@@ -1,7 +1,7 @@
 ---
 title: "Why Statistical Learning?"
-subtitle: "Week 1 — Motivation, Importance, and How It Works"
-author: "Ho-min Park & Hwan"
+subtitle: "Week 1 — Motivation, Importance, and How It Works (ISLP Ch. 1–2)"
+author: "Hyun-Hwan Jeong"
 date: 2026-07-10
 format:
   revealjs:
@@ -30,7 +30,7 @@ read before class, we spend class time on discussion + labs.
 
 :::: {.columns}
 ::: {.column width="50%"}
-- **Instructors:** Ho-min Park & Hwan
+- **Instructor (Week 1):** Hyun-Hwan Jeong
 - **Format:** 7 Fridays, 2:00–4:00 PM Central
 - **Textbook:** *An Introduction to Statistical Learning*, Python edition (ISLP)
 - **Style:** short conceptual recap + hands-on Python labs
@@ -83,6 +83,22 @@ cell types) hiding in thousands of measurements.
 ::: {.fragment}
 Regression, classification, clustering — different questions, same
 underlying machinery. That machinery is what this course teaches.
+:::
+
+## This isn't a fad — it's ~200 years in the making
+
+| | |
+|---|---|
+| **Early 1800s** | Legendre & Gauss formalize **least squares** — the ancestor of linear regression |
+| **1936** | Fisher's **linear discriminant analysis** for classification |
+| **1940s–70s** | Logistic regression, **generalized linear models** |
+| **1980s** | Breiman et al.: **classification and regression trees** |
+| **1990s** | **Support vector machines**; the term *statistical learning* emerges |
+| **2010s–now** | Deep learning, huge data, cheap compute — old ideas at new scale |
+
+::: {.fragment}
+Almost everything in this course is a 20th-century statistical idea, made
+newly practical by 21st-century data and compute.
 :::
 
 ## Why *you*, specifically
@@ -178,6 +194,30 @@ Most real projects are a mix of both — and the mix determines which method
 you should reach for.
 :::
 
+## How do we estimate $f$?
+
+:::: {.columns}
+::: {.column width="50%"}
+### Parametric methods
+1. Assume a functional **form** (e.g. $f(X) = \beta_0 + \beta_1 X$)
+2. Estimate a small set of **parameters** from the training data
+
+Simpler, needs less data, but wrong if the assumed form is wrong.
+:::
+::: {.column width="50%"}
+### Non-parametric methods
+No explicit functional form — let the data determine the shape of $f$
+directly (e.g. splines, trees, KNN).
+
+More flexible, needs more data, harder to interpret.
+:::
+::::
+
+::: {.fragment}
+Every method in this course sits somewhere on this spectrum — and where it
+sits determines how much data it needs and how easy it is to explain.
+:::
+
 ## Two kinds of learning problems
 
 :::: {.columns}
@@ -197,30 +237,91 @@ Clustering · Dimension reduction
 :::
 ::::
 
-## The trade-off you'll see all course long
+## Regression vs. classification
+
+- $Y$ **quantitative** (a number: wage, price, temperature) → a
+  **regression** problem
+- $Y$ **qualitative** (a category: default/no-default, up/down) → a
+  **classification** problem
+
+::: {.fragment}
+The distinction matters because we measure "getting it right"
+differently — a wrong number is off by *some amount*; a wrong category is
+just *wrong*. That difference drives which methods and which accuracy
+metrics apply.
+:::
+
+## Measuring the quality of fit
+
+For regression, the standard yardstick is **mean squared error**:
+
+$$\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{f}(x_i)\right)^2$$
+
+::: {.fragment}
+- Small on the **training data** is easy — and not the point.
+- What we actually care about is small **test MSE**: how well $\hat{f}$
+  predicts *new*, unseen observations.
+- A model can look excellent on training data and terrible on test
+  data — that gap is overfitting, made precise.
+:::
+
+## The bias-variance trade-off, precisely
+
+Expected test error at a point $x_0$ decomposes into three pieces:
+
+$$E\left[\left(y_0 - \hat{f}(x_0)\right)^2\right] = \text{Var}(\hat{f}(x_0)) + \left[\text{Bias}(\hat{f}(x_0))\right]^2 + \text{Var}(\epsilon)$$
 
 ```{=html}
 <div class="tradeoff">
   <div class="tradeoff-item">
     <i class="fa-solid fa-bullseye"></i>
-    <strong>Flexible models</strong>
-    <p>Trees, splines, deep nets. Fit the training data closely — risk
-    overfitting to its noise.</p>
+    <strong>Variance</strong>
+    <p>How much would $\hat{f}$ change if we fit it on a different
+    training set? Flexible models (trees, splines, deep nets) vary a lot.</p>
   </div>
-  <div class="tradeoff-vs">vs</div>
+  <div class="tradeoff-vs">+</div>
   <div class="tradeoff-item">
     <i class="fa-solid fa-ruler"></i>
-    <strong>Simple models</strong>
-    <p>Linear regression, LDA. Easy to interpret, more stable — risk
-    missing real structure.</p>
+    <strong>Bias</strong>
+    <p>Error from approximating a complex reality with a simpler model.
+    Simple models (linear regression, LDA) tend to be biased.</p>
   </div>
 </div>
 ```
 
 ::: {.fragment}
-Choosing well — and *measuring* the choice instead of guessing — is the
-prediction-accuracy / interpretability trade-off at the heart of Ch. 2, and
-it recurs in every later chapter.
+$\text{Var}(\epsilon)$ is irreducible noise — no model beats it. Everything
+else in this course is about trading variance against bias to minimize
+the two reducible terms.
+:::
+
+::: notes
+This is the formal version of the intuitive "flexible vs. simple" framing
+from earlier — the U-shaped test-error curve in Fig. 2.9-2.11 of ISLP is
+worth sketching live on the whiteboard here.
+:::
+
+## The classification setting
+
+Instead of MSE, classification uses the **error rate**:
+
+$$\frac{1}{n}\sum_{i=1}^{n} I(y_i \neq \hat{y}_i)$$
+
+::: {.fragment}
+The theoretical best possible classifier — the **Bayes classifier** —
+assigns each $x_0$ to the class $j$ that maximizes
+$\Pr(Y = j \mid X = x_0)$. It's a gold standard we can't compute directly
+(we don't know the true conditional distribution), but we can approximate it.
+:::
+
+::: {.fragment}
+**K-Nearest Neighbors (KNN)** approximates it non-parametrically: look at
+the $K$ closest training points to $x_0$ and vote.
+
+$$\Pr(Y = j \mid X = x_0) \approx \frac{1}{K}\sum_{i \in \mathcal{N}_0} I(y_i = j)$$
+
+Small $K$ → flexible, low bias, high variance. Large $K$ → the opposite.
+Same trade-off, new clothes.
 :::
 
 ## Where the next 7 weeks go
