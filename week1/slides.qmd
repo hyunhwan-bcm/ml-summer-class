@@ -14,6 +14,7 @@ format:
     footer: "ML Summer Class · Week 1"
     highlight-style: github
     code-line-numbers: false
+    html-math-method: katex
     include-in-header:
       - text: |
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
