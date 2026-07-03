@@ -1,0 +1,52 @@
+name: Render Quarto slide decks
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "week*/slides.qmd"
+      - "week*/custom.scss"
+      - "week*/Makefile"
+      - ".github/workflows/render-slides.yml"
+  pull_request:
+    paths:
+      - "week*/slides.qmd"
+      - "week*/custom.scss"
+      - "week*/Makefile"
+      - ".github/workflows/render-slides.yml"
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Allow Chrome sandbox for decktape (Ubuntu 24.04 restricts unprivileged user namespaces)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
+      - name: Render each deck
+        run: |
+          set -e
+          for dir in week*/; do
+            if [ -f "${dir}slides.qmd" ]; then
+              echo "::group::Rendering ${dir}"
+              make -C "$dir"
+              echo "::endgroup::"
+            fi
+          done
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slide-decks
+          path: |
+            week*/slides.html
+            week*/slides.pdf
+            week*/slides_files/**
+          if-no-files-found: error
