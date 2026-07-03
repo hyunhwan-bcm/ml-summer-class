@@ -32,10 +32,10 @@ read before class, we spend class time on discussion + labs.
 
 :::: {.columns}
 ::: {.column width="50%"}
-- **Instructor (Week 1):** Hyun-Hwan Jeong
-- **Format:** 7 Fridays, 2:00–4:00 PM Central
+- **Instructors:** Ho-min Park & Hyun-Hwan Jeong
+- **This session:** led by Hyun-Hwan Jeong
+- **Format:** 7 Fridays, 2:00–4:00 PM Central, Jul 10 – Aug 21
 - **Textbook:** *An Introduction to Statistical Learning*, Python edition (ISLP)
-- **Style:** short conceptual recap + hands-on Python labs
 :::
 ::: {.column width="50%"}
 - Read the chapter **before** class
@@ -48,6 +48,20 @@ read before class, we spend class time on discussion + labs.
 Emphasize the flipped-classroom structure — the condensed 7-week pace only
 works if people show up having read the chapter.
 :::
+
+## Course syllabus
+
+| # | Date | Topics | Chapters |
+|---|------|--------|----------|
+| 1 | Jul 10 | Intro + Statistical Learning basics | Ch 1–2 |
+| 2 | Jul 17 | Linear Regression; Classification | Ch 3–4 |
+| 3 | Jul 24 | Resampling; Regularization | Ch 5–6 |
+| 4 | Jul 31 | Moving Beyond Linearity; Tree-Based Methods | Ch 7–8 |
+| 5 | Aug 7 | Support Vector Machines; Deep Learning I | Ch 9, Ch 10 (pt 1) |
+| 6 | Aug 14 | Deep Learning II; Unsupervised Learning | Ch 10 (pt 2), Ch 12 |
+| 7 | Aug 21 | Survival Analysis; Multiple Testing; wrap-up | Ch 11, Ch 13 |
+
+Full reading list and slide decks for every week live in the repo README.
 
 # Why Are We Doing This? {.divider background-color="#1b3a5c"}
 
@@ -384,17 +398,19 @@ Every week's lab makes the ideas from that week's slides concrete in Python.
 
 ## Before next Friday
 
-1. Read **ISLP Ch. 1–2** (`week1/ch01-02-intro-statistical-learning.pdf`)
-2. Set up a Python environment with `jupyter`, `numpy`, `pandas`,
-   `scikit-learn`, `statsmodels`, and the `ISLP` package
-3. Skim the Ch. 2 lab — *Introduction to Python* — and try running it
+1. Read **ISLP Ch. 3–4** (`week2/ch03-04-regression-classification.pdf`) —
+   Linear Regression & Classification, for Jul 17
+2. If you haven't already, set up a Python environment with `jupyter`,
+   `numpy`, `pandas`, `scikit-learn`, `statsmodels`, and the `ISLP` package
+3. If you didn't finish running today's Ch. 2 lab — *Introduction to
+   Python* — in class, catch up on it before next week's lab builds on it
 4. Bring questions; we'll spend class time on discussion + the lab, not
    re-reading slides
 
 ## Questions?
 
 ::: {style="text-align: center; margin-top: 2em;"}
-[See you Friday.]{.hl}
+[See you next Friday.]{.hl}
 :::
 
 ::: notes
