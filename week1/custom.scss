@@ -81,9 +81,15 @@ $code-block-font-size: 0.65em;
   font-size: 0.75em;
 }
 
-// Figures extracted from the textbook — keep them from overpowering a slide
+// Figures extracted from the textbook — scale to fit without distorting.
+// width/height must both be auto so the browser derives one from the
+// other via the image's intrinsic ratio; a fixed width plus max-height
+// makes the two constraints fight and stretches the image.
 .reveal .slides section img {
-  max-height: 62vh;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 55vh;
   border: 1px solid darken($brand-paper, 10%);
   border-radius: 4px;
 }
