@@ -25,14 +25,30 @@ The course textbook is [*An Introduction to Statistical Learning, with Applicati
 
 ## Schedule
 
-| # | Date | Topics | Chapters |
-|---|------|--------|----------|
-| 1 | Jul 10 | Intro + Statistical Learning basics | Ch 1–2 |
-| 2 | Jul 17 | Linear Regression; Classification (logistic regression, LDA, QDA, KNN) | Ch 3–4 |
-| 3 | Jul 24 | Resampling (Cross-Validation & Bootstrap); Regularization (subset selection, ridge, lasso) | Ch 5–6 |
-| 4 | Jul 31 | Moving Beyond Linearity (splines, GAMs); Tree-Based Methods | Ch 7–8 |
-| 5 | Aug 7 | Support Vector Machines; Deep Learning I (neural network basics, CNNs) | Ch 9, Ch 10 (part 1) |
-| 6 | Aug 14 | Deep Learning II (RNNs, network tuning); Survival Analysis / Unsupervised Learning | Ch 10 (part 2), Ch 11 or 12 |
-| 7 | Aug 21 | Remaining Ch 11/12 topic; Multiple Testing; wrap-up | Ch 11/12, Ch 13 |
+| # | Date | Topics | Chapters | Reading |
+|---|------|--------|----------|---------|
+| 1 | Jul 10 | Intro + Statistical Learning basics | Ch 1–2 | [`week1/`](week1/) |
+| 2 | Jul 17 | Linear Regression; Classification (logistic regression, LDA, QDA, KNN) | Ch 3–4 | [`week2/`](week2/) |
+| 3 | Jul 24 | Resampling (Cross-Validation & Bootstrap); Regularization (subset selection, ridge, lasso) | Ch 5–6 | [`week3/`](week3/) |
+| 4 | Jul 31 | Moving Beyond Linearity (splines, GAMs); Tree-Based Methods | Ch 7–8 | [`week4/`](week4/) |
+| 5 | Aug 7 | Support Vector Machines; Deep Learning I (neural network basics, CNNs) | Ch 9, Ch 10 (part 1) | [`week5/`](week5/) |
+| 6 | Aug 14 | Deep Learning II (RNNs, network tuning); Unsupervised Learning | Ch 10 (part 2), Ch 12 | [`week6/`](week6/) |
+| 7 | Aug 21 | Survival Analysis; Multiple Testing; wrap-up | Ch 11, Ch 13 | [`week7/`](week7/) |
 
 Each session pairs conceptual material with the corresponding Python lab(s) from the textbook.
+
+## Weekly readings
+
+The `week1/` – `week7/` directories each contain the chapter excerpt(s) (split
+from `textbook/ISLP.pdf`) relevant to that week's session, so you can read
+just the assigned unit without downloading the whole book:
+
+- `week1/ch01-02-intro-statistical-learning.pdf` — Ch 1–2
+- `week2/ch03-04-regression-classification.pdf` — Ch 3–4
+- `week3/ch05-06-resampling-regularization.pdf` — Ch 5–6
+- `week4/ch07-08-nonlinearity-trees.pdf` — Ch 7–8
+- `week5/ch09-10pt1-svm-deep-learning-intro.pdf` — Ch 9, Ch 10.1–10.4
+- `week6/ch10pt2-rnn-deep-learning.pdf` — Ch 10.5–10.10
+- `week6/ch12-unsupervised-learning.pdf` — Ch 12
+- `week7/ch11-survival-analysis.pdf` — Ch 11
+- `week7/ch13-multiple-testing.pdf` — Ch 13
