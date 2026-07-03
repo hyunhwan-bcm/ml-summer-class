@@ -28,6 +28,9 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Allow Chrome sandbox for decktape (Ubuntu 24.04 restricts unprivileged user namespaces)
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+
       - name: Render each deck
         run: |
           set -e
