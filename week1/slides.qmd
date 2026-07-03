@@ -7,7 +7,8 @@ format:
   revealjs:
     theme: [default, custom.scss]
     width: 1920
-    height: 1080
+    height: 1350
+    margin: 0.08
     slide-number: c/t
     center: false
     transition: fade
@@ -61,29 +62,36 @@ decisions*. That's exactly the gap statistical learning fills.
 > — James, Witten, Hastie, Tibshirani, Taylor (ISLP, Ch. 1)
 :::
 
-## Three examples from the textbook — one shape
+## Wage data — a regression problem
 
-:::: {.columns}
-::: {.column width="33%"}
-### Wage data
-Predict a worker's **wage** from age, education, and year. A continuous
-number we want to estimate as accurately as possible.
-:::
-::: {.column width="33%"}
-### Stock market data
-Predict whether the market goes **up or down** tomorrow from recent
-returns. A category, not a number.
-:::
-::: {.column width="33%"}
-### Gene expression data
-No target to predict at all — just find **structure** (clusters of similar
-cell types) hiding in thousands of measurements.
-:::
-::::
+![](images/fig1-1-wage.png){fig-align="center" width="85%"}
+
+Predict a worker's **wage** — a continuous number — from age, education,
+and year. We want to estimate it as accurately as possible.
+
+## Stock market data — a classification problem
+
+![](images/fig1-2-stock-market.png){fig-align="center" width="78%"}
+
+Predict whether the market goes **up or down** tomorrow — a category, not
+a number — from the past few days' returns.
+
+## Gene expression data — no target at all
+
+![](images/fig1-4-gene-expression.png){fig-align="center" width="78%"}
+
+No output to predict — just **structure** hiding in thousands of
+measurements. Colors mark the true cancer type; the method never saw
+those labels, yet the clusters line up with them anyway.
+
+## One shape, three questions
+
+Regression, classification, clustering: different questions, but the same
+underlying machinery — observe data, estimate structure, check how well
+the estimate generalizes.
 
 ::: {.fragment}
-Regression, classification, clustering — different questions, same
-underlying machinery. That machinery is what this course teaches.
+That machinery is what this course teaches.
 :::
 
 ## This isn't a fad — it's ~200 years in the making
@@ -219,6 +227,13 @@ Every method in this course sits somewhere on this spectrum — and where it
 sits determines how much data it needs and how easy it is to explain.
 :::
 
+## The flexibility spectrum, mapped
+
+![](images/fig2-7-flexibility-interpretability.png){fig-align="center" width="65%"}
+
+Every method in this course has a home on this plot. Moving right buys
+flexibility at the cost of interpretability — there's no free lunch.
+
 ## Two kinds of learning problems
 
 :::: {.columns}
@@ -272,34 +287,29 @@ Expected test error at a point $x_0$ decomposes into three pieces:
 
 $$E\left[\left(y_0 - \hat{f}(x_0)\right)^2\right] = \text{Var}(\hat{f}(x_0)) + \left[\text{Bias}(\hat{f}(x_0))\right]^2 + \text{Var}(\epsilon)$$
 
-```{=html}
-<div class="tradeoff">
-  <div class="tradeoff-item">
-    <i class="fa-solid fa-bullseye"></i>
-    <strong>Variance</strong>
-    <p>How much would $\hat{f}$ change if we fit it on a different
-    training set? Flexible models (trees, splines, deep nets) vary a lot.</p>
-  </div>
-  <div class="tradeoff-vs">+</div>
-  <div class="tradeoff-item">
-    <i class="fa-solid fa-ruler"></i>
-    <strong>Bias</strong>
-    <p>Error from approximating a complex reality with a simpler model.
-    Simple models (linear regression, LDA) tend to be biased.</p>
-  </div>
-</div>
-```
+- **Variance** — how much $\hat{f}$ would change on a different training
+  set. Flexible models (trees, splines, deep nets) vary a lot.
+- **Bias** — error from approximating a complex reality with a simpler
+  model. Simple models (linear regression, LDA) tend to be biased.
+- $\text{Var}(\epsilon)$ — irreducible noise. No model beats it.
 
 ::: {.fragment}
-$\text{Var}(\epsilon)$ is irreducible noise — no model beats it. Everything
-else in this course is about trading variance against bias to minimize
-the two reducible terms.
+Minimizing test error means *trading* variance against bias — not
+eliminating either one.
 :::
 
+## What it looks like in practice
+
+![](images/fig2-12-bias-variance.png){fig-align="center" width="92%"}
+
+Squared bias (cyan) falls and variance (orange) rises as flexibility
+increases. Test MSE (red) is their sum — it bottoms out in the middle,
+not at either extreme.
+
 ::: notes
-This is the formal version of the intuitive "flexible vs. simple" framing
-from earlier — the U-shaped test-error curve in Fig. 2.9-2.11 of ISLP is
-worth sketching live on the whiteboard here.
+Worth pausing here — this U-shape is the single most important picture in
+Chapter 2, and it recurs (in disguise) in cross-validation curves,
+regularization paths, and learning curves for the rest of the course.
 :::
 
 ## The classification setting
@@ -315,15 +325,33 @@ $\Pr(Y = j \mid X = x_0)$. It's a gold standard we can't compute directly
 (we don't know the true conditional distribution), but we can approximate it.
 :::
 
-::: {.fragment}
-**K-Nearest Neighbors (KNN)** approximates it non-parametrically: look at
-the $K$ closest training points to $x_0$ and vote.
+## K-Nearest Neighbors
+
+**KNN** approximates the Bayes classifier non-parametrically: look at the
+$K$ closest training points to $x_0$ and vote.
 
 $$\Pr(Y = j \mid X = x_0) \approx \frac{1}{K}\sum_{i \in \mathcal{N}_0} I(y_i = j)$$
 
+::: {.fragment}
 Small $K$ → flexible, low bias, high variance. Large $K$ → the opposite.
 Same trade-off, new clothes.
 :::
+
+## KNN in action ($K=3$)
+
+![](images/fig2-14-knn-k3.png){fig-align="center" width="82%"}
+
+Left: the 3 nearest neighbors of the test point (✕) vote — 2 blue beats 1
+orange. Right: repeating this at every point traces out the decision
+boundary.
+
+## Choosing $K$ *is* choosing flexibility
+
+![](images/fig2-16-knn-k1-vs-k100.png){fig-align="center" width="88%"}
+
+$K=1$ (left) chases every training point — low bias, high variance.
+$K=100$ (right) barely bends — high bias, low variance. The purple dashed
+curve is the true (Bayes) boundary neither one quite matches.
 
 ## Where the next 7 weeks go
 

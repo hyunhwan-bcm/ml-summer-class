@@ -76,42 +76,14 @@ $code-block-font-size: 0.65em;
   }
 }
 
-// Flexible-vs-simple comparison used on the trade-off slide
-.tradeoff {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  margin-top: 0.6em;
-}
-
-.tradeoff-item {
-  flex: 1;
-  background: $brand-paper;
-  border: 1px solid darken($brand-paper, 12%);
-  border-radius: 8px;
-  padding: 1em 1.2em;
-  text-align: center;
-
-  i {
-    color: $brand-amber;
-    font-size: 1.8em;
-    display: block;
-    margin-bottom: 0.3em;
-  }
-
-  p {
-    font-size: 0.75em;
-    margin-top: 0.3em;
-  }
-}
-
-.tradeoff-vs {
-  font-weight: 700;
-  color: $brand-navy;
-  font-size: 1.1em;
-}
-
 // Table styling (used for the course roadmap)
 .reveal .slides table {
   font-size: 0.75em;
+}
+
+// Figures extracted from the textbook — keep them from overpowering a slide
+.reveal .slides section img {
+  max-height: 62vh;
+  border: 1px solid darken($brand-paper, 10%);
+  border-radius: 4px;
 }
