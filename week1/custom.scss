@@ -81,11 +81,17 @@ $code-block-font-size: 0.65em;
   font-size: 0.75em;
 }
 
-// Figures extracted from the textbook — scale to fit without distorting.
-// width/height must both be auto so the browser derives one from the
-// other via the image's intrinsic ratio; a fixed width plus max-height
-// makes the two constraints fight and stretches the image.
-.reveal .slides section img {
+// Figures extracted from the textbook, wrapped in raw HTML (not a markdown
+// image) specifically to avoid Quarto's revealjs auto-figure handling: a
+// centered markdown image gets tagged with reveal.js's `r-stretch`, which
+// resizes it at runtime via JS. That fights a CSS max-width/max-height
+// constraint and can leave the image mid-resize (wrong ratio) in decktape's
+// static capture. Plain img + CSS-only sizing is deterministic.
+.fig-wrap {
+  text-align: center;
+}
+
+.fig-wrap img {
   width: auto;
   height: auto;
   max-width: 90%;

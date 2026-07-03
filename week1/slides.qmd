@@ -64,21 +64,27 @@ decisions*. That's exactly the gap statistical learning fills.
 
 ## Wage data — a regression problem
 
-![](images/fig1-1-wage.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig1-1-wage.png" alt=""></div>
+```
 
 Predict a worker's **wage** — a continuous number — from age, education,
 and year. We want to estimate it as accurately as possible.
 
 ## Stock market data — a classification problem
 
-![](images/fig1-2-stock-market.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig1-2-stock-market.png" alt=""></div>
+```
 
 Predict whether the market goes **up or down** tomorrow — a category, not
 a number — from the past few days' returns.
 
 ## Gene expression data — no target at all
 
-![](images/fig1-4-gene-expression.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig1-4-gene-expression.png" alt=""></div>
+```
 
 No output to predict — just **structure** hiding in thousands of
 measurements. Colors mark the true cancer type; the method never saw
@@ -229,7 +235,9 @@ sits determines how much data it needs and how easy it is to explain.
 
 ## The flexibility spectrum, mapped
 
-![](images/fig2-7-flexibility-interpretability.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig2-7-flexibility-interpretability.png" alt=""></div>
+```
 
 Every method in this course has a home on this plot. Moving right buys
 flexibility at the cost of interpretability — there's no free lunch.
@@ -300,7 +308,9 @@ eliminating either one.
 
 ## What it looks like in practice
 
-![](images/fig2-12-bias-variance.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig2-12-bias-variance.png" alt=""></div>
+```
 
 Squared bias (cyan) falls and variance (orange) rises as flexibility
 increases. Test MSE (red) is their sum — it bottoms out in the middle,
@@ -339,7 +349,9 @@ Same trade-off, new clothes.
 
 ## KNN in action ($K=3$)
 
-![](images/fig2-14-knn-k3.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig2-14-knn-k3.png" alt=""></div>
+```
 
 Left: the 3 nearest neighbors of the test point (✕) vote — 2 blue beats 1
 orange. Right: repeating this at every point traces out the decision
@@ -347,7 +359,9 @@ boundary.
 
 ## Choosing $K$ *is* choosing flexibility
 
-![](images/fig2-16-knn-k1-vs-k100.png){fig-align="center"}
+```{=html}
+<div class="fig-wrap"><img src="images/fig2-16-knn-k1-vs-k100.png" alt=""></div>
+```
 
 $K=1$ (left) chases every training point — low bias, high variance.
 $K=100$ (right) barely bends — high bias, low variance. The purple dashed
