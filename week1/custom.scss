@@ -1,0 +1,117 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+$brand-navy: #1b3a5c;
+$brand-blue: #2f6fb5;
+$brand-amber: #e8a33d;
+$brand-ink: #1c1f24;
+$brand-paper: #fbfbfa;
+
+$presentation-heading-font: "Source Sans Pro", sans-serif;
+$presentation-font-family: "Source Sans Pro", sans-serif;
+$presentation-heading-color: $brand-navy;
+$presentation-heading-font-weight: 700;
+$body-color: $brand-ink;
+$presentation-font-size-root: 30px;
+$link-color: $brand-blue;
+$code-block-font-size: 0.65em;
+
+/*-- scss:rules --*/
+
+.reveal .slides section {
+  text-align: left;
+
+  h1, h2 {
+    border-bottom: 3px solid $brand-amber;
+    padding-bottom: 0.2em;
+  }
+}
+
+// Section-divider slides (# H1 headings tagged .divider)
+.reveal .slides section.divider {
+  text-align: center;
+
+  h1 {
+    color: #fff;
+    border-bottom: none;
+    font-size: 2.2em;
+    letter-spacing: 0.02em;
+  }
+}
+
+// Inline emphasis class used throughout slides.qmd
+.hl {
+  color: $brand-blue;
+  font-weight: 700;
+}
+
+// Blockquote styling for the ISLP citation
+.reveal .slides section blockquote {
+  border-left: 6px solid $brand-amber;
+  padding-left: 0.8em;
+  font-style: italic;
+  color: lighten($brand-ink, 15%);
+}
+
+// Callout card used on the "Why It Is Important" slide
+.stat-card {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  background: rgba($brand-blue, 0.08);
+  border-left: 6px solid $brand-blue;
+  border-radius: 6px;
+  padding: 0.9em 1.1em;
+
+  i {
+    color: $brand-blue;
+    font-size: 1.6em;
+    margin-top: 0.1em;
+  }
+
+  p {
+    margin: 0.2em 0 0 0;
+    font-size: 0.85em;
+  }
+}
+
+// Flexible-vs-simple comparison used on the trade-off slide
+.tradeoff {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 0.6em;
+}
+
+.tradeoff-item {
+  flex: 1;
+  background: $brand-paper;
+  border: 1px solid darken($brand-paper, 12%);
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  text-align: center;
+
+  i {
+    color: $brand-amber;
+    font-size: 1.8em;
+    display: block;
+    margin-bottom: 0.3em;
+  }
+
+  p {
+    font-size: 0.75em;
+    margin-top: 0.3em;
+  }
+}
+
+.tradeoff-vs {
+  font-weight: 700;
+  color: $brand-navy;
+  font-size: 1.1em;
+}
+
+// Table styling (used for the course roadmap)
+.reveal .slides table {
+  font-size: 0.75em;
+}

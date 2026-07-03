@@ -1,0 +1,258 @@
+---
+title: "Why Statistical Learning?"
+subtitle: "Week 1 — Motivation, Importance, and How It Works"
+author: "Ho-min Park & Hwan"
+date: 2026-07-10
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1920
+    height: 1080
+    slide-number: c/t
+    center: false
+    transition: fade
+    footer: "ML Summer Class · Week 1"
+    highlight-style: github
+    code-line-numbers: false
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+---
+
+# Welcome {.divider background-color="#1b3a5c"}
+
+::: notes
+Quick intros, logistics (Fridays 2-4pm Central, 7 weeks), and set expectations:
+read before class, we spend class time on discussion + labs.
+:::
+
+## About this course
+
+:::: {.columns}
+::: {.column width="50%"}
+- **Instructors:** Ho-min Park & Hwan
+- **Format:** 7 Fridays, 2:00–4:00 PM Central
+- **Textbook:** *An Introduction to Statistical Learning*, Python edition (ISLP)
+- **Style:** short conceptual recap + hands-on Python labs
+:::
+::: {.column width="50%"}
+- Read the chapter **before** class
+- Class time = discussion + labs, not lecture
+- Every week pairs theory with a runnable notebook
+:::
+::::
+
+::: notes
+Emphasize the flipped-classroom structure — the condensed 7-week pace only
+works if people show up having read the chapter.
+:::
+
+# Why Are We Doing This? {.divider background-color="#1b3a5c"}
+
+## Data is everywhere — decisions aren't automatically good
+
+[Every field now collects more data than any person can look at by eye.]{.hl}
+The bottleneck has shifted from *collecting* data to *turning it into
+decisions*. That's exactly the gap statistical learning fills.
+
+::: {.fragment}
+> "Statistical learning refers to a vast set of tools for understanding data."
+> — James, Witten, Hastie, Tibshirani, Taylor (ISLP, Ch. 1)
+:::
+
+## Three examples from the textbook — one shape
+
+:::: {.columns}
+::: {.column width="33%"}
+### Wage data
+Predict a worker's **wage** from age, education, and year. A continuous
+number we want to estimate as accurately as possible.
+:::
+::: {.column width="33%"}
+### Stock market data
+Predict whether the market goes **up or down** tomorrow from recent
+returns. A category, not a number.
+:::
+::: {.column width="33%"}
+### Gene expression data
+No target to predict at all — just find **structure** (clusters of similar
+cell types) hiding in thousands of measurements.
+:::
+::::
+
+::: {.fragment}
+Regression, classification, clustering — different questions, same
+underlying machinery. That machinery is what this course teaches.
+:::
+
+## Why *you*, specifically
+
+- These methods show up **inside** the tools you already use: recommendation
+  systems, medical risk scores, fraud detection, A/B tests, genomics
+  pipelines.
+- Being able to read a model's assumptions (and know when they break) is
+  what separates *using* a black box from *trusting* one.
+- The skills transfer directly to the Python data-science stack
+  (`scikit-learn`, `statsmodels`) you'll use outside this course.
+
+# Why It Is Important {.divider background-color="#1b3a5c"}
+
+## It's the common language of modern data work
+
+:::: {.columns}
+::: {.column width="55%"}
+- **Science** — genomics, astrophysics, climate models
+- **Medicine** — diagnosis support, survival/risk prediction
+- **Business** — demand forecasting, pricing, churn
+- **Technology** — search ranking, spam filtering, the models behind LLMs
+:::
+::: {.column width="45%"}
+```{=html}
+<div class="stat-card">
+  <i class="fa-solid fa-diagram-project"></i>
+  <div>
+    <strong>One toolkit, many domains.</strong>
+    <p>The same bias-variance trade-off that governs a linear regression
+    also governs a neural network. Learn the trade-off once.</p>
+  </div>
+</div>
+```
+:::
+::::
+
+## Getting it wrong is expensive
+
+- An **overfit** model looks great on the data you trained it on and fails
+  the moment it meets new data — silently, until it's in production.
+- An **overly rigid** model misses real signal and gives you false
+  confidence in a simple story.
+- Statistical learning gives you the *vocabulary and diagnostics*
+  (train/test split, cross-validation, bias-variance) to tell which
+  mistake you're making — and fix it.
+
+::: notes
+This is the seed for Chapter 2's bias-variance discussion and Chapter 5's
+cross-validation — plant the idea now, they'll see the math for it soon.
+:::
+
+# How It Works {.divider background-color="#1b3a5c"}
+
+## The basic setup
+
+We assume there's some relationship between an input $X$ and an output $Y$:
+
+$$Y = f(X) + \epsilon$$
+
+::: {.fragment}
+- $f$ — the **true, unknown** systematic relationship we want to learn
+- $\epsilon$ — random noise, independent of $X$, mean zero
+- **Statistical learning = a set of approaches for estimating $f$**
+:::
+
+::: {.fragment}
+Everything this course covers — linear regression, trees, neural networks —
+is a different strategy for estimating the same $f$.
+:::
+
+## Two reasons to estimate $f$
+
+:::: {.columns}
+::: {.column width="50%"}
+### Prediction
+We only care about the output. $f$ can be a "black box" as long as
+$\hat{Y} = \hat{f}(X)$ is accurate.
+
+*e.g. will this loan default?*
+:::
+::: {.column width="50%"}
+### Inference
+We want to understand **how** $Y$ changes with $X$: which predictors
+matter, and how. $f$ must stay interpretable.
+
+*e.g. which drug dosage actually helps?*
+:::
+::::
+
+::: {.fragment}
+Most real projects are a mix of both — and the mix determines which method
+you should reach for.
+:::
+
+## Two kinds of learning problems
+
+:::: {.columns}
+::: {.column width="50%"}
+### Supervised
+Every observation has a **labeled outcome** $Y$. We fit $f$ to match
+inputs to known answers.
+
+Regression (numeric $Y$) · Classification (categorical $Y$)
+:::
+::: {.column width="50%"}
+### Unsupervised
+No labeled outcome — only inputs $X$. We look for structure: groups,
+patterns, lower-dimensional summaries.
+
+Clustering · Dimension reduction
+:::
+::::
+
+## The trade-off you'll see all course long
+
+```{=html}
+<div class="tradeoff">
+  <div class="tradeoff-item">
+    <i class="fa-solid fa-bullseye"></i>
+    <strong>Flexible models</strong>
+    <p>Trees, splines, deep nets. Fit the training data closely — risk
+    overfitting to its noise.</p>
+  </div>
+  <div class="tradeoff-vs">vs</div>
+  <div class="tradeoff-item">
+    <i class="fa-solid fa-ruler"></i>
+    <strong>Simple models</strong>
+    <p>Linear regression, LDA. Easy to interpret, more stable — risk
+    missing real structure.</p>
+  </div>
+</div>
+```
+
+::: {.fragment}
+Choosing well — and *measuring* the choice instead of guessing — is the
+prediction-accuracy / interpretability trade-off at the heart of Ch. 2, and
+it recurs in every later chapter.
+:::
+
+## Where the next 7 weeks go
+
+| Week | Focus |
+|---|---|
+| 1 | **Foundations** — what we just covered |
+| 2 | Regression & classification: fitting $f$ to data |
+| 3 | Resampling & regularization: trusting your estimate of $f$ |
+| 4 | Beyond straight lines: splines, trees |
+| 5–6 | Support vector machines, deep learning |
+| 7 | Survival analysis, unsupervised learning, multiple testing |
+
+Every week's lab makes the ideas from that week's slides concrete in Python.
+
+# Getting Started {.divider background-color="#1b3a5c"}
+
+## Before next Friday
+
+1. Read **ISLP Ch. 1–2** (`week1/ch01-02-intro-statistical-learning.pdf`)
+2. Set up a Python environment with `jupyter`, `numpy`, `pandas`,
+   `scikit-learn`, `statsmodels`, and the `ISLP` package
+3. Skim the Ch. 2 lab — *Introduction to Python* — and try running it
+4. Bring questions; we'll spend class time on discussion + the lab, not
+   re-reading slides
+
+## Questions?
+
+::: {style="text-align: center; margin-top: 2em;"}
+[See you Friday.]{.hl}
+:::
+
+::: notes
+Leave time here for open Q&A before wrapping.
+:::

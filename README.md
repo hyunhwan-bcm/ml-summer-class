@@ -52,3 +52,13 @@ just the assigned unit without downloading the whole book:
 - `week6/ch12-unsupervised-learning.pdf` — Ch 12
 - `week7/ch11-survival-analysis.pdf` — Ch 11
 - `week7/ch13-multiple-testing.pdf` — Ch 13
+
+## Slide decks
+
+Session slides are built with [Quarto](https://quarto.org) (`slides.qmd` →
+revealjs); see [`AGENTS.md`](AGENTS.md) for the deck conventions used across
+the course.
+
+| Date | Title | Description | Slides |
+|---|---|---|---|
+| Jul 10 | Why Statistical Learning? | Motivation, importance, and how statistical learning works — Week 1 kickoff | [`week1/slides.qmd`](week1/slides.qmd) (run `make` in `week1/` to build `slides.pdf`) |
