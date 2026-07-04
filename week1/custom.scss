@@ -76,11 +76,81 @@ $code-block-font-size: 0.65em;
   }
 }
 
-// Table styling (used for the course roadmap and history timeline).
-// Kept well below the (larger) body text size -- the 7-row syllabus table
-// otherwise runs into the footer at the bigger root font size.
+// Table styling (used for the course roadmap table). Kept well below the
+// (larger) body text size -- the 7-row syllabus table otherwise runs into
+// the footer at the bigger root font size.
 .reveal .slides table {
   font-size: 0.7em;
+}
+
+// Horizontal timeline used on the "A short history" slide: a line with
+// dots, and labels alternating above/below via a 3-row grid (top label /
+// dot+line / bottom label) so history reads as a timeline, not a table.
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  column-gap: 0.3em;
+  margin-top: 2rem;
+}
+
+.timeline-line {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 4px;
+  background: $brand-amber;
+  border-radius: 2px;
+}
+
+.timeline-dot {
+  grid-row: 2;
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  background: $brand-navy;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px $brand-amber;
+  justify-self: center;
+  z-index: 2;
+}
+
+.timeline-label {
+  font-size: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15em;
+  line-height: 1.25;
+
+  strong {
+    color: $brand-navy;
+  }
+}
+
+.timeline-label-top {
+  grid-row: 1;
+
+  &::after {
+    content: "";
+    order: 1;
+    width: 2px;
+    height: 0.8em;
+    background: $brand-amber;
+  }
+}
+
+.timeline-label-bottom {
+  grid-row: 3;
+
+  &::before {
+    content: "";
+    order: -1;
+    width: 2px;
+    height: 0.8em;
+    background: $brand-amber;
+  }
 }
 
 // Figures extracted from the textbook, wrapped in raw HTML (not a markdown

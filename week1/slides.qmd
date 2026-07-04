@@ -109,14 +109,41 @@ course teaches one toolkit that covers all three.
 
 ## A short history
 
-| | |
-|---|---|
-| **Early 1800s** | Legendre & Gauss formalize **least squares** — the ancestor of linear regression |
-| **1936** | Fisher's **linear discriminant analysis** for classification |
-| **1940s–70s** | Logistic regression, **generalized linear models** |
-| **1980s** | Breiman et al.: **classification and regression trees** |
-| **1990s** | **Support vector machines**; the term *statistical learning* emerges |
-| **2010s–now** | Deep learning, huge data, cheap compute — old ideas at new scale |
+```{=html}
+<div class="timeline">
+  <div class="timeline-line"></div>
+
+  <div class="timeline-label timeline-label-top" style="grid-column: 1;">
+    <strong>Early 1800s</strong><span>Least squares</span>
+  </div>
+  <div class="timeline-dot" style="grid-column: 1;"></div>
+
+  <div class="timeline-dot" style="grid-column: 2;"></div>
+  <div class="timeline-label timeline-label-bottom" style="grid-column: 2;">
+    <strong>1936</strong><span>Linear discriminant analysis</span>
+  </div>
+
+  <div class="timeline-label timeline-label-top" style="grid-column: 3;">
+    <strong>1940s–70s</strong><span>Logistic regression, GLMs</span>
+  </div>
+  <div class="timeline-dot" style="grid-column: 3;"></div>
+
+  <div class="timeline-dot" style="grid-column: 4;"></div>
+  <div class="timeline-label timeline-label-bottom" style="grid-column: 4;">
+    <strong>1980s</strong><span>Classification &amp; regression trees</span>
+  </div>
+
+  <div class="timeline-label timeline-label-top" style="grid-column: 5;">
+    <strong>1990s</strong><span>Support vector machines</span>
+  </div>
+  <div class="timeline-dot" style="grid-column: 5;"></div>
+
+  <div class="timeline-dot" style="grid-column: 6;"></div>
+  <div class="timeline-label timeline-label-bottom" style="grid-column: 6;">
+    <strong>2010s–now</strong><span>Deep learning at scale</span>
+  </div>
+</div>
+```
 
 ::: {.fragment}
 Most of these ideas are decades old — we just finally have the data and
