@@ -115,37 +115,37 @@ course teaches one toolkit that covers all three.
 
   <img class="timeline-img timeline-img-top" style="grid-column: 1;" src="images/timeline-least-squares.png" alt="">
   <div class="timeline-label timeline-label-top" style="grid-column: 1;">
-    <strong>Early 1800s</strong><span>Draw the best-fitting line</span>
+    <strong>Early 1800s</strong><span class="timeline-term">Least squares</span><span class="timeline-desc">draw the best-fitting line</span>
   </div>
   <div class="timeline-dot" style="grid-column: 1;"></div>
 
   <div class="timeline-dot" style="grid-column: 2;"></div>
   <div class="timeline-label timeline-label-bottom" style="grid-column: 2;">
-    <strong>1936</strong><span>Sort points into groups</span>
+    <strong>1936</strong><span class="timeline-term">Linear discriminant analysis</span><span class="timeline-desc">sort points into groups</span>
   </div>
   <img class="timeline-img timeline-img-bottom" style="grid-column: 2;" src="images/timeline-lda.png" alt="">
 
   <img class="timeline-img timeline-img-top" style="grid-column: 3;" src="images/timeline-logistic.png" alt="">
   <div class="timeline-label timeline-label-top" style="grid-column: 3;">
-    <strong>1940s–70s</strong><span>Predict a probability</span>
+    <strong>1940s–70s</strong><span class="timeline-term">Logistic regression</span><span class="timeline-desc">predict a probability</span>
   </div>
   <div class="timeline-dot" style="grid-column: 3;"></div>
 
   <div class="timeline-dot" style="grid-column: 4;"></div>
   <div class="timeline-label timeline-label-bottom" style="grid-column: 4;">
-    <strong>1980s</strong><span>Ask yes/no questions</span>
+    <strong>1980s</strong><span class="timeline-term">Decision trees</span><span class="timeline-desc">ask yes/no questions</span>
   </div>
   <img class="timeline-img timeline-img-bottom" style="grid-column: 4;" src="images/timeline-trees.png" alt="">
 
   <img class="timeline-img timeline-img-top" style="grid-column: 5;" src="images/timeline-svm.png" alt="">
   <div class="timeline-label timeline-label-top" style="grid-column: 5;">
-    <strong>1990s</strong><span>Find the widest gap</span>
+    <strong>1990s</strong><span class="timeline-term">Support vector machines</span><span class="timeline-desc">find the widest gap</span>
   </div>
   <div class="timeline-dot" style="grid-column: 5;"></div>
 
   <div class="timeline-dot" style="grid-column: 6;"></div>
   <div class="timeline-label timeline-label-bottom" style="grid-column: 6;">
-    <strong>2010s–now</strong><span>Stack many small decisions</span>
+    <strong>2010s–now</strong><span class="timeline-term">Deep learning</span><span class="timeline-desc">stack many small decisions</span>
   </div>
   <img class="timeline-img timeline-img-bottom" style="grid-column: 6;" src="images/timeline-deep-learning.png" alt="">
 </div>

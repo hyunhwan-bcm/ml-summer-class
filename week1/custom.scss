@@ -137,17 +137,27 @@ $code-block-font-size: 0.65em;
 }
 
 .timeline-label {
-  font-size: 0.48em;
+  font-size: 0.44em;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.15em;
-  line-height: 1.25;
+  gap: 0.1em;
+  line-height: 1.2;
 
   strong {
     color: $brand-navy;
   }
+}
+
+.timeline-term {
+  font-weight: 600;
+  color: $brand-blue;
+}
+
+.timeline-desc {
+  font-style: italic;
+  color: lighten($brand-ink, 25%);
 }
 
 .timeline-label-top {
