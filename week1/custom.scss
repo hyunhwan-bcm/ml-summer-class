@@ -13,7 +13,7 @@ $presentation-font-family: "Source Sans Pro", sans-serif;
 $presentation-heading-color: $brand-navy;
 $presentation-heading-font-weight: 700;
 $body-color: $brand-ink;
-$presentation-font-size-root: 40px;
+$presentation-font-size-root: 48px;
 $link-color: $brand-blue;
 $code-block-font-size: 0.65em;
 
@@ -78,7 +78,7 @@ $code-block-font-size: 0.65em;
 
 // Table styling (used for the course roadmap and history timeline)
 .reveal .slides table {
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 
 // Figures extracted from the textbook, wrapped in raw HTML (not a markdown
