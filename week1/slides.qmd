@@ -61,15 +61,14 @@ works if people show up having read the chapter.
 | 6 | Aug 14 | Deep Learning II; Unsupervised Learning | Ch 10 (pt 2), Ch 12 |
 | 7 | Aug 21 | Survival Analysis; Multiple Testing; wrap-up | Ch 11, Ch 13 |
 
-Full reading list and slide decks for every week live in the repo README.
+More detail is in the repo README.
 
 # Why Are We Doing This? {.divider background-color="#1b3a5c"}
 
-## Data is everywhere — decisions aren't automatically good
+## Data is everywhere
 
-[Every field now collects more data than any person can look at by eye.]{.hl}
-The bottleneck has shifted from *collecting* data to *turning it into
-decisions*. That's exactly the gap statistical learning fills.
+Every field collects more data than anyone could look at by hand. The hard
+part isn't collecting data anymore — it's turning it into decisions.
 
 ::: {.fragment}
 > "Statistical learning refers to a vast set of tools for understanding data."
@@ -82,8 +81,7 @@ decisions*. That's exactly the gap statistical learning fills.
 <div class="fig-wrap"><img src="images/fig1-1-wage.png" alt=""></div>
 ```
 
-Predict a worker's **wage** — a continuous number — from age, education,
-and year. We want to estimate it as accurately as possible.
+Predict a worker's **wage** — a number — from age, education, and year.
 
 ## Stock market data — a classification problem
 
@@ -92,7 +90,7 @@ and year. We want to estimate it as accurately as possible.
 ```
 
 Predict whether the market goes **up or down** tomorrow — a category, not
-a number — from the past few days' returns.
+a number.
 
 ## Gene expression data — no target at all
 
@@ -100,21 +98,16 @@ a number — from the past few days' returns.
 <div class="fig-wrap"><img src="images/fig1-4-gene-expression.png" alt=""></div>
 ```
 
-No output to predict — just **structure** hiding in thousands of
-measurements. Colors mark the true cancer type; the method never saw
-those labels, yet the clusters line up with them anyway.
+No output to predict — just structure hidden in thousands of
+measurements. The colors show the true cancer type, which the method
+never saw.
 
 ## One shape, three questions
 
-Regression, classification, clustering: different questions, but the same
-underlying machinery — observe data, estimate structure, check how well
-the estimate generalizes.
+Regression, classification, clustering — three different questions. This
+course teaches one toolkit that covers all three.
 
-::: {.fragment}
-That machinery is what this course teaches.
-:::
-
-## This isn't a fad — it's ~200 years in the making
+## A short history
 
 | | |
 |---|---|
@@ -126,23 +119,21 @@ That machinery is what this course teaches.
 | **2010s–now** | Deep learning, huge data, cheap compute — old ideas at new scale |
 
 ::: {.fragment}
-Almost everything in this course is a 20th-century statistical idea, made
-newly practical by 21st-century data and compute.
+Most of these ideas are decades old — we just finally have the data and
+compute to use them well.
 :::
 
 ## Why *you*, specifically
 
-- These methods show up **inside** the tools you already use: recommendation
-  systems, medical risk scores, fraud detection, A/B tests, genomics
-  pipelines.
-- Being able to read a model's assumptions (and know when they break) is
-  what separates *using* a black box from *trusting* one.
-- The skills transfer directly to the Python data-science stack
-  (`scikit-learn`, `statsmodels`) you'll use outside this course.
+- These methods power tools you already use: recommendation systems,
+  medical risk scores, fraud detection, genomics.
+- Knowing a model's assumptions — and when they break — is what separates
+  using a tool from trusting it.
+- The skills carry over directly to `scikit-learn` and `statsmodels`.
 
 # Why It Is Important {.divider background-color="#1b3a5c"}
 
-## It's the common language of modern data work
+## It shows up everywhere
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -157,8 +148,8 @@ newly practical by 21st-century data and compute.
   <i class="fa-solid fa-diagram-project"></i>
   <div>
     <strong>One toolkit, many domains.</strong>
-    <p>The same bias-variance trade-off that governs a linear regression
-    also governs a neural network. Learn the trade-off once.</p>
+    <p>The bias-variance trade-off that governs a linear regression also
+    governs a neural network.</p>
   </div>
 </div>
 ```
@@ -167,13 +158,12 @@ newly practical by 21st-century data and compute.
 
 ## Getting it wrong is expensive
 
-- An **overfit** model looks great on the data you trained it on and fails
-  the moment it meets new data — silently, until it's in production.
-- An **overly rigid** model misses real signal and gives you false
-  confidence in a simple story.
-- Statistical learning gives you the *vocabulary and diagnostics*
-  (train/test split, cross-validation, bias-variance) to tell which
-  mistake you're making — and fix it.
+- An **overfit** model looks great on training data, then quietly fails
+  the moment it sees new data.
+- An **overly rigid** model misses real signal, and gives you false
+  confidence in a too-simple story.
+- Statistical learning gives you ways to tell which mistake you're
+  making — train/test splits, cross-validation, bias-variance.
 
 ::: notes
 This is the seed for Chapter 2's bias-variance discussion and Chapter 5's
@@ -189,14 +179,9 @@ We assume there's some relationship between an input $X$ and an output $Y$:
 $$Y = f(X) + \epsilon$$
 
 ::: {.fragment}
-- $f$ — the **true, unknown** systematic relationship we want to learn
+- $f$ — the **true, unknown** relationship we want to learn
 - $\epsilon$ — random noise, independent of $X$, mean zero
-- **Statistical learning = a set of approaches for estimating $f$**
-:::
-
-::: {.fragment}
-Everything this course covers — linear regression, trees, neural networks —
-is a different strategy for estimating the same $f$.
+- Statistical learning = a set of ways to estimate $f$
 :::
 
 ## Two reasons to estimate $f$
@@ -204,23 +189,22 @@ is a different strategy for estimating the same $f$.
 :::: {.columns}
 ::: {.column width="50%"}
 ### Prediction
-We only care about the output. $f$ can be a "black box" as long as
+We only care about the output. $f$ can be a black box as long as
 $\hat{Y} = \hat{f}(X)$ is accurate.
 
 *e.g. will this loan default?*
 :::
 ::: {.column width="50%"}
 ### Inference
-We want to understand **how** $Y$ changes with $X$: which predictors
-matter, and how. $f$ must stay interpretable.
+We want to know **how** $Y$ changes with $X$. $f$ has to stay
+interpretable.
 
 *e.g. which drug dosage actually helps?*
 :::
 ::::
 
 ::: {.fragment}
-Most real projects are a mix of both — and the mix determines which method
-you should reach for.
+Most real projects need a bit of both.
 :::
 
 ## How do we estimate $f$?
@@ -228,24 +212,18 @@ you should reach for.
 :::: {.columns}
 ::: {.column width="50%"}
 ### Parametric methods
-1. Assume a functional **form** (e.g. $f(X) = \beta_0 + \beta_1 X$)
-2. Estimate a small set of **parameters** from the training data
+Assume a functional **form** (e.g. $f(X) = \beta_0 + \beta_1 X$), then
+estimate its parameters from data.
 
-Simpler, needs less data, but wrong if the assumed form is wrong.
+Simpler, needs less data — wrong if the assumed form is wrong.
 :::
 ::: {.column width="50%"}
 ### Non-parametric methods
-No explicit functional form — let the data determine the shape of $f$
-directly (e.g. splines, trees, KNN).
+No assumed form — let the data shape $f$ directly (splines, trees, KNN).
 
 More flexible, needs more data, harder to interpret.
 :::
 ::::
-
-::: {.fragment}
-Every method in this course sits somewhere on this spectrum — and where it
-sits determines how much data it needs and how easy it is to explain.
-:::
 
 ## The flexibility spectrum, mapped
 
@@ -253,23 +231,21 @@ sits determines how much data it needs and how easy it is to explain.
 <div class="fig-wrap"><img src="images/fig2-7-flexibility-interpretability.png" alt=""></div>
 ```
 
-Every method in this course has a home on this plot. Moving right buys
-flexibility at the cost of interpretability — there's no free lunch.
+Every method we'll cover fits somewhere on this plot: more flexibility,
+less interpretability.
 
 ## Two kinds of learning problems
 
 :::: {.columns}
 ::: {.column width="50%"}
 ### Supervised
-Every observation has a **labeled outcome** $Y$. We fit $f$ to match
-inputs to known answers.
+Every observation has a **labeled outcome** $Y$.
 
 Regression (numeric $Y$) · Classification (categorical $Y$)
 :::
 ::: {.column width="50%"}
 ### Unsupervised
-No labeled outcome — only inputs $X$. We look for structure: groups,
-patterns, lower-dimensional summaries.
+No labeled outcome — only inputs $X$. We look for structure instead.
 
 Clustering · Dimension reduction
 :::
@@ -277,16 +253,12 @@ Clustering · Dimension reduction
 
 ## Regression vs. classification
 
-- $Y$ **quantitative** (a number: wage, price, temperature) → a
-  **regression** problem
-- $Y$ **qualitative** (a category: default/no-default, up/down) → a
-  **classification** problem
+- $Y$ **quantitative** (a number) → **regression**
+- $Y$ **qualitative** (a category) → **classification**
 
 ::: {.fragment}
-The distinction matters because we measure "getting it right"
-differently — a wrong number is off by *some amount*; a wrong category is
-just *wrong*. That difference drives which methods and which accuracy
-metrics apply.
+We measure error differently for each: a wrong number is off by some
+amount; a wrong category is just wrong.
 :::
 
 ## Measuring the quality of fit
@@ -296,11 +268,8 @@ For regression, the standard yardstick is **mean squared error**:
 $$\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}\left(y_i - \hat{f}(x_i)\right)^2$$
 
 ::: {.fragment}
-- Small on the **training data** is easy — and not the point.
-- What we actually care about is small **test MSE**: how well $\hat{f}$
-  predicts *new*, unseen observations.
-- A model can look excellent on training data and terrible on test
-  data — that gap is overfitting, made precise.
+Small MSE on training data is easy, and not the point. What matters is
+**test MSE** — how well $\hat{f}$ predicts data it hasn't seen.
 :::
 
 ## The bias-variance trade-off, precisely
@@ -309,16 +278,9 @@ Expected test error at a point $x_0$ decomposes into three pieces:
 
 $$E\left[\left(y_0 - \hat{f}(x_0)\right)^2\right] = \text{Var}(\hat{f}(x_0)) + \left[\text{Bias}(\hat{f}(x_0))\right]^2 + \text{Var}(\epsilon)$$
 
-- **Variance** — how much $\hat{f}$ would change on a different training
-  set. Flexible models (trees, splines, deep nets) vary a lot.
-- **Bias** — error from approximating a complex reality with a simpler
-  model. Simple models (linear regression, LDA) tend to be biased.
-- $\text{Var}(\epsilon)$ — irreducible noise. No model beats it.
-
-::: {.fragment}
-Minimizing test error means *trading* variance against bias — not
-eliminating either one.
-:::
+- **Variance** — how much $\hat{f}$ changes on a different training set
+- **Bias** — error from fitting a complex reality with too simple a model
+- $\text{Var}(\epsilon)$ — irreducible noise, no model beats it
 
 ## What it looks like in practice
 
@@ -326,14 +288,12 @@ eliminating either one.
 <div class="fig-wrap"><img src="images/fig2-12-bias-variance.png" alt=""></div>
 ```
 
-Squared bias (cyan) falls and variance (orange) rises as flexibility
-increases. Test MSE (red) is their sum — it bottoms out in the middle,
-not at either extreme.
+Bias (cyan) falls and variance (orange) rises as flexibility increases.
+Test MSE (red) is their sum, so it bottoms out in the middle.
 
 ::: notes
-Worth pausing here — this U-shape is the single most important picture in
-Chapter 2, and it recurs (in disguise) in cross-validation curves,
-regularization paths, and learning curves for the rest of the course.
+Worth pausing here — this U-shape recurs (in disguise) in cross-validation
+curves, regularization paths, and learning curves for the rest of the course.
 :::
 
 ## The classification setting
@@ -343,22 +303,20 @@ Instead of MSE, classification uses the **error rate**:
 $$\frac{1}{n}\sum_{i=1}^{n} I(y_i \neq \hat{y}_i)$$
 
 ::: {.fragment}
-The theoretical best possible classifier — the **Bayes classifier** —
-assigns each $x_0$ to the class $j$ that maximizes
-$\Pr(Y = j \mid X = x_0)$. It's a gold standard we can't compute directly
-(we don't know the true conditional distribution), but we can approximate it.
+The best possible classifier — the **Bayes classifier** — assigns each
+$x_0$ to the class $j$ that maximizes $\Pr(Y = j \mid X = x_0)$. We can't
+compute it directly, but we can approximate it.
 :::
 
 ## K-Nearest Neighbors
 
-**KNN** approximates the Bayes classifier non-parametrically: look at the
-$K$ closest training points to $x_0$ and vote.
+**KNN** approximates the Bayes classifier: look at the $K$ closest
+training points to $x_0$ and vote.
 
 $$\Pr(Y = j \mid X = x_0) \approx \frac{1}{K}\sum_{i \in \mathcal{N}_0} I(y_i = j)$$
 
 ::: {.fragment}
 Small $K$ → flexible, low bias, high variance. Large $K$ → the opposite.
-Same trade-off, new clothes.
 :::
 
 ## KNN in action ($K=3$)
@@ -368,8 +326,7 @@ Same trade-off, new clothes.
 ```
 
 Left: the 3 nearest neighbors of the test point (✕) vote — 2 blue beats 1
-orange. Right: repeating this at every point traces out the decision
-boundary.
+orange. Right: doing this everywhere traces out the decision boundary.
 
 ## Choosing $K$ *is* choosing flexibility
 
@@ -377,9 +334,9 @@ boundary.
 <div class="fig-wrap"><img src="images/fig2-16-knn-k1-vs-k100.png" alt=""></div>
 ```
 
-$K=1$ (left) chases every training point — low bias, high variance.
-$K=100$ (right) barely bends — high bias, low variance. The purple dashed
-curve is the true (Bayes) boundary neither one quite matches.
+$K=1$ (left) chases every point — low bias, high variance. $K=100$
+(right) barely bends — high bias, low variance. The purple dashed line is
+the true boundary.
 
 ## Where the next 7 weeks go
 
@@ -392,19 +349,19 @@ curve is the true (Bayes) boundary neither one quite matches.
 | 5–6 | Support vector machines, deep learning |
 | 7 | Survival analysis, unsupervised learning, multiple testing |
 
-Every week's lab makes the ideas from that week's slides concrete in Python.
+Each week pairs the ideas here with a hands-on Python lab.
 
 # Getting Started {.divider background-color="#1b3a5c"}
 
 ## Before next Friday
 
 1. Read **ISLP Ch. 3–4** (`week2/ch03-04-regression-classification.pdf`) —
-   Linear Regression & Classification, for Jul 17
-2. If you haven't already, set up a Python environment with `jupyter`,
-   `numpy`, `pandas`, `scikit-learn`, `statsmodels`, and the `ISLP` package
-3. If you didn't finish running today's Ch. 2 lab — *Introduction to
-   Python* — in class, catch up on it before next week's lab builds on it
-4. Bring questions; we'll spend class time on discussion + the lab, not
+   for Jul 17
+2. If you haven't already, set up Python with `jupyter`, `numpy`,
+   `pandas`, `scikit-learn`, `statsmodels`, and `ISLP`
+3. If you didn't finish today's Ch. 2 lab (*Introduction to Python*),
+   catch up before next week's lab builds on it
+4. Bring questions — class time is for discussion and the lab, not
    re-reading slides
 
 ## Questions?
