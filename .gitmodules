@@ -1,0 +1,4 @@
+[submodule "external/ISLP_labs"]
+	path = external/ISLP_labs
+	url = https://github.com/intro-stat-learning/ISLP_labs.git
+	branch = stable
