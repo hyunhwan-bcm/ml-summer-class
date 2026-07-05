@@ -7,12 +7,14 @@ on:
       - "week*/slides.qmd"
       - "week*/custom.scss"
       - "week*/Makefile"
+      - "week*/images/**"
       - ".github/workflows/render-slides.yml"
   pull_request:
     paths:
       - "week*/slides.qmd"
       - "week*/custom.scss"
       - "week*/Makefile"
+      - "week*/images/**"
       - ".github/workflows/render-slides.yml"
   workflow_dispatch:
 
