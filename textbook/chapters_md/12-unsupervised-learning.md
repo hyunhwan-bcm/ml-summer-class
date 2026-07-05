@@ -2,7 +2,7 @@
 
 # Unsupervised Learning
 
-![](../images/8dda4ead5b46e3b76d13bd06782b32e1388f17352be09682e1bacc6f352f54c3.jpg)
+![](../images/12-unsupervised-learning/8dda4ead5b46e3b76d13bd06782b32e1388f17352be09682e1bacc6f352f54c3.jpg)
 
 Most of this book concerns supervised learning methods such as regression and classification. In the supervised learning setting, we typically have access to a set of p features $X_{1}, X_{2}, \ldots, X_{p}$ , measured on n observations, and a response Y also measured on those same n observations. The goal is then to predict Y using $X_{1}, X_{2}, \ldots, X_{p}$ .
 
@@ -75,7 +75,7 @@ z _ {i 2} = \phi_ {1 2} x _ {i 1} + \phi_ {2 2} x _ {i 2} + \dots + \phi_ {p 2} 
 $$
 
 where $\phi_{2}$ is the second principal component loading vector, with elements $\phi_{12}, \phi_{22}, \ldots, \phi_{p2}$ . It turns out that constraining $Z_{2}$ to be uncorrelated with $Z_{1}$ is equivalent to constraining the direction $\phi_{2}$ to be orthogonal (perpendicular) to the direction $\phi_{1}$ . In the example in Figure 6.14, the observations lie in two-dimensional space (since p = 2), and so once we have found $\phi_{1}$ , there is only one possibility for $\phi_{2}$ , which is shown as a blue dashed line. (From Section 6.3.1, we know that $\phi_{12} = 0.544$ and $\phi_{22} = -0.839$ .) But in a larger data set with p > 2 variables, there are multiple distinct principal components, and they are defined in a similar manner. To find $\phi_{2}$ , we solve a problem similar to (12.3) with $\phi_{2}$ replacing $\phi_{1}$ , and with the additional constraint that $\phi_{2}$ is orthogonal to $\phi_{1}$ . $^{2}$
-![](../images/b28a2bd62c709ab968e97e357300387d94cc1f9f4f467f18a90d55b296790eba.jpg)
+![](../images/12-unsupervised-learning/b28a2bd62c709ab968e97e357300387d94cc1f9f4f467f18a90d55b296790eba.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -145,7 +145,7 @@ The first two principal component loading vectors in a simulated three-dimension
 
 In the previous section, we describe the principal component loading vectors as the directions in feature space along which the data vary the most, and the principal component scores as projections along these directions. However, an alternative interpretation of principal components can also be
 
-![](../images/0f4c876f3fed0187af1455af93dcc5aa3f79aa3da9e1688e512c1f9d176febdd.jpg)  
+![](../images/12-unsupervised-learning/0f4c876f3fed0187af1455af93dcc5aa3f79aa3da9e1688e512c1f9d176febdd.jpg)  
 FIGURE 12.2. Ninety observations simulated in three dimensions. The observations are displayed in color for ease of visualization. Left: the first two principal component directions span the plane that best fits the data. The plane is positioned to minimize the sum of squared distances to each point. Right: the first two principal component score vectors give the coordinates of the projection of the 90 observations onto the plane.
 
 useful: principal components provide low-dimensional linear surfaces that are closest to the observations. We expand upon that interpretation here. $^{3}$
@@ -220,7 +220,7 @@ $$
 
 where TSS represents the total sum of squared elements of X, and RSS represents the residual sum of squares of the M-dimensional approximation given by the principal components. Recalling the definition of $R^{2}$ from (3.17), this means that we can interpret the PVE as the $R^{2}$ of the approximation for X given by the first M principal components.
 
-![](../images/579bf81fd09b669e468170c64deca90b47e6c0865a6d88263269a3c59302cd3e.jpg)  
+![](../images/12-unsupervised-learning/579bf81fd09b669e468170c64deca90b47e6c0865a6d88263269a3c59302cd3e.jpg)  
 FIGURE 12.3. Left: a scree plot depicting the proportion of variance explained by each of the four principal components in the USArrests data. Right: the cumulative proportion of variance explained by the four principal components in the USArrests data.
 
 In the USArrests data, the first principal component explains 62.0% of the variance in the data, and the next principal component explains 24.7% of the variance. Together, the first two principal components explain almost 87% of the variance in the data, and the last two principal components explain only 13% of the variance. This means that Figure 12.1 provides a pretty accurate summary of the data using just two dimensions. The PVE of each principal component, as well as the cumulative PVE, is shown in Figure 12.3. The left-hand panel is known as a scree plot, and will be discussed later in this chapter.
@@ -235,7 +235,7 @@ We have already mentioned that before PCA is performed, the variables should be 
 
 For instance, Figure 12.1 was obtained after scaling each of the variables to have standard deviation one. This is reproduced in the left-hand plot in Figure 12.4. Why does it matter that we scaled the variables? In these data, the variables are measured in different units; Murder, Rape, and Assault are reported as the number of occurrences per 100,000 people, and UrbanPop is the percentage of the state's population that lives in an urban area. These four variables have variances of 18.97, 87.73, 6945.16, and 209.5, respectively. Consequently, if we perform PCA on the unscaled variables, then
 
-![](../images/22bed6f1fc2203b1024c7d2f60cc1dc2f199876d37a6488f5597cb4fefb4294b.jpg)  
+![](../images/12-unsupervised-learning/22bed6f1fc2203b1024c7d2f60cc1dc2f199876d37a6488f5597cb4fefb4294b.jpg)  
 FIGURE 12.4. Two principal component biplots for the USArrests data. Left: the same as Figure 12.1, with the variables scaled to have unit standard deviations. Right: principal components using unscaled data. Assault has by far the largest loading on the first principal component because it has the highest variance among the four variables. In general, scaling the variables to have standard deviation one is recommended.
 
 the first principal component loading vector will have a very large loading for Assault, since that variable has by far the highest variance. The right-hand plot in Figure 12.4 displays the first two principal components for the USArrests data set, without scaling the variables to have standard deviation one. As predicted, the first principal component loading vector places almost all of its weight on Assault, while the second principal component loading vector places almost all of its weight on UrbanPop. Comparing this to the left-hand plot, we see that scaling does indeed have a substantial effect on the results obtained.
@@ -333,7 +333,7 @@ is pretty accurate. Over 100 random runs of this experiment, the average correla
 
 Figure 12.6 further indicates that Algorithm 12.1 performs fairly well on this dataset.
 
-![](../images/2fa2385e22768a93987b741bd641990ce1543c8ab3ad73ae2b49768567d43c6c.jpg)
+![](../images/12-unsupervised-learning/2fa2385e22768a93987b741bd641990ce1543c8ab3ad73ae2b49768567d43c6c.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -371,7 +371,7 @@ We close with a few observations:
 
 Digital streaming services like Netflix and Amazon use data about the content that a customer has viewed in the past, as well as data from other customers, to suggest other content for the customer. As a concrete example, some years back, Netflix had customers rate each movie that they had seen with a score from 1–5. This resulted in a very big $n \times p$ matrix for which the $(i, j)$ element is the rating given by the ith customer to the
 
-![](../images/b4293694cc6bed462888618e3e3ddd422d2e53d39d17c7ebacd43a06992a7275.jpg)  
+![](../images/12-unsupervised-learning/b4293694cc6bed462888618e3e3ddd422d2e53d39d17c7ebacd43a06992a7275.jpg)  
 FIGURE 12.6. As described in the text, in each of 100 trials, we left out 20 elements of the USArrests dataset. In each trial, we applied Algorithm 12.1 with M = 1 to impute the missing elements and compute the principal components. Left: For each of the 50 states, the imputed first principal component scores (averaged over 100 trials, and displayed with a standard deviation bar) are plotted against the first principal component scores computed using all the data. Right: The imputed principal component loadings (averaged over 100 trials, and displayed with a standard deviation bar) are plotted against the true principal component loadings.
 
 jth movie. One specific early example of this matrix had n = 480,189 customers and p = 17,770 movies. However, on average each customer had seen around 200 movies, so 99% of the matrix had missing elements. Table 12.2 illustrates the setup.
@@ -387,7 +387,7 @@ Examples of genres include Romance, Western, and Action.
 
 Principal component models similar to Algorithm 12.1 are at the heart of many recommender systems. Although the data matrices involved are
 
-![](../images/72ea70d6b85d0d46d69b64ab947b03b367ccb7f2f4bae247c63be1780688404b.jpg)
+![](../images/12-unsupervised-learning/72ea70d6b85d0d46d69b64ab947b03b367ccb7f2f4bae247c63be1780688404b.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -439,7 +439,7 @@ The K-means clustering procedure results from a simple and intuitive mathematica
 1. $C_{1} \cup C_{2} \cup \cdots \cup C_{K} = \{1, \ldots, n\}$ . In other words, each observation belongs to at least one of the K clusters.  
 2. $C_k \cap C_{k'} = \emptyset$ for all $k \neq k'$ . In other words, the clusters are non-overlapping: no observation belongs to more than one cluster.
 
-![](../images/cc56c5b21e065a9b12c267e94f8a0f9dc2fc9d111d1cfde0267fc8b1216f3869.jpg)  
+![](../images/12-unsupervised-learning/cc56c5b21e065a9b12c267e94f8a0f9dc2fc9d111d1cfde0267fc8b1216f3869.jpg)  
 FIGURE 12.7. A simulated data set with 150 observations in two-dimensional space. Panels show the results of applying K-means clustering with different values of K, the number of clusters. The color of each observation indicates the cluster to which it was assigned using the K-means clustering algorithm. Note that there is no ordering of the clusters, so the cluster coloring is arbitrary. These cluster labels were not used in clustering; instead, they are the outputs of the clustering procedure.
 
 For instance, if the $i$ th observation is in the $k$ th cluster, then $i \in C_k$ . The idea behind $K$ -means clustering is that a good clustering is one for which the within-cluster variation is as small as possible. The within-cluster variation for cluster $C_k$ is a measure $W(C_k)$ of the amount by which the observations within a cluster differ from each other. Hence we want to solve the problem
@@ -485,14 +485,14 @@ where $\bar{x}_{kj} = \frac{1}{|C_{k}|} \sum_{i \in C_{k}} x_{ij}$ is the mean f
 
 Because the K-means algorithm finds a local rather than a global optimum, the results obtained will depend on the initial (random) cluster assignment of each observation in Step 1 of Algorithm 12.2. For this reason, it is important to run the algorithm multiple times from different random
 
-![](../images/4fef148312115bfb012c33c47be898b2c431a0e68f600d596f6f31da18e6f3f2.jpg)  
+![](../images/12-unsupervised-learning/4fef148312115bfb012c33c47be898b2c431a0e68f600d596f6f31da18e6f3f2.jpg)  
 FIGURE 12.8. The progress of the K-means algorithm on the example of Figure 12.7 with K=3. Top left: the observations are shown. Top center: in Step 1 of the algorithm, each observation is randomly assigned to a cluster. Top right: in Step 2(a), the cluster centroids are computed. These are shown as large colored disks. Initially the centroids are almost completely overlapping because the initial cluster assignments were chosen at random. Bottom left: in Step 2(b), each observation is assigned to the nearest centroid. Bottom center: Step 2(a) is once again performed, leading to new cluster centroids. Bottom right: the results obtained after ten iterations.
 
 initial configurations. Then one selects the best solution, i.e. that for which the objective (12.17) is smallest. Figure 12.9 shows the local optima obtained by running K-means clustering six times using six different initial cluster assignments, using the toy data from Figure 12.7. In this case, the best clustering is the one with an objective value of 235.8.
 
 As we have seen, to perform K-means clustering, we must decide how many clusters we expect in the data. The problem of selecting K is far from simple. This issue, along with other practical considerations that arise in performing K-means clustering, is addressed in Section 12.4.3.
 
-![](../images/63554b24f1c097eedf723d54da24efbf3469b9f95e5978712103b5c24824d302.jpg)  
+![](../images/12-unsupervised-learning/63554b24f1c097eedf723d54da24efbf3469b9f95e5978712103b5c24824d302.jpg)  
 FIGURE 12.9. K-means clustering performed six times on the data from Figure 12.7 with K = 3, each time with a different random assignment of the observations in Step 1 of the K-means algorithm. Above each plot is the value of the objective (12.17). Three different local optima were obtained, one of which resulted in a smaller value of the objective and provides better separation between the clusters. Those labeled in red all achieved the same best solution, with an objective value of 235.8.
 
 # 12.4.2 Hierarchical Clustering
@@ -504,7 +504,7 @@ In this section, we describe bottom-up or agglomerative clustering. This is the 
 bottom-up
 agglomerative
 
-![](../images/c4948692179ae526066725d15d9aa9d6a4f353afcaf86a45ce0f85a5f54a537e.jpg)
+![](../images/12-unsupervised-learning/c4948692179ae526066725d15d9aa9d6a4f353afcaf86a45ce0f85a5f54a537e.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -528,14 +528,14 @@ In the left-hand panel of Figure 12.11, each leaf of the dendrogram represents o
 
 This highlights a very important point in interpreting dendrograms that is often misunderstood. Consider the left-hand panel of Figure 12.12, which shows a simple dendrogram obtained from hierarchically clustering nine
 
-![](../images/bd6c0e384a7f6ce9b314ee14ddf37bff5f5bc79bec5f1e79c550ce7ec1d5263e.jpg)  
+![](../images/12-unsupervised-learning/bd6c0e384a7f6ce9b314ee14ddf37bff5f5bc79bec5f1e79c550ce7ec1d5263e.jpg)  
 FIGURE 12.11. Left: dendrogram obtained from hierarchically clustering the data from Figure 12.10 with complete linkage and Euclidean distance. Center: the dendrogram from the left-hand panel, cut at a height of nine (indicated by the dashed line). This cut results in two distinct clusters, shown in different colors. Right: the dendrogram from the left-hand panel, now cut at a height of five. This cut results in three distinct clusters, shown in different colors. Note that the colors were not used in clustering, but are simply used for display purposes in this figure.
 
 observations. One can see that observations 5 and 7 are quite similar to each other, since they fuse at the lowest point on the dendrogram. Observations 1 and 6 are also quite similar to each other. However, it is tempting but incorrect to conclude from the figure that observations 9 and 2 are quite similar to each other on the basis that they are located near each other on the dendrogram. In fact, based on the information contained in the dendrogram, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7. (This can be seen from the right-hand panel of Figure 12.12, in which the raw data are displayed.) To put it mathematically, there are $2^{n-1}$ possible reorderings of the dendrogram, where n is the number of leaves. This is because at each of the n-1 points where fusions occur, the positions of the two fused branches could be swapped without affecting the meaning of the dendrogram. Therefore, we cannot draw conclusions about the similarity of two observations based on their proximity along the horizontal axis. Rather, we draw conclusions about the similarity of two observations based on the location on the vertical axis where branches containing those two observations first are fused.
 
 Now that we understand how to interpret the left-hand panel of Figure 12.11, we can move on to the issue of identifying clusters on the basis of a dendrogram. In order to do this, we make a horizontal cut across the dendrogram, as shown in the center and right-hand panels of Figure 12.11. The distinct sets of observations beneath the cut can be interpreted as clusters. In the center panel of Figure 12.11, cutting the dendrogram at a height of nine results in two clusters, shown in distinct colors. In the right-hand panel, cutting the dendrogram at a height of five results in three clusters. Further cuts can be made as one descends the dendrogram in order to obtain any number of clusters, between 1 (corresponding to no cut) and $n$
 
-![](../images/7ba09d406b885f9b2eaabf49fb32bc1d4f944b78280f1292ab8aa240c9a62f42.jpg)  
+![](../images/12-unsupervised-learning/7ba09d406b885f9b2eaabf49fb32bc1d4f944b78280f1292ab8aa240c9a62f42.jpg)  
 FIGURE 12.12. An illustration of how to properly interpret a dendrogram with nine observations in two-dimensional space. Left: a dendrogram generated using Euclidean distance and complete linkage. Observations 5 and 7 are quite similar to each other, as are observations 1 and 6. However, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7, even though observations 9 and 2 are close together in terms of horizontal distance. This is because observations 2, 8, 5, and 7 all fuse with observation 9 at the same height, approximately 1.8. Right: the raw data used to generate the dendrogram can be used to confirm that indeed, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7.
 
 (corresponding to a cut at height 0, so that each observation is in its own cluster). In other words, the height of the cut to the dendrogram serves the same role as the K in K-means clustering: it controls the number of clusters obtained.
@@ -571,14 +571,14 @@ The choice of dissimilarity measure is very important, as it has a strong effect
 
 For instance, consider an online retailer interested in clustering shoppers based on their past shopping histories. The goal is to identify subgroups of similar shoppers, so that shoppers within each subgroup can be shown items and advertisements that are particularly likely to interest them. Suppose the data takes the form of a matrix where the rows are the shoppers and the columns are the items available for purchase; the elements of the data matrix indicate the number of times a given shopper has purchased a
 
-![](../images/aa671e4fa724c49237660ff418d45c2c221df533c8b94a2767a831743cf4bd8a.jpg)  
+![](../images/12-unsupervised-learning/aa671e4fa724c49237660ff418d45c2c221df533c8b94a2767a831743cf4bd8a.jpg)  
 FIGURE 12.13. An illustration of the first few steps of the hierarchical clustering algorithm, using the data from Figure 12.12, with complete linkage and Euclidean distance. Top Left: initially, there are nine distinct clusters, $\{1\}, \{2\}, \ldots, \{9\}$ . Top Right: the two clusters that are closest together, $\{5\}$ and $\{7\}$ , are fused into a single cluster. Bottom Left: the two clusters that are closest together, $\{6\}$ and $\{1\}$ , are fused into a single cluster. Bottom Right: the two clusters that are closest together using complete linkage, $\{8\}$ and the cluster $\{5, 7\}$ , are fused into a single cluster.
 
 given item (i.e. a 0 if the shopper has never purchased this item, a 1 if the shopper has purchased it once, etc.) What type of dissimilarity measure should be used to cluster the shoppers? If Euclidean distance is used, then shoppers who have bought very few items overall (i.e. infrequent users of the online shopping site) will be clustered together. This may not be desirable. On the other hand, if correlation-based distance is used, then shoppers with similar preferences (e.g. shoppers who have bought items A and B but never items C or D) will be clustered together, even if some shoppers with these preferences are higher-volume shoppers than others. Therefore, for this application, correlation-based distance may be a better choice.
 
 In addition to carefully selecting the dissimilarity measure used, one must also consider whether or not the variables should be scaled to have standard deviation one before the dissimilarity between the observations is computed. To illustrate this point, we continue with the online shopping ex-
 
-![](../images/03139d97913009292e3b6a73a2d6dda57dfdd25d61539177f0ac17c5ae5af6cf.jpg)  
+![](../images/12-unsupervised-learning/03139d97913009292e3b6a73a2d6dda57dfdd25d61539177f0ac17c5ae5af6cf.jpg)  
 FIGURE 12.14. Average, complete, and single linkage applied to an example data set. Average and complete linkage tend to yield more balanced clusters.
 
 ample just described. Some items may be purchased more frequently than others; for instance, a shopper might buy ten pairs of socks a year, but a computer very rarely. High-frequency purchases like socks therefore tend to have a much larger effect on the inter-shopper dissimilarities, and hence on the clustering ultimately obtained, than rare purchases like computers. This may not be desirable. If the variables are scaled to have standard deviation one before the inter-observation dissimilarities are computed, then each variable will in effect be given equal importance in the hierarchical clustering performed. We might also want to scale the variables to have standard deviation one if they are measured on different scales; otherwise, the choice of units (e.g. centimeters versus kilometers) for a particular variable will greatly affect the dissimilarity measure obtained. It should come as no surprise that whether or not it is a good decision to scale the variables before computing the dissimilarity measure depends on the application at hand. An example is shown in Figure 12.16. We note that the issue of whether or not to scale the variables before performing clustering applies to K-means clustering as well.
@@ -591,7 +591,7 @@ Clustering can be a very useful tool for data analysis in the unsupervised setti
 
 In order to perform clustering, some decisions must be made.
 
-![](../images/1e8c5923b1513ee52ac41e1254ae8a229ab86f95ee4bcb7de1ad9b528e53cd70.jpg)
+![](../images/12-unsupervised-learning/1e8c5923b1513ee52ac41e1254ae8a229ab86f95ee4bcb7de1ad9b528e53cd70.jpg)
 
 <details>
 <summary>line</summary>
@@ -637,7 +637,7 @@ Each of these decisions can have a strong impact on the results obtained. In pra
 
 Any time clustering is performed on a data set we will find clusters. But we really want to know whether the clusters that have been found represent true subgroups in the data, or whether they are simply a result of clustering the noise. For instance, if we were to obtain an independent set of observations, then would those observations also display the same set of clusters? This is a hard question to answer. There exist a number of techniques for assigning a p-value to a cluster in order to assess whether there is more
 
-![](../images/f86a7ebf13151677fb345846dadb2241bccd7e2af91f04302be14e3cd52b5a7a.jpg)  
+![](../images/12-unsupervised-learning/f86a7ebf13151677fb345846dadb2241bccd7e2af91f04302be14e3cd52b5a7a.jpg)  
 FIGURE 12.16. An eclectic online retailer sells two items: socks and computers. Left: the number of pairs of socks, and computers, purchased by eight online shoppers is displayed. Each shopper is shown in a different color. If inter-observation dissimilarities are computed using Euclidean distance on the raw variables, then the number of socks purchased by an individual will drive the dissimilarities obtained, and the number of computers purchased will have little effect. This might be undesirable, since (1) computers are more expensive than socks and so the online retailer may be more interested in encouraging shoppers to buy computers than socks, and (2) a large difference in the number of socks purchased by two shoppers may be less informative about the shoppers' overall shopping preferences than a small difference in the number of computers purchased. Center: the same data are shown, after scaling each variable by its standard deviation. Now the two products will have a comparable effect on the inter-observation dissimilarities obtained. Right: the same data are displayed, but now the y-axis represents the number of dollars spent by each online shopper on socks and on computers. Since computers are much more expensive than socks, now computer purchase history will drive the inter-observation dissimilarities obtained.
 
 evidence for the cluster than one would expect due to chance. However, there has been no consensus on a single best approach. More details can be found in ESL. $^{8}$
@@ -1368,7 +1368,7 @@ In [52]: fig, axes = plt.subplots(1, 2, figsize=(15,6))
     ticks = np.arange(nci_pca.n_components_)+1
 ```
 
-![](../images/919900d843339a3af66885317bf383c3487c67722de97c07cfbc0f1bb03cad3d.jpg)  
+![](../images/12-unsupervised-learning/919900d843339a3af66885317bf383c3487c67722de97c07cfbc0f1bb03cad3d.jpg)  
 FIGURE 12.17. Projections of the NCI60 cancer cell lines onto the first three principal components (in other words, the scores for the first three principal components). On the whole, observations belonging to a single cancer type tend to lie near each other in this low-dimensional space. It would not have been possible to visualize the data without using a dimension reduction method such as PCA, since based on the full data set there are $\binom{6,830}{2}$ possible scatterplots, none of which would have been particularly informative.
 
 ```matlab
@@ -1393,7 +1393,7 @@ We see that together, the first seven principal components explain around 40% of
 
 We now perform hierarchical clustering of the cell lines in the NCI60 data using complete, single, and average linkage. Once again, the goal is to find out whether or not the observations cluster into distinct types of cancer. Euclidean distance is used as the dissimilarity measure. We first write a short function to produce the three dendrograms.
 
-![](../images/a83efd6327eac9e64a8d9820c20ba45e07e52c82b5cdcabb5cbfc5420295035b.jpg)  
+![](../images/12-unsupervised-learning/a83efd6327eac9e64a8d9820c20ba45e07e52c82b5cdcabb5cbfc5420295035b.jpg)  
 FIGURE 12.18. The PVE of the principal components of the NCI60 cancer cell line microarray data set. Left: the PVE of each principal component is shown. Right: the cumulative PVE of the principal components is shown. Together, all principal components explain 100,% of the variance.
 
 In [53]:  
@@ -1426,7 +1426,7 @@ ax = axes[2]; hc_sing = plot_nci('Single', ax)
 
 The results are shown in Figure 12.19. We see that the choice of linkage certainly does affect the results obtained. Typically, single linkage will tend to yield trailing clusters: very large clusters onto which individual observations attach one-by-one. On the other hand, complete and average linkage tend to yield more balanced, attractive clusters. For this reason, complete and average linkage are generally preferred to single linkage. Clearly cell lines within a single cancer type do tend to cluster together, although the clustering is not perfect. We will use complete linkage hierarchical clustering for the analysis that follows.
 
-![](../images/c087285d14508d6bdebaf4296e75d902047ea6567113756556b61ddc89442cbb.jpg)  
+![](../images/12-unsupervised-learning/c087285d14508d6bdebaf4296e75d902047ea6567113756556b61ddc89442cbb.jpg)  
 FIGURE 12.19. The NCI60 cancer cell line microarray data, clustered with average, complete, and single linkage, and using Euclidean distance as the dissimilarity measure. Complete and average linkage tend to yield evenly sized clusters whereas single linkage tends to yield extended clusters to which single leaves are fused one by one.
 
 We can cut the dendrogram at the height that will yield a particular number of clusters, say four:
@@ -1503,7 +1503,7 @@ pd.crosstab(nci_labs['label'], pca_labels)
 (a) Prove (12.18).  
 (b) On the basis of this identity, argue that the $K$ -means clustering algorithm (Algorithm 12.2) decreases the objective (12.17) at each iteration.
 
-![](../images/b5c9d2e388bfe42f2fb8cc20f56c189e770a8a568705bc97d9540f9d93e21446.jpg)
+![](../images/12-unsupervised-learning/b5c9d2e388bfe42f2fb8cc20f56c189e770a8a568705bc97d9540f9d93e21446.jpg)
 
 2. Suppose that we have four observations, for which we compute a dissimilarity matrix, given by
 

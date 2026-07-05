@@ -1,6 +1,6 @@
 # An Introduction to Statistical Learning, with Applications in Python (ISLP)
 
-Full text converted from [`ISLP.pdf`](ISLP.pdf) to Markdown (MinerU2.5-Pro VLM, MLX backend). The complete book is also available as a single file at [`ISLP.md`](ISLP.md); this directory splits it into one file per chapter for easier navigation. All chapter files share the images in [`images/`](images/).
+Full text converted from [`ISLP.pdf`](ISLP.pdf) to Markdown (MinerU2.5-Pro VLM, MLX backend). The complete book is also available as a single file at [`ISLP.md`](ISLP.md); this directory splits it into one file per chapter for easier navigation. Each chapter's figures live in a matching subfolder under [`images/`](images/) (e.g. `images/03-linear-regression/`). Front matter and the index have no figures. Only figures actually referenced in the text are kept — MinerU also extracts incidental sub-crops that aren't inlined anywhere, and those were dropped.
 
 ## Chapters
 
@@ -27,8 +27,8 @@ Full text converted from [`ISLP.pdf`](ISLP.pdf) to Markdown (MinerU2.5-Pro VLM, 
 ```
 textbook/
 ├── ISLP.pdf          original source
-├── ISLP.md           full book, single file
+├── ISLP.md           full book, single file (images/<chapter>/...)
 ├── README.md         this file
-├── images/           figures referenced by every file below (shared, not duplicated)
-└── chapters_md/      one file per chapter, image links point to ../images/
+├── images/           one subfolder per chapter, e.g. images/03-linear-regression/
+└── chapters_md/      one file per chapter, image links point to ../images/<chapter>/
 ```

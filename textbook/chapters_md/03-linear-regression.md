@@ -101,7 +101,7 @@ residual
 
 residual sum of squares
 
-![](../images/e694611eb20fbb92e0c898ef67fd42874021e76d93f696b9f47efb5ecb1f7166.jpg)
+![](../images/03-linear-regression/e694611eb20fbb92e0c898ef67fd42874021e76d93f696b9f47efb5ecb1f7166.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -256,7 +256,7 @@ $$
 
 Here $\beta_{0}$ is the intercept term—that is, the expected value of Y when X = 0, and $\beta_{1}$ is the slope—the average increase in Y associated with a one-unit increase in X. The error term is a catch-all for what we miss with this simple model: the true relationship is probably not linear, there may be other variables that cause variation in Y, and there may be measurement error. We typically assume that the error term is independent of X.
 
-![](../images/d241fbd88d26c11f12895e04ec76558a9aef5d18bbcf644372c7c919c95c43c1.jpg)  
+![](../images/03-linear-regression/d241fbd88d26c11f12895e04ec76558a9aef5d18bbcf644372c7c919c95c43c1.jpg)  
 FIGURE 3.2. Contour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$ , given by (3.4).
 
 The model given by (3.5) defines the population regression line, which is the best linear approximation to the true relationship between X and $Y.^{1}$ The least squares regression coefficient estimates (3.4) characterize the least squares line (3.2). The left-hand panel of Figure 3.3 displays these two lines in a simple simulated example. We created 100 random Xs, and generated 100 corresponding Ys from the model
@@ -276,7 +276,7 @@ line
 least squares
 line
 
-![](../images/1b11311f97fb38c9a9c68873e6d9d9558c7530cc8ad4587e7e86d60001efc295.jpg)  
+![](../images/03-linear-regression/1b11311f97fb38c9a9c68873e6d9d9558c7530cc8ad4587e7e86d60001efc295.jpg)  
 FIGURE 3.3. A simulated data set. Left: The red line represents the true relationship, $f(X) = 2 + 3X$ , which is known as the population regression line. The blue line is the least squares line; it is the least squares estimate for $f(X)$ based on the observed data, shown in black. Right: The population regression line is again shown in red, and the least squares line in dark blue. In light blue, ten least squares lines are shown, each computed on the basis of a separate random set of observations. Each least squares line is different, but on average, the least squares lines are quite close to the population regression line.
 
 the population mean $\mu$ of some random variable Y. Unfortunately, $\mu$ is unknown, but we do have access to n observations from $Y, y_{1}, \ldots, y_{n}$ , which we can use to estimate $\mu$ . A reasonable estimate is $\hat{\mu} = \bar{y}$ , where $\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_{i}$ is the sample mean. The sample mean and the population mean are different, but in general the sample mean will provide a good estimate of the population mean. In the same way, the unknown coefficients $\beta_{0}$ and $\beta_{1}$ in linear regression define the population regression line. We seek to estimate these unknown coefficients using $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$ given in (3.4). These coefficient estimates define the least squares line.
@@ -485,7 +485,7 @@ $$
 
 The values $\hat{\beta}_{0},\hat{\beta}_{1},\ldots,\hat{\beta}_{p}$ that minimize (3.22) are the multiple least squares regression coefficient estimates. Unlike the simple linear regression estimates given in (3.4), the multiple regression coefficient estimates have somewhat complicated forms that are most easily represented using matrix algebra. For this reason, we do not provide them here. Any statistical software package can be used to compute these coefficient estimates, and later in this chapter we will show how this can be done in R. Figure 3.4
 
-![](../images/3a7cd87aecf001ee642d4945c1659a416fdf9a8596bc7387cb9bdc0bb6e5c4b2.jpg)
+![](../images/03-linear-regression/3a7cd87aecf001ee642d4945c1659a416fdf9a8596bc7387cb9bdc0bb6e5c4b2.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -642,7 +642,7 @@ $$
 \mathrm{RSE} = \sqrt {\frac {1}{n - p - 1} \mathrm{RSS}}, \tag {3.25}
 $$
 
-![](../images/3109c1ea6baf283af3d5fe5ad23258adb9c383376495e0f345a8f797eb7b066e.jpg)
+![](../images/03-linear-regression/3109c1ea6baf283af3d5fe5ad23258adb9c383376495e0f345a8f797eb7b066e.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -709,7 +709,7 @@ Now $\beta_{0}$ can be interpreted as the average credit card balance among thos
 
 Table 3.7 displays the coefficient estimates and other information associated with the model (3.27). The average credit card debt for non-owners is estimated to be \$509.80, whereas owners are estimated to carry \$19.73 in additional debt for a total of \$509.80 + \$19.73 = \$529.53. However, we
 
-![](../images/2288b74b2dbd304aa4de6aae6efb3d873dbfa419ca2c1887382f585cc5b4507d.jpg)
+![](../images/03-linear-regression/2288b74b2dbd304aa4de6aae6efb3d873dbfa419ca2c1887382f585cc5b4507d.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -863,7 +863,7 @@ $$
 
 Once again, we have two different regression lines for the students and the non-students. But now those regression lines have different intercepts, $\beta_{0}+\beta_{2}$ versus $\beta_{0}$ , as well as different slopes, $\beta_{1}+\beta_{3}$ versus $\beta_{1}$ . This allows for the possibility that changes in income may affect the credit card balances of students and non-students differently. The right-hand panel of Figure 3.7
 
-![](../images/d92ae20bb4e192265af9e7f9fa9eddeef265c5482fa28f40ba3209bd920db080.jpg)  
+![](../images/03-linear-regression/d92ae20bb4e192265af9e7f9fa9eddeef265c5482fa28f40ba3209bd920db080.jpg)  
 FIGURE 3.7. For the Credit data, the least squares lines are shown for prediction of balance from income for students and non-students. Left: The model (3.34) was fit. There is no interaction between income and student. Right: The model (3.35) was fit. There is an interaction term between income and student.
 
 shows the estimated relationships between income and balance for students and non-students in the model $(3.35)$ . We note that the slope for students is lower than the slope for non-students. This suggests that increases in income are associated with smaller increases in credit card balance among students as compared to non-students.
@@ -880,7 +880,7 @@ $$
 
 may provide a better fit. Equation 3.36 involves predicting mpg using a non-linear function of horsepower. But it is still a linear model! That is, (3.36) is simply a multiple linear regression model with $X_{1} = horsepower$ and $X_{2} = horsepower^{2}$ . So we can use standard linear regression software to estimate $\beta_{0}, \beta_{1}$ , and $\beta_{2}$ in order to produce a non-linear fit. The blue curve in Figure 3.8 shows the resulting quadratic fit to the data. The quadratic
 
-![](../images/7081495a89282cb7b8e89944c06f8a1b9a0ad681c0ac9e2d79b3d7cfdbbb3c71.jpg)
+![](../images/03-linear-regression/7081495a89282cb7b8e89944c06f8a1b9a0ad681c0ac9e2d79b3d7cfdbbb3c71.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -920,7 +920,7 @@ In practice, identifying and overcoming these problems is as much an art as a sc
 
 # 1. Non-linearity of the Data
 
-![](../images/629231ec237dda373227ac74d94798236619b2eabd6e02cb2abbb546182c4e7f.jpg)  
+![](../images/03-linear-regression/629231ec237dda373227ac74d94798236619b2eabd6e02cb2abbb546182c4e7f.jpg)  
 FIGURE 3.9. Plots of residuals versus predicted (or fitted) values for the Auto data set. In each plot, the red line is a smooth fit to the residuals, intended to make it easier to identify a trend. Left: A linear regression of mpg on horsepower. A strong pattern in the residuals indicates non-linearity in the data. Right: A linear regression of mpg on horsepower and horsepower $^{2}$ . There is little pattern in the residuals.
 
 The linear regression model assumes that there is a straight-line relationship between the predictors and the response. If the true relationship is far from linear, then virtually all of the conclusions that we draw from the fit are suspect. In addition, the prediction accuracy of the model can be significantly reduced.
@@ -943,14 +943,14 @@ As an extreme example, suppose we accidentally doubled our data, leading to obse
 
 Why might correlations among the error terms occur? Such correlations frequently occur in the context of time series data, which consists of observations for which measurements are obtained at discrete points in time. In many cases, observations that are obtained at adjacent time points will have positively correlated errors. In order to determine if this is the case for a given data set, we can plot the residuals from our model as a function of time. If the errors are uncorrelated, then there should be no discernible pat-
 
-![](../images/bcf085761af2fc32a12237731ee7e0ef042b051c19c6741a29b057a886ce4fc4.jpg)  
+![](../images/03-linear-regression/bcf085761af2fc32a12237731ee7e0ef042b051c19c6741a29b057a886ce4fc4.jpg)  
 FIGURE 3.10. Plots of residuals from simulated time series data sets generated with differing levels of correlation $\rho$ between error terms for adjacent time points.
 
 tern. On the other hand, if the error terms are positively correlated, then we may see tracking in the residuals—that is, adjacent residuals may have similar values. Figure 3.10 provides an illustration. In the top panel, we see the residuals from a linear regression fit to data generated with uncorrelated errors. There is no evidence of a time-related trend in the residuals. In contrast, the residuals in the bottom panel are from a data set in which adjacent errors had a correlation of 0.9. Now there is a clear pattern in the residuals—adjacent residuals tend to take on similar values. Finally, the center panel illustrates a more moderate case in which the residuals had a correlation of 0.5. There is still evidence of tracking, but the pattern is less clear.
 
 Many methods have been developed to properly take account of correlations in the error terms in time series data. Correlation among the error terms can also occur outside of time series data. For instance, consider a study in which individuals' heights are predicted from their weights. The assumption of uncorrelated errors could be violated if some of the individuals in the study are members of the same family, eat the same diet, or have been exposed to the same environmental factors. In general, the assumption of uncorrelated errors is extremely important for linear regression as well as for other statistical methods, and good experimental design is crucial in order to mitigate the risk of such correlations.
 
-![](../images/b7d3188363bbbe5138cc7291603ae9111ea9860f6857b7dd3225c875c5f900a8.jpg)  
+![](../images/03-linear-regression/b7d3188363bbbe5138cc7291603ae9111ea9860f6857b7dd3225c875c5f900a8.jpg)  
 FIGURE 3.11. Residual plots. In each plot, the red line is a smooth fit to the residuals, intended to make it easier to identify a trend. The blue lines track the outer quantiles of the residuals, and emphasize patterns. Left: The funnel shape indicates heteroscedasticity. Right: The response has been log transformed, and there is now no evidence of heteroscedasticity.
 
 # 3. Non-constant Variance of Error Terms
@@ -973,7 +973,7 @@ An outlier is a point for which $y_{i}$ is far from the value predicted by the
 
 outlier
 
-![](../images/1f6ffdfb54181a9e6cc77c2c2e56903c0092b66df09dd0791238e85f097fb6ad.jpg)  
+![](../images/03-linear-regression/1f6ffdfb54181a9e6cc77c2c2e56903c0092b66df09dd0791238e85f097fb6ad.jpg)  
 FIGURE 3.12. Left: The least squares regression line is shown in red, and the regression line after removing the outlier is shown in blue. Center: The residual plot clearly identifies the outlier. Right: The outlier has a studentized residual of 6; typically we expect values between -3 and 3.
 
 model. Outliers can arise for a variety of reasons, such as incorrect recording of an observation during data collection.
@@ -988,7 +988,7 @@ If we believe that an outlier has occurred due to an error in data collection or
 
 We just saw that outliers are observations for which the response $y_{i}$ is unusual given the predictor $x_{i}$ . In contrast, observations with high leverage have an unusual value for $x_{i}$ . For example, observation 41 in the left-hand
 
-![](../images/944eb2a82ec381e223db6759e9abc2b6b8ad101b3c4372164a3f8ce7fa030f0b.jpg)  
+![](../images/03-linear-regression/944eb2a82ec381e223db6759e9abc2b6b8ad101b3c4372164a3f8ce7fa030f0b.jpg)  
 FIGURE 3.13. Left: Observation 41 is a high leverage point, while 20 is not. The red line is the fit to all the data, and the blue line is the fit with observation 41 removed. Center: The red observation is not unusual in terms of its $X_{1}$ value or its $X_{2}$ value, but still falls outside the bulk of the data, and hence has high leverage. Right: Observation 41 has a high leverage and a high residual.
 
 panel of Figure 3.13 has high leverage, in that the predictor value for this observation is large relative to the other observations. (Note that the data displayed in Figure 3.13 are the same as the data displayed in Figure 3.12, but with the addition of a single high leverage observation.) The red solid line is the least squares fit to the data, while the blue dashed line is the fit produced when observation 41 is removed. Comparing the left-hand panels of Figures 3.12 and 3.13, we observe that removing the high leverage observation has a much more substantial impact on the least squares line than removing the outlier. In fact, high leverage observations tend to have a sizable impact on the estimated regression line. It is cause for concern if the least squares line is heavily affected by just a couple of observations, because any problems with these points may invalidate the entire fit. For this reason, it is important to identify high leverage observations.
@@ -1003,7 +1003,7 @@ $$
 h _ {i} = \frac {1}{n} + \frac {(x _ {i} - \bar {x}) ^ {2}}{\sum_ {i ^ {\prime} = 1} ^ {n} (x _ {i ^ {\prime}} - \bar {x}) ^ {2}}. \tag {3.37}
 $$
 
-![](../images/b6564e4213d530d273993aa35491fed98b632257ae8ba148a43799179e4bb774.jpg)  
+![](../images/03-linear-regression/b6564e4213d530d273993aa35491fed98b632257ae8ba148a43799179e4bb774.jpg)  
 FIGURE 3.14. Scatterplots of the observations from the Credit data set. Left: A plot of age versus limit. These two variables are not collinear. Right: A plot of rating versus limit. There is high collinearity.
 
 It is clear from this equation that $h_{i}$ increases with the distance of $x_{i}$ from $\bar{x}$ . There is a simple extension of $h_{i}$ to the case of multiple predictors, though we do not provide the formula here. The leverage statistic $h_{i}$ is always between 1/n and 1, and the average leverage for all the observations is always equal to $(p+1)/n$ . So if a given observation has a leverage statistic that greatly exceeds $(p+1)/n$ , then we may suspect that the corresponding point has high leverage.
@@ -1016,7 +1016,7 @@ Collinearity refers to the situation in which two or more predictor variables ar
 
 Figure 3.15 illustrates some of the difficulties that can result from collinearity. The left-hand panel of Figure 3.15 is a contour plot of the RSS (3.22) associated with different possible coefficient estimates for the regression of balance on limit and age. Each ellipse represents a set of coefficients
 
-![](../images/76b4b258721db1459af4e3d0faa595175b69ae9c3553cfe840b527e7051ccc50.jpg)  
+![](../images/03-linear-regression/76b4b258721db1459af4e3d0faa595175b69ae9c3553cfe840b527e7051ccc50.jpg)  
 FIGURE 3.15. Contour plots for the RSS values as a function of the parameters $\beta$ for various regressions involving the Credit data set. In each plot, the black dots represent the coefficient values corresponding to the minimum RSS. Left: A contour plot of RSS for the regression of balance onto age and limit. The minimum value is well defined. Right: A contour plot of RSS for the regression of balance onto rating and limit. Because of the collinearity, there are many pairs $(\beta_{\mathrm{Limit}}, \beta_{\mathrm{Rating}})$ with a similar value for RSS.
 
 that correspond to the same RSS, with ellipses nearest to the center taking on the lowest values of RSS. The black dots and associated dashed lines represent the coefficient estimates that result in the smallest possible RSS—in other words, these are the least squares estimates. The axes for limit and age have been scaled so that the plot includes possible coefficient estimates that are up to four standard errors on either side of the least squares estimates. Thus the plot includes all plausible values for the coefficients. For example, we see that the true limit coefficient is almost certainly somewhere between 0.15 and 0.20.
@@ -1099,7 +1099,7 @@ K-nearest
 neighbors
 regression
 
-![](../images/5ae82184319e08108d97c61ab64a6217c84d9cd15f6fb951a72dce205efb5bf9.jpg)  
+![](../images/03-linear-regression/5ae82184319e08108d97c61ab64a6217c84d9cd15f6fb951a72dce205efb5bf9.jpg)  
 FIGURE 3.16. Plots of $\hat{f}(X)$ using KNN regression on a two-dimensional data set with 64 observations (orange dots). Left: K = 1 results in a rough step function fit. Right: K = 9 produces a much smoother fit.
 
 In contrast, larger values of K provide a smoother and less variable fit; the prediction in a region is an average of several points, and so changing one observation has a smaller effect. However, the smoothing may cause bias by masking some of the structure in $f(X)$ . In Chapter 5, we introduce several approaches for estimating test error rates. These methods can be used to identify the optimal value of K in KNN regression.
@@ -1108,20 +1108,20 @@ In what setting will a parametric approach such as least squares linear regressi
 
 In practice, the true relationship between $X$ and $Y$ is rarely exactly linear. Figure 3.19 examines the relative performances of least squares regression and KNN under increasing levels of non-linearity in the relationship between $X$ and $Y$ . In the top row, the true relationship is nearly linear. In this case we see that the test MSE for linear regression is still superior
 
-![](../images/e24aa78d8f960f598486dee124bc2ce06b70f4ec27e73bec91c7d07b482bf21b.jpg)  
+![](../images/03-linear-regression/e24aa78d8f960f598486dee124bc2ce06b70f4ec27e73bec91c7d07b482bf21b.jpg)  
 FIGURE 3.17. Plots of $\hat{f}(X)$ using KNN regression on a one-dimensional data set with 50 observations. The true relationship is given by the black solid line. Left: The blue curve corresponds to K = 1 and interpolates (i.e. passes directly through) the training data. Right: The blue curve corresponds to K = 9, and represents a smoother fit.
 
-![](../images/51152bee48ef959e4755c50675cf67536894262a14af9cf9c3d8bff2aeab5325.jpg)  
+![](../images/03-linear-regression/51152bee48ef959e4755c50675cf67536894262a14af9cf9c3d8bff2aeab5325.jpg)  
 FIGURE 3.18. The same data set shown in Figure 3.17 is investigated further. Left: The blue dashed line is the least squares fit to the data. Since $f(X)$ is in fact linear (displayed as the black line), the least squares regression line provides a very good estimate of $f(X)$ . Right: The dashed horizontal line represents the least squares test set MSE, while the green solid line corresponds to the MSE for KNN as a function of 1/K (on the log scale). Linear regression achieves a lower test MSE than does KNN regression, since $f(X)$ is in fact linear. For KNN regression, the best results occur with a very large value of K, corresponding to a small value of 1/K.
 
-![](../images/91a3decb616e3e0b2ce1c7de7ac5e657e046be032e1292981270d405c6d01e4b.jpg)  
+![](../images/03-linear-regression/91a3decb616e3e0b2ce1c7de7ac5e657e046be032e1292981270d405c6d01e4b.jpg)  
 FIGURE 3.19. Top Left: In a setting with a slightly non-linear relationship between X and Y (solid black line), the KNN fits with K = 1 (blue) and K = 9 (red) are displayed. Top Right: For the slightly non-linear data, the test set MSE for least squares regression (horizontal black) and KNN with various values of 1/K (green) are displayed. Bottom Left and Bottom Right: As in the top panel, but with a strongly non-linear relationship between X and Y.
 
 to that of KNN for low values of K. However, for $K \geq 4$ , KNN outperforms linear regression. The second row illustrates a more substantial deviation from linearity. In this situation, KNN substantially outperforms linear regression for all values of K. Note that as the extent of non-linearity increases, there is little change in the test set MSE for the non-parametric KNN method, but there is a large increase in the test set MSE of linear regression.
 
 Figures 3.18 and 3.19 display situations in which KNN performs slightly worse than linear regression when the relationship is linear, but much better than linear regression for nonlinear situations. In a real life situation in which the true relationship is unknown, one might suspect that KNN should be favored over linear regression because it will at worst be slightly inferior to linear regression if the true relationship is linear, and may give substantially better results if the true relationship is non-linear. But in reality, even when the true relationship is highly non-linear, KNN may still provide inferior results to linear regression. In particular, both Figures 3.18
 
-![](../images/147201079d1ec8f67deb0473fa3d115e6492ef3e7a246bf239742b8bd7590830.jpg)
+![](../images/03-linear-regression/147201079d1ec8f67deb0473fa3d115e6492ef3e7a246bf239742b8bd7590830.jpg)
 
 <details>
 <summary>line</summary>
@@ -1843,7 +1843,7 @@ Note: We interpret this result by saying that the fitted values from linear regr
 
 7. It is claimed in the text that in the case of simple linear regression of $Y$ onto $X$ , the $R^2$ statistic (3.17) is equal to the square of the correlation between $X$ and $Y$ (3.18). Prove that this is the case. For simplicity, you may assume that $\bar{x} = \bar{y} = 0$ .
 
-![](../images/7ca0dd16fac1919197a1d3b5373df0603af6c4ac00157458bbc5414260120b8c.jpg)
+![](../images/03-linear-regression/7ca0dd16fac1919197a1d3b5373df0603af6c4ac00157458bbc5414260120b8c.jpg)
 
 # Applied
 
@@ -1906,7 +1906,7 @@ y = 2 * x + rng.normal(size=100)
 
 (d) For the regression of $Y$ onto $X$ without an intercept, the $t$ -statistic for $H_0: \beta = 0$ takes the form $\hat{\beta} / \mathrm{SE}(\hat{\beta})$ , where $\hat{\beta}$ is given by (3.38), and where
 
-![](../images/e6ec4d6fb9806bd68feb42972354751355f4cee307624503072b4492ef28e90e.jpg)
+![](../images/03-linear-regression/e6ec4d6fb9806bd68feb42972354751355f4cee307624503072b4492ef28e90e.jpg)
 
 $$
 \mathrm{SE} (\hat {\beta}) = \sqrt {\frac {\sum_ {i = 1} ^ {n} (y _ {i} - x _ {i} \hat {\beta}) ^ {2}}{(n - 1) \sum_ {i ^ {\prime} = 1} ^ {n} x _ {i ^ {\prime}} ^ {2}}}.

@@ -31,7 +31,7 @@ where $\epsilon_{i}$ is the error term. This approach is known as polynomial reg
 The left-hand panel in Figure 7.1 is a plot of wage against age for the Wage data set, which contains income and demographic information for males who reside in the central Atlantic region of the United States. We see the results of fitting a degree-4 polynomial using least squares (solid blue curve). Even though this is a linear regression model like any other, the individual coefficients are not of particular interest. Instead, we look at the entire fitted function across a grid of 63 values for age from 18 to 80 in order to understand the relationship between age and wage.
 
 Degree-4 Polynomial  
-![](../images/ff5e85eb81badee2b635f8db716b9985e22030e77b2e543cef8084bd57a4889c.jpg)  
+![](../images/07-moving-beyond-linearity/ff5e85eb81badee2b635f8db716b9985e22030e77b2e543cef8084bd57a4889c.jpg)  
 FIGURE 7.1. The Wage data. Left: The solid blue curve is a degree-4 polynomial of wage (in thousands of dollars) as a function of age, fit by least squares. The dashed curves indicate an estimated 95% confidence interval. Right: We model the binary event wage>250 using logistic regression, again with a degree-4 polynomial. The fitted posterior probability of wage exceeding \$250,000 is shown in blue, along with an estimated 95% confidence interval.
 
 In Figure 7.1, a pair of dashed curves accompanies the fit; these are $(2\times)$ standard error curves. Let's see how these arise. Suppose we have computed the fit at a particular value of age, $x_{0}$ :
@@ -89,7 +89,7 @@ indicator
 function
 
 Piecewise Constant  
-![](../images/889bc1ab95f46a9b9a3b967b40652ba930b7e8f872de9a986c09d5097ee328fb.jpg)  
+![](../images/07-moving-beyond-linearity/889bc1ab95f46a9b9a3b967b40652ba930b7e8f872de9a986c09d5097ee328fb.jpg)  
 FIGURE 7.2. The Wage data. Left: The solid curve displays the fitted value from a least squares regression of wage (in thousands of dollars) using step functions of age. The dashed curves indicate an estimated 95% confidence interval. Right: We model the binary event wage>250 using logistic regression, again using step functions of age. The fitted posterior probability of wage exceeding \$250,000 is shown, along with an estimated 95% confidence interval.
 
 be interpreted as the mean value of Y for $X < c_{1}$ . By comparison, (7.5) predicts a response of $\beta_{0} + \beta_{j}$ for $c_{j} \leq X < c_{j+1}$ , so $\beta_{j}$ represents the average increase in the response for X in $c_{j} \leq X < c_{j+1}$ relative to $X < c_{1}$ .
@@ -149,7 +149,7 @@ regression
 
 knot
 
-![](../images/8a5ba4c8288fbe9e72c0b312fd7cf0c9ea6ef9be1bd5d462cd1b421eb7d190ec.jpg)  
+![](../images/07-moving-beyond-linearity/8a5ba4c8288fbe9e72c0b312fd7cf0c9ea6ef9be1bd5d462cd1b421eb7d190ec.jpg)  
 FIGURE 7.3. Various piecewise polynomials are fit to a subset of the Wage data, with a knot at age=50. Top Left: The cubic polynomials are unconstrained. Top Right: The cubic polynomials are constrained to be continuous at age=50. Bottom Left: The cubic polynomials are constrained to be continuous, and to have continuous first and second derivatives. Bottom Right: A linear spline is shown, which is constrained to be continuous.
 
 $\beta_{01}, \beta_{11}, \beta_{21}$ , and $\beta_{31}$ , and the second has coefficients $\beta_{02}, \beta_{12}, \beta_{22}$ , and $\beta_{32}$ . Each of these polynomial functions can be fit using least squares applied to simple functions of the original predictor.
@@ -182,7 +182,7 @@ for an appropriate choice of basis functions $b_{1}, b_{2}, \ldots, b_{K+3}$ . T
 
 Just as there were several ways to represent polynomials, there are also many equivalent ways to represent cubic splines using different choices of basis functions in (7.9). The most direct way to represent a cubic spline using (7.9) is to start off with a basis for a cubic polynomial—namely, $x, x^2$ , and $x^3$ —and then add one truncated power basis function per knot.
 
-![](../images/7acd27f329e121a797f62d5226ad45246c39c5898847fbf4c58e2582bdea5bae.jpg)
+![](../images/07-moving-beyond-linearity/7acd27f329e121a797f62d5226ad45246c39c5898847fbf4c58e2582bdea5bae.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -224,7 +224,7 @@ spline
 When we fit a spline, where should we place the knots? The regression spline is most flexible in regions that contain a lot of knots, because in those regions the polynomial coefficients can change rapidly. Hence, one
 
 Natural Cubic Spline  
-![](../images/0120879d83b9908d056fdd20807c8976de5c53deea9c2192fee4ba8056e07fa9.jpg)  
+![](../images/07-moving-beyond-linearity/0120879d83b9908d056fdd20807c8976de5c53deea9c2192fee4ba8056e07fa9.jpg)  
 FIGURE 7.5. A natural cubic spline function with four degrees of freedom is fit to the Wage data. Left: A spline is fit to wage (in thousands of dollars) as a function of age. Right: Logistic regression is used to model the binary event wage>250 as a function of age. The fitted posterior probability of wage exceeding \$250,000 is shown. The dashed lines denote the knot locations.
 
 option is to place more knots in places where we feel the function might vary most rapidly, and to place fewer knots where it seems more stable. While this option can work well, in practice it is common to place knots in a uniform fashion. One way to do this is to specify the desired degrees of freedom, and then have the software automatically place the corresponding number of knots at uniform quantiles of the data.
@@ -233,7 +233,7 @@ Figure 7.5 shows an example on the Wage data. As in Figure 7.4, we have fit a na
 
 How many knots should we use, or equivalently how many degrees of freedom should our spline contain? One option is to try out different numbers of knots and see which produces the best looking curve. A somewhat more objective approach is to use cross-validation, as discussed in Chapters 5 and 6. With this method, we remove a portion of the data (say 10%), fit a spline with a certain number of knots to the remaining data, and then use the spline to make predictions for the held-out portion. We repeat this process multiple times until each observation has been left out once, and
 
-![](../images/c1997315077c98b936039a5060f85a219b06f80f6785b369a6c2f6402d6eef56.jpg)  
+![](../images/07-moving-beyond-linearity/c1997315077c98b936039a5060f85a219b06f80f6785b369a6c2f6402d6eef56.jpg)  
 FIGURE 7.6. Ten-fold cross-validated mean squared errors for selecting the degrees of freedom when fitting splines to the Wage data. The response is wage and the predictor age. Left: A natural cubic spline. Right: A cubic spline.
 
 then compute the overall cross-validated RSS. This procedure can be repeated for different numbers of knots K. Then the value of K giving the smallest RSS is chosen.
@@ -246,7 +246,7 @@ In Section 7.7 we fit additive spline models simultaneously on several variables
 
 Figure 7.7 compares a natural cubic spline with 15 degrees of freedom to a degree-15 polynomial on the Wage data set. The extra flexibility in the polynomial produces undesirable results at the boundaries, while the natural cubic spline still provides a reasonable fit to the data. Regression splines often give superior results to polynomial regression. This is because unlike polynomials, which must use a high degree (exponent in the highest monomial term, e.g. $X^{15}$ ) to produce flexible fits, splines introduce flexibility by increasing the number of knots but keeping the degree fixed. Generally, this approach produces more stable estimates. Splines also allow us to place more knots, and hence flexibility, over regions where the function f seems to be changing rapidly, and fewer knots where f appears more stable.
 
-![](../images/0dc23882ea416247e50a5f2e4320ae603e83fc1f221487d4f11d5305e22dd310.jpg)
+![](../images/07-moving-beyond-linearity/0dc23882ea416247e50a5f2e4320ae603e83fc1f221487d4f11d5305e22dd310.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -328,7 +328,7 @@ The notation $\hat{g}_{\lambda}^{(-i)}(x_{i})$ indicates the fitted value for th
 
 Figure 7.8 shows the results from fitting a smoothing spline to the Wage data. The red curve indicates the fit obtained from pre-specifying that we would like a smoothing spline with 16 effective degrees of freedom. The blue curve is the smoothing spline obtained when $\lambda$ is chosen using LOOCV; in this case, the value of $\lambda$ chosen results in 6.8 effective degrees of freedom (computed using (7.13)). For this data, there is little discernible difference between the two smoothing splines, beyond the fact that the one with 16 degrees of freedom seems slightly wigglier. Since there is little difference between the two fits, the smoothing spline fit with 6.8 degrees of freedom
 
-![](../images/5c9bd24bf6a1162f35aa6a24a9ab85ef183688bc26d21fe5e752c9470eca4319.jpg)
+![](../images/07-moving-beyond-linearity/5c9bd24bf6a1162f35aa6a24a9ab85ef183688bc26d21fe5e752c9470eca4319.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -353,7 +353,7 @@ Note that in Step 3 of Algorithm 7.1, the weights $K_{i0}$ will differ for each 
 In order to perform local regression, there are a number of choices to be made, such as how to define the weighting function K, and whether to fit a linear, constant, or quadratic regression in Step 3. (Equation 7.14 corresponds to a linear regression.) While all of these choices make some difference, the most important choice is the span s, which is the proportion of points used to compute the local regression at $x_{0}$ , as defined in Step 1 above. The span plays a role like that of the tuning parameter $\lambda$ in smooth-
 
 Local Regression  
-![](../images/f1b348ae2b84f80e5d83c13f20f7b58df1314a02c6a7cbfd686bdc9d5b8dcdb0.jpg)  
+![](../images/07-moving-beyond-linearity/f1b348ae2b84f80e5d83c13f20f7b58df1314a02c6a7cbfd686bdc9d5b8dcdb0.jpg)  
 FIGURE 7.9. Local regression illustrated on some simulated data, where the blue curve represents $f(x)$ from which the data were generated, and the light orange curve corresponds to the local regression estimate $\hat{f}(x)$ . The orange colored points are local to the target point $x_{0}$ , represented by the orange vertical line. The yellow bell-shape superimposed on the plot indicates weights assigned to each point, decreasing to zero with distance from the target point. The fit $\hat{f}(x_{0})$ at $x_{0}$ is obtained by fitting a weighted linear regression (orange line segment), and using the fitted value at $x_{0}$ (orange solid dot) as the estimate $\hat{f}(x_{0})$ .
 
 ing splines: it controls the flexibility of the non-linear fit. The smaller the value of s, the more local and wiggly will be our fit; alternatively, a very large value of s will lead to a global fit to the data using all of the training observations. We can again use cross-validation to choose s, or we can specify it directly. Figure 7.10 displays local linear regression fits on the Wage data, using two values of s: 0.7 and 0.2. As expected, the fit obtained using s = 0.7 is smoother than that obtained using s = 0.2.
@@ -376,7 +376,7 @@ $$
 
 4. The fitted value at $x_0$ is given by $\hat{f}(x_0) = \hat{\beta}_0 + \hat{\beta}_1x_0$ .
 
-![](../images/f8a4c564ad06ece2982112e36016c5bc87b18bb34e9907996c085b65b061d91a.jpg)
+![](../images/07-moving-beyond-linearity/f8a4c564ad06ece2982112e36016c5bc87b18bb34e9907996c085b65b061d91a.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -401,7 +401,7 @@ additive
 model
 additivity
 
-![](../images/74307dfb9bf59dde4e591d33a92101425b62903779699fa230f4dacfa00cfe44.jpg)  
+![](../images/07-moving-beyond-linearity/74307dfb9bf59dde4e591d33a92101425b62903779699fa230f4dacfa00cfe44.jpg)  
 FIGURE 7.11. For the Wage data, plots of the relationship between each feature and the response, wage, in the fitted model (7.16). Each plot displays the fitted function and pointwise standard errors. The first two functions are natural splines in year and age, with four and five degrees of freedom, respectively. The third function is a step function, fit to the qualitative variable education.
 
 examine GAMs for a quantitative response in Section 7.7.1, and then for a qualitative response in Section 7.7.2.
@@ -430,7 +430,7 @@ $$
 
 on the Wage data. Here year and age are quantitative variables, while the variable education is qualitative with five levels: <HS, HS, <Coll, Coll, >Coll, referring to the amount of high school or college education that an individual has completed. We fit the first two functions using natural splines. We
 
-![](../images/65b5bda55f03ff933a49e1339731ca6ee3c1f5ad0a6dfed759cf2a47e3626482.jpg)  
+![](../images/07-moving-beyond-linearity/65b5bda55f03ff933a49e1339731ca6ee3c1f5ad0a6dfed759cf2a47e3626482.jpg)  
 FIGURE 7.12. Details are as in Figure 7.11, but now $f_{1}$ and $f_{2}$ are smoothing splines with four and five degrees of freedom, respectively.
 
 fit the third function using a separate constant for each level, via the usual dummy variable approach of Section 3.3.1.
@@ -471,7 +471,7 @@ $$
 \log \left(\frac {p (X)}{1 - p (X)}\right) = \beta_ {0} + f _ {1} (X _ {1}) + f _ {2} (X _ {2}) + \dots + f _ {p} (X _ {p}). \tag {7.18}
 $$
 
-![](../images/b18b73cdc647f304cc65225975089ac23e0be277fb5f9feb4786bc15de6c5b1f.jpg)  
+![](../images/07-moving-beyond-linearity/b18b73cdc647f304cc65225975089ac23e0be277fb5f9feb4786bc15de6c5b1f.jpg)  
 FIGURE 7.13. For the Wage data, the logistic regression GAM given in (7.19) is fit to the binary response I(wage>250). Each plot displays the fitted function and pointwise standard errors. The first function is linear in year, the second function a smoothing spline with five degrees of freedom in age, and the third a step function for education. There are very wide standard errors for the first level <HS of education.
 
 Equation 7.18 is a logistic regression GAM. It has all the same pros and cons as discussed in the previous section for quantitative responses.
@@ -494,7 +494,7 @@ Once again $f_2$ is fit using a smoothing spline with five degrees of freedom, a
 
 In this lab, we demonstrate some of the nonlinear models discussed in this chapter. We use the Wage data as a running example, and show that many of the complex non-linear fitting procedures discussed can easily be implemented in Python.
 
-![](../images/c21fc07952074a0ac9141d9bcf45f68e352c6eed5065d9cfc00e1047a1829965.jpg)  
+![](../images/07-moving-beyond-linearity/c21fc07952074a0ac9141d9bcf45f68e352c6eed5065d9cfc00e1047a1829965.jpg)  
 FIGURE 7.14. The same model is fit as in Figure 7.13, this time excluding the observations for which education is <HS. Now we see that increased education tends to be associated with higher salaries.
 
 As usual, we start with some of our standard imports.
@@ -1335,7 +1335,7 @@ $$
 f (x) = \beta_ {0} + \beta_ {1} x + \beta_ {2} x ^ {2} + \beta_ {3} x ^ {3} + \beta_ {4} (x - \xi) _ {+} ^ {3}
 $$
 
-![](../images/7c6ba86e3fc9caee3e43c38ad6562d90b9d25d58a10e9fdf8369d4c187a0afa1.jpg)
+![](../images/07-moving-beyond-linearity/7c6ba86e3fc9caee3e43c38ad6562d90b9d25d58a10e9fdf8369d4c187a0afa1.jpg)
 
 is indeed a cubic regression spline, regardless of the values of $\beta_{0}, \beta_{1}, \beta_{2}, \beta_{3}, \beta_{4}$ .
 

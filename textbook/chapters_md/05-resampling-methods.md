@@ -27,7 +27,7 @@ validation
 set
 hold-out set
 
-![](../images/050a708a335645d8e8a4cb41af5c35a4bc4f795e3d6f1e7c651aec5fd5ca8580.jpg)
+![](../images/05-resampling-methods/050a708a335645d8e8a4cb41af5c35a4bc4f795e3d6f1e7c651aec5fd5ca8580.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -50,7 +50,7 @@ The validation set approach is conceptually simple and is easy to implement. But
 1. As is shown in the right-hand panel of Figure 5.2, the validation estimate of the test error rate can be highly variable, depending on precisely which observations are included in the training set and which observations are included in the validation set.  
 2. In the validation approach, only a subset of the observations—those that are included in the training set rather than in the validation set—are used to fit the model. Since statistical methods tend to perform worse when trained on fewer observations, this suggests that the
 
-![](../images/a0a35d97bb424ae6d335512220761d30bfc12de80d15741bdffdb39ba1b1be34.jpg)  
+![](../images/05-resampling-methods/a0a35d97bb424ae6d335512220761d30bfc12de80d15741bdffdb39ba1b1be34.jpg)  
 FIGURE 5.2. The validation set approach was used on the Auto data set in order to estimate the test error that results from predicting mpg using polynomial functions of horsepower. Left: Validation error estimates for a single split into training and validation data sets. Right: The validation method was repeated ten times, each time using a different random split of the observations into a training set and a validation set. This illustrates the variability in the estimated test MSE that results from this approach.
 
 validation set error rate may tend to overestimate the test error rate for the model fit on the entire data set.
@@ -69,7 +69,7 @@ $$
 \mathrm{CV} _ {(n)} = \frac {1}{n} \sum_ {i = 1} ^ {n} \mathrm{MSE} _ {i}. \tag {5.1}
 $$
 
-![](../images/d6ce523d71b4f13ca198aebe59c43e359921641d4f00e611b5c38ea672214b9c.jpg)
+![](../images/05-resampling-methods/d6ce523d71b4f13ca198aebe59c43e359921641d4f00e611b5c38ea672214b9c.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -95,7 +95,7 @@ $$
 \mathrm{CV} _ {(n)} = \frac {1}{n} \sum_ {i = 1} ^ {n} \left(\frac {y _ {i} - \hat {y} _ {i}}{1 - h _ {i}}\right) ^ {2}, \tag {5.2}
 $$
 
-![](../images/9de0fb39c2321a815da6a49c76f4060a6d45ff2f0fc0a3d6676a7d67c75b5038.jpg)  
+![](../images/05-resampling-methods/9de0fb39c2321a815da6a49c76f4060a6d45ff2f0fc0a3d6676a7d67c75b5038.jpg)  
 FIGURE 5.4. Cross-validation was used on the Auto data set in order to estimate the test error that results from predicting mpg using polynomial functions of horsepower. Left: The LOOCV error curve. Right: 10-fold CV was run nine separate times, each with a different random split of the data into ten parts. The figure shows the nine slightly different CV error curves.
 
 where $\hat{y}_{i}$ is the ith fitted value from the original least squares fit, and $h_{i}$ is the leverage defined in (3.37) on page 105. $^{1}$ This is like the ordinary MSE, except the ith residual is divided by $1 - h_{i}$ . The leverage lies between 1/n and 1, and reflects the amount that an observation influences its own fit. Hence the residuals for high-leverage points are inflated in this formula by exactly the right amount for this equality to hold.
@@ -114,7 +114,7 @@ Figure 5.5 illustrates the $k$ -fold CV approach.
 
 k-fold CV
 
-![](../images/7f256037fda74a8d925026e3f0d317f7a2998d07a300b7d5fa8013659a30b24b.jpg)
+![](../images/05-resampling-methods/7f256037fda74a8d925026e3f0d317f7a2998d07a300b7d5fa8013659a30b24b.jpg)
 
 <details>
 <summary>bar_stacked</summary>
@@ -136,7 +136,7 @@ The right-hand panel of Figure 5.4 displays nine different 10-fold CV estimates 
 
 When we examine real data, we do not know the true test MSE, and so it is difficult to determine the accuracy of the cross-validation estimate. However, if we examine simulated data, then we can compute the true test MSE, and can thereby evaluate the accuracy of our cross-validation results. In Figure 5.6, we plot the cross-validation estimates and true test error rates that result from applying smoothing splines to the simulated data sets illustrated in Figures 2.9–2.11 of Chapter 2. The true test MSE is displayed in blue. The black dashed and orange solid lines respectively show the estimated LOOCV and 10-fold CV estimates. In all three plots, the two cross-validation estimates are very similar. In the right-hand panel
 
-![](../images/856b3fe51dd6ea17c20056cbb562562664cbcffaad078071d6d46ffa868a39d1.jpg)  
+![](../images/05-resampling-methods/856b3fe51dd6ea17c20056cbb562562664cbcffaad078071d6d46ffa868a39d1.jpg)  
 FIGURE 5.6. True and estimated test MSE for the simulated data sets in Figures 2.9 (left), 2.10 (center), and 2.11 (right). The true test MSE is shown in blue, the LOOCV estimate is shown as a black dashed line, and the 10-fold CV estimate is shown in orange. The crosses indicate the minimum of each of the MSE curves.
 
 of Figure 5.6, the true test MSE and the cross-validation curves are almost identical. In the center panel of Figure 5.6, the two sets of curves are similar at the lower degrees of flexibility, while the CV curves overestimate the test set MSE for higher degrees of flexibility. In the left-hand panel of Figure 5.6, the CV curves have the correct general shape, but they underestimate the true test MSE.
@@ -167,7 +167,7 @@ where $\mathrm{Err}_i = I(y_i \neq \hat{y}_i)$ . The $k$ -fold CV error rate and
 
 As an example, we fit various logistic regression models on the two-dimensional classification data displayed in Figure 2.13. In the top-left panel of Figure 5.7, the black solid line shows the estimated decision boundary resulting from fitting a standard logistic regression model to this data set. Since this is simulated data, we can compute the true test error rate, which takes a value of 0.201 and so is substantially larger than the Bayes
 
-![](../images/9c84590cb0b925b3128696be8e25497dbf3fc12ae1565d16afd7b7d0b0cc9ace.jpg)  
+![](../images/05-resampling-methods/9c84590cb0b925b3128696be8e25497dbf3fc12ae1565d16afd7b7d0b0cc9ace.jpg)  
 FIGURE 5.7. Logistic regression fits on the two-dimensional classification data displayed in Figure 2.13. The Bayes decision boundary is represented using a purple dashed line. Estimated decision boundaries from linear, quadratic, cubic and quartic (degrees 1–4) logistic regressions are displayed in black. The test error rates for the four logistic regression fits are respectively 0.201, 0.197, 0.160, and 0.162, while the Bayes error rate is 0.133.
 
 error rate of 0.133. Clearly logistic regression does not have enough flexibility to model the Bayes decision boundary in this setting. We can easily extend logistic regression to obtain a non-linear decision boundary by using polynomial functions of the predictors, as we did in the regression setting in Section 3.3.2. For example, we can fit a quadratic logistic regression model, given by
@@ -178,7 +178,7 @@ $$
 
 The top-right panel of Figure 5.7 displays the resulting decision boundary, which is now curved. However, the test error rate has improved only slightly, to 0.197. A much larger improvement is apparent in the bottom-left panel
 
-![](../images/d5dc83a7c1ec277d39c33e80e81c362f4b9153516c4f8601b281a44ffea3d28c.jpg)  
+![](../images/05-resampling-methods/d5dc83a7c1ec277d39c33e80e81c362f4b9153516c4f8601b281a44ffea3d28c.jpg)  
 FIGURE 5.8. Test error (brown), training error (blue), and 10-fold CV error (black) on the two-dimensional classification data displayed in Figure 5.7. Left: Logistic regression using polynomial functions of the predictors. The order of the polynomials used is displayed on the x-axis. Right: The KNN classifier with different values of K, the number of neighbors used in the KNN classifier.
 
 of Figure 5.7, in which we have fit a logistic regression model involving cubic polynomials of the predictors. Now the test error rate has decreased to 0.160. Going to a quartic polynomial (bottom-right) slightly increases the test error.
@@ -211,7 +211,7 @@ Figure 5.9 illustrates this approach for estimating $\alpha$ on a simulated data
 
 It is natural to wish to quantify the accuracy of our estimate of $\alpha$ . To estimate the standard deviation of $\hat{\alpha}$ , we repeated the process of simulating 100 paired observations of X and Y, and estimating $\alpha$ using (5.7), 1,000 times. We thereby obtained 1,000 estimates for $\alpha$ , which we can call $\hat{\alpha}_{1}, \hat{\alpha}_{2}, \ldots, \hat{\alpha}_{1,000}$ . The left-hand panel of Figure 5.10 displays a histogram of the resulting estimates. For these simulations the parameters were set to $\sigma_{X}^{2} = 1$ , $\sigma_{Y}^{2} = 1.25$ , and $\sigma_{XY} = 0.5$ , and so we know that the true value of $\alpha$ is 0.6. We indicated this value using a solid vertical line on the histogram.
 
-![](../images/bc8c0b9027d43c50a10a6ab6d482a311b325ed12eac049ad254354bfb070d1d3.jpg)  
+![](../images/05-resampling-methods/bc8c0b9027d43c50a10a6ab6d482a311b325ed12eac049ad254354bfb070d1d3.jpg)  
 FIGURE 5.9. Each panel displays 100 simulated returns for investments X and Y. From left to right and top to bottom, the resulting estimates for $\alpha$ are 0.576, 0.532, 0.657, and 0.651.
 
 The mean over all 1,000 estimates for $\alpha$ is
@@ -232,7 +232,7 @@ In practice, however, the procedure for estimating $\mathrm{SE}(\hat{\alpha})$ o
 
 This approach is illustrated in Figure 5.11 on a simple data set, which we call Z, that contains only n = 3 observations. We randomly select n observations from the data set in order to produce a bootstrap data set,
 
-![](../images/7739f4ae258d00c7e8d8063c245bebb4a6f28d31ded735db7f2a4221fc22ec1b.jpg)  
+![](../images/05-resampling-methods/7739f4ae258d00c7e8d8063c245bebb4a6f28d31ded735db7f2a4221fc22ec1b.jpg)  
 FIGURE 5.10. Left: A histogram of the estimates of $\alpha$ obtained by generating 1,000 simulated data sets from the true population. Center: A histogram of the estimates of $\alpha$ obtained from 1,000 bootstrap samples from a single data set. Right: The estimates of $\alpha$ displayed in the left and center panels are shown as boxplots. In each panel, the pink line indicates the true value of $\alpha$ .
 
 $Z^{*1}$ . The sampling is performed with replacement, which means that the same observation can occur more than once in the bootstrap data set. In this example, $Z^{*1}$ contains the third observation twice, the first observation once, and no instances of the second observation. Note that if an observation is contained in $Z^{*1}$ , then both its X and Y values are included. We can use $Z^{*1}$ to produce a new bootstrap estimate for $\alpha$ , which we call $\hat{\alpha}^{*1}$ . This procedure is repeated B times for some large value of B, in order to produce B different bootstrap data sets, $Z^{*1}, Z^{*2}, \ldots, Z^{*B}$ , and B corresponding $\alpha$ estimates, $\hat{\alpha}^{*1}, \hat{\alpha}^{*2}, \ldots, \hat{\alpha}^{*B}$ . We can compute the standard error of these bootstrap estimates using the formula
@@ -245,7 +245,7 @@ This serves as an estimate of the standard error of $\hat{\alpha}$ estimated fro
 
 The bootstrap approach is illustrated in the center panel of Figure 5.10, which displays a histogram of 1,000 bootstrap estimates of $\alpha$ , each computed using a distinct bootstrap data set. This panel was constructed on the basis of a single data set, and hence could be created using real data. Note that the histogram looks very similar to the left-hand panel, which displays the idealized histogram of the estimates of $\alpha$ obtained by generating 1,000 simulated data sets from the true population. In particular the bootstrap estimate $\mathrm{SE}(\hat{\alpha})$ from (5.8) is 0.087, very close to the estimate of 0.083 obtained using 1,000 simulated data sets. The right-hand panel displays the information in the center and left panels in a different way, via boxplots of the estimates for $\alpha$ obtained by generating 1,000 simulated data sets from the true population and using the bootstrap approach. Again, the boxplots have similar spreads, indicating that the bootstrap approach can be used to effectively estimate the variability associated with $\hat{\alpha}$ .
 
-![](../images/0d9526e82adff405b72c86dc95446c43b183d375e0c8c1d0d6d16efd5ce66380.jpg)
+![](../images/05-resampling-methods/0d9526e82adff405b72c86dc95446c43b183d375e0c8c1d0d6d16efd5ce66380.jpg)
 
 <details>
 <summary>flowchart</summary>

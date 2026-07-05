@@ -53,7 +53,7 @@ In Algorithm 6.1, Step 2 identifies the best model (on the training data) for ea
 
 Now in order to select a single best model, we must simply choose among these $p + 1$ options. This task must be performed with care, because the RSS of these $p + 1$ models decreases monotonically, and the $R^{2}$ increases monotonically, as the number of features included in the models increases. Therefore, if we use these statistics to select the best model, then we will always end up with a model involving all of the variables. The problem is that a low RSS or a high $R^{2}$ indicates a model with a low training error, whereas we wish to choose a model that has a low test error. (As shown in Chapter 2 in Figures 2.9–2.11, training error tends to be quite a bit smaller than test error, and a low training error by no means guarantees a low test error.) Therefore, in Step 3, we use the error on a validation set, $C_{p}$ , BIC, or adjusted $R^{2}$ in order to select among $M_{0}, M_{1}, \ldots, M_{p}$ . If cross-validation is used to select the best model, then Step 2 is repeated on each training fold, and the validation errors are averaged to select the best value of k.
 
-![](../images/6ee061cbd36cc7a38648903cf80aa2e04cd88595eff14f0b31b3b5ebf92d4f1c.jpg)  
+![](../images/06-linear-model-selection-and-regularization/6ee061cbd36cc7a38648903cf80aa2e04cd88595eff14f0b31b3b5ebf92d4f1c.jpg)  
 FIGURE 6.1. For each possible model containing a subset of the ten predictors in the Credit data set, the RSS and $R^{2}$ are displayed. The red frontier tracks the best model for a given number of predictors, according to RSS and $R^{2}$ . Though the data set contains only ten predictors, the x-axis ranges from 1 to 11, since one of the variables is categorical and takes on three values, leading to the creation of two dummy variables.
 
 Then the model $\mathcal{M}_k$ fit on the full training set is delivered for the chosen $k$ . These approaches are discussed in Section 6.1.3.
@@ -158,7 +158,7 @@ $$
 
 where $\hat{\sigma}^{2}$ is an estimate of the variance of the error $\epsilon$ associated with each response measurement in (6.1). $^{4}$ Typically $\hat{\sigma}^{2}$ is estimated using the full model containing all predictors. Essentially, the $C_{p}$ statistic adds a penalty of $2d\hat{\sigma}^{2}$ to the training RSS in order to adjust for the fact that the training error tends to underestimate the test error. Clearly, the penalty increases as the number of predictors in the model increases; this is intended to adjust
 
-![](../images/9c6038b8e267e57da2f9bcee10e6f47c97874415571aa5f3caabf02de3a9adf9.jpg)  
+![](../images/06-linear-model-selection-and-regularization/9c6038b8e267e57da2f9bcee10e6f47c97874415571aa5f3caabf02de3a9adf9.jpg)  
 FIGURE 6.2. $C_{p}$ , BIC, and adjusted $R^{2}$ are shown for the best models of each size for the Credit data set (the lower frontier in Figure 6.1). $C_{p}$ and BIC are estimates of test MSE. In the middle plot we see that the BIC estimate of test error shows an increase after four variables are selected. The other two plots are rather flat after four variables are included.
 
 for the corresponding decrease in training RSS. Though it is beyond the scope of this book, one can show that if $\hat{\sigma}^{2}$ is an unbiased estimate of $\sigma^{2}$ in (6.2), then $C_{p}$ is an unbiased estimate of test MSE. As a consequence, the $C_{p}$ statistic tends to take on a small value for models with a low test error, so when determining which of a set of models is best, we choose the model with the lowest $C_{p}$ value. In Figure 6.2, $C_{p}$ selects the six-variable model containing the predictors income, limit, rating, cards, age and student.
@@ -197,7 +197,7 @@ $C_{p}$ , AIC, and BIC all have rigorous theoretical justifications that are bey
 
 As an alternative to the approaches just discussed, we can directly estimate the test error using the validation set and cross-validation methods discussed in Chapter 5. We can compute the validation set error or the cross-validation error for each model under consideration, and then select
 
-![](../images/6e60aa2628210c640d6daaac8cd61a683155a821b3c43f8b99255ee0d1335fa8.jpg)  
+![](../images/06-linear-model-selection-and-regularization/6e60aa2628210c640d6daaac8cd61a683155a821b3c43f8b99255ee0d1335fa8.jpg)  
 FIGURE 6.3. For the Credit data set, three quantities are displayed for the best model containing d predictors, for d ranging from 1 to 11. The overall best model, based on each of these quantities, is shown as a blue cross. Left: Square root of BIC. Center: Validation set errors. Right: Cross-validation errors.
 
 the model for which the resulting estimated test error is smallest. This procedure has an advantage relative to AIC, BIC, $C_{p}$ , and adjusted $R^{2}$ , in that it provides a direct estimate of the test error, and makes fewer assumptions about the true underlying model. It can also be used in a wider range of model selection tasks, even in cases where it is hard to pinpoint the model degrees of freedom (e.g. the number of predictors in the model) or hard to estimate the error variance $\sigma^{2}$ . Note that when cross-validation is used, the sequence of models $M_{k}$ in Algorithms 6.1–6.3 is determined separately for each training fold, and the validation errors are averaged over all folds for each model size k. This means, for example with best-subset regression, that $M_{k}$ , the best subset of size k, can differ across the folds. Once the best size k is chosen, we find the best model of that size on the full data set.
@@ -243,7 +243,7 @@ tuning parameter
 shrinkage
 penalty
 
-![](../images/8c4fc73278f90223f71870882a58b6ce8dab6e1ffbb2213b96a37c13f52539a4.jpg)  
+![](../images/06-linear-model-selection-and-regularization/8c4fc73278f90223f71870882a58b6ce8dab6e1ffbb2213b96a37c13f52539a4.jpg)  
 FIGURE 6.4. The standardized ridge regression coefficients are displayed for the Credit data set, as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{R}\|_{2}/\|\hat{\beta}\|_{2}$ .
 
 the relative impact of these two terms on the regression coefficient estimates. When $\lambda = 0$ , the penalty term has no effect, and ridge regression will produce the least squares estimates. However, as $\lambda \to \infty$ , the impact of the shrinkage penalty grows, and the ridge regression coefficient estimates will approach zero. Unlike least squares, which generates only one set of coefficient estimates, ridge regression will produce a different set of coefficient estimates, $\hat{\beta}_{\lambda}^{R}$ , for each value of $\lambda$ . Selecting a good value for $\lambda$ is critical; we defer this discussion to Section 6.2.3, where we use cross-validation.
@@ -268,7 +268,7 @@ so that they are all on the same scale. In $(6.6)$ , the denominator is the esti
 
 Ridge regression's advantage over least squares is rooted in the bias-variance trade-off. As $\lambda$ increases, the flexibility of the ridge regression fit decreases, leading to decreased variance but increased bias. This is illustrated in the left-hand panel of Figure 6.5, using a simulated data set containing $p = 45$ predictors and $n = 50$ observations. The green curve in the left-hand panel
 
-![](../images/a61478c4b43376c1bb2e48215c0d10707383cbd41da863e544e03455bfc9c5ca.jpg)  
+![](../images/06-linear-model-selection-and-regularization/a61478c4b43376c1bb2e48215c0d10707383cbd41da863e544e03455bfc9c5ca.jpg)  
 FIGURE 6.5. Squared bias (black), variance (green), and test mean squared error (purple) for the ridge regression predictions on a simulated data set, as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{R}\|_{2}/\|\hat{\beta}\|_{2}$ . The horizontal dashed lines indicate the minimum possible MSE. The purple crosses indicate the ridge regression models for which the MSE is smallest.
 
 of Figure 6.5 displays the variance of the ridge regression predictions as a function of $\lambda$ . At the least squares coefficient estimates, which correspond to ridge regression with $\lambda = 0$ , the variance is high but there is no bias. But as $\lambda$ increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias. Recall that the test mean squared error (MSE), plotted in purple, is closely related to the variance plus the squared bias. For values of $\lambda$ up to about 10, the variance decreases rapidly, with very little increase in bias, plotted in black. Consequently, the MSE drops considerably as $\lambda$ increases from 0 to 10. Beyond this point, the decrease in variance due to increasing $\lambda$ slows, and the shrinkage on the coefficients causes them to be significantly underestimated, resulting in a large increase in the bias. The minimum MSE is achieved at approximately $\lambda = 30$ . Interestingly, because of its high variance, the MSE associated with the least squares fit, when $\lambda = 0$ , is almost as high as that of the null model for which all coefficient estimates are zero, when $\lambda = \infty$ . However, for an intermediate value of $\lambda$ , the MSE is considerably lower.
@@ -299,7 +299,7 @@ As with ridge regression, the lasso shrinks the coefficient estimates towards ze
 
 sparse
 
-![](../images/77132d443f7b3c25cb0d5df89001a1ed4fde051fdcf264f34d58ea15e6fd6d66.jpg)  
+![](../images/06-linear-model-selection-and-regularization/77132d443f7b3c25cb0d5df89001a1ed4fde051fdcf264f34d58ea15e6fd6d66.jpg)  
 FIGURE 6.6. The standardized lasso coefficients on the Credit data set are shown as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{L}\|_{1}/\|\hat{\beta}\|_{1}$ .
 
 As an example, consider the coefficient plots in Figure 6.6, which are generated from applying the lasso to the Credit data set. When $\lambda = 0$ , then the lasso simply gives the least squares fit, and when $\lambda$ becomes sufficiently large, the lasso gives the null model in which all coefficient estimates equal zero. However, in between these two extremes, the ridge regression and lasso models are quite different from each other. Moving from left to right in the right-hand panel of Figure 6.6, we observe that at first the lasso results in a model that contains only the rating predictor. Then student and limit enter the model almost simultaneously, shortly followed by income. Eventually, the remaining variables enter the model. Hence, depending on the value of $\lambda$ , the lasso can produce a model involving any number of variables. In contrast, ridge regression will always include all of the variables in the model, although the magnitude of the coefficient estimates will depend on $\lambda$ .
@@ -340,7 +340,7 @@ Each of the ellipses centered around $\hat{\beta}$ represents a contour: this me
 
 contour
 
-![](../images/4ca42c3b98c643c62e348d67cec14fcf57f63cdbed2ca30729f4690e1194307f.jpg)  
+![](../images/06-linear-model-selection-and-regularization/4ca42c3b98c643c62e348d67cec14fcf57f63cdbed2ca30729f4690e1194307f.jpg)  
 FIGURE 6.7. Contours of the error and constraint functions for the lasso (left) and ridge regression (right). The solid blue areas are the constraint regions, $|\beta_{1}| + |\beta_{2}| \leq s$ and $\beta_{1}^{2} + \beta_{2}^{2} \leq s$ , while the red ellipses are the contours of the RSS.
 
 the ellipses expand away from the least squares coefficient estimates, the RSS increases. Equations (6.8) and (6.9) indicate that the lasso and ridge regression coefficient estimates are given by the first point at which an ellipse contacts the constraint region. Since ridge regression has a circular constraint with no sharp points, this intersection will not generally occur on an axis, and so the ridge regression coefficient estimates will be exclusively non-zero. However, the lasso constraint has corners at each of the axes, and so the ellipse will often intersect the constraint region at an axis. When this occurs, one of the coefficients will equal zero. In higher dimensions, many of the coefficient estimates may equal zero simultaneously. In Figure 6.7, the intersection occurs at $\beta_{1}=0$ , and so the resulting model will only include $\beta_{2}$ .
@@ -351,7 +351,7 @@ In Figure 6.7, we considered the simple case of p = 2. When p = 3, then the cons
 
 It is clear that the lasso has a major advantage over ridge regression, in that it produces simpler and more interpretable models that involve only a subset of the predictors. However, which method leads to better prediction accuracy? Figure 6.8 displays the variance, squared bias, and test MSE of the lasso applied to the same simulated data as in Figure 6.5. Clearly the lasso leads to qualitatively similar behavior to ridge regression, in that as $\lambda$ increases, the variance decreases and the bias increases. In the right-hand
 
-![](../images/66c69c7cb6d11b1a34bb11fc44316348a24cf2e8178a17de8824c4b8659b8304.jpg)  
+![](../images/06-linear-model-selection-and-regularization/66c69c7cb6d11b1a34bb11fc44316348a24cf2e8178a17de8824c4b8659b8304.jpg)  
 FIGURE 6.8. Left: Plots of squared bias (black), variance (green), and test MSE (purple) for the lasso on a simulated data set. Right: Comparison of squared bias, variance, and test MSE between lasso (solid) and ridge (dotted). Both are plotted against their $R^{2}$ on the training data, as a common form of indexing. The crosses in both plots indicate the lasso model for which the MSE is smallest.
 
 panel of Figure 6.8, the dotted lines represent the ridge regression fits. Here we plot both against their $R^{2}$ on the training data. This is another useful way to index models, and can be used to compare models with different types of regularization, as is the case here. In this example, the lasso and ridge regression result in almost identical biases. However, the variance of ridge regression is slightly lower than the variance of the lasso. Consequently, the minimum MSE of ridge regression is slightly smaller than that of the lasso.
@@ -361,7 +361,7 @@ However, the data in Figure 6.8 were generated in such a way that all 45 predict
 These two examples illustrate that neither ridge regression nor the lasso will universally dominate the other. In general, one might expect the lasso to perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero. Ridge regression will perform better when the response is a function of many predictors, all with coefficients of roughly equal size. However, the number of predictors that is related to the response is never known a priori for real data sets. A technique such as cross-validation can be used in order to determine which approach is better on a particular data set.
 
 As with ridge regression, when the least squares estimates have excessively high variance, the lasso solution can yield a reduction in variance at the expense of a small increase in bias, and consequently can generate more accurate predictions. Unlike ridge regression, the lasso performs variable selection, and hence results in models that are easier to interpret.
-![](../images/66673112d9e335e1da6266bb32a9fa8e30ed766d2343a480b60538fc391ac9b1.jpg)  
+![](../images/06-linear-model-selection-and-regularization/66673112d9e335e1da6266bb32a9fa8e30ed766d2343a480b60538fc391ac9b1.jpg)  
 FIGURE 6.9. Left: Plots of squared bias (black), variance (green), and test MSE (purple) for the lasso. The simulated data is similar to that in Figure 6.8, except that now only two predictors are related to the response. Right: Comparison of squared bias, variance, and test MSE between lasso (solid) and ridge (dotted). Both are plotted against their $R^{2}$ on the training data, as a common form of indexing. The crosses in both plots indicate the lasso model for which the MSE is smallest.
 
 There are very efficient algorithms for fitting both ridge and lasso models; in both cases the entire coefficient paths can be computed with about the same amount of work as a single least squares fit. We will explore this further in the lab at the end of this chapter.
@@ -392,7 +392,7 @@ $$
 \sum_ {j = 1} ^ {p} (y _ {j} - \beta_ {j}) ^ {2} + \lambda \sum_ {j = 1} ^ {p} | \beta_ {j} | \tag {6.13}
 $$
 
-![](../images/3b3ea46293b6fc1c1a1374f45d47a892fc82f726983ed7af311a1b01ff35d308.jpg)  
+![](../images/06-linear-model-selection-and-regularization/3b3ea46293b6fc1c1a1374f45d47a892fc82f726983ed7af311a1b01ff35d308.jpg)  
 FIGURE 6.10. The ridge regression and lasso coefficient estimates for a simple setting with n = p and X a diagonal matrix with 1's on the diagonal. Left: The ridge regression coefficient estimates are shrunken proportionally towards zero, relative to the least squares estimates. Right: The lasso coefficient estimates are soft-thresholded towards zero.
 
 is minimized. One can show that in this setting, the ridge regression estimates take the form
@@ -418,9 +418,9 @@ thresholding
 
 We now show that one can view ridge regression and the lasso through a Bayesian lens. A Bayesian viewpoint for regression assumes that the coefficient vector $\beta$ has some prior distribution, say $p(\beta)$ , where $\beta = (\beta_{0}, \beta_{1}, \ldots, \beta_{p})^{T}$ . The likelihood of the data can be written as $f(Y|X, \beta)$ ,
 
-![](../images/63a5455dcaf8c6c30af34a0d2d999f5a2d88ee6989fecbcb3bad076b4e253ea7.jpg)
+![](../images/06-linear-model-selection-and-regularization/63a5455dcaf8c6c30af34a0d2d999f5a2d88ee6989fecbcb3bad076b4e253ea7.jpg)
 
-![](../images/b76791a96ffaa42e0f53d204f80f781d24031f14eb002784c9c31ca77cc05d98.jpg)  
+![](../images/06-linear-model-selection-and-regularization/b76791a96ffaa42e0f53d204f80f781d24031f14eb002784c9c31ca77cc05d98.jpg)  
 FIGURE 6.11. Left: Ridge regression is the posterior mode for $\beta$ under a Gaussian prior. Right: The lasso is the posterior mode for $\beta$ under a double-exponential prior.
 
 where $X = (X_{1}, \ldots, X_{p})$ . Multiplying the prior distribution by the likelihood gives us (up to a proportionality constant) the posterior distribution, which takes the form
@@ -449,7 +449,7 @@ The Gaussian and double-exponential priors are displayed in Figure 6.11. Therefo
 posterior
 mode
 
-![](../images/1f3610867399bfe5bfc9b455ab1273615c568a507c5bfe97da156b777a73826d.jpg)  
+![](../images/06-linear-model-selection-and-regularization/1f3610867399bfe5bfc9b455ab1273615c568a507c5bfe97da156b777a73826d.jpg)  
 FIGURE 6.12. Left: Cross-validation errors that result from applying ridge regression to the Credit data set with various values of $\lambda$ . Right: The coefficient estimates as a function of $\lambda$ . The vertical dashed lines indicate the value of $\lambda$ selected by cross-validation.
 
 # 6.2.3 Selecting the Tuning Parameter
@@ -460,7 +460,7 @@ Figure 6.12 displays the choice of $\lambda$ that results from performing leave-
 
 Figure 6.13 provides an illustration of ten-fold cross-validation applied to the lasso fits on the sparse simulated data from Figure 6.9. The left-hand panel of Figure 6.13 displays the cross-validation error, while the right-hand panel displays the coefficient estimates. The vertical dashed lines indicate the point at which the cross-validation error is smallest. The two colored lines in the right-hand panel of Figure 6.13 represent the two predictors that are related to the response, while the grey lines represent the unrelated predictors; these are often referred to as signal and noise variables, respectively. Not only has the lasso correctly given much larger coefficient estimates to the two signal predictors, but also the minimum cross-validation error corresponds to a set of coefficient estimates for which only the signal variables are non-zero. Hence cross-validation together with the lasso has correctly identified the two signal variables in the model, even though this is a challenging setting, with p = 45 variables and only n = 50
 
-![](../images/66340656480aab61298a3b20481d6a8fce4d5d0e727a167bc47084aadd3fbb9b.jpg)  
+![](../images/06-linear-model-selection-and-regularization/66340656480aab61298a3b20481d6a8fce4d5d0e727a167bc47084aadd3fbb9b.jpg)  
 FIGURE 6.13. Left: Ten-fold cross-validation MSE for the lasso, applied to the sparse simulated data set from Figure 6.9. Right: The corresponding lasso coefficient estimates are displayed. The two signal variables are shown in color, and the noise variables are in gray. The vertical dashed lines indicate the lasso fit for which the cross-validation error is smallest.
 
 observations. In contrast, the least squares solution—displayed on the far right of the right-hand panel of Figure 6.13—assigns a large coefficient estimate to only one of the two signal variables.
@@ -490,7 +490,7 @@ reduction
 linear
 combination
 
-![](../images/f88294968cae3374b317be62a3c95443cb802d951a63f2b874f2ae81462f509b.jpg)
+![](../images/06-linear-model-selection-and-regularization/f88294968cae3374b317be62a3c95443cb802d951a63f2b874f2ae81462f509b.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -605,7 +605,7 @@ The values of $z_{11}, \ldots, z_{n1}$ are known as the principal component scor
 
 There is also another interpretation of PCA: the first principal component vector defines the line that is as close as possible to the data. For instance, in Figure 6.14, the first principal component line minimizes the sum of the squared perpendicular distances between each point and the line. These distances are plotted as dashed line segments in the left-hand
 
-![](../images/0e01e854b8bd21195f374455a462e8a297de22a1503e14b92cf7a4d63e0b92cb.jpg)  
+![](../images/06-linear-model-selection-and-regularization/0e01e854b8bd21195f374455a462e8a297de22a1503e14b92cf7a4d63e0b92cb.jpg)  
 FIGURE 6.15. A subset of the advertising data. The mean pop and ad budgets are indicated with a blue circle. Left: The first principal component direction is shown in green. It is the dimension along which the data vary the most, and it also defines the line that is closest to all n of the observations. The distances from each observation to the principal component are represented using the black dashed line segments. The blue dot represents $(\overline{\mathrm{pop}}, \overline{\mathrm{ad}})$ . Right: The left-hand panel has been rotated so that the first principal component direction coincides with the x-axis.
 
 panel of Figure 6.15, in which the crosses represent the projection of each point onto the first principal component line. The first principal component has been chosen so that the projected observations are as close as possible to the original observations.
@@ -616,7 +616,7 @@ We can think of the values of the principal component $Z_{1}$ as single-number s
 
 So far we have concentrated on the first principal component. In general, one can construct up to p distinct principal components. The second
 
-![](../images/c6bc0fadadd37905cf539352133c6043220a20cfb935593672b3051ef70bc580.jpg)  
+![](../images/06-linear-model-selection-and-regularization/c6bc0fadadd37905cf539352133c6043220a20cfb935593672b3051ef70bc580.jpg)  
 FIGURE 6.16. Plots of the first principal component scores $z_{i1}$ versus pop and ad. The relationships are strong.
 
 principal component $Z_{2}$ is a linear combination of the variables that is uncorrelated with $Z_{1}$ , and has largest variance subject to this constraint. The second principal component direction is illustrated as a dashed blue line in Figure 6.14. It turns out that the zero correlation condition of $Z_{1}$ with $Z_{2}$ is equivalent to the condition that the direction must be perpendicular, or orthogonal, to the first principal component direction. The second principal component is given by the formula
@@ -641,10 +641,10 @@ principal
 components
 regression
 
-![](../images/d7766d99ab11cd4b7bf47ecdc8fef23c7e400828e18ee9e44c01e83c8b0bff47.jpg)  
+![](../images/06-linear-model-selection-and-regularization/d7766d99ab11cd4b7bf47ecdc8fef23c7e400828e18ee9e44c01e83c8b0bff47.jpg)  
 FIGURE 6.17. Plots of the second principal component scores $z_{i2}$ versus pop and ad. The relationships are weak.
 
-![](../images/f176eb8406c88740f39025bedf483d1690e4d8a4777522d78887fd73f946d6e2.jpg)  
+![](../images/06-linear-model-selection-and-regularization/f176eb8406c88740f39025bedf483d1690e4d8a4777522d78887fd73f946d6e2.jpg)  
 FIGURE 6.18. PCR was applied to two simulated data sets. In each panel, the horizontal dashed line represents the irreducible error. Left: Simulated data from Figure 6.8. Right: Simulated data from Figure 6.9.
 
 directions in which $X_{1},\ldots,X_{p}$ show the most variation are the directions that are associated with Y. While this assumption is not guaranteed to be true, it often turns out to be a reasonable enough approximation to give good results.
@@ -653,7 +653,7 @@ If the assumption underlying PCR holds, then fitting a least squares model to $Z
 
 Figure 6.18 displays the PCR fits on the simulated data sets from Figures 6.8 and 6.9. Recall that both data sets were generated using n = 50 observations and p = 45 predictors. However, while the response in the first data set was a function of all the predictors, the response in the second data set was generated using only two of the predictors. The curves are plotted as a function of M, the number of principal components used as predictors in the regression model. As more principal components are used
 
-![](../images/f9255ab8e27573c8011d396d8e151c181ac591e729b09569ecafe42417b47d19.jpg)  
+![](../images/06-linear-model-selection-and-regularization/f9255ab8e27573c8011d396d8e151c181ac591e729b09569ecafe42417b47d19.jpg)  
 FIGURE 6.19. PCR, ridge regression, and the lasso were applied to a simulated data set in which the first five principal components of X contain all the information about the response Y. In each panel, the irreducible error $\operatorname{Var}(\epsilon)$ is shown as a horizontal dashed line. Left: Results for PCR. Right: Results for lasso (solid) and ridge regression (dotted). The x-axis displays the shrinkage factor of the coefficient estimates, defined as the $\ell_{2}$ norm of the shrunken coefficient estimates divided by the $\ell_{2}$ norm of the least squares estimate.
 
 in the regression model, the bias decreases, but the variance increases. This results in a typical U-shape for the mean squared error. When M = p = 45, then PCR amounts simply to a least squares fit using all of the original predictors. The figure indicates that performing PCR with an appropriate choice of M can result in a substantial improvement over least squares, especially in the left-hand panel. However, by examining the ridge regression and lasso results in Figures 6.5, 6.8, and 6.9, we see that PCR does not perform as well as the two shrinkage methods in this example.
@@ -662,7 +662,7 @@ The relatively worse performance of PCR in Figure 6.18 is a consequence of the f
 
 We note that even though PCR provides a simple way to perform regression using $M < p$ predictors, it is not a feature selection method. This is because each of the $M$ principal components used in the regression is a linear combination of all $p$ of the original features. For instance, in (6.19), $Z_{1}$ was a linear combination of both pop and ad. Therefore, while PCR often performs quite well in many practical settings, it does not result in the
 
-![](../images/00ccb9ca8fea5786655548ac5b81ad46bb4dea371057e47397d447f5b114ed0a.jpg)  
+![](../images/06-linear-model-selection-and-regularization/00ccb9ca8fea5786655548ac5b81ad46bb4dea371057e47397d447f5b114ed0a.jpg)  
 FIGURE 6.20. Left: PCR standardized coefficient estimates on the Credit data set for different values of M. Right: The ten-fold cross-validation MSE obtained using PCR, as a function of M.
 
 development of a model that relies upon a small set of the original features. In this sense, PCR is more closely related to ridge regression than to the lasso. In fact, one can show that PCR and ridge regression are very closely related. One can even think of ridge regression as a continuous version of PCR! $^{8}$
@@ -675,7 +675,7 @@ When performing PCR, we generally recommend standardizing each predictor, using 
 
 The PCR approach that we just described involves identifying linear combinations, or directions, that best represent the predictors $X_{1},\ldots,X_{p}$ . These directions are identified in an unsupervised way, since the response Y is not used to help determine the principal component directions. That is, the response does not supervise the identification of the principal components. Consequently, PCR suffers from a drawback: there is no guarantee
 
-![](../images/9cbdbcd883da31b1739029dc0cea56de5bccedcec85b2c6946cfd78e789b5b4c.jpg)
+![](../images/06-linear-model-selection-and-regularization/9cbdbcd883da31b1739029dc0cea56de5bccedcec85b2c6946cfd78e789b5b4c.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -796,15 +796,15 @@ An example is shown in Figure 6.22 with p = 1 feature (plus an intercept) in two
 
 Figure 6.23 further illustrates the risk of carelessly applying least squares when the number of features p is large. Data were simulated with n = 20 observations, and regression was performed with between 1 and 20 features,
 
-![](../images/506cfa7ec8d703e4e8071d0064d34cd58197a21fc11e135e584fdd760c76fb6f.jpg)  
+![](../images/06-linear-model-selection-and-regularization/506cfa7ec8d703e4e8071d0064d34cd58197a21fc11e135e584fdd760c76fb6f.jpg)  
 FIGURE 6.22. Left: Least squares regression in the low-dimensional setting. Right: Least squares regression with n = 2 observations and two parameters to be estimated (an intercept and a coefficient).
 
-![](../images/2adaf1ad3692dd42cd333fd200ba1e6573d6ec0a721c545d50444cb3c1d9c520.jpg)  
+![](../images/06-linear-model-selection-and-regularization/2adaf1ad3692dd42cd333fd200ba1e6573d6ec0a721c545d50444cb3c1d9c520.jpg)  
 FIGURE 6.23. On a simulated example with n = 20 training observations, features that are completely unrelated to the outcome are added to the model. Left: The $R^{2}$ increases to 1 as more features are included. Center: The training set MSE decreases to 0 as more features are included. Right: The test set MSE increases as more features are included.
 
 each of which was completely unrelated to the response. As shown in the figure, the model $R^{2}$ increases to 1 as the number of features included in the model increases, and correspondingly the training set MSE decreases to 0 as the number of features increases, even though the features are completely unrelated to the response. On the other hand, the MSE on an independent test set becomes extremely large as the number of features included in the model increases, because including the additional predictors leads to a vast increase in the variance of the coefficient estimates. Looking at the test set MSE, it is clear that the best model contains at most a few variables. However, someone who carelessly examines only the $R^{2}$ or the training set MSE might erroneously conclude that the model with the greatest number of variables is best. This indicates the importance of applying extra care when analyzing data sets with a large number of variables, and of always evaluating model performance on an independent test set.
 
-![](../images/da857e9cf850ce79c0fab9f29b26ad640fb20ea8d11451d9926545adf20c61b5.jpg)  
+![](../images/06-linear-model-selection-and-regularization/da857e9cf850ce79c0fab9f29b26ad640fb20ea8d11451d9926545adf20c61b5.jpg)  
 FIGURE 6.24. The lasso was performed with n = 100 observations and three values of p, the number of features. Of the p features, 20 were associated with the response. The boxplots show the test MSEs that result using three different values of the tuning parameter $\lambda$ in (6.7). For ease of interpretation, rather than reporting $\lambda$ , the degrees of freedom are reported; for the lasso this turns out to be simply the number of estimated non-zero coefficients. When p = 20, the lowest test MSE was obtained with the smallest amount of regularization. When p = 50, the lowest test MSE was achieved when there is a substantial amount of regularization. When p = 2,000 the lasso performed poorly regardless of the amount of regularization, due to the fact that only 20 of the 2,000 features truly are associated with the outcome.
 
 In Section 6.1.3, we saw a number of approaches for adjusting the training set RSS or $R^{2}$ in order to account for the number of variables used to fit a least squares model. Unfortunately, the $C_{p}$ , AIC, and BIC approaches are not appropriate in the high-dimensional setting, because estimating $\hat{\sigma}^{2}$ is problematic. (For instance, the formula for $\hat{\sigma}^{2}$ from Chapter 3 yields an estimate $\hat{\sigma}^{2}=0$ in this setting.) Similarly, problems arise in the application of adjusted $R^{2}$ in the high-dimensional setting, since one can easily obtain a model with an adjusted $R^{2}$ value of 1. Clearly, alternative approaches that are better-suited to the high-dimensional setting are required.
@@ -1754,7 +1754,7 @@ v. Remain constant.
 (d) Repeat (a) for (squared) bias.  
 (e) Repeat (a) for the irreducible error.
 
-![](../images/73dbb05b38d7b31b8dabbc628b5bb30bb2f16a25f5797edfb12b357e7b4ee27d.jpg)
+![](../images/06-linear-model-selection-and-regularization/73dbb05b38d7b31b8dabbc628b5bb30bb2f16a25f5797edfb12b357e7b4ee27d.jpg)
 
 5. It is well-known that ridge regression tends to give similar coefficient values to correlated variables, whereas the lasso may give quite different coefficient values to correlated variables. We will now explore this property in a very simple setting.
 
@@ -1772,7 +1772,7 @@ Suppose that n = 2, p = 2, $x_{11} = x_{12}$ , $x_{21} = x_{22}$ . Furthermore, 
 
 7. We will now derive the Bayesian connection to the lasso and ridge regression discussed in Section 6.2.2.
 
-![](../images/a24a1ed052c8fe408795bcf2a1763a930164d6ae3cc009a53d05209a346aac65.jpg)
+![](../images/06-linear-model-selection-and-regularization/a24a1ed052c8fe408795bcf2a1763a930164d6ae3cc009a53d05209a346aac65.jpg)
 
 (a) Suppose that $y_{i} = \beta_{0} + \sum_{j=1}^{p} x_{ij} \beta_{j} + \epsilon_{i}$ where $\epsilon_{1}, \ldots, \epsilon_{n}$ are independent and identically distributed from a $N(0, \sigma^{2})$ distribution. Write out the likelihood for the data.  
 (b) Assume the following prior for $\beta$ : $\beta_{1},\ldots ,\beta_{p}$ are independent and identically distributed according to a double-exponential distribution with mean 0 and common scale parameter $b$ : i.e. $p(\beta) = \frac{1}{2b}\exp (-|\beta | / b)$ . Write out the posterior for $\beta$ in this setting.  

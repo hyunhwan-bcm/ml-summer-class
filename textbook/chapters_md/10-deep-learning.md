@@ -11,7 +11,7 @@ learning
 
 neural network
 
-![](../images/a58d51457d2a23702d3c1e597db456479da807628e90b951d1a8088f73119bc5.jpg)
+![](../images/10-deep-learning/a58d51457d2a23702d3c1e597db456479da807628e90b951d1a8088f73119bc5.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -78,7 +78,7 @@ hidden units
 
 activations
 
-![](../images/2f2c13cf69125516f2c142937c6ccfe42cdcba6dd215b7529e94103fcce1f98e.jpg)
+![](../images/10-deep-learning/2f2c13cf69125516f2c142937c6ccfe42cdcba6dd215b7529e94103fcce1f98e.jpg)
 
 <details>
 <summary>line</summary>
@@ -160,7 +160,7 @@ Modern neural networks typically have more than one hidden layer, and often many
 
 We will illustrate a large dense network on the famous and publicly available MNIST handwritten digit dataset. $^{1}$ Figure 10.3 shows examples of these digits. The idea is to build a model to classify the images into their correct digit class 0–9. Every image has $p = 28 \times 28 = 784$ pixels, each of which is an eight-bit grayscale value between 0 and 255 representing
 
-![](../images/660d675b98a1171d20fe326b03c40343cb3656e5f874329a594dab29d0edd097.jpg)  
+![](../images/10-deep-learning/660d675b98a1171d20fe326b03c40343cb3656e5f874329a594dab29d0edd097.jpg)  
 FIGURE 10.3. Examples of handwritten digits from the MNIST corpus. Each grayscale image has $28 \times 28$ pixels, each of which is an eight-bit number (0–255) which represents how dark that pixel is. The first 3, 5, and 8 are enlarged to show their 784 individual pixel values.
 
 the relative amount of the written digit in that tiny square. $^{2}$ These pixels are stored in the input vector X (in, say, column order). The output is the class label, represented by a vector $Y = (Y_{0}, Y_{1}, \ldots, Y_{9})$ of 10 dummy variables, with a one in the position corresponding to the label, and zeros elsewhere. In the machine learning community, this is known as one-hot encoding. There are 60,000 training images, and 10,000 test images.
@@ -173,7 +173,7 @@ Figure 10.4 shows a multilayer network architecture that works well for solving 
 - It has ten output variables, rather than one. In this case the ten variables really represent a single qualitative variable and so are quite dependent. (We have indexed them by the digit class 0–9 rather than 1–10, for clarity.) More generally, in multi-task learning one can predict different responses simultaneously with a single network; they all have a say in the formation of the hidden layers.  
 - The loss function used for training the network is tailored for the multiclass classification task.
 
-![](../images/add9941b5c87df1fba78b7b47dffa06b4cc8875b7e33d66d85f0da40a805f825.jpg)
+![](../images/10-deep-learning/add9941b5c87df1fba78b7b47dffa06b4cc8875b7e33d66d85f0da40a805f825.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -233,7 +233,7 @@ Table 10.1 compares the test performance of the neural network with two simple m
 
 TABLE 10.1. Test error rate on the MNIST data, for neural networks with two forms of regularization, as well as multinomial logistic regression and linear discriminant analysis. In this example, the extra complexity of the neural network leads to a marked improvement in test error.
 
-![](../images/744ebe584f5ceaf44a98b5cedc753cc4e3dd1e4df207525d25800a59fd18e4df.jpg)
+![](../images/10-deep-learning/744ebe584f5ceaf44a98b5cedc753cc4e3dd1e4df207525d25800a59fd18e4df.jpg)
 
 <details>
 <summary>natural_image</summary>
@@ -253,7 +253,7 @@ Neural networks rebounded around 2010 with big successes in image classification
 
 feature map
 
-![](../images/290e6c44bc40106fa6ba9659a1598a610dcc190225dc7b92786837d60532cdbc.jpg)
+![](../images/10-deep-learning/290e6c44bc40106fa6ba9659a1598a610dcc190225dc7b92786837d60532cdbc.jpg)
 
 <details>
 <summary>text_image</summary>
@@ -301,7 +301,7 @@ For instance, the top-left element comes from multiplying each element in the $2
 
 Figure 10.7 illustrates the application of two convolution filters to a $192 \times 179$ image of a tiger, shown on the left-hand side. $^{8}$ Each convolution filter is a $15 \times 15$ image containing mostly zeros (black), with a narrow strip of ones (white) oriented either vertically or horizontally within the image. When each filter is convolved with the image of the tiger, areas of the tiger that resemble the filter (i.e. that have either horizontal or vertical stripes or edges) are given large values, and areas of the tiger that do not resemble the feature are given small values. The convolved images are displayed on the right-hand side. We see that the horizontal stripe filter picks out horizontal stripes and edges in the original image, whereas the vertical stripe filter picks out vertical stripes and edges in the original image.
 
-![](../images/b1945ce60d3de05a544b138fef8feac1f1f92013ea78cfd1cd7dbb53ed3f3dfb.jpg)
+![](../images/10-deep-learning/b1945ce60d3de05a544b138fef8feac1f1f92013ea78cfd1cd7dbb53ed3f3dfb.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -346,7 +346,7 @@ So far we have defined a single convolution layer — each filter produces a new
 
 At the input layer, we see the three-dimensional feature map of a color image, where the channel axis represents each color by a $32 \times 32$ two-dimensional feature map of pixels. Each convolution filter produces a new channel at the first hidden layer, each of which is a $32 \times 32$ feature map (after some padding at the edges). After this first round of convolutions, we now have a new “image”; a feature map with considerably more channels than the three color input channels (six in the figure, since we used six convolution filters).
 
-![](../images/a5ff324c7f8c9a200b60e1b1a0907d511322fa28da0215872fa7f1c93b60c9ba.jpg)
+![](../images/10-deep-learning/a5ff324c7f8c9a200b60e1b1a0907d511322fa28da0215872fa7f1c93b60c9ba.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -374,7 +374,7 @@ An additional important trick used with image modeling is data augmentation. Ess
 
 data augmentation
 
-![](../images/2ed45c6bfc88f7083286b032f6a64b85cb0a2bca5ae86e8c3f4371b3ea69dc98.jpg)  
+![](../images/10-deep-learning/2ed45c6bfc88f7083286b032f6a64b85cb0a2bca5ae86e8c3f4371b3ea69dc98.jpg)  
 FIGURE 10.9. Data augmentation. The original image (leftmost) is distorted in natural ways to produce different images with the same class label. These distortions do not fool humans, and act as a form of regularization when fitting the CNN.
 
 zoom, horizontal and vertical shift, shear, small rotations, and in this case horizontal flips. At face value this is a way of increasing the training set considerably with somewhat different examples, and thus protects against overfitting. In fact we can see this as a form of regularization: we build a cloud of images around each original image, all with the same label. This kind of fattening of the data is similar in spirit to ridge regularization.
@@ -390,7 +390,7 @@ Much of the work in fitting a CNN is in learning the convolution filters at the 
 weight
 freezing
 
-![](../images/4a8de20893921c61a33f7284db3f2fc6b3c683ec67c320cddfbf041ab2146f41.jpg)
+![](../images/10-deep-learning/4a8de20893921c61a33f7284db3f2fc6b3c683ec67c320cddfbf041ab2146f41.jpg)
 
 flamingo  
 Cooper's hawk  
@@ -427,7 +427,7 @@ Here we can see many words have been omitted, and some unknown words (UNK) have 
 - A lasso logistic regression using the glmnet package;  
 - A two-class neural network with two hidden layers, each with 16 ReLU units.
 
-![](../images/cc8a909921978abb166acf577b4d0a0f762406b2c97e4926d91bd91f460971e7.jpg)  
+![](../images/10-deep-learning/cc8a909921978abb166acf577b4d0a0f762406b2c97e4926d91bd91f460971e7.jpg)  
 FIGURE 10.11. Accuracy of the lasso and a two-hidden-layer neural network on the IMDb data. For the lasso, the x-axis displays $-\log(\lambda)$ , while for the neural network it displays epochs (number of times the fitting algorithm passes through the training set). Both show a tendency to overfit, and achieve approximately the same test accuracy.
 
 Both methods produce a sequence of solutions. The lasso sequence is indexed by the regularization parameter $\lambda$ . The neural-net sequence is indexed by the number of gradient-descent iterations used in the fitting, as measured by training epochs or passes through the training set (Section 10.7). Notice that the training accuracy in Figure 10.11 (black points) increases monotonically in both cases. We can use the validation error to pick a good solution from each sequence (blue points in the plots), which would then be used to make predictions on the test data set.
@@ -470,7 +470,7 @@ recurrent
 neural
 network
 
-![](../images/7e751287668b783d7fe84cc6647b3a8e9767114211e4fdaa1d932da0074226c9.jpg)
+![](../images/10-deep-learning/7e751287668b783d7fe84cc6647b3a8e9767114211e4fdaa1d932da0074226c9.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -554,7 +554,7 @@ sharing
 
 embedding
 
-![](../images/b7e48af258da84298dbbba8e1b02c4147b640ea4b5d243c3a47a153fe3a0b033.jpg)
+![](../images/10-deep-learning/b7e48af258da84298dbbba8e1b02c4147b640ea4b5d243c3a47a153fe3a0b033.jpg)
 
 <details>
 <summary>heatmap</summary>
@@ -598,7 +598,7 @@ RNNs provide a rich framework for modeling data sequences, and they continue to 
 
 Figure 10.14 shows historical trading statistics from the New York Stock Exchange. Shown are three daily time series covering the period December 3, 1962 to December 31, 1986. $^{18}$
 
-![](../images/fc083539104e7c696a70e76eeb616a7dee04baeaf17029913857d2496a448c5b.jpg)
+![](../images/10-deep-learning/fc083539104e7c696a70e76eeb616a7dee04baeaf17029913857d2496a448c5b.jpg)
 
 <details>
 <summary>line</summary>
@@ -625,7 +625,7 @@ An observation here consists of the measurements $(v_{t}, r_{t}, z_{t})$ on day 
 
 auto-correlation
 
-![](../images/77e6b32eed21ae4edf77d9f1838151f46be22adb0696093d4b5e0f083b089918.jpg)
+![](../images/10-deep-learning/77e6b32eed21ae4edf77d9f1838151f46be22adb0696093d4b5e0f083b089918.jpg)
 
 <details>
 <summary>bar</summary>
@@ -692,7 +692,7 @@ $$
 
 So here the target Y is the value of $\log\_volume\ v_{t}$ at a single timepoint t, and the input sequence X is the series of 3-vectors $\{X_{\ell}\}_{1}^{L}$ each consisting of the three measurements $\log\_volume$ , DJ\_return and $\log\_volatility$ from day t - L, $t - L + 1$ , up to t - 1. Each value of t makes a separate $(X, Y)$ pair, for t running from $L + 1$ to T. For the NYSE data we will use the past
 
-![](../images/db3787cbd46ccfb74407b2f26125db068ec0513ec8405ec641e9e0811d74d272.jpg)
+![](../images/10-deep-learning/db3787cbd46ccfb74407b2f26125db068ec0513ec8405ec641e9e0811d74d272.jpg)
 
 <details>
 <summary>line</summary>
@@ -817,9 +817,9 @@ $$
 R (\theta) = \frac {1}{2} \sum_ {i = 1} ^ {n} (y _ {i} - f _ {\theta} (x _ {i})) ^ {2}, \tag {10.25}
 $$
 
-![](../images/3926535eb129a614a23eba5208546099de377f61089a30c482aae4164194ac3c.jpg)
+![](../images/10-deep-learning/3926535eb129a614a23eba5208546099de377f61089a30c482aae4164194ac3c.jpg)
 
-![](../images/e66c5217c4cb47d28a4e9d3acd1adc40c643f0f8a03e941b5519a7307f8b9453.jpg)
+![](../images/10-deep-learning/e66c5217c4cb47d28a4e9d3acd1adc40c643f0f8a03e941b5519a7307f8b9453.jpg)
 
 <details>
 <summary>line</summary>
@@ -901,7 +901,7 @@ stochastic
 gradient
 descent
 
-![](../images/b2bc4a4b8fbce5d2563f5ffd372ddbc7125c7b506ec30a816bead848ebe6860c.jpg)  
+![](../images/10-deep-learning/b2bc4a4b8fbce5d2563f5ffd372ddbc7125c7b506ec30a816bead848ebe6860c.jpg)  
 FIGURE 10.18. Evolution of training and validation errors for the MNIST neural network depicted in Figure 10.4, as a function of training epochs. The objective refers to the log-likelihood (10.14).
 
 to avoid overfitting. The first row in Table 10.1 uses ridge regularization on the weights. This is achieved by augmenting the objective function (10.14) with a penalty term:
@@ -914,7 +914,7 @@ The parameter $\lambda$ is often preset at a small value, or else it is found us
 
 Figure 10.18 shows some metrics that evolve during the training of the network on the MNIST data. It turns out that SGD naturally enforces its own form of approximately quadratic regularization. $^{21}$ Here the minibatch size was 128 observations per gradient update. The term epochs labeling the horizontal axis in Figure 10.18 counts the number of times an equivalent of the full training set has been processed. For this network, 20% of the 60,000 training observations were used as a validation set in order to determine when training should stop. So in fact 48,000 observations were used for training, and hence there are $48,000/128 \approx 375$ minibatch gradient updates per epoch. We see that the value of the validation objective actually starts to increase by 30 epochs, so early stopping can also be used as an additional form of regularization.
 
-![](../images/74f2799f46624faff0e1a8b472262aa464da71695db2ccf0a44f71bcce569852.jpg)  
+![](../images/10-deep-learning/74f2799f46624faff0e1a8b472262aa464da71695db2ccf0a44f71bcce569852.jpg)  
 FIGURE 10.19. Dropout Learning. Left: a fully connected network. Right: network with dropout in the input and hidden layer. The nodes in grey are selected at random, and ignored in an instance of training.
 
 # 10.7.3 Dropout Learning
@@ -931,7 +931,7 @@ The network in Figure 10.4 is considered to be relatively straightforward; it ne
 
 Choices such as these can make a difference. In preparing this MNIST example, we achieved a respectable 1.8% misclassification error after some trial and error. Finer tuning and training of a similar network can get under 1% error on these data, but the tinkering process can be tedious, and can result in overfitting if done carelessly.
 
-![](../images/f9affcc2ba6e60139f2b6e65e4e6f459ebb2a17b11129153dfb0e84eb73222fe.jpg)
+![](../images/10-deep-learning/f9affcc2ba6e60139f2b6e65e4e6f459ebb2a17b11129153dfb0e84eb73222fe.jpg)
 
 <details>
 <summary>line</summary>
@@ -996,7 +996,7 @@ $$
 
 where $X \sim U[-5, 5]$ (uniform distribution), and $\epsilon \sim N(0, \sigma^2)$ with $\sigma = 0.3$ . We then fit a natural spline to the data, as described in Section 7.4, with $d$
 
-![](../images/340066dc0f16c180cf169ded81f8361629464b0755dc47615b6937e83749a28e.jpg)  
+![](../images/10-deep-learning/340066dc0f16c180cf169ded81f8361629464b0755dc47615b6937e83749a28e.jpg)  
 FIGURE 10.21. Fitted functions $\hat{f}_{d}(X)$ (orange), true function $f(X)$ (black) and the observed 20 training data points. A different value of d (degrees of freedom) is used in each panel. For $d \geq 20$ the orange curves all interpolate the training points, and hence the training error is zero.
 
 degrees of freedom. $^{22}$ Recall from Section 7.4 that fitting a natural spline with d degrees of freedom amounts to fitting a least-squares regression of the response onto a set of d basis functions. The upper-left panel of Figure 10.21 shows the data, the true function $f(X)$ , and $\hat{f}_{8}(X)$ , the fitted natural spline with d = 8 degrees of freedom.

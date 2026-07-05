@@ -52,7 +52,7 @@ $$
 
 and that these observations fall into two classes—that is, $y_{1},\ldots ,y_{n}\in \{-1,1\}$ where $-1$ represents one class and 1 the other class. We also have a
 
-![](../images/ad64efbc815c37d3b7ff4f294ad667c481d6da8e72e334281a0540c0270a2182.jpg)
+![](../images/09-support-vector-machines/ad64efbc815c37d3b7ff4f294ad667c481d6da8e72e334281a0540c0270a2182.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -89,7 +89,7 @@ for all $i = 1,\dots ,n$
 
 If a separating hyperplane exists, we can use it to construct a very natural classifier: a test observation is assigned a class depending on which side of the hyperplane it is located. The right-hand panel of Figure 9.2 shows an example of such a classifier. That is, we classify the test observation $x^{*}$ based on the sign of $f(x^{*}) = \beta_{0} + \beta_{1}x_{1}^{*} + \beta_{2}x_{2}^{*} + \cdots + \beta_{p}x_{p}^{*}$ . If $f(x^{*})$ is positive, then we assign the test observation to class 1, and if $f(x^{*})$ is negative, then we assign it to class -1. We can also make use of the magnitude of $f(x^{*})$ . If
 
-![](../images/b459da401baa4e4cb28a151695ea90763638790c693562f35b341bdfab186ce5.jpg)  
+![](../images/09-support-vector-machines/b459da401baa4e4cb28a151695ea90763638790c693562f35b341bdfab186ce5.jpg)  
 FIGURE 9.2. Left: There are two classes of observations, shown in blue and in purple, each of which has measurements on two variables. Three separating hyperplanes, out of many possible, are shown in black. Right: A separating hyperplane is shown in black. The blue and purple grid indicates the decision rule made by a classifier based on this separating hyperplane: a test observation that falls in the blue portion of the grid will be assigned to the blue class, and a test observation that falls into the purple portion of the grid will be assigned to the purple class.
 
 $f(x^{*})$ is far from zero, then this means that $x^{*}$ lies far from the hyperplane, and so we can be confident about our class assignment for $x^{*}$ . On the other hand, if $f(x^{*})$ is close to zero, then $x^{*}$ is located near the hyperplane, and so we are less certain about the class assignment for $x^{*}$ . Not surprisingly, and as we see in Figure 9.2, a classifier that is based on a separating hyperplane leads to a linear decision boundary.
@@ -108,7 +108,7 @@ separating
 hyperplane
 margin
 
-![](../images/0896eec701f802fbf5717cedabfc8ed22d818babab5379c5ed7b41957724e4ed.jpg)
+![](../images/09-support-vector-machines/0896eec701f802fbf5717cedabfc8ed22d818babab5379c5ed7b41957724e4ed.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -167,7 +167,7 @@ Therefore, the constraints (9.10) and (9.11) ensure that each observation is on 
 
 The maximal margin classifier is a very natural way to perform classification, if a separating hyperplane exists. However, as we have hinted, in many cases no separating hyperplane exists, and so there is no maximal
 
-![](../images/682d335ac2187f1a7b4d4974682be749624771636f0cc9d55bfc371247b54ef5.jpg)
+![](../images/09-support-vector-machines/682d335ac2187f1a7b4d4974682be749624771636f0cc9d55bfc371247b54ef5.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -212,7 +212,7 @@ In Figure 9.4, we see that observations that belong to two classes are not neces
 
 In this case, we might be willing to consider a classifier based on a hyperplane that does not perfectly separate the two classes, in the interest of
 
-![](../images/c49495228873a42697aa9ea69d6703f074fed01182d4cc1f79b1501df9049e53.jpg)  
+![](../images/09-support-vector-machines/c49495228873a42697aa9ea69d6703f074fed01182d4cc1f79b1501df9049e53.jpg)  
 FIGURE 9.5. Left: Two classes of observations are shown in blue and in purple, along with the maximal margin hyperplane. Right: An additional blue observation has been added, leading to a dramatic shift in the maximal margin hyperplane shown as a solid line. The dashed line indicates the maximal margin hyperplane that was obtained in the absence of this additional point.
 
 - Greater robustness to individual observations, and  
@@ -234,7 +234,7 @@ classifier
 soft margin
 classifier
 
-![](../images/f264ada9816cabefb4c40e3474aa2d671fa41eb4cd1fddfd7bc0f847a2563a3b.jpg)  
+![](../images/09-support-vector-machines/f264ada9816cabefb4c40e3474aa2d671fa41eb4cd1fddfd7bc0f847a2563a3b.jpg)  
 FIGURE 9.6. Left: A support vector classifier was fit to a small data set. The hyperplane is shown as a solid line and the margins are shown as dashed lines. Purple observations: Observations 3, 4, 5, and 6 are on the correct side of the margin, observation 2 is on the margin, and observation 1 is on the wrong side of the margin. Blue observations: Observations 7 and 10 are on the correct side of the margin, observation 9 is on the margin, and observation 8 is on the wrong side of the margin. No observations are on the wrong side of the hyperplane. Right: Same as left panel with two additional points, 11 and 12. These two observations are on the wrong side of the hyperplane and the wrong side of the margin.
 
 misclassify a few observations. It is the solution to the optimization problem
@@ -269,7 +269,7 @@ The fact that only support vectors affect the classifier is in line with our pre
 
 The fact that the support vector classifier's decision rule is based only on a potentially small subset of the training observations (the support vectors) means that it is quite robust to the behavior of observations that are far away from the hyperplane. This property is distinct from some of
 
-![](../images/7bf257128bf2e0760e7cb6e3da43157641a532693c9359e6728420d1e0e6b585.jpg)  
+![](../images/09-support-vector-machines/7bf257128bf2e0760e7cb6e3da43157641a532693c9359e6728420d1e0e6b585.jpg)  
 FIGURE 9.7. A support vector classifier was fit using four different values of the tuning parameter C in (9.12)-(9.15). The largest value of C was used in the top left panel, and smaller values were used in the top right, bottom left, and bottom right panels. When C is large, then there is a high tolerance for observations being on the wrong side of the margin, and so the margin will be large. As C decreases, the tolerance for observations being on the wrong side of the margin decreases, and the margin narrows.
 
 the other classification methods that we have seen in preceding chapters, such as linear discriminant analysis. Recall that the LDA classification rule depends on the mean of all of the observations within each class, as well as the within-class covariance matrix computed using all of the observations. In contrast, logistic regression, unlike LDA, has very low sensitivity to observations far from the decision boundary. In fact we will see in Section 9.5 that the support vector classifier and logistic regression are closely related.
@@ -277,7 +277,7 @@ the other classification methods that we have seen in preceding chapters, such a
 # 9.3 Support Vector Machines
 
 We first discuss a general mechanism for converting a linear classifier into one that produces non-linear decision boundaries. We then introduce the support vector machine, which does this in an automatic way.
-![](../images/02cf50078d08d76fd3b5ad575a8291e888cf2c5c6b5be4e1dc0d52ccec1a176f.jpg)  
+![](../images/09-support-vector-machines/02cf50078d08d76fd3b5ad575a8291e888cf2c5c6b5be4e1dc0d52ccec1a176f.jpg)  
 FIGURE 9.8. Left: The observations fall into two classes, with a non-linear boundary between them. Right: The support vector classifier seeks a linear boundary, and consequently performs very poorly.
 
 # 9.3.1 Classification with Non-Linear Decision Boundaries
@@ -364,7 +364,7 @@ $$
 
 This is known as a polynomial kernel of degree $d$ , where $d$ is a positive integer. Using such a kernel with $d > 1$ , instead of the standard linear kernel (9.21), in the support vector classifier algorithm leads to a much more flexible decision boundary. It essentially amounts to fitting a support vector
 
-![](../images/a3196730ba2e7524080fc3aac59dea9c85a43c2500dd7c588e30c7e5b4426676.jpg)  
+![](../images/09-support-vector-machines/a3196730ba2e7524080fc3aac59dea9c85a43c2500dd7c588e30c7e5b4426676.jpg)  
 FIGURE 9.9. Left: An SVM with a polynomial kernel of degree 3 is applied to the non-linear data from Figure 9.8, resulting in a far more appropriate decision rule. Right: An SVM with a radial kernel is applied. In this example, either kernel is capable of capturing the decision boundary.
 
 classifier in a higher-dimensional space involving polynomials of degree d, rather than in the original feature space. When the support vector classifier is combined with a non-linear kernel such as $(9.22)$ , the resulting classifier is known as a support vector machine. Note that in this case the (non-linear) function has the form
@@ -387,7 +387,7 @@ In (9.24), $\gamma$ is a positive constant. The right-hand panel of Figure 9.9 s
 
 How does the radial kernel (9.24) actually work? If a given test observation $x^{*} = (x_{1}^{*},\dots,x_{p}^{*})^{T}$ is far from a training observation $x_{i}$ in terms of Euclidean distance, then $\sum_{j = 1}^{p}(x_{j}^{*} - x_{ij})^{2}$ will be large, and so $K(x^{*},x_{i}) = \exp (-\gamma \sum_{j = 1}^{p}(x_{j}^{*} - x_{ij})^{2})$ will be tiny. This means that in (9.23), $x_{i}$ will play virtually no role in $f(x^{*})$ . Recall that the predicted class label for the test observation $x^{*}$ is based on the sign of $f(x^{*})$ . In other words, training observations that are far from $x^{*}$ will play essentially no role in the predicted class label for $x^{*}$ . This means that the radial kernel has very local
 
-![](../images/a0cfcbe0b8d27c2173cf99d24e24f9a203685b15e2a650a2bf94c35ce1730f1e.jpg)  
+![](../images/09-support-vector-machines/a0cfcbe0b8d27c2173cf99d24e24f9a203685b15e2a650a2bf94c35ce1730f1e.jpg)  
 FIGURE 9.10. ROC curves for the Heart data training set. Left: The support vector classifier and LDA are compared. Right: The support vector classifier is compared to an SVM using a radial basis kernel with $\gamma = 10^{-3}$ , $10^{-2}$ , and $10^{-1}$ .
 
 behavior, in the sense that only nearby training observations have an effect on the class label of a test observation.
@@ -400,7 +400,7 @@ In Chapter 8 we apply decision trees and related methods to the Heart data. The 
 
 We first fit LDA and the support vector classifier to the training data. Note that the support vector classifier is equivalent to an SVM using a polynomial kernel of degree d = 1. The left-hand panel of Figure 9.10 displays ROC curves (described in Section 4.4.2) for the training set predictions for both LDA and the support vector classifier. Both classifiers compute scores of the form $\hat{f}(X) = \hat{\beta}_{0} + \hat{\beta}_{1}X_{1} + \hat{\beta}_{2}X_{2} + \cdots + \hat{\beta}_{p}X_{p}$ for each observation. For any given cutoff t, we classify observations into the heart disease or no heart disease categories depending on whether $\hat{f}(X) < t$ or $\hat{f}(X) \geq t$ . The ROC curve is obtained by forming these predictions and computing the false positive and true positive rates for a range of values of t. An optimal classifier will hug the top left corner of the ROC plot. In this instance
 
-![](../images/2a1f9a0e49e070d83e0bc64a9b1474e0501d4538ce21ad1807869c618b67d8bf.jpg)  
+![](../images/09-support-vector-machines/2a1f9a0e49e070d83e0bc64a9b1474e0501d4538ce21ad1807869c618b67d8bf.jpg)  
 FIGURE 9.11. ROC curves for the test set of the Heart data. Left: The support vector classifier and LDA are compared. Right: The support vector classifier is compared to an SVM using a radial basis kernel with $\gamma = 10^{-3}$ , $10^{-2}$ , and $10^{-1}$ .
 
 LDA and the support vector classifier both perform well, though there is a suggestion that the support vector classifier may be slightly superior.
@@ -436,7 +436,7 @@ $$
 
 where $\lambda$ is a nonnegative tuning parameter. When $\lambda$ is large then $\beta_{1},\ldots,\beta_{p}$ are small, more violations to the margin are tolerated, and a low-variance but high-bias classifier will result. When $\lambda$ is small then few violations to the margin will occur; this amounts to a high-variance but low-bias
 
-![](../images/537a9f0e6b7960c9ab6577c93cb529510208e037c00234527f8ed09ccbc1f0b0.jpg)
+![](../images/09-support-vector-machines/537a9f0e6b7960c9ab6577c93cb529510208e037c00234527f8ed09ccbc1f0b0.jpg)
 
 classifier. Thus, a small value of $\lambda$ in (9.25) amounts to a small value of C in (9.15). Note that the $\lambda\sum_{j=1}^{p}\beta_{j}^{2}$ term in (9.25) is the ridge penalty term from Section 6.2.1, and plays a similar role in controlling the bias-variance trade-off for the support vector classifier.
 
@@ -464,7 +464,7 @@ An interesting characteristic of the support vector classifier is that only supp
 
 When the support vector classifier and SVM were first introduced, it was thought that the tuning parameter C in $(9.15)$ was an unimportant “nuisance” parameter that could be set to some default value, like 1. However, the “Loss + Penalty” formulation $(9.25)$ for the support vector classifier indicates that this is not the case. The choice of tuning parameter is very important and determines the extent to which the model underfits or overfits the data, as illustrated, for example, in Figure 9.7.
 
-![](../images/134d407d23f00ae50163e7f79cb389ae29c0e392808fc03c56592057321d37f9.jpg)
+![](../images/09-support-vector-machines/134d407d23f00ae50163e7f79cb389ae29c0e392808fc03c56592057321d37f9.jpg)
 
 <details>
 <summary>line</summary>

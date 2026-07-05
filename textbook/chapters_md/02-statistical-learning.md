@@ -2,7 +2,7 @@
 
 # Statistical Learning
 
-![](../images/13a1e607b825311f07cf7647f6e62cca8d88aecef9e92a9206dac79fa1614a66.jpg)
+![](../images/02-statistical-learning/13a1e607b825311f07cf7647f6e62cca8d88aecef9e92a9206dac79fa1614a66.jpg)
 
 # 2.1 What Is Statistical Learning?
 
@@ -30,7 +30,7 @@ response
 dependent
 variable
 
-![](../images/83049f44aa0d4e4464443f2578674ba02ab87e0e6c56c7e53d8cfc56c2f7f80e.jpg)  
+![](../images/02-statistical-learning/83049f44aa0d4e4464443f2578674ba02ab87e0e6c56c7e53d8cfc56c2f7f80e.jpg)  
 FIGURE 2.1. The Advertising data set. The plot displays sales, in thousands of units, as a function of TV, radio, and newspaper budgets, in thousands of dollars, for 200 different markets. In each plot we show the simple least squares fit of sales to that variable, as described in Chapter 3. In other words, each blue line represents a simple model that can be used to predict sales using TV, radio, and newspaper, respectively.
 
 Here $f$ is some fixed but unknown function of $X_{1},\ldots ,X_{p}$ , and $\epsilon$ is a random error term, which is independent of $X$ and has mean zero. In this formulation, $f$ represents the systematic information that $X$ provides about $Y$ .
@@ -38,7 +38,7 @@ Here $f$ is some fixed but unknown function of $X_{1},\ldots ,X_{p}$ , and $\eps
 error term
 systematic
 
-![](../images/4be9158c1d1206ec20a647fdc3ac11ffafd1ba883678082fa3c739cb2206657f.jpg)  
+![](../images/02-statistical-learning/4be9158c1d1206ec20a647fdc3ac11ffafd1ba883678082fa3c739cb2206657f.jpg)  
 FIGURE 2.2. The Income data set. Left: The red dots are the observed values of income (in thousands of dollars) and years of education for 30 individuals. Right: The blue curve represents the true underlying relationship between income and years of education, which is generally unknown (but is known in this case because the data were simulated). The black lines represent the error associated with each observation. Note that some errors are positive (if an observation lies above the blue curve) and some are negative (if an observation lies below the curve). Overall, these errors have approximately mean zero.
 
 As another example, consider the left-hand panel of Figure 2.2, a plot of income versus years of education for 30 individuals in the Income data set. The plot suggests that one might be able to predict income using years of education. However, the function f that connects the input variable to the
@@ -69,7 +69,7 @@ The accuracy of $\hat{Y}$ as a prediction for Y depends on two quantities, which
 
 Why is the irreducible error larger than zero? The quantity $\epsilon$ may contain unmeasured variables that are useful in predicting $Y$ : since we don't
 
-![](../images/5e6c186fc9a03a83d1af12db447e8a318759c256aee5922ce978ed90f29ceba3.jpg)
+![](../images/02-statistical-learning/5e6c186fc9a03a83d1af12db447e8a318759c256aee5922ce978ed90f29ceba3.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -219,7 +219,7 @@ $$
 
 This is a linear model, which will be discussed extensively in Chapter 3. Once we have assumed that f is linear, the problem of estimating f is greatly simplified. Instead of having to estimate an entirely arbitrary p-dimensional function $f(X)$ , one only needs to estimate the $p + 1$ coefficients $\beta_{0}, \beta_{1}, \ldots, \beta_{p}$ .
 
-![](../images/263d8b6f9e17fd6d10e641a734791cce93cb3b2280ca38c251ef061db3ad7aac.jpg)
+![](../images/02-statistical-learning/263d8b6f9e17fd6d10e641a734791cce93cb3b2280ca38c251ef061db3ad7aac.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -346,7 +346,7 @@ $$
 \text {income} \approx \beta_ {0} + \beta_ {1} \times \text {education} + \beta_ {2} \times \text {seniority}.
 $$
 
-![](../images/64feb2b3751e2b049ff476a131eb819495aeb11d5bdd41c656be14093555ed29.jpg)
+![](../images/02-statistical-learning/64feb2b3751e2b049ff476a131eb819495aeb11d5bdd41c656be14093555ed29.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -473,7 +473,7 @@ An example of a non-parametric approach to fitting the Income data is shown in F
 thin-plate
 spline
 
-![](../images/7b298c22489483023c76e4358593ba44206315065c8a102798c62f462aba4ac6.jpg)
+![](../images/02-statistical-learning/7b298c22489483023c76e4358593ba44206315065c8a102798c62f462aba4ac6.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -597,7 +597,7 @@ As we have seen, there are advantages and disadvantages to parametric and non-pa
 
 Of the many methods that we examine in this book, some are less flexible, or more restrictive, in the sense that they can produce just a relatively small range of shapes to estimate f. For example, linear regression is a relatively inflexible approach, because it can only generate linear functions such as the lines shown in Figure 2.1 or the plane shown in Figure 2.4. Other methods, such as the thin plate splines shown in Figures 2.5 and 2.6, are considerably more flexible because they can generate a much wider range of possible shapes to estimate f.
 
-![](../images/fdb0b410fd75934f0306c11959e5e90201296c1a79b39581e24d7bada84e0a23.jpg)
+![](../images/02-statistical-learning/fdb0b410fd75934f0306c11959e5e90201296c1a79b39581e24d7bada84e0a23.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -626,7 +626,7 @@ Most statistical learning problems fall into one of two categories: supervised o
 
 By contrast, unsupervised learning describes the somewhat more challenging situation in which for every observation $i = 1, \ldots, n$ , we observe a vector of measurements $x_{i}$ but no associated response $y_{i}$ . It is not possible to fit a linear regression model, since there is no response variable to predict. In this setting, we are in some sense working blind; the situation is referred to as unsupervised because we lack a response variable that can supervise our analysis. What sort of statistical analysis is possible? We can seek to understand the relationships between the variables or between the observations. One statistical learning tool that we may use in this setting is cluster analysis, or clustering. The goal of cluster analysis is to ascertain, on the basis of $x_{1}, \ldots, x_{n}$ , whether the observations fall into relatively distinct groups. For example, in a market segmentation study we might observe multiple characteristics (variables) for potential customers, such as zip code, family income, and shopping habits. We might believe that the customers fall into different groups, such as big spenders versus low spenders. If the information about each customer's spending patterns were available, then a supervised analysis would be possible. However, this information is not available—that is, we do not know whether each potential customer is a big spender or not. In this setting, we can try to cluster the customers on the basis of the variables measured, in order to identify
 
-![](../images/920051327b4177d3cca109b36b5d85a99001047ee3b0a36468ac78c71a75a4e1.jpg)  
+![](../images/02-statistical-learning/920051327b4177d3cca109b36b5d85a99001047ee3b0a36468ac78c71a75a4e1.jpg)  
 FIGURE 2.8. A clustering data set involving three groups. Each group is shown using a different colored symbol. Left: The three groups are well-separated. In this setting, a clustering approach should successfully identify the three groups. Right: There is some overlap among the groups. Now the clustering task is more challenging.
 
 distinct groups of potential customers. Identifying such groups can be of interest because it might be that the groups differ with respect to some property of interest, such as spending habits.
@@ -690,7 +690,7 @@ MSE
 
 test data
 
-![](../images/c89739d672815875e906d5673a7d7e28becaf3ae26ad5ace7e0e6b68defa4258.jpg)  
+![](../images/02-statistical-learning/c89739d672815875e906d5673a7d7e28becaf3ae26ad5ace7e0e6b68defa4258.jpg)  
 FIGURE 2.9. Left: Data simulated from f, shown in black. Three estimates of f are shown: the linear regression line (orange curve), and two smoothing spline fits (blue and green curves). Right: Training MSE (grey curve), test MSE (red curve), and minimum possible test MSE over all methods (dashed line). Squares represent the training and test MSEs for the three fits shown in the left-hand panel.
 
 If these are approximately equal to $y_{1}, y_{2}, \ldots, y_{n}$ , then the training MSE given by (2.5) is small. However, we are really not interested in whether $\hat{f}(x_{i}) \approx y_{i}$ ; instead, we want to know whether $\hat{f}(x_{0})$ is approximately equal to $y_{0}$ , where $(x_{0}, y_{0})$ is a previously unseen test observation not used to train the statistical learning method. We want to choose the method that gives the lowest test MSE, as opposed to the lowest training MSE. In other words, if we had a large number of test observations, we could compute
@@ -715,7 +715,7 @@ In this example, we know the true function f, and so we can also compute the tes
 
 In the right-hand panel of Figure 2.9, as the flexibility of the statistical learning method increases, we observe a monotone decrease in the training MSE and a U-shape in the test MSE. This is a fundamental property of statistical learning that holds regardless of the particular data set at hand and regardless of the statistical method being used. As model flexibility increases, the training MSE will decrease, but the test MSE may not. When a given method yields a small training MSE but a large test MSE, we are said to be overfitting the data. This happens because our statistical learning procedure is working too hard to find patterns in the training data, and may be picking up some patterns that are just caused by random chance rather than by true properties of the unknown function f. When we overfit the training data, the test MSE will be very large because the supposed
 
-![](../images/e670eac24db477564aae6972d03fe8dca8b3fa53ea797650b3510638b50b68e1.jpg)  
+![](../images/02-statistical-learning/e670eac24db477564aae6972d03fe8dca8b3fa53ea797650b3510638b50b68e1.jpg)  
 FIGURE 2.10. Details are as in Figure 2.9, using a different true f that is much closer to linear. In this setting, linear regression provides a very good fit to the data.
 
 patterns that the method found in the training data simply don't exist in the test data. Note that regardless of whether or not overfitting has occurred, we almost always expect the training MSE to be smaller than the test MSE because most statistical learning methods either directly or indirectly seek to minimize the training MSE. Overfitting refers specifically to the case in which a less flexible model would have yielded a smaller test MSE.
@@ -731,7 +731,7 @@ validation
 
 The U-shape observed in the test MSE curves (Figures 2.9–2.11) turns out to be the result of two competing properties of statistical learning methods.
 
-![](../images/7a0dab7c96ef7844b1beed3fe23048b68b77083386b07eb7a4dc3205d3a738ad.jpg)  
+![](../images/02-statistical-learning/7a0dab7c96ef7844b1beed3fe23048b68b77083386b07eb7a4dc3205d3a738ad.jpg)  
 FIGURE 2.11. Details are as in Figure 2.9, using a different f that is far from linear. In this setting, linear regression provides a very poor fit to the data.
 
 Though the mathematical proof is beyond the scope of this book, it is possible to show that the expected test MSE, for a given value $x_{0}$ , can always be decomposed into the sum of three fundamental quantities: the variance of $\hat{f}(x_{0})$ , the squared bias of $\hat{f}(x_{0})$ and the variance of the error terms $\epsilon$ . That is,
@@ -751,7 +751,7 @@ What do we mean by the variance and bias of a statistical learning method? Varia
 
 expected test MSE
 
-![](../images/55a31e20c3b4321c195c824b5abb66e70541e3e70ecf2eab5fe3b7b8c7870684.jpg)  
+![](../images/02-statistical-learning/55a31e20c3b4321c195c824b5abb66e70541e3e70ecf2eab5fe3b7b8c7870684.jpg)  
 FIGURE 2.12. Squared bias (blue curve), variance (orange curve), $Var(\epsilon)$ (dashed line), and test MSE (red curve) for the three data sets in Figures 2.9–2.11. The vertical dotted line indicates the flexibility level corresponding to the smallest test MSE.
 
 In contrast, the orange least squares line is relatively inflexible and has low variance, because moving any single observation will likely cause only a small shift in the position of the line.
@@ -817,7 +817,7 @@ Bayes
 decision
 boundary
 
-![](../images/ad5736018aad6615ae50d9677b7e63c753f0cdaef43d5712d0e68605034b94ae.jpg)
+![](../images/02-statistical-learning/ad5736018aad6615ae50d9677b7e63c753f0cdaef43d5712d0e68605034b94ae.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -865,11 +865,11 @@ The choice of $K$ has a drastic effect on the KNN classifier obtained. Figure 2.
 
 Just as in the regression setting, there is not a strong relationship between the training error rate and the test error rate. With K = 1, the KNN training error rate is 0, but the test error rate may be quite high. In general, as we use more flexible classification methods, the training error rate will decline but the test error rate may not. In Figure 2.17, we have plotted the KNN test and training errors as a function of 1/K. As 1/K increases, the method becomes more flexible. As in the regression setting, the training error rate consistently declines as the flexibility increases. However, the test error exhibits a characteristic U-shape, declining at first (with a minimum at approximately K = 10) before increasing again when the method becomes excessively flexible and overfits.
 
-![](../images/a00d51c7ba738012c347b9a1b807dc3b2293619663e8df5d8c29b270932087ed.jpg)  
+![](../images/02-statistical-learning/a00d51c7ba738012c347b9a1b807dc3b2293619663e8df5d8c29b270932087ed.jpg)  
 FIGURE 2.14. The KNN approach, using K = 3, is illustrated in a simple situation with six blue observations and six orange observations. Left: a test observation at which a predicted class label is desired is shown as a black cross. The three closest points to the test observation are identified, and it is predicted that the test observation belongs to the most commonly-occurring class, in this case blue. Right: The KNN decision boundary for this example is shown in black. The blue grid indicates the region in which a test observation will be assigned to the blue class, and the orange grid indicates the region in which it will be assigned to the orange class.
 
 KNN: K=10  
-![](../images/7900cbc89aa0bdf08b3b1d0ef590bd72b8ce4f633ac283e84ddc58ab36f09ac1.jpg)
+![](../images/02-statistical-learning/7900cbc89aa0bdf08b3b1d0ef590bd72b8ce4f633ac283e84ddc58ab36f09ac1.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -885,10 +885,10 @@ FIGURE 2.15. The black curve indicates the KNN decision boundary on the data fro
 
 In both the regression and classification settings, choosing the correct level of flexibility is critical to the success of any statistical learning method. The bias-variance tradeoff, and the resulting U-shape in the test error, can make this a difficult task. In Chapter 5, we return to this topic and discuss
 
-![](../images/02a3955ccfd13dcebf78af88384d4c43cefaf7aa1892aafdedc0d973a9872961.jpg)  
+![](../images/02-statistical-learning/02a3955ccfd13dcebf78af88384d4c43cefaf7aa1892aafdedc0d973a9872961.jpg)  
 FIGURE 2.16. A comparison of the KNN decision boundaries (solid black curves) obtained using K = 1 and K = 100 on the data from Figure 2.13. With K = 1, the decision boundary is overly flexible, while with K = 100 it is not sufficiently flexible. The Bayes decision boundary is shown as a purple dashed line.
 
-![](../images/600a73c7c6b9fbca0258cf43dcb067a2f178db7ddedf6aaf730e1f51cc242abc.jpg)
+![](../images/02-statistical-learning/600a73c7c6b9fbca0258cf43dcb067a2f178db7ddedf6aaf730e1f51cc242abc.jpg)
 
 <details>
 <summary>line</summary>

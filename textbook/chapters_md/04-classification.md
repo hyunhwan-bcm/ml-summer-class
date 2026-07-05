@@ -22,7 +22,7 @@ We have stated that linear regression is not appropriate in the case of a qualit
 
 Suppose that we are trying to predict the medical condition of a patient in the emergency room on the basis of her symptoms. In this simplified example, there are three possible diagnoses: stroke, drug overdose, and
 
-![](../images/9a677de471c403769b8fefce8a0983f0fef8a27d71b8dedaf5cadd09b616e25a.jpg)  
+![](../images/04-classification/9a677de471c403769b8fefce8a0983f0fef8a27d71b8dedaf5cadd09b616e25a.jpg)  
 FIGURE 4.1. The Default data set. Left: The annual incomes and monthly credit card balances of a number of individuals. The individuals who defaulted on their credit card payments are shown in orange, and those who did not are shown in blue. Center: Boxplots of balance as a function of default status. Right: Boxplots of income as a function of default status.
 
 epileptic seizure. We could consider encoding these values as a quantitative response variable, Y, as follows:
@@ -69,7 +69,7 @@ $$
 
 The values of $\Pr(default = \text{Yes}|balance)$ , which we abbreviate $p(\text{balance})$ , will range between 0 and 1. Then for any given value of balance, a prediction can be made for default. For example, one might predict default = Yes
 
-![](../images/26294f244b400e4294a870e5edfb54c9646f034cc84cc99b4badec1a320e9990.jpg)  
+![](../images/04-classification/26294f244b400e4294a870e5edfb54c9646f034cc84cc99b4badec1a320e9990.jpg)  
 FIGURE 4.2. Classification using the Default data. Left: Estimated probability of default using linear regression. Some estimated probabilities are negative! The orange ticks indicate the 0/1 values coded for default (No or Yes). Right: Predicted probabilities of default using logistic regression. All probabilities lie between 0 and 1.
 
 for any individual for whom $p(\text{balance}) > 0.5$ . Alternatively, if a company wishes to be conservative in predicting individuals who are at risk for default, then they may choose to use a lower threshold, such as $p(\text{balance}) > 0.1$ .
@@ -190,7 +190,7 @@ Table 4.3 shows the coefficient estimates for a logistic regression model that u
 
 The right-hand panel of Figure 4.3 provides an explanation for this discrepancy. The variables student and balance are correlated. Students tend to hold higher levels of debt, which is in turn associated with higher probability of default. In other words, students are more likely to have large credit card balances, which, as we know from the left-hand panel of Figure 4.3, tend to be associated with high default rates. Thus, even though an individual student with a given credit card balance will tend to have a lower probability of default than a non-student with the same credit card balance, the fact that students on the whole tend to have higher credit card balances means that overall, students tend to default at a higher rate than non-students. This is an important distinction for a credit card company that is trying to determine to whom they should offer credit. A student is riskier than a non-student if no information about the student's credit card
 
-![](../images/9eac331daaa14c68f440c09e55f2d42ba6b40d68f92de445854349b7d0b7499b.jpg)  
+![](../images/04-classification/9eac331daaa14c68f440c09e55f2d42ba6b40d68f92de445854349b7d0b7499b.jpg)  
 FIGURE 4.3. Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown.
 
 balance is available. However, that student is less risky than a non-student with the same credit card balance!
@@ -312,7 +312,7 @@ $$
 normal
 Gaussian
 
-![](../images/f8def18a1de5f7fa69f2128afa49adf1e56339318757a7d998cb7c9a3e25b819.jpg)  
+![](../images/04-classification/f8def18a1de5f7fa69f2128afa49adf1e56339318757a7d998cb7c9a3e25b819.jpg)  
 FIGURE 4.4. Left: Two one-dimensional normal density functions are shown. The dashed vertical line represents the Bayes decision boundary. Right: 20 observations were drawn from each of the two classes, and are shown as histograms. The Bayes decision boundary is again shown as a dashed vertical line. The solid vertical line represents the LDA decision boundary estimated from the training data.
 
 X = x to the class for which (4.17) is largest. Taking the log of (4.17) and rearranging the terms, it is not hard to show $^{3}$ that this is equivalent to assigning the observation to the class for which
@@ -363,7 +363,7 @@ The right-hand panel of Figure 4.4 displays a histogram of a random sample of 20
 
 To reiterate, the LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean and a common variance $\sigma^{2}$ , and plugging estimates for these parameters into the Bayes classifier. In Section 4.4.3, we will consider a less stringent set of assumptions, by allowing the observations in the kth class to have a class-specific variance, $\sigma_{k}^{2}$ .
 
-![](../images/301239f1b7c3302a3d0a648bf912f026be6e090fbb9519143ec783a5a02bf267.jpg)  
+![](../images/04-classification/301239f1b7c3302a3d0a648bf912f026be6e090fbb9519143ec783a5a02bf267.jpg)  
 FIGURE 4.5. Two multivariate Gaussian density functions are shown, with p = 2. Left: The two predictors are uncorrelated. Right: The two variables have a correlation of 0.7.
 
 # 4.4.2 Linear Discriminant Analysis for $p > 1$
@@ -381,7 +381,7 @@ In the case of p > 1 predictors, the LDA classifier assumes that the observation
 multivariate
 Gaussian
 
-![](../images/fff7e3348c352fca0d3341501be4e671884c01de2f7fee9486c81022d3f9bf91.jpg)  
+![](../images/04-classification/fff7e3348c352fca0d3341501be4e671884c01de2f7fee9486c81022d3f9bf91.jpg)  
 FIGURE 4.6. An example with three classes. The observations from each class are drawn from a multivariate Gaussian distribution with p = 2, with a class-specific mean vector and a common covariance matrix. Left: Ellipses that contain 95 % of the probability for each of the three classes are shown. The dashed lines are the Bayes decision boundaries. Right: 20 observations were generated from each class, and the corresponding LDA decision boundaries are indicated using solid black lines. The Bayes decision boundaries are once again shown as dashed lines.
 
 to the class for which
@@ -445,7 +445,7 @@ The error rates that result from taking this approach are shown in Table 4.5. No
 
 TABLE 4.5. A confusion matrix compares the LDA predictions to the true default statuses for the 10,000 training observations in the Default data set, using a modified threshold value that predicts default for any individuals whose posterior default probability exceeds 20 %.
 
-![](../images/828217bcefc645a8c02dc3b7a1c627e1d074977b94cf604b5d6e8345f9d0494a.jpg)
+![](../images/04-classification/828217bcefc645a8c02dc3b7a1c627e1d074977b94cf604b5d6e8345f9d0494a.jpg)
 
 <details>
 <summary>roc</summary>
@@ -515,7 +515,7 @@ The ROC curve is a popular graphic for simultaneously displaying the two types o
 
 ROC curve
 
-![](../images/17452929ae72b4a156a8ad39c3053f9673f9fddbcea11103ed5b919738c9a41e.jpg)
+![](../images/04-classification/17452929ae72b4a156a8ad39c3053f9673f9fddbcea11103ed5b919738c9a41e.jpg)
 
 <details>
 <summary>roc</summary>
@@ -578,7 +578,7 @@ is largest. So the QDA classifier involves plugging estimates for $\Sigma_{k}$ ,
 
 Why does it matter whether or not we assume that the K classes share a common covariance matrix? In other words, why would one prefer LDA to
 
-![](../images/229f13fd3a1f0b3d4c53dcf4fcd70efca95a89aaeea3853da31d993651e219e7.jpg)  
+![](../images/04-classification/229f13fd3a1f0b3d4c53dcf4fcd70efca95a89aaeea3853da31d993651e219e7.jpg)  
 FIGURE 4.9. Left: The Bayes (purple dashed), LDA (black dotted), and QDA (green solid) decision boundaries for a two-class problem with $\Sigma_{1} = \Sigma_{2}$ . The shading indicates the QDA decision rule. Since the Bayes decision boundary is linear, it is more accurately approximated by LDA than by QDA. Right: Details are as given in the left-hand panel, except that $\Sigma_{1} \neq \Sigma_{2}$ . Since the Bayes decision boundary is non-linear, it is more accurately approximated by QDA than by LDA.
 
 QDA, or vice-versa? The answer lies in the bias-variance trade-off. When there are $p$ predictors, then estimating a covariance matrix requires estimating $p(p + 1) / 2$ parameters. QDA estimates a separate covariance matrix for each class, for a total of $Kp(p + 1) / 2$ parameters. With 50 predictors this is some multiple of 1,275, which is a lot of parameters. By instead assuming that the $K$ classes share a common covariance matrix, the LDA model becomes linear in $x$ , which means there are $Kp$ linear coefficients to estimate. Consequently, LDA is a much less flexible classifier than QDA, and so has substantially lower variance. This can potentially lead to improved prediction performance. But there is a trade-off: if LDA's assumption that the $K$ classes share a common covariance matrix is badly off, then LDA can suffer from high bias. Roughly speaking, LDA tends to be a better bet than QDA if there are relatively few training observations and so reducing variance is crucial. In contrast, QDA is recommended if the training set is very large, so that the variance of the classifier is not a major concern, or if the assumption of a common covariance matrix for the $K$ classes is clearly untenable.
@@ -639,10 +639,10 @@ $$
 We now consider the naive Bayes classifier in a toy example with p = 3 predictors and K = 2 classes. The first two predictors are quantitative, and the third predictor is qualitative with three levels. Suppose further that $\hat{\pi}_{1} = \hat{\pi}_{2} = 0.5$ . The estimated density functions $\hat{f}_{kj}$ for k = 1, 2 and j = 1, 2, 3 are displayed in Figure 4.10. Now suppose that we wish to classify a new observation, $x^{*} = (0.4, 1.5, 1)^{T}$ . It turns out that in this
 
 Density estimates for class k=1  
-![](../images/b71824376afb8120ae294eb18e7c45e1555fba17e0544c1fd6b21dd294ac04b3.jpg)
+![](../images/04-classification/b71824376afb8120ae294eb18e7c45e1555fba17e0544c1fd6b21dd294ac04b3.jpg)
 
 Density estimates for class k=2  
-![](../images/5913f29b897a37a0be441a2f8a6379ce8befe4c7254510c261f9902f5613a896.jpg)
+![](../images/04-classification/5913f29b897a37a0be441a2f8a6379ce8befe4c7254510c261f9902f5613a896.jpg)
 
 FIGURE 4.10. In the toy example in Section 4.4.4, we generate data with p = 3 predictors and K = 2 classes. The first two predictors are quantitative, and the third predictor is qualitative with three levels. In each class, the estimated density for each of the three predictors is displayed. If the prior probabilities for the two classes are equal, then the observation $x^{*} = (0.4, 1.5, 1)^{T}$ has a 94.4% posterior probability of belonging to the first class.
 
@@ -732,7 +732,7 @@ We now compare the empirical (practical) performance of logistic regression, LDA
 
 In each of the six scenarios, there were $p = 2$ quantitative predictors. The scenarios were as follows:
 
-![](../images/def845526a1626e1f33cca9abd35de7ed3aad253dee8e81c07548639af639fcf.jpg)  
+![](../images/04-classification/def845526a1626e1f33cca9abd35de7ed3aad253dee8e81c07548639af639fcf.jpg)  
 FIGURE 4.11. Boxplots of the test error rates for each of the linear scenarios described in the main text.
 
 Scenario 1: There were 20 training observations in each of two classes. The observations within each class were uncorrelated random normal variables with a different mean in each class. The left-hand panel of Figure 4.11 shows that LDA performed well in this setting, as one would expect since this is the model assumed by LDA. Logistic regression also performed quite well, since it assumes a linear decision boundary. KNN performed poorly because it paid a price in terms of variance that was not offset by a reduction in bias. QDA also performed worse than LDA, since it fit a more flexible classifier than necessary. The performance of naive Bayes was slightly better than QDA, because the naive Bayes assumption of independent predictors is correct.
@@ -743,7 +743,7 @@ Scenario 3: As in the previous scenario, there is substantial negative correlati
 
 Scenario 4: The data were generated from a normal distribution, with a correlation of 0.5 between the predictors in the first class, and correlation of -0.5 between the predictors in the second class. This setup corresponded to the QDA assumption, and resulted in quadratic decision boundaries. The left-hand panel of Figure 4.12 shows that QDA outperformed all of the
 
-![](../images/6c15ece33b93339c587d1867a11aee0f403e1c39b2d00687a06f622ad5767394.jpg)  
+![](../images/04-classification/6c15ece33b93339c587d1867a11aee0f403e1c39b2d00687a06f622ad5767394.jpg)  
 FIGURE 4.12. Boxplots of the test error rates for each of the non-linear scenarios described in the main text.
 
 other approaches. The naive Bayes assumption of independent predictors is violated, so naive Bayes performs poorly.
@@ -776,7 +776,7 @@ To begin, we consider predicting bikers using linear regression. The results are
 
 We see, for example, that a progression of weather from clear to cloudy results in, on average, 12.89 fewer bikers per hour; however, if the weather progresses further to rain or snow, then this further results in 53.60 fewer bikers per hour. Figure 4.13 displays the coefficients associated with mnth
 
-![](../images/5aad8e55dfc376179efbfcabe6549e9b114d34810a87f778b395a295c87f20b9.jpg)  
+![](../images/04-classification/5aad8e55dfc376179efbfcabe6549e9b114d34810a87f778b395a295c87f20b9.jpg)  
 FIGURE 4.13. A least squares linear regression model was fit to predict bikers in the Bikeshare data set. Left: The coefficients associated with the month of the year. Bike usage is highest in the spring and fall, and lowest in the winter. Right: The coefficients associated with the hour of the day. Bike usage is highest during peak commute times, and lowest overnight.
 
 and the coefficients associated with hr. We see that bike usage is highest in the spring and fall, and lowest during the winter months. Furthermore, bike usage is greatest around rush hour (9 AM and 6 PM), and lowest overnight. Thus, at first glance, fitting a linear regression model to the Bikeshare data set seems to provide reasonable and intuitive results.
@@ -787,7 +787,7 @@ Furthermore, it is reasonable to suspect that when the expected value of bikers 
 
 Finally, the response bikers is integer-valued. But under a linear model, $Y = \beta_{0} + \sum_{j=1}^{p} X_{j} \beta_{j} + \epsilon$ , where $\epsilon$ is a continuous-valued error term. This means that in a linear model, the response Y is necessarily continuous-valued (quantitative). Thus, the integer nature of the response bikers suggests that a linear regression model is not entirely satisfactory for this data set.
 
-![](../images/2d5c231900bbac55c51cbbc492e0e4fc48ce6cdcdd2de81d5fcbf034b860547c.jpg)  
+![](../images/04-classification/2d5c231900bbac55c51cbbc492e0e4fc48ce6cdcdd2de81d5fcbf034b860547c.jpg)  
 FIGURE 4.14. Left: On the Bikeshare dataset, the number of bikers is displayed on the y-axis, and the hour of the day is displayed on the x-axis. Jitter was applied for ease of visualization. For the most part, as the mean number of bikers increases, so does the variance in the number of bikers. A smoothing spline fit is shown in green. Right: The log of the number of bikers is now displayed on the y-axis.
 
 Some of the problems that arise when fitting a linear regression model to the Bikeshare data can be overcome by transforming the response; for instance, we can fit the model
@@ -808,7 +808,7 @@ $$
 \Pr (Y = k) = \frac {e ^ {- \lambda} \lambda^ {k}}{k !} \text {for} k = 0, 1, 2, \dots . \tag {4.35}
 $$
 
-![](../images/b359ffe74f1f32ad53c1fd4ed58f0a5b8ef320a85442c41ad5192228ccf2125c.jpg)
+![](../images/04-classification/b359ffe74f1f32ad53c1fd4ed58f0a5b8ef320a85442c41ad5192228ccf2125c.jpg)
 
 Poisson
 regression
@@ -847,7 +847,7 @@ We now fit a Poisson regression model to the Bikeshare data set. The results are
 
 TABLE 4.11. Results for a Poisson regression model fit to predict bikers in the Bikeshare data. The predictors mnth and hr are omitted from this table due to space constraints, and can be seen in Figure 4.15. For the qualitative variable weathersit, the baseline corresponds to clear skies.
 
-![](../images/1bd92f510e3d0c84cb5cfe7533a2f5afe2fc2c50d953db66849a659228270a95.jpg)  
+![](../images/04-classification/1bd92f510e3d0c84cb5cfe7533a2f5afe2fc2c50d953db66849a659228270a95.jpg)  
 FIGURE 4.15. A Poisson regression model was fit to predict bikers in the Bikeshare data set. Left: The coefficients associated with the month of the year. Bike usage is highest in the spring and fall, and lowest in the winter. Right: The coefficients associated with the hour of the day. Bike usage is highest during peak commute times, and lowest overnight.
 
 and lowest during the winter and in the early morning hours. Moreover, bike usage increases as the temperature increases, and decreases as the weather worsens. Interestingly, the coefficient associated with workingday is statistically significant under the Poisson regression model, but not under the linear regression model.
@@ -866,7 +866,7 @@ overdispersion
 
 We have now discussed three types of regression models: linear, logistic and Poisson. These approaches share some common characteristics:
 
-![](../images/9d881c8196205e2d0531cd19ad179622bfa7c55f5cea7261964e0b2b2427f863.jpg)
+![](../images/04-classification/9d881c8196205e2d0531cd19ad179622bfa7c55f5cea7261964e0b2b2427f863.jpg)
 
 1. Each approach uses predictors $X_{1},\ldots ,X_{p}$ to predict a response $Y$ . We assume that, conditional on $X_{1},\ldots ,X_{p}$ , $Y$ belongs to a certain family of distributions. For linear regression, we typically assume that $Y$ follows a Gaussian or normal distribution. For logistic regression, we assume that $Y$ follows a Bernoulli distribution. Finally, for Poisson regression, we assume that $Y$ follows a Poisson distribution.
 
@@ -2038,7 +2038,7 @@ Suppose that we have K classes, and that if an observation belongs to the kth cl
 Hint: For this problem, you should follow the arguments laid out in Section 4.4.1, but without making the assumption that $\sigma_{1}^{2}=\cdots=\sigma_{K}^{2}$ .  
 4. When the number of features p is large, there tends to be a deterioration in the performance of KNN and other local approaches that perform prediction using only observations that are near the test observation for which a prediction must be made. This phenomenon is known as the curse of dimensionality, and it ties into the fact that non-parametric approaches often perform poorly when p is large. We will now investigate this curse.
 
-![](../images/4614a2d7d19fa2aa6050541530e73bb5efa7582c3bef7a4fff48671492b2882d.jpg)  
+![](../images/04-classification/4614a2d7d19fa2aa6050541530e73bb5efa7582c3bef7a4fff48671492b2882d.jpg)  
 curse of di-
 mensionality
 
@@ -2081,11 +2081,11 @@ Hint: Recall that the density function for a normal random variable is $f(x) = \
 
 10. Equation 4.32 derived an expression for $\log \left(\frac{\Pr(Y = k|X = x)}{\Pr(Y = K|X = x)}\right)$ in the setting where $p > 1$ , so that the mean for the $k$ th class, $\mu_{k}$ , is a $p$ -dimensional vector, and the shared covariance $\Sigma$ is a $p \times p$ matrix. However, in the setting with $p = 1$ , (4.32) takes a simpler form, since the means $\mu_{1}, \ldots, \mu_{K}$ and the variance $\sigma^{2}$ are scalars. In this simpler setting, repeat the calculation in (4.32), and provide expressions for $a_{k}$ and $b_{kj}$ in terms of $\pi_{k}, \pi_{K}, \mu_{k}, \mu_{K}$ , and $\sigma^{2}$ .
 
-![](../images/349e095906fa9fc02ebb8b156115e2d23ac33629e8e2cf60ac9b84533b449057.jpg)
+![](../images/04-classification/349e095906fa9fc02ebb8b156115e2d23ac33629e8e2cf60ac9b84533b449057.jpg)
 
 11. Work out the detailed forms of $a_{k}$ , $b_{kj}$ , and $b_{kjl}$ in (4.33). Your answer should involve $\pi_{k}$ , $\pi_{K}$ , $\mu_{k}$ , $\mu_{K}$ , $\Sigma_{k}$ , and $\Sigma_{K}$ .
 
-![](../images/117fe3e727d9fc091016e4793fdd9ad16f89cc3d2b417962ee0315a4f223541f.jpg)
+![](../images/04-classification/117fe3e727d9fc091016e4793fdd9ad16f89cc3d2b417962ee0315a4f223541f.jpg)
 
 12. Suppose that you wish to classify an observation $X \in \mathbb{R}$ into apples and oranges. You fit a logistic regression model and find that
 

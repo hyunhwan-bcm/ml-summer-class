@@ -15,7 +15,7 @@ In order to motivate regression trees, we begin with a simple example.
 regression
 tree
 
-![](../images/054526ce49ec041bb6d64db4238807fc5e3799442c075a60f0817c1d335b8073.jpg)
+![](../images/08-tree-based-methods/054526ce49ec041bb6d64db4238807fc5e3799442c075a60f0817c1d335b8073.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -37,7 +37,7 @@ We use the Hitters data set to predict a baseball player's Salary based on Years
 
 Figure 8.1 shows a regression tree fit to this data. It consists of a series of splitting rules, starting at the top of the tree. The top split assigns observations having Years<4.5 to the left branch. $^{1}$ The predicted salary for these players is given by the mean response value for the players in the data set with Years<4.5. For such players, the mean log salary is 5.107, and so we make a prediction of $e^{5.107}$ thousands of dollars, i.e. \$165,174, for these players. Players with Years>=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. Overall, the tree stratifies or segments the players into three regions of predictor space: players who have played for four or fewer years, players who have played for five or more years and who made fewer than 118 hits last year, and players who have played for five or more years and who made at least 118 hits last year. These three regions can be written as $R_1 = \{X \mid \text{Years}<4.5\}$ , $R_2 = \{X \mid \text{Years}>=4.5$ , Hits<117.5}, and $R_3 = \{X \mid \text{Years}>=4.5$ , Hits>=117.5}. Figure 8.2 illustrates
 
-![](../images/8428359b7bf35fc8c19e426195d3ff7db9e3e1b716ec7db1d2f8510f6b6f348e.jpg)
+![](../images/08-tree-based-methods/8428359b7bf35fc8c19e426195d3ff7db9e3e1b716ec7db1d2f8510f6b6f348e.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -91,7 +91,7 @@ where $\hat{y}_{R_{1}}$ is the mean response for the training observations in $R
 
 Next, we repeat the process, looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS within
 
-![](../images/1c539d092d1c7e117642e7f8e4b89447bd592a5422109ee267802c826b46b5a7.jpg)  
+![](../images/08-tree-based-methods/1c539d092d1c7e117642e7f8e4b89447bd592a5422109ee267802c826b46b5a7.jpg)  
 FIGURE 8.3. Top Left: A partition of two-dimensional feature space that could not result from recursive binary splitting. Top Right: The output of recursive binary splitting on a two-dimensional example. Bottom Left: A tree corresponding to the partition in the top right panel. Bottom Right: A perspective plot of the prediction surface corresponding to that tree.
 
 each of the resulting regions. However, this time, instead of splitting the entire predictor space, we split one of the two previously identified regions. We now have three regions. Again, we look to split one of these three regions further, so as to minimize the RSS. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations.
@@ -138,7 +138,7 @@ A classification tree is very similar to a regression tree, except that it is us
 
 The task of growing a classification tree is quite similar to the task of growing a regression tree. Just as in the regression setting, we use recursive
 
-![](../images/02571549cceb4e3db989265012879b5f0cfead35d1f3738179ab4312a0fc3359.jpg)
+![](../images/08-tree-based-methods/02571549cceb4e3db989265012879b5f0cfead35d1f3738179ab4312a0fc3359.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -177,7 +177,7 @@ $$
 
 a measure of total variance across the $K$ classes. It is not hard to see that the Gini index takes on a small value if all of the $\hat{p}_{mk}$ 's are close to zero or one. For this reason the Gini index is referred to as a measure of
 
-![](../images/42fa234067b011f4aeceb688788c0d72e4d46cc2a9929c7448a1d20f173d6ada.jpg)
+![](../images/08-tree-based-methods/42fa234067b011f4aeceb688788c0d72e4d46cc2a9929c7448a1d20f173d6ada.jpg)
 
 <details>
 <summary>line</summary>
@@ -216,7 +216,7 @@ Figure 8.6 shows an example on the Heart data set. These data contain a binary o
 
 In our discussion thus far, we have assumed that the predictor variables take on continuous values. However, decision trees can be constructed even in the presence of qualitative predictor variables. For instance, in the Heart data, some of the predictors, such as Sex, Thal (Thallium stress test),
 
-![](../images/d12627209dc9a2d92066f6ef1f0dd67bb55986bb75534247128cab4483d70913.jpg)  
+![](../images/08-tree-based-methods/d12627209dc9a2d92066f6ef1f0dd67bb55986bb75534247128cab4483d70913.jpg)  
 FIGURE 8.6. Heart data. Top: The unpruned tree. Bottom Left: Cross-validation error, training, and test error, for different sizes of the pruned tree. Bottom Right: The pruned tree corresponding to the minimal cross-validation error.
 
 and ChestPain, are qualitative. Therefore, a split on one of these variables amounts to assigning some of the qualitative values to one branch and assigning the remaining to the other branch. In Figure 8.6, some of the internal nodes correspond to splitting qualitative variables. For instance, the top internal node corresponds to splitting Thal. The text Thal:a indicates that the left-hand branch coming out of that node consists of observations with the first value of the Thal variable (normal), and the right-hand node consists of the remaining observations (fixed or reversible defects). The text ChestPain:bc two splits down the tree on the left indicates that the left-hand branch coming out of that node consists of observations with the second and third values of the ChestPain variable, where the possible values are typical angina, atypical angina, non-anginal pain, and asymptomatic.
@@ -251,7 +251,7 @@ Decision trees for regression and classification have a number of advantages ove
 
 ▲ Trees are very easy to explain to people. In fact, they are even easier to explain than linear regression!
 
-![](../images/dc0cdb3adab97304aa12fe40f5ae13e79e4a24ae71d5f5532cb649a198e0b8ce.jpg)  
+![](../images/08-tree-based-methods/dc0cdb3adab97304aa12fe40f5ae13e79e4a24ae71d5f5532cb649a198e0b8ce.jpg)  
 FIGURE 8.7. Top Row: A two-dimensional classification example in which the true decision boundary is linear, and is indicated by the shaded regions. A classical approach that assumes a linear boundary (left) will outperform a decision tree that performs splits parallel to the axes (right). Bottom Row: Here the true decision boundary is non-linear. Here a linear model is unable to capture the true decision boundary (left), whereas a decision tree is successful (right).
 
 ▲ Some people believe that decision trees more closely mirror human decision-making than do the regression and classification approaches seen in previous chapters.  
@@ -293,7 +293,7 @@ $$
 
 bagging
 
-![](../images/83e2a4563e5ddf5f00d9274e38404c9236493ddb9646eb89f449d45417a8b789.jpg)
+![](../images/08-tree-based-methods/83e2a4563e5ddf5f00d9274e38404c9236493ddb9646eb89f449d45417a8b789.jpg)
 
 <details>
 <summary>line</summary>
@@ -336,7 +336,7 @@ As we have discussed, bagging typically results in improved accuracy over predic
 
 Although the collection of bagged trees is much more difficult to interpret than a single tree, one can obtain an overall summary of the importance of each predictor using the RSS (for bagging regression trees) or the Gini index (for bagging classification trees). In the case of bagging regression trees, we can record the total amount that the RSS (8.1) is decreased due to splits over a given predictor, averaged over all B trees. A large value indicates an important predictor. Similarly, in the context of bagging classification
 
-![](../images/1f72e25a3b59d962b56f7ba65ea708681d33a40ad930cf4da57bad5e948f37d9.jpg)
+![](../images/08-tree-based-methods/1f72e25a3b59d962b56f7ba65ea708681d33a40ad930cf4da57bad5e948f37d9.jpg)
 
 <details>
 <summary>bar</summary>
@@ -392,7 +392,7 @@ Recall that bagging involves creating multiple copies of the original training d
 
 boosting
 
-![](../images/4110d81a55e3aefe3d300daf68c4d0e70a85fc28a323171a65c7316b9ef754c4.jpg)
+![](../images/08-tree-based-methods/4110d81a55e3aefe3d300daf68c4d0e70a85fc28a323171a65c7316b9ef754c4.jpg)
 
 <details>
 <summary>line</summary>
@@ -465,7 +465,7 @@ Boosting has three tuning parameters:
 
 In Figure 8.11, we applied boosting to the 15-class cancer gene expression data set, in order to develop a classifier that can distinguish the normal class from the 14 cancer classes. We display the test error as a function of the total number of trees and the interaction depth d. We see that simple stumps with an interaction depth of one perform well if enough of them are included. This model outperforms the depth-two model, and both outperform a random forest. This highlights one difference between boosting and random forests: in boosting, because the growth of a particular tree takes into account the other trees that have already been grown, smaller
 
-![](../images/5750a74609fab8f132850db1eef2f6dc7d75af0042186b4f56f92e905a82c367.jpg)
+![](../images/08-tree-based-methods/5750a74609fab8f132850db1eef2f6dc7d75af0042186b4f56f92e905a82c367.jpg)
 
 <details>
 <summary>line</summary>
@@ -515,7 +515,7 @@ regression
 trees
 
 (a): $\hat{f}_{k}^{b-1}(X)$  
-![](../images/4fc9cf0123a5a4df342f92164b808b284a85ac21a9e89b1bf4a5ffe2feeb8a15.jpg)
+![](../images/08-tree-based-methods/4fc9cf0123a5a4df342f92164b808b284a85ac21a9e89b1bf4a5ffe2feeb8a15.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -534,7 +534,7 @@ graph TD
 (c): Possibility #2 for $\hat{f}_{k}^{b}(X)$
 
 (b): Possibility #1 for $\hat{f}_{k}^{b}(X)$  
-![](../images/ae673e04087dddb3c7a5c0491d3d0365e74f6824f718e4006c929f85c07aa5ce.jpg)
+![](../images/08-tree-based-methods/ae673e04087dddb3c7a5c0491d3d0365e74f6824f718e4006c929f85c07aa5ce.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -552,7 +552,7 @@ graph TD
 
 (d): Possibility #3 for $\hat{f}_k^b (X)$
 
-![](../images/c0331d4b56524428f7defa5a5441ee7d0bd3841ac5c8a3eef8a0ab44f783fde2.jpg)
+![](../images/08-tree-based-methods/c0331d4b56524428f7defa5a5441ee7d0bd3841ac5c8a3eef8a0ab44f783fde2.jpg)
 
 <details>
 <summary>wireframe</summary>
@@ -563,7 +563,7 @@ graph TD
 | 169.17 | 0.4079 |
 </details>
 
-![](../images/680bd1998c6fdc0b5764504271ae2c297587f0b32976dd91484379c000795672.jpg)
+![](../images/08-tree-based-methods/680bd1998c6fdc0b5764504271ae2c297587f0b32976dd91484379c000795672.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -634,7 +634,7 @@ A key element of the BART approach is that in Step 3(a)ii., we do not fit a fres
 
 Figure 8.13 shows the result of applying BART to the Heart data, using K = 200 trees, as the number of iterations is increased to 10,000. During the initial iterations, the test and training errors jump around a bit. After this initial burn-in period, the error rates settle down. We note that there is only a small difference between the training error and the test error, indicating that the tree perturbation process largely avoids overfitting.
 
-![](../images/7b6ccfc5c14337641eec63ce48824957ade64f982a1abcf9a41412f48bf643f6.jpg)
+![](../images/08-tree-based-methods/7b6ccfc5c14337641eec63ce48824957ade64f982a1abcf9a41412f48bf643f6.jpg)
 
 <details>
 <summary>line</summary>
@@ -1235,7 +1235,7 @@ Hint: In a setting with two classes, $\hat{p}_{m1} = 1 - \hat{p}_{m2}$ . You cou
 
 4. This question relates to the plots in Figure 8.14.
 
-![](../images/cb9ae44ffd55bbb42289f29ea23892863eebb06cdb27c930390f61a6fd0d4da4.jpg)  
+![](../images/08-tree-based-methods/cb9ae44ffd55bbb42289f29ea23892863eebb06cdb27c930390f61a6fd0d4da4.jpg)  
 FIGURE 8.14. Left: A partition of the predictor space corresponding to Exercise 4a. Right: A tree corresponding to Exercise 4b.
 
 (a) Sketch the tree corresponding to the partition of the predictor space illustrated in the left-hand panel of Figure 8.14. The numbers inside the boxes indicate the mean of $Y$ within each region.  

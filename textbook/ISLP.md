@@ -578,7 +578,7 @@ Index 597
 
 # Introduction
 
-![](images/9da473af07cba77e3e6c163da135e5335584efb017ec6a7f8cfeb05c42b27cd0.jpg)
+![](images/01-introduction/9da473af07cba77e3e6c163da135e5335584efb017ec6a7f8cfeb05c42b27cd0.jpg)
 
 # An Overview of Statistical Learning
 
@@ -588,7 +588,7 @@ Statistical learning refers to a vast set of tools for understanding data. These
 
 In this application (which we refer to as the Wage data set throughout this book), we examine a number of factors that relate to wages for a group of men from the Atlantic region of the United States. In particular, we wish to understand the association between an employee's age and education, as well as the calendar year, on his wage. Consider, for example, the left-hand panel of Figure 1.1, which displays wage versus age for each of the individuals in the data set. There is evidence that wage increases with age but then decreases again after approximately age 60. The blue line, which provides an estimate of the average wage for a given age, makes this trend clearer. Given an employee's age, we can use this curve to predict his wage. However, it is also clear from Figure 1.1 that there is a significant amount of variability associated with this average value, and so age alone is unlikely to provide an accurate prediction of a particular man's wage.
 
-![](images/5ef98b7be2df2eb710536cbbee1f6714c27b6a1db3be7e7c7011576d5cad9e70.jpg)  
+![](images/01-introduction/5ef98b7be2df2eb710536cbbee1f6714c27b6a1db3be7e7c7011576d5cad9e70.jpg)  
 FIGURE 1.1. Wage data, which contains income survey information for men from the central Atlantic region of the United States. Left: wage as a function of age. On average, wage increases with age until about 60 years of age, at which point it begins to decline. Center: wage as a function of year. There is a slow but steady increase of approximately \$10,000 in the average wage between 2003 and 2009. Right: Boxplots displaying wage as a function of education, with 1 indicating the lowest level (no high school diploma) and 5 the highest level (an advanced graduate degree). On average, wage increases with the level of education.
 
 We also have information regarding each employee's education level and the year in which the wage was earned. The center and right-hand panels of Figure 1.1, which display wage as a function of both year and education, indicate that both of these factors are associated with wage. Wages increase by approximately \$10,000, in a roughly linear (or straight-line) fashion, between 2003 and 2009, though this rise is very slight relative to the variability in the data. Wages are also typically greater for individuals with higher education levels: men with the lowest education level (1) tend to have substantially lower wages than those with the highest education level (5). Clearly, the most accurate prediction of a given man's wage will be obtained by combining his age, his education, and the year. In Chapter 3, we discuss linear regression, which can be used to predict wage from this data set. Ideally, we should predict wage in a way that accounts for the non-linear relationship between wage and age. In Chapter 7, we discuss a class of approaches for addressing this problem.
@@ -597,7 +597,7 @@ We also have information regarding each employee's education level and the year 
 
 The Wage data involves predicting a continuous or quantitative output value. This is often referred to as a regression problem. However, in certain cases we may instead wish to predict a non-numerical value—that is, a categorical or qualitative output. For example, in Chapter 4 we examine a stock market data set that contains the daily movements in the Standard & Poor's 500 (S&P) stock index over a 5-year period between 2001 and 2005. We refer to this as the Smarket data. The goal is to predict whether the index will increase or decrease on a given day, using the past 5 days' percentage changes in the index. Here the statistical learning problem does not involve predicting a numerical value. Instead it involves predicting whether a given
 
-![](images/5d56e7309664c6cf7cb14385f82f7ea6de1e6173be8c14533c282c110f6f1360.jpg)  
+![](images/01-introduction/5d56e7309664c6cf7cb14385f82f7ea6de1e6173be8c14533c282c110f6f1360.jpg)  
 FIGURE 1.2. Left: Boxplots of the previous day's percentage change in the S&P index for the days for which the market increased or decreased, obtained from the Smarket data. Center and Right: Same as left panel, but the percentage changes for 2 and 3 days previous are shown.
 
 day's stock market performance will fall into the Up bucket or the Down bucket. This is known as a classification problem. A model that could accurately predict the direction in which the market will move would be very useful!
@@ -608,7 +608,7 @@ The left-hand panel of Figure 1.2 displays two boxplots of the previous day's pe
 
 The previous two applications illustrate data sets with both input and output variables. However, another important class of problems involves situations in which we only observe input variables, with no corresponding output. For example, in a marketing setting, we might have demographic information for a number of current or potential customers. We may wish to understand which types of customers are similar to each other by grouping individuals according to their observed characteristics. This is known as a
 
-![](images/8075a616e8b5bdf3ffb597e240ece40b5f466653fd16ca88cc127f86cfce22fc.jpg)
+![](images/01-introduction/8075a616e8b5bdf3ffb597e240ece40b5f466653fd16ca88cc127f86cfce22fc.jpg)
 
 <details>
 <summary>boxplot</summary>
@@ -629,7 +629,7 @@ The left-hand panel of Figure 1.4 addresses this problem by representing each of
 
 In this particular data set, it turns out that the cell lines correspond to 14 different types of cancer. (However, this information was not used to create the left-hand panel of Figure 1.4.) The right-hand panel of Figure 1.4 is identical to the left-hand panel, except that the 14 cancer types are shown using distinct colored symbols. There is clear evidence that cell lines with the same cancer type tend to be located near each other in this two-dimensional representation. In addition, even though the cancer information was not used to produce the left-hand panel, the clustering obtained does bear some resemblance to some of the actual cancer types observed in the right-hand panel. This provides some independent verification of the accuracy of our clustering analysis.
 
-![](images/80880dfaf15e6f7e5f5865c31804b6d1e13547a25570399f63b35d01c8efa199.jpg)  
+![](images/01-introduction/80880dfaf15e6f7e5f5865c31804b6d1e13547a25570399f63b35d01c8efa199.jpg)  
 FIGURE 1.4. Left: Representation of the NCI60 gene expression data set in a two-dimensional space, $Z_{1}$ and $Z_{2}$ . Each point corresponds to one of the 64 cell lines. There appear to be four groups of cell lines, which we have represented using different colors. Right: Same as left panel except that we have represented each of the 14 different types of cancer using a different colored symbol. Cell lines corresponding to the same cancer type tend to be nearby in the two-dimensional space.
 
 # A Brief History of Statistical Learning
@@ -795,7 +795,7 @@ A few of the plots in this book were taken from ESL: Figures 6.7, 8.3, and 12.14
 
 # Statistical Learning
 
-![](images/13a1e607b825311f07cf7647f6e62cca8d88aecef9e92a9206dac79fa1614a66.jpg)
+![](images/02-statistical-learning/13a1e607b825311f07cf7647f6e62cca8d88aecef9e92a9206dac79fa1614a66.jpg)
 
 # 2.1 What Is Statistical Learning?
 
@@ -823,7 +823,7 @@ response
 dependent
 variable
 
-![](images/83049f44aa0d4e4464443f2578674ba02ab87e0e6c56c7e53d8cfc56c2f7f80e.jpg)  
+![](images/02-statistical-learning/83049f44aa0d4e4464443f2578674ba02ab87e0e6c56c7e53d8cfc56c2f7f80e.jpg)  
 FIGURE 2.1. The Advertising data set. The plot displays sales, in thousands of units, as a function of TV, radio, and newspaper budgets, in thousands of dollars, for 200 different markets. In each plot we show the simple least squares fit of sales to that variable, as described in Chapter 3. In other words, each blue line represents a simple model that can be used to predict sales using TV, radio, and newspaper, respectively.
 
 Here $f$ is some fixed but unknown function of $X_{1},\ldots ,X_{p}$ , and $\epsilon$ is a random error term, which is independent of $X$ and has mean zero. In this formulation, $f$ represents the systematic information that $X$ provides about $Y$ .
@@ -831,7 +831,7 @@ Here $f$ is some fixed but unknown function of $X_{1},\ldots ,X_{p}$ , and $\eps
 error term
 systematic
 
-![](images/4be9158c1d1206ec20a647fdc3ac11ffafd1ba883678082fa3c739cb2206657f.jpg)  
+![](images/02-statistical-learning/4be9158c1d1206ec20a647fdc3ac11ffafd1ba883678082fa3c739cb2206657f.jpg)  
 FIGURE 2.2. The Income data set. Left: The red dots are the observed values of income (in thousands of dollars) and years of education for 30 individuals. Right: The blue curve represents the true underlying relationship between income and years of education, which is generally unknown (but is known in this case because the data were simulated). The black lines represent the error associated with each observation. Note that some errors are positive (if an observation lies above the blue curve) and some are negative (if an observation lies below the curve). Overall, these errors have approximately mean zero.
 
 As another example, consider the left-hand panel of Figure 2.2, a plot of income versus years of education for 30 individuals in the Income data set. The plot suggests that one might be able to predict income using years of education. However, the function f that connects the input variable to the
@@ -862,7 +862,7 @@ The accuracy of $\hat{Y}$ as a prediction for Y depends on two quantities, which
 
 Why is the irreducible error larger than zero? The quantity $\epsilon$ may contain unmeasured variables that are useful in predicting $Y$ : since we don't
 
-![](images/5e6c186fc9a03a83d1af12db447e8a318759c256aee5922ce978ed90f29ceba3.jpg)
+![](images/02-statistical-learning/5e6c186fc9a03a83d1af12db447e8a318759c256aee5922ce978ed90f29ceba3.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -1012,7 +1012,7 @@ $$
 
 This is a linear model, which will be discussed extensively in Chapter 3. Once we have assumed that f is linear, the problem of estimating f is greatly simplified. Instead of having to estimate an entirely arbitrary p-dimensional function $f(X)$ , one only needs to estimate the $p + 1$ coefficients $\beta_{0}, \beta_{1}, \ldots, \beta_{p}$ .
 
-![](images/263d8b6f9e17fd6d10e641a734791cce93cb3b2280ca38c251ef061db3ad7aac.jpg)
+![](images/02-statistical-learning/263d8b6f9e17fd6d10e641a734791cce93cb3b2280ca38c251ef061db3ad7aac.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -1139,7 +1139,7 @@ $$
 \text {income} \approx \beta_ {0} + \beta_ {1} \times \text {education} + \beta_ {2} \times \text {seniority}.
 $$
 
-![](images/64feb2b3751e2b049ff476a131eb819495aeb11d5bdd41c656be14093555ed29.jpg)
+![](images/02-statistical-learning/64feb2b3751e2b049ff476a131eb819495aeb11d5bdd41c656be14093555ed29.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -1266,7 +1266,7 @@ An example of a non-parametric approach to fitting the Income data is shown in F
 thin-plate
 spline
 
-![](images/7b298c22489483023c76e4358593ba44206315065c8a102798c62f462aba4ac6.jpg)
+![](images/02-statistical-learning/7b298c22489483023c76e4358593ba44206315065c8a102798c62f462aba4ac6.jpg)
 
 <details>
 <summary>surface_3d</summary>
@@ -1390,7 +1390,7 @@ As we have seen, there are advantages and disadvantages to parametric and non-pa
 
 Of the many methods that we examine in this book, some are less flexible, or more restrictive, in the sense that they can produce just a relatively small range of shapes to estimate f. For example, linear regression is a relatively inflexible approach, because it can only generate linear functions such as the lines shown in Figure 2.1 or the plane shown in Figure 2.4. Other methods, such as the thin plate splines shown in Figures 2.5 and 2.6, are considerably more flexible because they can generate a much wider range of possible shapes to estimate f.
 
-![](images/fdb0b410fd75934f0306c11959e5e90201296c1a79b39581e24d7bada84e0a23.jpg)
+![](images/02-statistical-learning/fdb0b410fd75934f0306c11959e5e90201296c1a79b39581e24d7bada84e0a23.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -1419,7 +1419,7 @@ Most statistical learning problems fall into one of two categories: supervised o
 
 By contrast, unsupervised learning describes the somewhat more challenging situation in which for every observation $i = 1, \ldots, n$ , we observe a vector of measurements $x_{i}$ but no associated response $y_{i}$ . It is not possible to fit a linear regression model, since there is no response variable to predict. In this setting, we are in some sense working blind; the situation is referred to as unsupervised because we lack a response variable that can supervise our analysis. What sort of statistical analysis is possible? We can seek to understand the relationships between the variables or between the observations. One statistical learning tool that we may use in this setting is cluster analysis, or clustering. The goal of cluster analysis is to ascertain, on the basis of $x_{1}, \ldots, x_{n}$ , whether the observations fall into relatively distinct groups. For example, in a market segmentation study we might observe multiple characteristics (variables) for potential customers, such as zip code, family income, and shopping habits. We might believe that the customers fall into different groups, such as big spenders versus low spenders. If the information about each customer's spending patterns were available, then a supervised analysis would be possible. However, this information is not available—that is, we do not know whether each potential customer is a big spender or not. In this setting, we can try to cluster the customers on the basis of the variables measured, in order to identify
 
-![](images/920051327b4177d3cca109b36b5d85a99001047ee3b0a36468ac78c71a75a4e1.jpg)  
+![](images/02-statistical-learning/920051327b4177d3cca109b36b5d85a99001047ee3b0a36468ac78c71a75a4e1.jpg)  
 FIGURE 2.8. A clustering data set involving three groups. Each group is shown using a different colored symbol. Left: The three groups are well-separated. In this setting, a clustering approach should successfully identify the three groups. Right: There is some overlap among the groups. Now the clustering task is more challenging.
 
 distinct groups of potential customers. Identifying such groups can be of interest because it might be that the groups differ with respect to some property of interest, such as spending habits.
@@ -1483,7 +1483,7 @@ MSE
 
 test data
 
-![](images/c89739d672815875e906d5673a7d7e28becaf3ae26ad5ace7e0e6b68defa4258.jpg)  
+![](images/02-statistical-learning/c89739d672815875e906d5673a7d7e28becaf3ae26ad5ace7e0e6b68defa4258.jpg)  
 FIGURE 2.9. Left: Data simulated from f, shown in black. Three estimates of f are shown: the linear regression line (orange curve), and two smoothing spline fits (blue and green curves). Right: Training MSE (grey curve), test MSE (red curve), and minimum possible test MSE over all methods (dashed line). Squares represent the training and test MSEs for the three fits shown in the left-hand panel.
 
 If these are approximately equal to $y_{1}, y_{2}, \ldots, y_{n}$ , then the training MSE given by (2.5) is small. However, we are really not interested in whether $\hat{f}(x_{i}) \approx y_{i}$ ; instead, we want to know whether $\hat{f}(x_{0})$ is approximately equal to $y_{0}$ , where $(x_{0}, y_{0})$ is a previously unseen test observation not used to train the statistical learning method. We want to choose the method that gives the lowest test MSE, as opposed to the lowest training MSE. In other words, if we had a large number of test observations, we could compute
@@ -1508,7 +1508,7 @@ In this example, we know the true function f, and so we can also compute the tes
 
 In the right-hand panel of Figure 2.9, as the flexibility of the statistical learning method increases, we observe a monotone decrease in the training MSE and a U-shape in the test MSE. This is a fundamental property of statistical learning that holds regardless of the particular data set at hand and regardless of the statistical method being used. As model flexibility increases, the training MSE will decrease, but the test MSE may not. When a given method yields a small training MSE but a large test MSE, we are said to be overfitting the data. This happens because our statistical learning procedure is working too hard to find patterns in the training data, and may be picking up some patterns that are just caused by random chance rather than by true properties of the unknown function f. When we overfit the training data, the test MSE will be very large because the supposed
 
-![](images/e670eac24db477564aae6972d03fe8dca8b3fa53ea797650b3510638b50b68e1.jpg)  
+![](images/02-statistical-learning/e670eac24db477564aae6972d03fe8dca8b3fa53ea797650b3510638b50b68e1.jpg)  
 FIGURE 2.10. Details are as in Figure 2.9, using a different true f that is much closer to linear. In this setting, linear regression provides a very good fit to the data.
 
 patterns that the method found in the training data simply don't exist in the test data. Note that regardless of whether or not overfitting has occurred, we almost always expect the training MSE to be smaller than the test MSE because most statistical learning methods either directly or indirectly seek to minimize the training MSE. Overfitting refers specifically to the case in which a less flexible model would have yielded a smaller test MSE.
@@ -1524,7 +1524,7 @@ validation
 
 The U-shape observed in the test MSE curves (Figures 2.9–2.11) turns out to be the result of two competing properties of statistical learning methods.
 
-![](images/7a0dab7c96ef7844b1beed3fe23048b68b77083386b07eb7a4dc3205d3a738ad.jpg)  
+![](images/02-statistical-learning/7a0dab7c96ef7844b1beed3fe23048b68b77083386b07eb7a4dc3205d3a738ad.jpg)  
 FIGURE 2.11. Details are as in Figure 2.9, using a different f that is far from linear. In this setting, linear regression provides a very poor fit to the data.
 
 Though the mathematical proof is beyond the scope of this book, it is possible to show that the expected test MSE, for a given value $x_{0}$ , can always be decomposed into the sum of three fundamental quantities: the variance of $\hat{f}(x_{0})$ , the squared bias of $\hat{f}(x_{0})$ and the variance of the error terms $\epsilon$ . That is,
@@ -1544,7 +1544,7 @@ What do we mean by the variance and bias of a statistical learning method? Varia
 
 expected test MSE
 
-![](images/55a31e20c3b4321c195c824b5abb66e70541e3e70ecf2eab5fe3b7b8c7870684.jpg)  
+![](images/02-statistical-learning/55a31e20c3b4321c195c824b5abb66e70541e3e70ecf2eab5fe3b7b8c7870684.jpg)  
 FIGURE 2.12. Squared bias (blue curve), variance (orange curve), $Var(\epsilon)$ (dashed line), and test MSE (red curve) for the three data sets in Figures 2.9–2.11. The vertical dotted line indicates the flexibility level corresponding to the smallest test MSE.
 
 In contrast, the orange least squares line is relatively inflexible and has low variance, because moving any single observation will likely cause only a small shift in the position of the line.
@@ -1610,7 +1610,7 @@ Bayes
 decision
 boundary
 
-![](images/ad5736018aad6615ae50d9677b7e63c753f0cdaef43d5712d0e68605034b94ae.jpg)
+![](images/02-statistical-learning/ad5736018aad6615ae50d9677b7e63c753f0cdaef43d5712d0e68605034b94ae.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -1658,11 +1658,11 @@ The choice of $K$ has a drastic effect on the KNN classifier obtained. Figure 2.
 
 Just as in the regression setting, there is not a strong relationship between the training error rate and the test error rate. With K = 1, the KNN training error rate is 0, but the test error rate may be quite high. In general, as we use more flexible classification methods, the training error rate will decline but the test error rate may not. In Figure 2.17, we have plotted the KNN test and training errors as a function of 1/K. As 1/K increases, the method becomes more flexible. As in the regression setting, the training error rate consistently declines as the flexibility increases. However, the test error exhibits a characteristic U-shape, declining at first (with a minimum at approximately K = 10) before increasing again when the method becomes excessively flexible and overfits.
 
-![](images/a00d51c7ba738012c347b9a1b807dc3b2293619663e8df5d8c29b270932087ed.jpg)  
+![](images/02-statistical-learning/a00d51c7ba738012c347b9a1b807dc3b2293619663e8df5d8c29b270932087ed.jpg)  
 FIGURE 2.14. The KNN approach, using K = 3, is illustrated in a simple situation with six blue observations and six orange observations. Left: a test observation at which a predicted class label is desired is shown as a black cross. The three closest points to the test observation are identified, and it is predicted that the test observation belongs to the most commonly-occurring class, in this case blue. Right: The KNN decision boundary for this example is shown in black. The blue grid indicates the region in which a test observation will be assigned to the blue class, and the orange grid indicates the region in which it will be assigned to the orange class.
 
 KNN: K=10  
-![](images/7900cbc89aa0bdf08b3b1d0ef590bd72b8ce4f633ac283e84ddc58ab36f09ac1.jpg)
+![](images/02-statistical-learning/7900cbc89aa0bdf08b3b1d0ef590bd72b8ce4f633ac283e84ddc58ab36f09ac1.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -1678,10 +1678,10 @@ FIGURE 2.15. The black curve indicates the KNN decision boundary on the data fro
 
 In both the regression and classification settings, choosing the correct level of flexibility is critical to the success of any statistical learning method. The bias-variance tradeoff, and the resulting U-shape in the test error, can make this a difficult task. In Chapter 5, we return to this topic and discuss
 
-![](images/02a3955ccfd13dcebf78af88384d4c43cefaf7aa1892aafdedc0d973a9872961.jpg)  
+![](images/02-statistical-learning/02a3955ccfd13dcebf78af88384d4c43cefaf7aa1892aafdedc0d973a9872961.jpg)  
 FIGURE 2.16. A comparison of the KNN decision boundaries (solid black curves) obtained using K = 1 and K = 100 on the data from Figure 2.13. With K = 1, the decision boundary is overly flexible, while with K = 100 it is not sufficiently flexible. The Bayes decision boundary is shown as a purple dashed line.
 
-![](images/600a73c7c6b9fbca0258cf43dcb067a2f178db7ddedf6aaf730e1f51cc242abc.jpg)
+![](images/02-statistical-learning/600a73c7c6b9fbca0258cf43dcb067a2f178db7ddedf6aaf730e1f51cc242abc.jpg)
 
 <details>
 <summary>line</summary>
@@ -3340,7 +3340,7 @@ residual
 
 residual sum of squares
 
-![](images/e694611eb20fbb92e0c898ef67fd42874021e76d93f696b9f47efb5ecb1f7166.jpg)
+![](images/03-linear-regression/e694611eb20fbb92e0c898ef67fd42874021e76d93f696b9f47efb5ecb1f7166.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -3495,7 +3495,7 @@ $$
 
 Here $\beta_{0}$ is the intercept term—that is, the expected value of Y when X = 0, and $\beta_{1}$ is the slope—the average increase in Y associated with a one-unit increase in X. The error term is a catch-all for what we miss with this simple model: the true relationship is probably not linear, there may be other variables that cause variation in Y, and there may be measurement error. We typically assume that the error term is independent of X.
 
-![](images/d241fbd88d26c11f12895e04ec76558a9aef5d18bbcf644372c7c919c95c43c1.jpg)  
+![](images/03-linear-regression/d241fbd88d26c11f12895e04ec76558a9aef5d18bbcf644372c7c919c95c43c1.jpg)  
 FIGURE 3.2. Contour and three-dimensional plots of the RSS on the Advertising data, using sales as the response and TV as the predictor. The red dots correspond to the least squares estimates $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$ , given by (3.4).
 
 The model given by (3.5) defines the population regression line, which is the best linear approximation to the true relationship between X and $Y.^{1}$ The least squares regression coefficient estimates (3.4) characterize the least squares line (3.2). The left-hand panel of Figure 3.3 displays these two lines in a simple simulated example. We created 100 random Xs, and generated 100 corresponding Ys from the model
@@ -3515,7 +3515,7 @@ line
 least squares
 line
 
-![](images/1b11311f97fb38c9a9c68873e6d9d9558c7530cc8ad4587e7e86d60001efc295.jpg)  
+![](images/03-linear-regression/1b11311f97fb38c9a9c68873e6d9d9558c7530cc8ad4587e7e86d60001efc295.jpg)  
 FIGURE 3.3. A simulated data set. Left: The red line represents the true relationship, $f(X) = 2 + 3X$ , which is known as the population regression line. The blue line is the least squares line; it is the least squares estimate for $f(X)$ based on the observed data, shown in black. Right: The population regression line is again shown in red, and the least squares line in dark blue. In light blue, ten least squares lines are shown, each computed on the basis of a separate random set of observations. Each least squares line is different, but on average, the least squares lines are quite close to the population regression line.
 
 the population mean $\mu$ of some random variable Y. Unfortunately, $\mu$ is unknown, but we do have access to n observations from $Y, y_{1}, \ldots, y_{n}$ , which we can use to estimate $\mu$ . A reasonable estimate is $\hat{\mu} = \bar{y}$ , where $\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_{i}$ is the sample mean. The sample mean and the population mean are different, but in general the sample mean will provide a good estimate of the population mean. In the same way, the unknown coefficients $\beta_{0}$ and $\beta_{1}$ in linear regression define the population regression line. We seek to estimate these unknown coefficients using $\hat{\beta}_{0}$ and $\hat{\beta}_{1}$ given in (3.4). These coefficient estimates define the least squares line.
@@ -3724,7 +3724,7 @@ $$
 
 The values $\hat{\beta}_{0},\hat{\beta}_{1},\ldots,\hat{\beta}_{p}$ that minimize (3.22) are the multiple least squares regression coefficient estimates. Unlike the simple linear regression estimates given in (3.4), the multiple regression coefficient estimates have somewhat complicated forms that are most easily represented using matrix algebra. For this reason, we do not provide them here. Any statistical software package can be used to compute these coefficient estimates, and later in this chapter we will show how this can be done in R. Figure 3.4
 
-![](images/3a7cd87aecf001ee642d4945c1659a416fdf9a8596bc7387cb9bdc0bb6e5c4b2.jpg)
+![](images/03-linear-regression/3a7cd87aecf001ee642d4945c1659a416fdf9a8596bc7387cb9bdc0bb6e5c4b2.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -3881,7 +3881,7 @@ $$
 \mathrm{RSE} = \sqrt {\frac {1}{n - p - 1} \mathrm{RSS}}, \tag {3.25}
 $$
 
-![](images/3109c1ea6baf283af3d5fe5ad23258adb9c383376495e0f345a8f797eb7b066e.jpg)
+![](images/03-linear-regression/3109c1ea6baf283af3d5fe5ad23258adb9c383376495e0f345a8f797eb7b066e.jpg)
 
 <details>
 <summary>scatter_3d</summary>
@@ -3948,7 +3948,7 @@ Now $\beta_{0}$ can be interpreted as the average credit card balance among thos
 
 Table 3.7 displays the coefficient estimates and other information associated with the model (3.27). The average credit card debt for non-owners is estimated to be \$509.80, whereas owners are estimated to carry \$19.73 in additional debt for a total of \$509.80 + \$19.73 = \$529.53. However, we
 
-![](images/2288b74b2dbd304aa4de6aae6efb3d873dbfa419ca2c1887382f585cc5b4507d.jpg)
+![](images/03-linear-regression/2288b74b2dbd304aa4de6aae6efb3d873dbfa419ca2c1887382f585cc5b4507d.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -4102,7 +4102,7 @@ $$
 
 Once again, we have two different regression lines for the students and the non-students. But now those regression lines have different intercepts, $\beta_{0}+\beta_{2}$ versus $\beta_{0}$ , as well as different slopes, $\beta_{1}+\beta_{3}$ versus $\beta_{1}$ . This allows for the possibility that changes in income may affect the credit card balances of students and non-students differently. The right-hand panel of Figure 3.7
 
-![](images/d92ae20bb4e192265af9e7f9fa9eddeef265c5482fa28f40ba3209bd920db080.jpg)  
+![](images/03-linear-regression/d92ae20bb4e192265af9e7f9fa9eddeef265c5482fa28f40ba3209bd920db080.jpg)  
 FIGURE 3.7. For the Credit data, the least squares lines are shown for prediction of balance from income for students and non-students. Left: The model (3.34) was fit. There is no interaction between income and student. Right: The model (3.35) was fit. There is an interaction term between income and student.
 
 shows the estimated relationships between income and balance for students and non-students in the model $(3.35)$ . We note that the slope for students is lower than the slope for non-students. This suggests that increases in income are associated with smaller increases in credit card balance among students as compared to non-students.
@@ -4119,7 +4119,7 @@ $$
 
 may provide a better fit. Equation 3.36 involves predicting mpg using a non-linear function of horsepower. But it is still a linear model! That is, (3.36) is simply a multiple linear regression model with $X_{1} = horsepower$ and $X_{2} = horsepower^{2}$ . So we can use standard linear regression software to estimate $\beta_{0}, \beta_{1}$ , and $\beta_{2}$ in order to produce a non-linear fit. The blue curve in Figure 3.8 shows the resulting quadratic fit to the data. The quadratic
 
-![](images/7081495a89282cb7b8e89944c06f8a1b9a0ad681c0ac9e2d79b3d7cfdbbb3c71.jpg)
+![](images/03-linear-regression/7081495a89282cb7b8e89944c06f8a1b9a0ad681c0ac9e2d79b3d7cfdbbb3c71.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -4159,7 +4159,7 @@ In practice, identifying and overcoming these problems is as much an art as a sc
 
 # 1. Non-linearity of the Data
 
-![](images/629231ec237dda373227ac74d94798236619b2eabd6e02cb2abbb546182c4e7f.jpg)  
+![](images/03-linear-regression/629231ec237dda373227ac74d94798236619b2eabd6e02cb2abbb546182c4e7f.jpg)  
 FIGURE 3.9. Plots of residuals versus predicted (or fitted) values for the Auto data set. In each plot, the red line is a smooth fit to the residuals, intended to make it easier to identify a trend. Left: A linear regression of mpg on horsepower. A strong pattern in the residuals indicates non-linearity in the data. Right: A linear regression of mpg on horsepower and horsepower $^{2}$ . There is little pattern in the residuals.
 
 The linear regression model assumes that there is a straight-line relationship between the predictors and the response. If the true relationship is far from linear, then virtually all of the conclusions that we draw from the fit are suspect. In addition, the prediction accuracy of the model can be significantly reduced.
@@ -4182,14 +4182,14 @@ As an extreme example, suppose we accidentally doubled our data, leading to obse
 
 Why might correlations among the error terms occur? Such correlations frequently occur in the context of time series data, which consists of observations for which measurements are obtained at discrete points in time. In many cases, observations that are obtained at adjacent time points will have positively correlated errors. In order to determine if this is the case for a given data set, we can plot the residuals from our model as a function of time. If the errors are uncorrelated, then there should be no discernible pat-
 
-![](images/bcf085761af2fc32a12237731ee7e0ef042b051c19c6741a29b057a886ce4fc4.jpg)  
+![](images/03-linear-regression/bcf085761af2fc32a12237731ee7e0ef042b051c19c6741a29b057a886ce4fc4.jpg)  
 FIGURE 3.10. Plots of residuals from simulated time series data sets generated with differing levels of correlation $\rho$ between error terms for adjacent time points.
 
 tern. On the other hand, if the error terms are positively correlated, then we may see tracking in the residuals—that is, adjacent residuals may have similar values. Figure 3.10 provides an illustration. In the top panel, we see the residuals from a linear regression fit to data generated with uncorrelated errors. There is no evidence of a time-related trend in the residuals. In contrast, the residuals in the bottom panel are from a data set in which adjacent errors had a correlation of 0.9. Now there is a clear pattern in the residuals—adjacent residuals tend to take on similar values. Finally, the center panel illustrates a more moderate case in which the residuals had a correlation of 0.5. There is still evidence of tracking, but the pattern is less clear.
 
 Many methods have been developed to properly take account of correlations in the error terms in time series data. Correlation among the error terms can also occur outside of time series data. For instance, consider a study in which individuals' heights are predicted from their weights. The assumption of uncorrelated errors could be violated if some of the individuals in the study are members of the same family, eat the same diet, or have been exposed to the same environmental factors. In general, the assumption of uncorrelated errors is extremely important for linear regression as well as for other statistical methods, and good experimental design is crucial in order to mitigate the risk of such correlations.
 
-![](images/b7d3188363bbbe5138cc7291603ae9111ea9860f6857b7dd3225c875c5f900a8.jpg)  
+![](images/03-linear-regression/b7d3188363bbbe5138cc7291603ae9111ea9860f6857b7dd3225c875c5f900a8.jpg)  
 FIGURE 3.11. Residual plots. In each plot, the red line is a smooth fit to the residuals, intended to make it easier to identify a trend. The blue lines track the outer quantiles of the residuals, and emphasize patterns. Left: The funnel shape indicates heteroscedasticity. Right: The response has been log transformed, and there is now no evidence of heteroscedasticity.
 
 # 3. Non-constant Variance of Error Terms
@@ -4212,7 +4212,7 @@ An outlier is a point for which $y_{i}$ is far from the value predicted by the
 
 outlier
 
-![](images/1f6ffdfb54181a9e6cc77c2c2e56903c0092b66df09dd0791238e85f097fb6ad.jpg)  
+![](images/03-linear-regression/1f6ffdfb54181a9e6cc77c2c2e56903c0092b66df09dd0791238e85f097fb6ad.jpg)  
 FIGURE 3.12. Left: The least squares regression line is shown in red, and the regression line after removing the outlier is shown in blue. Center: The residual plot clearly identifies the outlier. Right: The outlier has a studentized residual of 6; typically we expect values between -3 and 3.
 
 model. Outliers can arise for a variety of reasons, such as incorrect recording of an observation during data collection.
@@ -4227,7 +4227,7 @@ If we believe that an outlier has occurred due to an error in data collection or
 
 We just saw that outliers are observations for which the response $y_{i}$ is unusual given the predictor $x_{i}$ . In contrast, observations with high leverage have an unusual value for $x_{i}$ . For example, observation 41 in the left-hand
 
-![](images/944eb2a82ec381e223db6759e9abc2b6b8ad101b3c4372164a3f8ce7fa030f0b.jpg)  
+![](images/03-linear-regression/944eb2a82ec381e223db6759e9abc2b6b8ad101b3c4372164a3f8ce7fa030f0b.jpg)  
 FIGURE 3.13. Left: Observation 41 is a high leverage point, while 20 is not. The red line is the fit to all the data, and the blue line is the fit with observation 41 removed. Center: The red observation is not unusual in terms of its $X_{1}$ value or its $X_{2}$ value, but still falls outside the bulk of the data, and hence has high leverage. Right: Observation 41 has a high leverage and a high residual.
 
 panel of Figure 3.13 has high leverage, in that the predictor value for this observation is large relative to the other observations. (Note that the data displayed in Figure 3.13 are the same as the data displayed in Figure 3.12, but with the addition of a single high leverage observation.) The red solid line is the least squares fit to the data, while the blue dashed line is the fit produced when observation 41 is removed. Comparing the left-hand panels of Figures 3.12 and 3.13, we observe that removing the high leverage observation has a much more substantial impact on the least squares line than removing the outlier. In fact, high leverage observations tend to have a sizable impact on the estimated regression line. It is cause for concern if the least squares line is heavily affected by just a couple of observations, because any problems with these points may invalidate the entire fit. For this reason, it is important to identify high leverage observations.
@@ -4242,7 +4242,7 @@ $$
 h _ {i} = \frac {1}{n} + \frac {(x _ {i} - \bar {x}) ^ {2}}{\sum_ {i ^ {\prime} = 1} ^ {n} (x _ {i ^ {\prime}} - \bar {x}) ^ {2}}. \tag {3.37}
 $$
 
-![](images/b6564e4213d530d273993aa35491fed98b632257ae8ba148a43799179e4bb774.jpg)  
+![](images/03-linear-regression/b6564e4213d530d273993aa35491fed98b632257ae8ba148a43799179e4bb774.jpg)  
 FIGURE 3.14. Scatterplots of the observations from the Credit data set. Left: A plot of age versus limit. These two variables are not collinear. Right: A plot of rating versus limit. There is high collinearity.
 
 It is clear from this equation that $h_{i}$ increases with the distance of $x_{i}$ from $\bar{x}$ . There is a simple extension of $h_{i}$ to the case of multiple predictors, though we do not provide the formula here. The leverage statistic $h_{i}$ is always between 1/n and 1, and the average leverage for all the observations is always equal to $(p+1)/n$ . So if a given observation has a leverage statistic that greatly exceeds $(p+1)/n$ , then we may suspect that the corresponding point has high leverage.
@@ -4255,7 +4255,7 @@ Collinearity refers to the situation in which two or more predictor variables ar
 
 Figure 3.15 illustrates some of the difficulties that can result from collinearity. The left-hand panel of Figure 3.15 is a contour plot of the RSS (3.22) associated with different possible coefficient estimates for the regression of balance on limit and age. Each ellipse represents a set of coefficients
 
-![](images/76b4b258721db1459af4e3d0faa595175b69ae9c3553cfe840b527e7051ccc50.jpg)  
+![](images/03-linear-regression/76b4b258721db1459af4e3d0faa595175b69ae9c3553cfe840b527e7051ccc50.jpg)  
 FIGURE 3.15. Contour plots for the RSS values as a function of the parameters $\beta$ for various regressions involving the Credit data set. In each plot, the black dots represent the coefficient values corresponding to the minimum RSS. Left: A contour plot of RSS for the regression of balance onto age and limit. The minimum value is well defined. Right: A contour plot of RSS for the regression of balance onto rating and limit. Because of the collinearity, there are many pairs $(\beta_{\mathrm{Limit}}, \beta_{\mathrm{Rating}})$ with a similar value for RSS.
 
 that correspond to the same RSS, with ellipses nearest to the center taking on the lowest values of RSS. The black dots and associated dashed lines represent the coefficient estimates that result in the smallest possible RSS—in other words, these are the least squares estimates. The axes for limit and age have been scaled so that the plot includes possible coefficient estimates that are up to four standard errors on either side of the least squares estimates. Thus the plot includes all plausible values for the coefficients. For example, we see that the true limit coefficient is almost certainly somewhere between 0.15 and 0.20.
@@ -4338,7 +4338,7 @@ K-nearest
 neighbors
 regression
 
-![](images/5ae82184319e08108d97c61ab64a6217c84d9cd15f6fb951a72dce205efb5bf9.jpg)  
+![](images/03-linear-regression/5ae82184319e08108d97c61ab64a6217c84d9cd15f6fb951a72dce205efb5bf9.jpg)  
 FIGURE 3.16. Plots of $\hat{f}(X)$ using KNN regression on a two-dimensional data set with 64 observations (orange dots). Left: K = 1 results in a rough step function fit. Right: K = 9 produces a much smoother fit.
 
 In contrast, larger values of K provide a smoother and less variable fit; the prediction in a region is an average of several points, and so changing one observation has a smaller effect. However, the smoothing may cause bias by masking some of the structure in $f(X)$ . In Chapter 5, we introduce several approaches for estimating test error rates. These methods can be used to identify the optimal value of K in KNN regression.
@@ -4347,20 +4347,20 @@ In what setting will a parametric approach such as least squares linear regressi
 
 In practice, the true relationship between $X$ and $Y$ is rarely exactly linear. Figure 3.19 examines the relative performances of least squares regression and KNN under increasing levels of non-linearity in the relationship between $X$ and $Y$ . In the top row, the true relationship is nearly linear. In this case we see that the test MSE for linear regression is still superior
 
-![](images/e24aa78d8f960f598486dee124bc2ce06b70f4ec27e73bec91c7d07b482bf21b.jpg)  
+![](images/03-linear-regression/e24aa78d8f960f598486dee124bc2ce06b70f4ec27e73bec91c7d07b482bf21b.jpg)  
 FIGURE 3.17. Plots of $\hat{f}(X)$ using KNN regression on a one-dimensional data set with 50 observations. The true relationship is given by the black solid line. Left: The blue curve corresponds to K = 1 and interpolates (i.e. passes directly through) the training data. Right: The blue curve corresponds to K = 9, and represents a smoother fit.
 
-![](images/51152bee48ef959e4755c50675cf67536894262a14af9cf9c3d8bff2aeab5325.jpg)  
+![](images/03-linear-regression/51152bee48ef959e4755c50675cf67536894262a14af9cf9c3d8bff2aeab5325.jpg)  
 FIGURE 3.18. The same data set shown in Figure 3.17 is investigated further. Left: The blue dashed line is the least squares fit to the data. Since $f(X)$ is in fact linear (displayed as the black line), the least squares regression line provides a very good estimate of $f(X)$ . Right: The dashed horizontal line represents the least squares test set MSE, while the green solid line corresponds to the MSE for KNN as a function of 1/K (on the log scale). Linear regression achieves a lower test MSE than does KNN regression, since $f(X)$ is in fact linear. For KNN regression, the best results occur with a very large value of K, corresponding to a small value of 1/K.
 
-![](images/91a3decb616e3e0b2ce1c7de7ac5e657e046be032e1292981270d405c6d01e4b.jpg)  
+![](images/03-linear-regression/91a3decb616e3e0b2ce1c7de7ac5e657e046be032e1292981270d405c6d01e4b.jpg)  
 FIGURE 3.19. Top Left: In a setting with a slightly non-linear relationship between X and Y (solid black line), the KNN fits with K = 1 (blue) and K = 9 (red) are displayed. Top Right: For the slightly non-linear data, the test set MSE for least squares regression (horizontal black) and KNN with various values of 1/K (green) are displayed. Bottom Left and Bottom Right: As in the top panel, but with a strongly non-linear relationship between X and Y.
 
 to that of KNN for low values of K. However, for $K \geq 4$ , KNN outperforms linear regression. The second row illustrates a more substantial deviation from linearity. In this situation, KNN substantially outperforms linear regression for all values of K. Note that as the extent of non-linearity increases, there is little change in the test set MSE for the non-parametric KNN method, but there is a large increase in the test set MSE of linear regression.
 
 Figures 3.18 and 3.19 display situations in which KNN performs slightly worse than linear regression when the relationship is linear, but much better than linear regression for nonlinear situations. In a real life situation in which the true relationship is unknown, one might suspect that KNN should be favored over linear regression because it will at worst be slightly inferior to linear regression if the true relationship is linear, and may give substantially better results if the true relationship is non-linear. But in reality, even when the true relationship is highly non-linear, KNN may still provide inferior results to linear regression. In particular, both Figures 3.18
 
-![](images/147201079d1ec8f67deb0473fa3d115e6492ef3e7a246bf239742b8bd7590830.jpg)
+![](images/03-linear-regression/147201079d1ec8f67deb0473fa3d115e6492ef3e7a246bf239742b8bd7590830.jpg)
 
 <details>
 <summary>line</summary>
@@ -5082,7 +5082,7 @@ Note: We interpret this result by saying that the fitted values from linear regr
 
 7. It is claimed in the text that in the case of simple linear regression of $Y$ onto $X$ , the $R^2$ statistic (3.17) is equal to the square of the correlation between $X$ and $Y$ (3.18). Prove that this is the case. For simplicity, you may assume that $\bar{x} = \bar{y} = 0$ .
 
-![](images/7ca0dd16fac1919197a1d3b5373df0603af6c4ac00157458bbc5414260120b8c.jpg)
+![](images/03-linear-regression/7ca0dd16fac1919197a1d3b5373df0603af6c4ac00157458bbc5414260120b8c.jpg)
 
 # Applied
 
@@ -5145,7 +5145,7 @@ y = 2 * x + rng.normal(size=100)
 
 (d) For the regression of $Y$ onto $X$ without an intercept, the $t$ -statistic for $H_0: \beta = 0$ takes the form $\hat{\beta} / \mathrm{SE}(\hat{\beta})$ , where $\hat{\beta}$ is given by (3.38), and where
 
-![](images/e6ec4d6fb9806bd68feb42972354751355f4cee307624503072b4492ef28e90e.jpg)
+![](images/03-linear-regression/e6ec4d6fb9806bd68feb42972354751355f4cee307624503072b4492ef28e90e.jpg)
 
 $$
 \mathrm{SE} (\hat {\beta}) = \sqrt {\frac {\sum_ {i = 1} ^ {n} (y _ {i} - x _ {i} \hat {\beta}) ^ {2}}{(n - 1) \sum_ {i ^ {\prime} = 1} ^ {n} x _ {i ^ {\prime}} ^ {2}}}.
@@ -5254,7 +5254,7 @@ We have stated that linear regression is not appropriate in the case of a qualit
 
 Suppose that we are trying to predict the medical condition of a patient in the emergency room on the basis of her symptoms. In this simplified example, there are three possible diagnoses: stroke, drug overdose, and
 
-![](images/9a677de471c403769b8fefce8a0983f0fef8a27d71b8dedaf5cadd09b616e25a.jpg)  
+![](images/04-classification/9a677de471c403769b8fefce8a0983f0fef8a27d71b8dedaf5cadd09b616e25a.jpg)  
 FIGURE 4.1. The Default data set. Left: The annual incomes and monthly credit card balances of a number of individuals. The individuals who defaulted on their credit card payments are shown in orange, and those who did not are shown in blue. Center: Boxplots of balance as a function of default status. Right: Boxplots of income as a function of default status.
 
 epileptic seizure. We could consider encoding these values as a quantitative response variable, Y, as follows:
@@ -5301,7 +5301,7 @@ $$
 
 The values of $\Pr(default = \text{Yes}|balance)$ , which we abbreviate $p(\text{balance})$ , will range between 0 and 1. Then for any given value of balance, a prediction can be made for default. For example, one might predict default = Yes
 
-![](images/26294f244b400e4294a870e5edfb54c9646f034cc84cc99b4badec1a320e9990.jpg)  
+![](images/04-classification/26294f244b400e4294a870e5edfb54c9646f034cc84cc99b4badec1a320e9990.jpg)  
 FIGURE 4.2. Classification using the Default data. Left: Estimated probability of default using linear regression. Some estimated probabilities are negative! The orange ticks indicate the 0/1 values coded for default (No or Yes). Right: Predicted probabilities of default using logistic regression. All probabilities lie between 0 and 1.
 
 for any individual for whom $p(\text{balance}) > 0.5$ . Alternatively, if a company wishes to be conservative in predicting individuals who are at risk for default, then they may choose to use a lower threshold, such as $p(\text{balance}) > 0.1$ .
@@ -5422,7 +5422,7 @@ Table 4.3 shows the coefficient estimates for a logistic regression model that u
 
 The right-hand panel of Figure 4.3 provides an explanation for this discrepancy. The variables student and balance are correlated. Students tend to hold higher levels of debt, which is in turn associated with higher probability of default. In other words, students are more likely to have large credit card balances, which, as we know from the left-hand panel of Figure 4.3, tend to be associated with high default rates. Thus, even though an individual student with a given credit card balance will tend to have a lower probability of default than a non-student with the same credit card balance, the fact that students on the whole tend to have higher credit card balances means that overall, students tend to default at a higher rate than non-students. This is an important distinction for a credit card company that is trying to determine to whom they should offer credit. A student is riskier than a non-student if no information about the student's credit card
 
-![](images/9eac331daaa14c68f440c09e55f2d42ba6b40d68f92de445854349b7d0b7499b.jpg)  
+![](images/04-classification/9eac331daaa14c68f440c09e55f2d42ba6b40d68f92de445854349b7d0b7499b.jpg)  
 FIGURE 4.3. Confounding in the Default data. Left: Default rates are shown for students (orange) and non-students (blue). The solid lines display default rate as a function of balance, while the horizontal broken lines display the overall default rates. Right: Boxplots of balance for students (orange) and non-students (blue) are shown.
 
 balance is available. However, that student is less risky than a non-student with the same credit card balance!
@@ -5544,7 +5544,7 @@ $$
 normal
 Gaussian
 
-![](images/f8def18a1de5f7fa69f2128afa49adf1e56339318757a7d998cb7c9a3e25b819.jpg)  
+![](images/04-classification/f8def18a1de5f7fa69f2128afa49adf1e56339318757a7d998cb7c9a3e25b819.jpg)  
 FIGURE 4.4. Left: Two one-dimensional normal density functions are shown. The dashed vertical line represents the Bayes decision boundary. Right: 20 observations were drawn from each of the two classes, and are shown as histograms. The Bayes decision boundary is again shown as a dashed vertical line. The solid vertical line represents the LDA decision boundary estimated from the training data.
 
 X = x to the class for which (4.17) is largest. Taking the log of (4.17) and rearranging the terms, it is not hard to show $^{3}$ that this is equivalent to assigning the observation to the class for which
@@ -5595,7 +5595,7 @@ The right-hand panel of Figure 4.4 displays a histogram of a random sample of 20
 
 To reiterate, the LDA classifier results from assuming that the observations within each class come from a normal distribution with a class-specific mean and a common variance $\sigma^{2}$ , and plugging estimates for these parameters into the Bayes classifier. In Section 4.4.3, we will consider a less stringent set of assumptions, by allowing the observations in the kth class to have a class-specific variance, $\sigma_{k}^{2}$ .
 
-![](images/301239f1b7c3302a3d0a648bf912f026be6e090fbb9519143ec783a5a02bf267.jpg)  
+![](images/04-classification/301239f1b7c3302a3d0a648bf912f026be6e090fbb9519143ec783a5a02bf267.jpg)  
 FIGURE 4.5. Two multivariate Gaussian density functions are shown, with p = 2. Left: The two predictors are uncorrelated. Right: The two variables have a correlation of 0.7.
 
 # 4.4.2 Linear Discriminant Analysis for $p > 1$
@@ -5613,7 +5613,7 @@ In the case of p > 1 predictors, the LDA classifier assumes that the observation
 multivariate
 Gaussian
 
-![](images/fff7e3348c352fca0d3341501be4e671884c01de2f7fee9486c81022d3f9bf91.jpg)  
+![](images/04-classification/fff7e3348c352fca0d3341501be4e671884c01de2f7fee9486c81022d3f9bf91.jpg)  
 FIGURE 4.6. An example with three classes. The observations from each class are drawn from a multivariate Gaussian distribution with p = 2, with a class-specific mean vector and a common covariance matrix. Left: Ellipses that contain 95 % of the probability for each of the three classes are shown. The dashed lines are the Bayes decision boundaries. Right: 20 observations were generated from each class, and the corresponding LDA decision boundaries are indicated using solid black lines. The Bayes decision boundaries are once again shown as dashed lines.
 
 to the class for which
@@ -5677,7 +5677,7 @@ The error rates that result from taking this approach are shown in Table 4.5. No
 
 TABLE 4.5. A confusion matrix compares the LDA predictions to the true default statuses for the 10,000 training observations in the Default data set, using a modified threshold value that predicts default for any individuals whose posterior default probability exceeds 20 %.
 
-![](images/828217bcefc645a8c02dc3b7a1c627e1d074977b94cf604b5d6e8345f9d0494a.jpg)
+![](images/04-classification/828217bcefc645a8c02dc3b7a1c627e1d074977b94cf604b5d6e8345f9d0494a.jpg)
 
 <details>
 <summary>roc</summary>
@@ -5747,7 +5747,7 @@ The ROC curve is a popular graphic for simultaneously displaying the two types o
 
 ROC curve
 
-![](images/17452929ae72b4a156a8ad39c3053f9673f9fddbcea11103ed5b919738c9a41e.jpg)
+![](images/04-classification/17452929ae72b4a156a8ad39c3053f9673f9fddbcea11103ed5b919738c9a41e.jpg)
 
 <details>
 <summary>roc</summary>
@@ -5810,7 +5810,7 @@ is largest. So the QDA classifier involves plugging estimates for $\Sigma_{k}$ ,
 
 Why does it matter whether or not we assume that the K classes share a common covariance matrix? In other words, why would one prefer LDA to
 
-![](images/229f13fd3a1f0b3d4c53dcf4fcd70efca95a89aaeea3853da31d993651e219e7.jpg)  
+![](images/04-classification/229f13fd3a1f0b3d4c53dcf4fcd70efca95a89aaeea3853da31d993651e219e7.jpg)  
 FIGURE 4.9. Left: The Bayes (purple dashed), LDA (black dotted), and QDA (green solid) decision boundaries for a two-class problem with $\Sigma_{1} = \Sigma_{2}$ . The shading indicates the QDA decision rule. Since the Bayes decision boundary is linear, it is more accurately approximated by LDA than by QDA. Right: Details are as given in the left-hand panel, except that $\Sigma_{1} \neq \Sigma_{2}$ . Since the Bayes decision boundary is non-linear, it is more accurately approximated by QDA than by LDA.
 
 QDA, or vice-versa? The answer lies in the bias-variance trade-off. When there are $p$ predictors, then estimating a covariance matrix requires estimating $p(p + 1) / 2$ parameters. QDA estimates a separate covariance matrix for each class, for a total of $Kp(p + 1) / 2$ parameters. With 50 predictors this is some multiple of 1,275, which is a lot of parameters. By instead assuming that the $K$ classes share a common covariance matrix, the LDA model becomes linear in $x$ , which means there are $Kp$ linear coefficients to estimate. Consequently, LDA is a much less flexible classifier than QDA, and so has substantially lower variance. This can potentially lead to improved prediction performance. But there is a trade-off: if LDA's assumption that the $K$ classes share a common covariance matrix is badly off, then LDA can suffer from high bias. Roughly speaking, LDA tends to be a better bet than QDA if there are relatively few training observations and so reducing variance is crucial. In contrast, QDA is recommended if the training set is very large, so that the variance of the classifier is not a major concern, or if the assumption of a common covariance matrix for the $K$ classes is clearly untenable.
@@ -5871,10 +5871,10 @@ $$
 We now consider the naive Bayes classifier in a toy example with p = 3 predictors and K = 2 classes. The first two predictors are quantitative, and the third predictor is qualitative with three levels. Suppose further that $\hat{\pi}_{1} = \hat{\pi}_{2} = 0.5$ . The estimated density functions $\hat{f}_{kj}$ for k = 1, 2 and j = 1, 2, 3 are displayed in Figure 4.10. Now suppose that we wish to classify a new observation, $x^{*} = (0.4, 1.5, 1)^{T}$ . It turns out that in this
 
 Density estimates for class k=1  
-![](images/b71824376afb8120ae294eb18e7c45e1555fba17e0544c1fd6b21dd294ac04b3.jpg)
+![](images/04-classification/b71824376afb8120ae294eb18e7c45e1555fba17e0544c1fd6b21dd294ac04b3.jpg)
 
 Density estimates for class k=2  
-![](images/5913f29b897a37a0be441a2f8a6379ce8befe4c7254510c261f9902f5613a896.jpg)
+![](images/04-classification/5913f29b897a37a0be441a2f8a6379ce8befe4c7254510c261f9902f5613a896.jpg)
 
 FIGURE 4.10. In the toy example in Section 4.4.4, we generate data with p = 3 predictors and K = 2 classes. The first two predictors are quantitative, and the third predictor is qualitative with three levels. In each class, the estimated density for each of the three predictors is displayed. If the prior probabilities for the two classes are equal, then the observation $x^{*} = (0.4, 1.5, 1)^{T}$ has a 94.4% posterior probability of belonging to the first class.
 
@@ -5964,7 +5964,7 @@ We now compare the empirical (practical) performance of logistic regression, LDA
 
 In each of the six scenarios, there were $p = 2$ quantitative predictors. The scenarios were as follows:
 
-![](images/def845526a1626e1f33cca9abd35de7ed3aad253dee8e81c07548639af639fcf.jpg)  
+![](images/04-classification/def845526a1626e1f33cca9abd35de7ed3aad253dee8e81c07548639af639fcf.jpg)  
 FIGURE 4.11. Boxplots of the test error rates for each of the linear scenarios described in the main text.
 
 Scenario 1: There were 20 training observations in each of two classes. The observations within each class were uncorrelated random normal variables with a different mean in each class. The left-hand panel of Figure 4.11 shows that LDA performed well in this setting, as one would expect since this is the model assumed by LDA. Logistic regression also performed quite well, since it assumes a linear decision boundary. KNN performed poorly because it paid a price in terms of variance that was not offset by a reduction in bias. QDA also performed worse than LDA, since it fit a more flexible classifier than necessary. The performance of naive Bayes was slightly better than QDA, because the naive Bayes assumption of independent predictors is correct.
@@ -5975,7 +5975,7 @@ Scenario 3: As in the previous scenario, there is substantial negative correlati
 
 Scenario 4: The data were generated from a normal distribution, with a correlation of 0.5 between the predictors in the first class, and correlation of -0.5 between the predictors in the second class. This setup corresponded to the QDA assumption, and resulted in quadratic decision boundaries. The left-hand panel of Figure 4.12 shows that QDA outperformed all of the
 
-![](images/6c15ece33b93339c587d1867a11aee0f403e1c39b2d00687a06f622ad5767394.jpg)  
+![](images/04-classification/6c15ece33b93339c587d1867a11aee0f403e1c39b2d00687a06f622ad5767394.jpg)  
 FIGURE 4.12. Boxplots of the test error rates for each of the non-linear scenarios described in the main text.
 
 other approaches. The naive Bayes assumption of independent predictors is violated, so naive Bayes performs poorly.
@@ -6008,7 +6008,7 @@ To begin, we consider predicting bikers using linear regression. The results are
 
 We see, for example, that a progression of weather from clear to cloudy results in, on average, 12.89 fewer bikers per hour; however, if the weather progresses further to rain or snow, then this further results in 53.60 fewer bikers per hour. Figure 4.13 displays the coefficients associated with mnth
 
-![](images/5aad8e55dfc376179efbfcabe6549e9b114d34810a87f778b395a295c87f20b9.jpg)  
+![](images/04-classification/5aad8e55dfc376179efbfcabe6549e9b114d34810a87f778b395a295c87f20b9.jpg)  
 FIGURE 4.13. A least squares linear regression model was fit to predict bikers in the Bikeshare data set. Left: The coefficients associated with the month of the year. Bike usage is highest in the spring and fall, and lowest in the winter. Right: The coefficients associated with the hour of the day. Bike usage is highest during peak commute times, and lowest overnight.
 
 and the coefficients associated with hr. We see that bike usage is highest in the spring and fall, and lowest during the winter months. Furthermore, bike usage is greatest around rush hour (9 AM and 6 PM), and lowest overnight. Thus, at first glance, fitting a linear regression model to the Bikeshare data set seems to provide reasonable and intuitive results.
@@ -6019,7 +6019,7 @@ Furthermore, it is reasonable to suspect that when the expected value of bikers 
 
 Finally, the response bikers is integer-valued. But under a linear model, $Y = \beta_{0} + \sum_{j=1}^{p} X_{j} \beta_{j} + \epsilon$ , where $\epsilon$ is a continuous-valued error term. This means that in a linear model, the response Y is necessarily continuous-valued (quantitative). Thus, the integer nature of the response bikers suggests that a linear regression model is not entirely satisfactory for this data set.
 
-![](images/2d5c231900bbac55c51cbbc492e0e4fc48ce6cdcdd2de81d5fcbf034b860547c.jpg)  
+![](images/04-classification/2d5c231900bbac55c51cbbc492e0e4fc48ce6cdcdd2de81d5fcbf034b860547c.jpg)  
 FIGURE 4.14. Left: On the Bikeshare dataset, the number of bikers is displayed on the y-axis, and the hour of the day is displayed on the x-axis. Jitter was applied for ease of visualization. For the most part, as the mean number of bikers increases, so does the variance in the number of bikers. A smoothing spline fit is shown in green. Right: The log of the number of bikers is now displayed on the y-axis.
 
 Some of the problems that arise when fitting a linear regression model to the Bikeshare data can be overcome by transforming the response; for instance, we can fit the model
@@ -6040,7 +6040,7 @@ $$
 \Pr (Y = k) = \frac {e ^ {- \lambda} \lambda^ {k}}{k !} \text {for} k = 0, 1, 2, \dots . \tag {4.35}
 $$
 
-![](images/b359ffe74f1f32ad53c1fd4ed58f0a5b8ef320a85442c41ad5192228ccf2125c.jpg)
+![](images/04-classification/b359ffe74f1f32ad53c1fd4ed58f0a5b8ef320a85442c41ad5192228ccf2125c.jpg)
 
 Poisson
 regression
@@ -6079,7 +6079,7 @@ We now fit a Poisson regression model to the Bikeshare data set. The results are
 
 TABLE 4.11. Results for a Poisson regression model fit to predict bikers in the Bikeshare data. The predictors mnth and hr are omitted from this table due to space constraints, and can be seen in Figure 4.15. For the qualitative variable weathersit, the baseline corresponds to clear skies.
 
-![](images/1bd92f510e3d0c84cb5cfe7533a2f5afe2fc2c50d953db66849a659228270a95.jpg)  
+![](images/04-classification/1bd92f510e3d0c84cb5cfe7533a2f5afe2fc2c50d953db66849a659228270a95.jpg)  
 FIGURE 4.15. A Poisson regression model was fit to predict bikers in the Bikeshare data set. Left: The coefficients associated with the month of the year. Bike usage is highest in the spring and fall, and lowest in the winter. Right: The coefficients associated with the hour of the day. Bike usage is highest during peak commute times, and lowest overnight.
 
 and lowest during the winter and in the early morning hours. Moreover, bike usage increases as the temperature increases, and decreases as the weather worsens. Interestingly, the coefficient associated with workingday is statistically significant under the Poisson regression model, but not under the linear regression model.
@@ -6098,7 +6098,7 @@ overdispersion
 
 We have now discussed three types of regression models: linear, logistic and Poisson. These approaches share some common characteristics:
 
-![](images/9d881c8196205e2d0531cd19ad179622bfa7c55f5cea7261964e0b2b2427f863.jpg)
+![](images/04-classification/9d881c8196205e2d0531cd19ad179622bfa7c55f5cea7261964e0b2b2427f863.jpg)
 
 1. Each approach uses predictors $X_{1},\ldots ,X_{p}$ to predict a response $Y$ . We assume that, conditional on $X_{1},\ldots ,X_{p}$ , $Y$ belongs to a certain family of distributions. For linear regression, we typically assume that $Y$ follows a Gaussian or normal distribution. For logistic regression, we assume that $Y$ follows a Bernoulli distribution. Finally, for Poisson regression, we assume that $Y$ follows a Poisson distribution.
 
@@ -7270,7 +7270,7 @@ Suppose that we have K classes, and that if an observation belongs to the kth cl
 Hint: For this problem, you should follow the arguments laid out in Section 4.4.1, but without making the assumption that $\sigma_{1}^{2}=\cdots=\sigma_{K}^{2}$ .  
 4. When the number of features p is large, there tends to be a deterioration in the performance of KNN and other local approaches that perform prediction using only observations that are near the test observation for which a prediction must be made. This phenomenon is known as the curse of dimensionality, and it ties into the fact that non-parametric approaches often perform poorly when p is large. We will now investigate this curse.
 
-![](images/4614a2d7d19fa2aa6050541530e73bb5efa7582c3bef7a4fff48671492b2882d.jpg)  
+![](images/04-classification/4614a2d7d19fa2aa6050541530e73bb5efa7582c3bef7a4fff48671492b2882d.jpg)  
 curse of di-
 mensionality
 
@@ -7313,11 +7313,11 @@ Hint: Recall that the density function for a normal random variable is $f(x) = \
 
 10. Equation 4.32 derived an expression for $\log \left(\frac{\Pr(Y = k|X = x)}{\Pr(Y = K|X = x)}\right)$ in the setting where $p > 1$ , so that the mean for the $k$ th class, $\mu_{k}$ , is a $p$ -dimensional vector, and the shared covariance $\Sigma$ is a $p \times p$ matrix. However, in the setting with $p = 1$ , (4.32) takes a simpler form, since the means $\mu_{1}, \ldots, \mu_{K}$ and the variance $\sigma^{2}$ are scalars. In this simpler setting, repeat the calculation in (4.32), and provide expressions for $a_{k}$ and $b_{kj}$ in terms of $\pi_{k}, \pi_{K}, \mu_{k}, \mu_{K}$ , and $\sigma^{2}$ .
 
-![](images/349e095906fa9fc02ebb8b156115e2d23ac33629e8e2cf60ac9b84533b449057.jpg)
+![](images/04-classification/349e095906fa9fc02ebb8b156115e2d23ac33629e8e2cf60ac9b84533b449057.jpg)
 
 11. Work out the detailed forms of $a_{k}$ , $b_{kj}$ , and $b_{kjl}$ in (4.33). Your answer should involve $\pi_{k}$ , $\pi_{K}$ , $\mu_{k}$ , $\mu_{K}$ , $\Sigma_{k}$ , and $\Sigma_{K}$ .
 
-![](images/117fe3e727d9fc091016e4793fdd9ad16f89cc3d2b417962ee0315a4f223541f.jpg)
+![](images/04-classification/117fe3e727d9fc091016e4793fdd9ad16f89cc3d2b417962ee0315a4f223541f.jpg)
 
 12. Suppose that you wish to classify an observation $X \in \mathbb{R}$ into apples and oranges. You fit a logistic regression model and find that
 
@@ -7448,7 +7448,7 @@ validation
 set
 hold-out set
 
-![](images/050a708a335645d8e8a4cb41af5c35a4bc4f795e3d6f1e7c651aec5fd5ca8580.jpg)
+![](images/05-resampling-methods/050a708a335645d8e8a4cb41af5c35a4bc4f795e3d6f1e7c651aec5fd5ca8580.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -7471,7 +7471,7 @@ The validation set approach is conceptually simple and is easy to implement. But
 1. As is shown in the right-hand panel of Figure 5.2, the validation estimate of the test error rate can be highly variable, depending on precisely which observations are included in the training set and which observations are included in the validation set.  
 2. In the validation approach, only a subset of the observations—those that are included in the training set rather than in the validation set—are used to fit the model. Since statistical methods tend to perform worse when trained on fewer observations, this suggests that the
 
-![](images/a0a35d97bb424ae6d335512220761d30bfc12de80d15741bdffdb39ba1b1be34.jpg)  
+![](images/05-resampling-methods/a0a35d97bb424ae6d335512220761d30bfc12de80d15741bdffdb39ba1b1be34.jpg)  
 FIGURE 5.2. The validation set approach was used on the Auto data set in order to estimate the test error that results from predicting mpg using polynomial functions of horsepower. Left: Validation error estimates for a single split into training and validation data sets. Right: The validation method was repeated ten times, each time using a different random split of the observations into a training set and a validation set. This illustrates the variability in the estimated test MSE that results from this approach.
 
 validation set error rate may tend to overestimate the test error rate for the model fit on the entire data set.
@@ -7490,7 +7490,7 @@ $$
 \mathrm{CV} _ {(n)} = \frac {1}{n} \sum_ {i = 1} ^ {n} \mathrm{MSE} _ {i}. \tag {5.1}
 $$
 
-![](images/d6ce523d71b4f13ca198aebe59c43e359921641d4f00e611b5c38ea672214b9c.jpg)
+![](images/05-resampling-methods/d6ce523d71b4f13ca198aebe59c43e359921641d4f00e611b5c38ea672214b9c.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -7516,7 +7516,7 @@ $$
 \mathrm{CV} _ {(n)} = \frac {1}{n} \sum_ {i = 1} ^ {n} \left(\frac {y _ {i} - \hat {y} _ {i}}{1 - h _ {i}}\right) ^ {2}, \tag {5.2}
 $$
 
-![](images/9de0fb39c2321a815da6a49c76f4060a6d45ff2f0fc0a3d6676a7d67c75b5038.jpg)  
+![](images/05-resampling-methods/9de0fb39c2321a815da6a49c76f4060a6d45ff2f0fc0a3d6676a7d67c75b5038.jpg)  
 FIGURE 5.4. Cross-validation was used on the Auto data set in order to estimate the test error that results from predicting mpg using polynomial functions of horsepower. Left: The LOOCV error curve. Right: 10-fold CV was run nine separate times, each with a different random split of the data into ten parts. The figure shows the nine slightly different CV error curves.
 
 where $\hat{y}_{i}$ is the ith fitted value from the original least squares fit, and $h_{i}$ is the leverage defined in (3.37) on page 105. $^{1}$ This is like the ordinary MSE, except the ith residual is divided by $1 - h_{i}$ . The leverage lies between 1/n and 1, and reflects the amount that an observation influences its own fit. Hence the residuals for high-leverage points are inflated in this formula by exactly the right amount for this equality to hold.
@@ -7535,7 +7535,7 @@ Figure 5.5 illustrates the $k$ -fold CV approach.
 
 k-fold CV
 
-![](images/7f256037fda74a8d925026e3f0d317f7a2998d07a300b7d5fa8013659a30b24b.jpg)
+![](images/05-resampling-methods/7f256037fda74a8d925026e3f0d317f7a2998d07a300b7d5fa8013659a30b24b.jpg)
 
 <details>
 <summary>bar_stacked</summary>
@@ -7557,7 +7557,7 @@ The right-hand panel of Figure 5.4 displays nine different 10-fold CV estimates 
 
 When we examine real data, we do not know the true test MSE, and so it is difficult to determine the accuracy of the cross-validation estimate. However, if we examine simulated data, then we can compute the true test MSE, and can thereby evaluate the accuracy of our cross-validation results. In Figure 5.6, we plot the cross-validation estimates and true test error rates that result from applying smoothing splines to the simulated data sets illustrated in Figures 2.9–2.11 of Chapter 2. The true test MSE is displayed in blue. The black dashed and orange solid lines respectively show the estimated LOOCV and 10-fold CV estimates. In all three plots, the two cross-validation estimates are very similar. In the right-hand panel
 
-![](images/856b3fe51dd6ea17c20056cbb562562664cbcffaad078071d6d46ffa868a39d1.jpg)  
+![](images/05-resampling-methods/856b3fe51dd6ea17c20056cbb562562664cbcffaad078071d6d46ffa868a39d1.jpg)  
 FIGURE 5.6. True and estimated test MSE for the simulated data sets in Figures 2.9 (left), 2.10 (center), and 2.11 (right). The true test MSE is shown in blue, the LOOCV estimate is shown as a black dashed line, and the 10-fold CV estimate is shown in orange. The crosses indicate the minimum of each of the MSE curves.
 
 of Figure 5.6, the true test MSE and the cross-validation curves are almost identical. In the center panel of Figure 5.6, the two sets of curves are similar at the lower degrees of flexibility, while the CV curves overestimate the test set MSE for higher degrees of flexibility. In the left-hand panel of Figure 5.6, the CV curves have the correct general shape, but they underestimate the true test MSE.
@@ -7588,7 +7588,7 @@ where $\mathrm{Err}_i = I(y_i \neq \hat{y}_i)$ . The $k$ -fold CV error rate and
 
 As an example, we fit various logistic regression models on the two-dimensional classification data displayed in Figure 2.13. In the top-left panel of Figure 5.7, the black solid line shows the estimated decision boundary resulting from fitting a standard logistic regression model to this data set. Since this is simulated data, we can compute the true test error rate, which takes a value of 0.201 and so is substantially larger than the Bayes
 
-![](images/9c84590cb0b925b3128696be8e25497dbf3fc12ae1565d16afd7b7d0b0cc9ace.jpg)  
+![](images/05-resampling-methods/9c84590cb0b925b3128696be8e25497dbf3fc12ae1565d16afd7b7d0b0cc9ace.jpg)  
 FIGURE 5.7. Logistic regression fits on the two-dimensional classification data displayed in Figure 2.13. The Bayes decision boundary is represented using a purple dashed line. Estimated decision boundaries from linear, quadratic, cubic and quartic (degrees 1–4) logistic regressions are displayed in black. The test error rates for the four logistic regression fits are respectively 0.201, 0.197, 0.160, and 0.162, while the Bayes error rate is 0.133.
 
 error rate of 0.133. Clearly logistic regression does not have enough flexibility to model the Bayes decision boundary in this setting. We can easily extend logistic regression to obtain a non-linear decision boundary by using polynomial functions of the predictors, as we did in the regression setting in Section 3.3.2. For example, we can fit a quadratic logistic regression model, given by
@@ -7599,7 +7599,7 @@ $$
 
 The top-right panel of Figure 5.7 displays the resulting decision boundary, which is now curved. However, the test error rate has improved only slightly, to 0.197. A much larger improvement is apparent in the bottom-left panel
 
-![](images/d5dc83a7c1ec277d39c33e80e81c362f4b9153516c4f8601b281a44ffea3d28c.jpg)  
+![](images/05-resampling-methods/d5dc83a7c1ec277d39c33e80e81c362f4b9153516c4f8601b281a44ffea3d28c.jpg)  
 FIGURE 5.8. Test error (brown), training error (blue), and 10-fold CV error (black) on the two-dimensional classification data displayed in Figure 5.7. Left: Logistic regression using polynomial functions of the predictors. The order of the polynomials used is displayed on the x-axis. Right: The KNN classifier with different values of K, the number of neighbors used in the KNN classifier.
 
 of Figure 5.7, in which we have fit a logistic regression model involving cubic polynomials of the predictors. Now the test error rate has decreased to 0.160. Going to a quartic polynomial (bottom-right) slightly increases the test error.
@@ -7632,7 +7632,7 @@ Figure 5.9 illustrates this approach for estimating $\alpha$ on a simulated data
 
 It is natural to wish to quantify the accuracy of our estimate of $\alpha$ . To estimate the standard deviation of $\hat{\alpha}$ , we repeated the process of simulating 100 paired observations of X and Y, and estimating $\alpha$ using (5.7), 1,000 times. We thereby obtained 1,000 estimates for $\alpha$ , which we can call $\hat{\alpha}_{1}, \hat{\alpha}_{2}, \ldots, \hat{\alpha}_{1,000}$ . The left-hand panel of Figure 5.10 displays a histogram of the resulting estimates. For these simulations the parameters were set to $\sigma_{X}^{2} = 1$ , $\sigma_{Y}^{2} = 1.25$ , and $\sigma_{XY} = 0.5$ , and so we know that the true value of $\alpha$ is 0.6. We indicated this value using a solid vertical line on the histogram.
 
-![](images/bc8c0b9027d43c50a10a6ab6d482a311b325ed12eac049ad254354bfb070d1d3.jpg)  
+![](images/05-resampling-methods/bc8c0b9027d43c50a10a6ab6d482a311b325ed12eac049ad254354bfb070d1d3.jpg)  
 FIGURE 5.9. Each panel displays 100 simulated returns for investments X and Y. From left to right and top to bottom, the resulting estimates for $\alpha$ are 0.576, 0.532, 0.657, and 0.651.
 
 The mean over all 1,000 estimates for $\alpha$ is
@@ -7653,7 +7653,7 @@ In practice, however, the procedure for estimating $\mathrm{SE}(\hat{\alpha})$ o
 
 This approach is illustrated in Figure 5.11 on a simple data set, which we call Z, that contains only n = 3 observations. We randomly select n observations from the data set in order to produce a bootstrap data set,
 
-![](images/7739f4ae258d00c7e8d8063c245bebb4a6f28d31ded735db7f2a4221fc22ec1b.jpg)  
+![](images/05-resampling-methods/7739f4ae258d00c7e8d8063c245bebb4a6f28d31ded735db7f2a4221fc22ec1b.jpg)  
 FIGURE 5.10. Left: A histogram of the estimates of $\alpha$ obtained by generating 1,000 simulated data sets from the true population. Center: A histogram of the estimates of $\alpha$ obtained from 1,000 bootstrap samples from a single data set. Right: The estimates of $\alpha$ displayed in the left and center panels are shown as boxplots. In each panel, the pink line indicates the true value of $\alpha$ .
 
 $Z^{*1}$ . The sampling is performed with replacement, which means that the same observation can occur more than once in the bootstrap data set. In this example, $Z^{*1}$ contains the third observation twice, the first observation once, and no instances of the second observation. Note that if an observation is contained in $Z^{*1}$ , then both its X and Y values are included. We can use $Z^{*1}$ to produce a new bootstrap estimate for $\alpha$ , which we call $\hat{\alpha}^{*1}$ . This procedure is repeated B times for some large value of B, in order to produce B different bootstrap data sets, $Z^{*1}, Z^{*2}, \ldots, Z^{*B}$ , and B corresponding $\alpha$ estimates, $\hat{\alpha}^{*1}, \hat{\alpha}^{*2}, \ldots, \hat{\alpha}^{*B}$ . We can compute the standard error of these bootstrap estimates using the formula
@@ -7666,7 +7666,7 @@ This serves as an estimate of the standard error of $\hat{\alpha}$ estimated fro
 
 The bootstrap approach is illustrated in the center panel of Figure 5.10, which displays a histogram of 1,000 bootstrap estimates of $\alpha$ , each computed using a distinct bootstrap data set. This panel was constructed on the basis of a single data set, and hence could be created using real data. Note that the histogram looks very similar to the left-hand panel, which displays the idealized histogram of the estimates of $\alpha$ obtained by generating 1,000 simulated data sets from the true population. In particular the bootstrap estimate $\mathrm{SE}(\hat{\alpha})$ from (5.8) is 0.087, very close to the estimate of 0.083 obtained using 1,000 simulated data sets. The right-hand panel displays the information in the center and left panels in a different way, via boxplots of the estimates for $\alpha$ obtained by generating 1,000 simulated data sets from the true population and using the bootstrap approach. Again, the boxplots have similar spreads, indicating that the bootstrap approach can be used to effectively estimate the variability associated with $\hat{\alpha}$ .
 
-![](images/0d9526e82adff405b72c86dc95446c43b183d375e0c8c1d0d6d16efd5ce66380.jpg)
+![](images/05-resampling-methods/0d9526e82adff405b72c86dc95446c43b183d375e0c8c1d0d6d16efd5ce66380.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -8315,7 +8315,7 @@ In Algorithm 6.1, Step 2 identifies the best model (on the training data) for ea
 
 Now in order to select a single best model, we must simply choose among these $p + 1$ options. This task must be performed with care, because the RSS of these $p + 1$ models decreases monotonically, and the $R^{2}$ increases monotonically, as the number of features included in the models increases. Therefore, if we use these statistics to select the best model, then we will always end up with a model involving all of the variables. The problem is that a low RSS or a high $R^{2}$ indicates a model with a low training error, whereas we wish to choose a model that has a low test error. (As shown in Chapter 2 in Figures 2.9–2.11, training error tends to be quite a bit smaller than test error, and a low training error by no means guarantees a low test error.) Therefore, in Step 3, we use the error on a validation set, $C_{p}$ , BIC, or adjusted $R^{2}$ in order to select among $M_{0}, M_{1}, \ldots, M_{p}$ . If cross-validation is used to select the best model, then Step 2 is repeated on each training fold, and the validation errors are averaged to select the best value of k.
 
-![](images/6ee061cbd36cc7a38648903cf80aa2e04cd88595eff14f0b31b3b5ebf92d4f1c.jpg)  
+![](images/06-linear-model-selection-and-regularization/6ee061cbd36cc7a38648903cf80aa2e04cd88595eff14f0b31b3b5ebf92d4f1c.jpg)  
 FIGURE 6.1. For each possible model containing a subset of the ten predictors in the Credit data set, the RSS and $R^{2}$ are displayed. The red frontier tracks the best model for a given number of predictors, according to RSS and $R^{2}$ . Though the data set contains only ten predictors, the x-axis ranges from 1 to 11, since one of the variables is categorical and takes on three values, leading to the creation of two dummy variables.
 
 Then the model $\mathcal{M}_k$ fit on the full training set is delivered for the chosen $k$ . These approaches are discussed in Section 6.1.3.
@@ -8420,7 +8420,7 @@ $$
 
 where $\hat{\sigma}^{2}$ is an estimate of the variance of the error $\epsilon$ associated with each response measurement in (6.1). $^{4}$ Typically $\hat{\sigma}^{2}$ is estimated using the full model containing all predictors. Essentially, the $C_{p}$ statistic adds a penalty of $2d\hat{\sigma}^{2}$ to the training RSS in order to adjust for the fact that the training error tends to underestimate the test error. Clearly, the penalty increases as the number of predictors in the model increases; this is intended to adjust
 
-![](images/9c6038b8e267e57da2f9bcee10e6f47c97874415571aa5f3caabf02de3a9adf9.jpg)  
+![](images/06-linear-model-selection-and-regularization/9c6038b8e267e57da2f9bcee10e6f47c97874415571aa5f3caabf02de3a9adf9.jpg)  
 FIGURE 6.2. $C_{p}$ , BIC, and adjusted $R^{2}$ are shown for the best models of each size for the Credit data set (the lower frontier in Figure 6.1). $C_{p}$ and BIC are estimates of test MSE. In the middle plot we see that the BIC estimate of test error shows an increase after four variables are selected. The other two plots are rather flat after four variables are included.
 
 for the corresponding decrease in training RSS. Though it is beyond the scope of this book, one can show that if $\hat{\sigma}^{2}$ is an unbiased estimate of $\sigma^{2}$ in (6.2), then $C_{p}$ is an unbiased estimate of test MSE. As a consequence, the $C_{p}$ statistic tends to take on a small value for models with a low test error, so when determining which of a set of models is best, we choose the model with the lowest $C_{p}$ value. In Figure 6.2, $C_{p}$ selects the six-variable model containing the predictors income, limit, rating, cards, age and student.
@@ -8459,7 +8459,7 @@ $C_{p}$ , AIC, and BIC all have rigorous theoretical justifications that are bey
 
 As an alternative to the approaches just discussed, we can directly estimate the test error using the validation set and cross-validation methods discussed in Chapter 5. We can compute the validation set error or the cross-validation error for each model under consideration, and then select
 
-![](images/6e60aa2628210c640d6daaac8cd61a683155a821b3c43f8b99255ee0d1335fa8.jpg)  
+![](images/06-linear-model-selection-and-regularization/6e60aa2628210c640d6daaac8cd61a683155a821b3c43f8b99255ee0d1335fa8.jpg)  
 FIGURE 6.3. For the Credit data set, three quantities are displayed for the best model containing d predictors, for d ranging from 1 to 11. The overall best model, based on each of these quantities, is shown as a blue cross. Left: Square root of BIC. Center: Validation set errors. Right: Cross-validation errors.
 
 the model for which the resulting estimated test error is smallest. This procedure has an advantage relative to AIC, BIC, $C_{p}$ , and adjusted $R^{2}$ , in that it provides a direct estimate of the test error, and makes fewer assumptions about the true underlying model. It can also be used in a wider range of model selection tasks, even in cases where it is hard to pinpoint the model degrees of freedom (e.g. the number of predictors in the model) or hard to estimate the error variance $\sigma^{2}$ . Note that when cross-validation is used, the sequence of models $M_{k}$ in Algorithms 6.1–6.3 is determined separately for each training fold, and the validation errors are averaged over all folds for each model size k. This means, for example with best-subset regression, that $M_{k}$ , the best subset of size k, can differ across the folds. Once the best size k is chosen, we find the best model of that size on the full data set.
@@ -8505,7 +8505,7 @@ tuning parameter
 shrinkage
 penalty
 
-![](images/8c4fc73278f90223f71870882a58b6ce8dab6e1ffbb2213b96a37c13f52539a4.jpg)  
+![](images/06-linear-model-selection-and-regularization/8c4fc73278f90223f71870882a58b6ce8dab6e1ffbb2213b96a37c13f52539a4.jpg)  
 FIGURE 6.4. The standardized ridge regression coefficients are displayed for the Credit data set, as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{R}\|_{2}/\|\hat{\beta}\|_{2}$ .
 
 the relative impact of these two terms on the regression coefficient estimates. When $\lambda = 0$ , the penalty term has no effect, and ridge regression will produce the least squares estimates. However, as $\lambda \to \infty$ , the impact of the shrinkage penalty grows, and the ridge regression coefficient estimates will approach zero. Unlike least squares, which generates only one set of coefficient estimates, ridge regression will produce a different set of coefficient estimates, $\hat{\beta}_{\lambda}^{R}$ , for each value of $\lambda$ . Selecting a good value for $\lambda$ is critical; we defer this discussion to Section 6.2.3, where we use cross-validation.
@@ -8530,7 +8530,7 @@ so that they are all on the same scale. In $(6.6)$ , the denominator is the esti
 
 Ridge regression's advantage over least squares is rooted in the bias-variance trade-off. As $\lambda$ increases, the flexibility of the ridge regression fit decreases, leading to decreased variance but increased bias. This is illustrated in the left-hand panel of Figure 6.5, using a simulated data set containing $p = 45$ predictors and $n = 50$ observations. The green curve in the left-hand panel
 
-![](images/a61478c4b43376c1bb2e48215c0d10707383cbd41da863e544e03455bfc9c5ca.jpg)  
+![](images/06-linear-model-selection-and-regularization/a61478c4b43376c1bb2e48215c0d10707383cbd41da863e544e03455bfc9c5ca.jpg)  
 FIGURE 6.5. Squared bias (black), variance (green), and test mean squared error (purple) for the ridge regression predictions on a simulated data set, as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{R}\|_{2}/\|\hat{\beta}\|_{2}$ . The horizontal dashed lines indicate the minimum possible MSE. The purple crosses indicate the ridge regression models for which the MSE is smallest.
 
 of Figure 6.5 displays the variance of the ridge regression predictions as a function of $\lambda$ . At the least squares coefficient estimates, which correspond to ridge regression with $\lambda = 0$ , the variance is high but there is no bias. But as $\lambda$ increases, the shrinkage of the ridge coefficient estimates leads to a substantial reduction in the variance of the predictions, at the expense of a slight increase in bias. Recall that the test mean squared error (MSE), plotted in purple, is closely related to the variance plus the squared bias. For values of $\lambda$ up to about 10, the variance decreases rapidly, with very little increase in bias, plotted in black. Consequently, the MSE drops considerably as $\lambda$ increases from 0 to 10. Beyond this point, the decrease in variance due to increasing $\lambda$ slows, and the shrinkage on the coefficients causes them to be significantly underestimated, resulting in a large increase in the bias. The minimum MSE is achieved at approximately $\lambda = 30$ . Interestingly, because of its high variance, the MSE associated with the least squares fit, when $\lambda = 0$ , is almost as high as that of the null model for which all coefficient estimates are zero, when $\lambda = \infty$ . However, for an intermediate value of $\lambda$ , the MSE is considerably lower.
@@ -8561,7 +8561,7 @@ As with ridge regression, the lasso shrinks the coefficient estimates towards ze
 
 sparse
 
-![](images/77132d443f7b3c25cb0d5df89001a1ed4fde051fdcf264f34d58ea15e6fd6d66.jpg)  
+![](images/06-linear-model-selection-and-regularization/77132d443f7b3c25cb0d5df89001a1ed4fde051fdcf264f34d58ea15e6fd6d66.jpg)  
 FIGURE 6.6. The standardized lasso coefficients on the Credit data set are shown as a function of $\lambda$ and $\|\hat{\beta}_{\lambda}^{L}\|_{1}/\|\hat{\beta}\|_{1}$ .
 
 As an example, consider the coefficient plots in Figure 6.6, which are generated from applying the lasso to the Credit data set. When $\lambda = 0$ , then the lasso simply gives the least squares fit, and when $\lambda$ becomes sufficiently large, the lasso gives the null model in which all coefficient estimates equal zero. However, in between these two extremes, the ridge regression and lasso models are quite different from each other. Moving from left to right in the right-hand panel of Figure 6.6, we observe that at first the lasso results in a model that contains only the rating predictor. Then student and limit enter the model almost simultaneously, shortly followed by income. Eventually, the remaining variables enter the model. Hence, depending on the value of $\lambda$ , the lasso can produce a model involving any number of variables. In contrast, ridge regression will always include all of the variables in the model, although the magnitude of the coefficient estimates will depend on $\lambda$ .
@@ -8602,7 +8602,7 @@ Each of the ellipses centered around $\hat{\beta}$ represents a contour: this me
 
 contour
 
-![](images/4ca42c3b98c643c62e348d67cec14fcf57f63cdbed2ca30729f4690e1194307f.jpg)  
+![](images/06-linear-model-selection-and-regularization/4ca42c3b98c643c62e348d67cec14fcf57f63cdbed2ca30729f4690e1194307f.jpg)  
 FIGURE 6.7. Contours of the error and constraint functions for the lasso (left) and ridge regression (right). The solid blue areas are the constraint regions, $|\beta_{1}| + |\beta_{2}| \leq s$ and $\beta_{1}^{2} + \beta_{2}^{2} \leq s$ , while the red ellipses are the contours of the RSS.
 
 the ellipses expand away from the least squares coefficient estimates, the RSS increases. Equations (6.8) and (6.9) indicate that the lasso and ridge regression coefficient estimates are given by the first point at which an ellipse contacts the constraint region. Since ridge regression has a circular constraint with no sharp points, this intersection will not generally occur on an axis, and so the ridge regression coefficient estimates will be exclusively non-zero. However, the lasso constraint has corners at each of the axes, and so the ellipse will often intersect the constraint region at an axis. When this occurs, one of the coefficients will equal zero. In higher dimensions, many of the coefficient estimates may equal zero simultaneously. In Figure 6.7, the intersection occurs at $\beta_{1}=0$ , and so the resulting model will only include $\beta_{2}$ .
@@ -8613,7 +8613,7 @@ In Figure 6.7, we considered the simple case of p = 2. When p = 3, then the cons
 
 It is clear that the lasso has a major advantage over ridge regression, in that it produces simpler and more interpretable models that involve only a subset of the predictors. However, which method leads to better prediction accuracy? Figure 6.8 displays the variance, squared bias, and test MSE of the lasso applied to the same simulated data as in Figure 6.5. Clearly the lasso leads to qualitatively similar behavior to ridge regression, in that as $\lambda$ increases, the variance decreases and the bias increases. In the right-hand
 
-![](images/66c69c7cb6d11b1a34bb11fc44316348a24cf2e8178a17de8824c4b8659b8304.jpg)  
+![](images/06-linear-model-selection-and-regularization/66c69c7cb6d11b1a34bb11fc44316348a24cf2e8178a17de8824c4b8659b8304.jpg)  
 FIGURE 6.8. Left: Plots of squared bias (black), variance (green), and test MSE (purple) for the lasso on a simulated data set. Right: Comparison of squared bias, variance, and test MSE between lasso (solid) and ridge (dotted). Both are plotted against their $R^{2}$ on the training data, as a common form of indexing. The crosses in both plots indicate the lasso model for which the MSE is smallest.
 
 panel of Figure 6.8, the dotted lines represent the ridge regression fits. Here we plot both against their $R^{2}$ on the training data. This is another useful way to index models, and can be used to compare models with different types of regularization, as is the case here. In this example, the lasso and ridge regression result in almost identical biases. However, the variance of ridge regression is slightly lower than the variance of the lasso. Consequently, the minimum MSE of ridge regression is slightly smaller than that of the lasso.
@@ -8623,7 +8623,7 @@ However, the data in Figure 6.8 were generated in such a way that all 45 predict
 These two examples illustrate that neither ridge regression nor the lasso will universally dominate the other. In general, one might expect the lasso to perform better in a setting where a relatively small number of predictors have substantial coefficients, and the remaining predictors have coefficients that are very small or that equal zero. Ridge regression will perform better when the response is a function of many predictors, all with coefficients of roughly equal size. However, the number of predictors that is related to the response is never known a priori for real data sets. A technique such as cross-validation can be used in order to determine which approach is better on a particular data set.
 
 As with ridge regression, when the least squares estimates have excessively high variance, the lasso solution can yield a reduction in variance at the expense of a small increase in bias, and consequently can generate more accurate predictions. Unlike ridge regression, the lasso performs variable selection, and hence results in models that are easier to interpret.
-![](images/66673112d9e335e1da6266bb32a9fa8e30ed766d2343a480b60538fc391ac9b1.jpg)  
+![](images/06-linear-model-selection-and-regularization/66673112d9e335e1da6266bb32a9fa8e30ed766d2343a480b60538fc391ac9b1.jpg)  
 FIGURE 6.9. Left: Plots of squared bias (black), variance (green), and test MSE (purple) for the lasso. The simulated data is similar to that in Figure 6.8, except that now only two predictors are related to the response. Right: Comparison of squared bias, variance, and test MSE between lasso (solid) and ridge (dotted). Both are plotted against their $R^{2}$ on the training data, as a common form of indexing. The crosses in both plots indicate the lasso model for which the MSE is smallest.
 
 There are very efficient algorithms for fitting both ridge and lasso models; in both cases the entire coefficient paths can be computed with about the same amount of work as a single least squares fit. We will explore this further in the lab at the end of this chapter.
@@ -8654,7 +8654,7 @@ $$
 \sum_ {j = 1} ^ {p} (y _ {j} - \beta_ {j}) ^ {2} + \lambda \sum_ {j = 1} ^ {p} | \beta_ {j} | \tag {6.13}
 $$
 
-![](images/3b3ea46293b6fc1c1a1374f45d47a892fc82f726983ed7af311a1b01ff35d308.jpg)  
+![](images/06-linear-model-selection-and-regularization/3b3ea46293b6fc1c1a1374f45d47a892fc82f726983ed7af311a1b01ff35d308.jpg)  
 FIGURE 6.10. The ridge regression and lasso coefficient estimates for a simple setting with n = p and X a diagonal matrix with 1's on the diagonal. Left: The ridge regression coefficient estimates are shrunken proportionally towards zero, relative to the least squares estimates. Right: The lasso coefficient estimates are soft-thresholded towards zero.
 
 is minimized. One can show that in this setting, the ridge regression estimates take the form
@@ -8680,9 +8680,9 @@ thresholding
 
 We now show that one can view ridge regression and the lasso through a Bayesian lens. A Bayesian viewpoint for regression assumes that the coefficient vector $\beta$ has some prior distribution, say $p(\beta)$ , where $\beta = (\beta_{0}, \beta_{1}, \ldots, \beta_{p})^{T}$ . The likelihood of the data can be written as $f(Y|X, \beta)$ ,
 
-![](images/63a5455dcaf8c6c30af34a0d2d999f5a2d88ee6989fecbcb3bad076b4e253ea7.jpg)
+![](images/06-linear-model-selection-and-regularization/63a5455dcaf8c6c30af34a0d2d999f5a2d88ee6989fecbcb3bad076b4e253ea7.jpg)
 
-![](images/b76791a96ffaa42e0f53d204f80f781d24031f14eb002784c9c31ca77cc05d98.jpg)  
+![](images/06-linear-model-selection-and-regularization/b76791a96ffaa42e0f53d204f80f781d24031f14eb002784c9c31ca77cc05d98.jpg)  
 FIGURE 6.11. Left: Ridge regression is the posterior mode for $\beta$ under a Gaussian prior. Right: The lasso is the posterior mode for $\beta$ under a double-exponential prior.
 
 where $X = (X_{1}, \ldots, X_{p})$ . Multiplying the prior distribution by the likelihood gives us (up to a proportionality constant) the posterior distribution, which takes the form
@@ -8711,7 +8711,7 @@ The Gaussian and double-exponential priors are displayed in Figure 6.11. Therefo
 posterior
 mode
 
-![](images/1f3610867399bfe5bfc9b455ab1273615c568a507c5bfe97da156b777a73826d.jpg)  
+![](images/06-linear-model-selection-and-regularization/1f3610867399bfe5bfc9b455ab1273615c568a507c5bfe97da156b777a73826d.jpg)  
 FIGURE 6.12. Left: Cross-validation errors that result from applying ridge regression to the Credit data set with various values of $\lambda$ . Right: The coefficient estimates as a function of $\lambda$ . The vertical dashed lines indicate the value of $\lambda$ selected by cross-validation.
 
 # 6.2.3 Selecting the Tuning Parameter
@@ -8722,7 +8722,7 @@ Figure 6.12 displays the choice of $\lambda$ that results from performing leave-
 
 Figure 6.13 provides an illustration of ten-fold cross-validation applied to the lasso fits on the sparse simulated data from Figure 6.9. The left-hand panel of Figure 6.13 displays the cross-validation error, while the right-hand panel displays the coefficient estimates. The vertical dashed lines indicate the point at which the cross-validation error is smallest. The two colored lines in the right-hand panel of Figure 6.13 represent the two predictors that are related to the response, while the grey lines represent the unrelated predictors; these are often referred to as signal and noise variables, respectively. Not only has the lasso correctly given much larger coefficient estimates to the two signal predictors, but also the minimum cross-validation error corresponds to a set of coefficient estimates for which only the signal variables are non-zero. Hence cross-validation together with the lasso has correctly identified the two signal variables in the model, even though this is a challenging setting, with p = 45 variables and only n = 50
 
-![](images/66340656480aab61298a3b20481d6a8fce4d5d0e727a167bc47084aadd3fbb9b.jpg)  
+![](images/06-linear-model-selection-and-regularization/66340656480aab61298a3b20481d6a8fce4d5d0e727a167bc47084aadd3fbb9b.jpg)  
 FIGURE 6.13. Left: Ten-fold cross-validation MSE for the lasso, applied to the sparse simulated data set from Figure 6.9. Right: The corresponding lasso coefficient estimates are displayed. The two signal variables are shown in color, and the noise variables are in gray. The vertical dashed lines indicate the lasso fit for which the cross-validation error is smallest.
 
 observations. In contrast, the least squares solution—displayed on the far right of the right-hand panel of Figure 6.13—assigns a large coefficient estimate to only one of the two signal variables.
@@ -8752,7 +8752,7 @@ reduction
 linear
 combination
 
-![](images/f88294968cae3374b317be62a3c95443cb802d951a63f2b874f2ae81462f509b.jpg)
+![](images/06-linear-model-selection-and-regularization/f88294968cae3374b317be62a3c95443cb802d951a63f2b874f2ae81462f509b.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -8867,7 +8867,7 @@ The values of $z_{11}, \ldots, z_{n1}$ are known as the principal component scor
 
 There is also another interpretation of PCA: the first principal component vector defines the line that is as close as possible to the data. For instance, in Figure 6.14, the first principal component line minimizes the sum of the squared perpendicular distances between each point and the line. These distances are plotted as dashed line segments in the left-hand
 
-![](images/0e01e854b8bd21195f374455a462e8a297de22a1503e14b92cf7a4d63e0b92cb.jpg)  
+![](images/06-linear-model-selection-and-regularization/0e01e854b8bd21195f374455a462e8a297de22a1503e14b92cf7a4d63e0b92cb.jpg)  
 FIGURE 6.15. A subset of the advertising data. The mean pop and ad budgets are indicated with a blue circle. Left: The first principal component direction is shown in green. It is the dimension along which the data vary the most, and it also defines the line that is closest to all n of the observations. The distances from each observation to the principal component are represented using the black dashed line segments. The blue dot represents $(\overline{\mathrm{pop}}, \overline{\mathrm{ad}})$ . Right: The left-hand panel has been rotated so that the first principal component direction coincides with the x-axis.
 
 panel of Figure 6.15, in which the crosses represent the projection of each point onto the first principal component line. The first principal component has been chosen so that the projected observations are as close as possible to the original observations.
@@ -8878,7 +8878,7 @@ We can think of the values of the principal component $Z_{1}$ as single-number s
 
 So far we have concentrated on the first principal component. In general, one can construct up to p distinct principal components. The second
 
-![](images/c6bc0fadadd37905cf539352133c6043220a20cfb935593672b3051ef70bc580.jpg)  
+![](images/06-linear-model-selection-and-regularization/c6bc0fadadd37905cf539352133c6043220a20cfb935593672b3051ef70bc580.jpg)  
 FIGURE 6.16. Plots of the first principal component scores $z_{i1}$ versus pop and ad. The relationships are strong.
 
 principal component $Z_{2}$ is a linear combination of the variables that is uncorrelated with $Z_{1}$ , and has largest variance subject to this constraint. The second principal component direction is illustrated as a dashed blue line in Figure 6.14. It turns out that the zero correlation condition of $Z_{1}$ with $Z_{2}$ is equivalent to the condition that the direction must be perpendicular, or orthogonal, to the first principal component direction. The second principal component is given by the formula
@@ -8903,10 +8903,10 @@ principal
 components
 regression
 
-![](images/d7766d99ab11cd4b7bf47ecdc8fef23c7e400828e18ee9e44c01e83c8b0bff47.jpg)  
+![](images/06-linear-model-selection-and-regularization/d7766d99ab11cd4b7bf47ecdc8fef23c7e400828e18ee9e44c01e83c8b0bff47.jpg)  
 FIGURE 6.17. Plots of the second principal component scores $z_{i2}$ versus pop and ad. The relationships are weak.
 
-![](images/f176eb8406c88740f39025bedf483d1690e4d8a4777522d78887fd73f946d6e2.jpg)  
+![](images/06-linear-model-selection-and-regularization/f176eb8406c88740f39025bedf483d1690e4d8a4777522d78887fd73f946d6e2.jpg)  
 FIGURE 6.18. PCR was applied to two simulated data sets. In each panel, the horizontal dashed line represents the irreducible error. Left: Simulated data from Figure 6.8. Right: Simulated data from Figure 6.9.
 
 directions in which $X_{1},\ldots,X_{p}$ show the most variation are the directions that are associated with Y. While this assumption is not guaranteed to be true, it often turns out to be a reasonable enough approximation to give good results.
@@ -8915,7 +8915,7 @@ If the assumption underlying PCR holds, then fitting a least squares model to $Z
 
 Figure 6.18 displays the PCR fits on the simulated data sets from Figures 6.8 and 6.9. Recall that both data sets were generated using n = 50 observations and p = 45 predictors. However, while the response in the first data set was a function of all the predictors, the response in the second data set was generated using only two of the predictors. The curves are plotted as a function of M, the number of principal components used as predictors in the regression model. As more principal components are used
 
-![](images/f9255ab8e27573c8011d396d8e151c181ac591e729b09569ecafe42417b47d19.jpg)  
+![](images/06-linear-model-selection-and-regularization/f9255ab8e27573c8011d396d8e151c181ac591e729b09569ecafe42417b47d19.jpg)  
 FIGURE 6.19. PCR, ridge regression, and the lasso were applied to a simulated data set in which the first five principal components of X contain all the information about the response Y. In each panel, the irreducible error $\operatorname{Var}(\epsilon)$ is shown as a horizontal dashed line. Left: Results for PCR. Right: Results for lasso (solid) and ridge regression (dotted). The x-axis displays the shrinkage factor of the coefficient estimates, defined as the $\ell_{2}$ norm of the shrunken coefficient estimates divided by the $\ell_{2}$ norm of the least squares estimate.
 
 in the regression model, the bias decreases, but the variance increases. This results in a typical U-shape for the mean squared error. When M = p = 45, then PCR amounts simply to a least squares fit using all of the original predictors. The figure indicates that performing PCR with an appropriate choice of M can result in a substantial improvement over least squares, especially in the left-hand panel. However, by examining the ridge regression and lasso results in Figures 6.5, 6.8, and 6.9, we see that PCR does not perform as well as the two shrinkage methods in this example.
@@ -8924,7 +8924,7 @@ The relatively worse performance of PCR in Figure 6.18 is a consequence of the f
 
 We note that even though PCR provides a simple way to perform regression using $M < p$ predictors, it is not a feature selection method. This is because each of the $M$ principal components used in the regression is a linear combination of all $p$ of the original features. For instance, in (6.19), $Z_{1}$ was a linear combination of both pop and ad. Therefore, while PCR often performs quite well in many practical settings, it does not result in the
 
-![](images/00ccb9ca8fea5786655548ac5b81ad46bb4dea371057e47397d447f5b114ed0a.jpg)  
+![](images/06-linear-model-selection-and-regularization/00ccb9ca8fea5786655548ac5b81ad46bb4dea371057e47397d447f5b114ed0a.jpg)  
 FIGURE 6.20. Left: PCR standardized coefficient estimates on the Credit data set for different values of M. Right: The ten-fold cross-validation MSE obtained using PCR, as a function of M.
 
 development of a model that relies upon a small set of the original features. In this sense, PCR is more closely related to ridge regression than to the lasso. In fact, one can show that PCR and ridge regression are very closely related. One can even think of ridge regression as a continuous version of PCR! $^{8}$
@@ -8937,7 +8937,7 @@ When performing PCR, we generally recommend standardizing each predictor, using 
 
 The PCR approach that we just described involves identifying linear combinations, or directions, that best represent the predictors $X_{1},\ldots,X_{p}$ . These directions are identified in an unsupervised way, since the response Y is not used to help determine the principal component directions. That is, the response does not supervise the identification of the principal components. Consequently, PCR suffers from a drawback: there is no guarantee
 
-![](images/9cbdbcd883da31b1739029dc0cea56de5bccedcec85b2c6946cfd78e789b5b4c.jpg)
+![](images/06-linear-model-selection-and-regularization/9cbdbcd883da31b1739029dc0cea56de5bccedcec85b2c6946cfd78e789b5b4c.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -9058,15 +9058,15 @@ An example is shown in Figure 6.22 with p = 1 feature (plus an intercept) in two
 
 Figure 6.23 further illustrates the risk of carelessly applying least squares when the number of features p is large. Data were simulated with n = 20 observations, and regression was performed with between 1 and 20 features,
 
-![](images/506cfa7ec8d703e4e8071d0064d34cd58197a21fc11e135e584fdd760c76fb6f.jpg)  
+![](images/06-linear-model-selection-and-regularization/506cfa7ec8d703e4e8071d0064d34cd58197a21fc11e135e584fdd760c76fb6f.jpg)  
 FIGURE 6.22. Left: Least squares regression in the low-dimensional setting. Right: Least squares regression with n = 2 observations and two parameters to be estimated (an intercept and a coefficient).
 
-![](images/2adaf1ad3692dd42cd333fd200ba1e6573d6ec0a721c545d50444cb3c1d9c520.jpg)  
+![](images/06-linear-model-selection-and-regularization/2adaf1ad3692dd42cd333fd200ba1e6573d6ec0a721c545d50444cb3c1d9c520.jpg)  
 FIGURE 6.23. On a simulated example with n = 20 training observations, features that are completely unrelated to the outcome are added to the model. Left: The $R^{2}$ increases to 1 as more features are included. Center: The training set MSE decreases to 0 as more features are included. Right: The test set MSE increases as more features are included.
 
 each of which was completely unrelated to the response. As shown in the figure, the model $R^{2}$ increases to 1 as the number of features included in the model increases, and correspondingly the training set MSE decreases to 0 as the number of features increases, even though the features are completely unrelated to the response. On the other hand, the MSE on an independent test set becomes extremely large as the number of features included in the model increases, because including the additional predictors leads to a vast increase in the variance of the coefficient estimates. Looking at the test set MSE, it is clear that the best model contains at most a few variables. However, someone who carelessly examines only the $R^{2}$ or the training set MSE might erroneously conclude that the model with the greatest number of variables is best. This indicates the importance of applying extra care when analyzing data sets with a large number of variables, and of always evaluating model performance on an independent test set.
 
-![](images/da857e9cf850ce79c0fab9f29b26ad640fb20ea8d11451d9926545adf20c61b5.jpg)  
+![](images/06-linear-model-selection-and-regularization/da857e9cf850ce79c0fab9f29b26ad640fb20ea8d11451d9926545adf20c61b5.jpg)  
 FIGURE 6.24. The lasso was performed with n = 100 observations and three values of p, the number of features. Of the p features, 20 were associated with the response. The boxplots show the test MSEs that result using three different values of the tuning parameter $\lambda$ in (6.7). For ease of interpretation, rather than reporting $\lambda$ , the degrees of freedom are reported; for the lasso this turns out to be simply the number of estimated non-zero coefficients. When p = 20, the lowest test MSE was obtained with the smallest amount of regularization. When p = 50, the lowest test MSE was achieved when there is a substantial amount of regularization. When p = 2,000 the lasso performed poorly regardless of the amount of regularization, due to the fact that only 20 of the 2,000 features truly are associated with the outcome.
 
 In Section 6.1.3, we saw a number of approaches for adjusting the training set RSS or $R^{2}$ in order to account for the number of variables used to fit a least squares model. Unfortunately, the $C_{p}$ , AIC, and BIC approaches are not appropriate in the high-dimensional setting, because estimating $\hat{\sigma}^{2}$ is problematic. (For instance, the formula for $\hat{\sigma}^{2}$ from Chapter 3 yields an estimate $\hat{\sigma}^{2}=0$ in this setting.) Similarly, problems arise in the application of adjusted $R^{2}$ in the high-dimensional setting, since one can easily obtain a model with an adjusted $R^{2}$ value of 1. Clearly, alternative approaches that are better-suited to the high-dimensional setting are required.
@@ -10016,7 +10016,7 @@ v. Remain constant.
 (d) Repeat (a) for (squared) bias.  
 (e) Repeat (a) for the irreducible error.
 
-![](images/73dbb05b38d7b31b8dabbc628b5bb30bb2f16a25f5797edfb12b357e7b4ee27d.jpg)
+![](images/06-linear-model-selection-and-regularization/73dbb05b38d7b31b8dabbc628b5bb30bb2f16a25f5797edfb12b357e7b4ee27d.jpg)
 
 5. It is well-known that ridge regression tends to give similar coefficient values to correlated variables, whereas the lasso may give quite different coefficient values to correlated variables. We will now explore this property in a very simple setting.
 
@@ -10034,7 +10034,7 @@ Suppose that n = 2, p = 2, $x_{11} = x_{12}$ , $x_{21} = x_{22}$ . Furthermore, 
 
 7. We will now derive the Bayesian connection to the lasso and ridge regression discussed in Section 6.2.2.
 
-![](images/a24a1ed052c8fe408795bcf2a1763a930164d6ae3cc009a53d05209a346aac65.jpg)
+![](images/06-linear-model-selection-and-regularization/a24a1ed052c8fe408795bcf2a1763a930164d6ae3cc009a53d05209a346aac65.jpg)
 
 (a) Suppose that $y_{i} = \beta_{0} + \sum_{j=1}^{p} x_{ij} \beta_{j} + \epsilon_{i}$ where $\epsilon_{1}, \ldots, \epsilon_{n}$ are independent and identically distributed from a $N(0, \sigma^{2})$ distribution. Write out the likelihood for the data.  
 (b) Assume the following prior for $\beta$ : $\beta_{1},\ldots ,\beta_{p}$ are independent and identically distributed according to a double-exponential distribution with mean 0 and common scale parameter $b$ : i.e. $p(\beta) = \frac{1}{2b}\exp (-|\beta | / b)$ . Write out the posterior for $\beta$ in this setting.  
@@ -10146,7 +10146,7 @@ where $\epsilon_{i}$ is the error term. This approach is known as polynomial reg
 The left-hand panel in Figure 7.1 is a plot of wage against age for the Wage data set, which contains income and demographic information for males who reside in the central Atlantic region of the United States. We see the results of fitting a degree-4 polynomial using least squares (solid blue curve). Even though this is a linear regression model like any other, the individual coefficients are not of particular interest. Instead, we look at the entire fitted function across a grid of 63 values for age from 18 to 80 in order to understand the relationship between age and wage.
 
 Degree-4 Polynomial  
-![](images/ff5e85eb81badee2b635f8db716b9985e22030e77b2e543cef8084bd57a4889c.jpg)  
+![](images/07-moving-beyond-linearity/ff5e85eb81badee2b635f8db716b9985e22030e77b2e543cef8084bd57a4889c.jpg)  
 FIGURE 7.1. The Wage data. Left: The solid blue curve is a degree-4 polynomial of wage (in thousands of dollars) as a function of age, fit by least squares. The dashed curves indicate an estimated 95% confidence interval. Right: We model the binary event wage>250 using logistic regression, again with a degree-4 polynomial. The fitted posterior probability of wage exceeding \$250,000 is shown in blue, along with an estimated 95% confidence interval.
 
 In Figure 7.1, a pair of dashed curves accompanies the fit; these are $(2\times)$ standard error curves. Let's see how these arise. Suppose we have computed the fit at a particular value of age, $x_{0}$ :
@@ -10204,7 +10204,7 @@ indicator
 function
 
 Piecewise Constant  
-![](images/889bc1ab95f46a9b9a3b967b40652ba930b7e8f872de9a986c09d5097ee328fb.jpg)  
+![](images/07-moving-beyond-linearity/889bc1ab95f46a9b9a3b967b40652ba930b7e8f872de9a986c09d5097ee328fb.jpg)  
 FIGURE 7.2. The Wage data. Left: The solid curve displays the fitted value from a least squares regression of wage (in thousands of dollars) using step functions of age. The dashed curves indicate an estimated 95% confidence interval. Right: We model the binary event wage>250 using logistic regression, again using step functions of age. The fitted posterior probability of wage exceeding \$250,000 is shown, along with an estimated 95% confidence interval.
 
 be interpreted as the mean value of Y for $X < c_{1}$ . By comparison, (7.5) predicts a response of $\beta_{0} + \beta_{j}$ for $c_{j} \leq X < c_{j+1}$ , so $\beta_{j}$ represents the average increase in the response for X in $c_{j} \leq X < c_{j+1}$ relative to $X < c_{1}$ .
@@ -10264,7 +10264,7 @@ regression
 
 knot
 
-![](images/8a5ba4c8288fbe9e72c0b312fd7cf0c9ea6ef9be1bd5d462cd1b421eb7d190ec.jpg)  
+![](images/07-moving-beyond-linearity/8a5ba4c8288fbe9e72c0b312fd7cf0c9ea6ef9be1bd5d462cd1b421eb7d190ec.jpg)  
 FIGURE 7.3. Various piecewise polynomials are fit to a subset of the Wage data, with a knot at age=50. Top Left: The cubic polynomials are unconstrained. Top Right: The cubic polynomials are constrained to be continuous at age=50. Bottom Left: The cubic polynomials are constrained to be continuous, and to have continuous first and second derivatives. Bottom Right: A linear spline is shown, which is constrained to be continuous.
 
 $\beta_{01}, \beta_{11}, \beta_{21}$ , and $\beta_{31}$ , and the second has coefficients $\beta_{02}, \beta_{12}, \beta_{22}$ , and $\beta_{32}$ . Each of these polynomial functions can be fit using least squares applied to simple functions of the original predictor.
@@ -10297,7 +10297,7 @@ for an appropriate choice of basis functions $b_{1}, b_{2}, \ldots, b_{K+3}$ . T
 
 Just as there were several ways to represent polynomials, there are also many equivalent ways to represent cubic splines using different choices of basis functions in (7.9). The most direct way to represent a cubic spline using (7.9) is to start off with a basis for a cubic polynomial—namely, $x, x^2$ , and $x^3$ —and then add one truncated power basis function per knot.
 
-![](images/7acd27f329e121a797f62d5226ad45246c39c5898847fbf4c58e2582bdea5bae.jpg)
+![](images/07-moving-beyond-linearity/7acd27f329e121a797f62d5226ad45246c39c5898847fbf4c58e2582bdea5bae.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -10339,7 +10339,7 @@ spline
 When we fit a spline, where should we place the knots? The regression spline is most flexible in regions that contain a lot of knots, because in those regions the polynomial coefficients can change rapidly. Hence, one
 
 Natural Cubic Spline  
-![](images/0120879d83b9908d056fdd20807c8976de5c53deea9c2192fee4ba8056e07fa9.jpg)  
+![](images/07-moving-beyond-linearity/0120879d83b9908d056fdd20807c8976de5c53deea9c2192fee4ba8056e07fa9.jpg)  
 FIGURE 7.5. A natural cubic spline function with four degrees of freedom is fit to the Wage data. Left: A spline is fit to wage (in thousands of dollars) as a function of age. Right: Logistic regression is used to model the binary event wage>250 as a function of age. The fitted posterior probability of wage exceeding \$250,000 is shown. The dashed lines denote the knot locations.
 
 option is to place more knots in places where we feel the function might vary most rapidly, and to place fewer knots where it seems more stable. While this option can work well, in practice it is common to place knots in a uniform fashion. One way to do this is to specify the desired degrees of freedom, and then have the software automatically place the corresponding number of knots at uniform quantiles of the data.
@@ -10348,7 +10348,7 @@ Figure 7.5 shows an example on the Wage data. As in Figure 7.4, we have fit a na
 
 How many knots should we use, or equivalently how many degrees of freedom should our spline contain? One option is to try out different numbers of knots and see which produces the best looking curve. A somewhat more objective approach is to use cross-validation, as discussed in Chapters 5 and 6. With this method, we remove a portion of the data (say 10%), fit a spline with a certain number of knots to the remaining data, and then use the spline to make predictions for the held-out portion. We repeat this process multiple times until each observation has been left out once, and
 
-![](images/c1997315077c98b936039a5060f85a219b06f80f6785b369a6c2f6402d6eef56.jpg)  
+![](images/07-moving-beyond-linearity/c1997315077c98b936039a5060f85a219b06f80f6785b369a6c2f6402d6eef56.jpg)  
 FIGURE 7.6. Ten-fold cross-validated mean squared errors for selecting the degrees of freedom when fitting splines to the Wage data. The response is wage and the predictor age. Left: A natural cubic spline. Right: A cubic spline.
 
 then compute the overall cross-validated RSS. This procedure can be repeated for different numbers of knots K. Then the value of K giving the smallest RSS is chosen.
@@ -10361,7 +10361,7 @@ In Section 7.7 we fit additive spline models simultaneously on several variables
 
 Figure 7.7 compares a natural cubic spline with 15 degrees of freedom to a degree-15 polynomial on the Wage data set. The extra flexibility in the polynomial produces undesirable results at the boundaries, while the natural cubic spline still provides a reasonable fit to the data. Regression splines often give superior results to polynomial regression. This is because unlike polynomials, which must use a high degree (exponent in the highest monomial term, e.g. $X^{15}$ ) to produce flexible fits, splines introduce flexibility by increasing the number of knots but keeping the degree fixed. Generally, this approach produces more stable estimates. Splines also allow us to place more knots, and hence flexibility, over regions where the function f seems to be changing rapidly, and fewer knots where f appears more stable.
 
-![](images/0dc23882ea416247e50a5f2e4320ae603e83fc1f221487d4f11d5305e22dd310.jpg)
+![](images/07-moving-beyond-linearity/0dc23882ea416247e50a5f2e4320ae603e83fc1f221487d4f11d5305e22dd310.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -10443,7 +10443,7 @@ The notation $\hat{g}_{\lambda}^{(-i)}(x_{i})$ indicates the fitted value for th
 
 Figure 7.8 shows the results from fitting a smoothing spline to the Wage data. The red curve indicates the fit obtained from pre-specifying that we would like a smoothing spline with 16 effective degrees of freedom. The blue curve is the smoothing spline obtained when $\lambda$ is chosen using LOOCV; in this case, the value of $\lambda$ chosen results in 6.8 effective degrees of freedom (computed using (7.13)). For this data, there is little discernible difference between the two smoothing splines, beyond the fact that the one with 16 degrees of freedom seems slightly wigglier. Since there is little difference between the two fits, the smoothing spline fit with 6.8 degrees of freedom
 
-![](images/5c9bd24bf6a1162f35aa6a24a9ab85ef183688bc26d21fe5e752c9470eca4319.jpg)
+![](images/07-moving-beyond-linearity/5c9bd24bf6a1162f35aa6a24a9ab85ef183688bc26d21fe5e752c9470eca4319.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -10468,7 +10468,7 @@ Note that in Step 3 of Algorithm 7.1, the weights $K_{i0}$ will differ for each 
 In order to perform local regression, there are a number of choices to be made, such as how to define the weighting function K, and whether to fit a linear, constant, or quadratic regression in Step 3. (Equation 7.14 corresponds to a linear regression.) While all of these choices make some difference, the most important choice is the span s, which is the proportion of points used to compute the local regression at $x_{0}$ , as defined in Step 1 above. The span plays a role like that of the tuning parameter $\lambda$ in smooth-
 
 Local Regression  
-![](images/f1b348ae2b84f80e5d83c13f20f7b58df1314a02c6a7cbfd686bdc9d5b8dcdb0.jpg)  
+![](images/07-moving-beyond-linearity/f1b348ae2b84f80e5d83c13f20f7b58df1314a02c6a7cbfd686bdc9d5b8dcdb0.jpg)  
 FIGURE 7.9. Local regression illustrated on some simulated data, where the blue curve represents $f(x)$ from which the data were generated, and the light orange curve corresponds to the local regression estimate $\hat{f}(x)$ . The orange colored points are local to the target point $x_{0}$ , represented by the orange vertical line. The yellow bell-shape superimposed on the plot indicates weights assigned to each point, decreasing to zero with distance from the target point. The fit $\hat{f}(x_{0})$ at $x_{0}$ is obtained by fitting a weighted linear regression (orange line segment), and using the fitted value at $x_{0}$ (orange solid dot) as the estimate $\hat{f}(x_{0})$ .
 
 ing splines: it controls the flexibility of the non-linear fit. The smaller the value of s, the more local and wiggly will be our fit; alternatively, a very large value of s will lead to a global fit to the data using all of the training observations. We can again use cross-validation to choose s, or we can specify it directly. Figure 7.10 displays local linear regression fits on the Wage data, using two values of s: 0.7 and 0.2. As expected, the fit obtained using s = 0.7 is smoother than that obtained using s = 0.2.
@@ -10491,7 +10491,7 @@ $$
 
 4. The fitted value at $x_0$ is given by $\hat{f}(x_0) = \hat{\beta}_0 + \hat{\beta}_1x_0$ .
 
-![](images/f8a4c564ad06ece2982112e36016c5bc87b18bb34e9907996c085b65b061d91a.jpg)
+![](images/07-moving-beyond-linearity/f8a4c564ad06ece2982112e36016c5bc87b18bb34e9907996c085b65b061d91a.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -10516,7 +10516,7 @@ additive
 model
 additivity
 
-![](images/74307dfb9bf59dde4e591d33a92101425b62903779699fa230f4dacfa00cfe44.jpg)  
+![](images/07-moving-beyond-linearity/74307dfb9bf59dde4e591d33a92101425b62903779699fa230f4dacfa00cfe44.jpg)  
 FIGURE 7.11. For the Wage data, plots of the relationship between each feature and the response, wage, in the fitted model (7.16). Each plot displays the fitted function and pointwise standard errors. The first two functions are natural splines in year and age, with four and five degrees of freedom, respectively. The third function is a step function, fit to the qualitative variable education.
 
 examine GAMs for a quantitative response in Section 7.7.1, and then for a qualitative response in Section 7.7.2.
@@ -10545,7 +10545,7 @@ $$
 
 on the Wage data. Here year and age are quantitative variables, while the variable education is qualitative with five levels: <HS, HS, <Coll, Coll, >Coll, referring to the amount of high school or college education that an individual has completed. We fit the first two functions using natural splines. We
 
-![](images/65b5bda55f03ff933a49e1339731ca6ee3c1f5ad0a6dfed759cf2a47e3626482.jpg)  
+![](images/07-moving-beyond-linearity/65b5bda55f03ff933a49e1339731ca6ee3c1f5ad0a6dfed759cf2a47e3626482.jpg)  
 FIGURE 7.12. Details are as in Figure 7.11, but now $f_{1}$ and $f_{2}$ are smoothing splines with four and five degrees of freedom, respectively.
 
 fit the third function using a separate constant for each level, via the usual dummy variable approach of Section 3.3.1.
@@ -10586,7 +10586,7 @@ $$
 \log \left(\frac {p (X)}{1 - p (X)}\right) = \beta_ {0} + f _ {1} (X _ {1}) + f _ {2} (X _ {2}) + \dots + f _ {p} (X _ {p}). \tag {7.18}
 $$
 
-![](images/b18b73cdc647f304cc65225975089ac23e0be277fb5f9feb4786bc15de6c5b1f.jpg)  
+![](images/07-moving-beyond-linearity/b18b73cdc647f304cc65225975089ac23e0be277fb5f9feb4786bc15de6c5b1f.jpg)  
 FIGURE 7.13. For the Wage data, the logistic regression GAM given in (7.19) is fit to the binary response I(wage>250). Each plot displays the fitted function and pointwise standard errors. The first function is linear in year, the second function a smoothing spline with five degrees of freedom in age, and the third a step function for education. There are very wide standard errors for the first level <HS of education.
 
 Equation 7.18 is a logistic regression GAM. It has all the same pros and cons as discussed in the previous section for quantitative responses.
@@ -10609,7 +10609,7 @@ Once again $f_2$ is fit using a smoothing spline with five degrees of freedom, a
 
 In this lab, we demonstrate some of the nonlinear models discussed in this chapter. We use the Wage data as a running example, and show that many of the complex non-linear fitting procedures discussed can easily be implemented in Python.
 
-![](images/c21fc07952074a0ac9141d9bcf45f68e352c6eed5065d9cfc00e1047a1829965.jpg)  
+![](images/07-moving-beyond-linearity/c21fc07952074a0ac9141d9bcf45f68e352c6eed5065d9cfc00e1047a1829965.jpg)  
 FIGURE 7.14. The same model is fit as in Figure 7.13, this time excluding the observations for which education is <HS. Now we see that increased education tends to be associated with higher salaries.
 
 As usual, we start with some of our standard imports.
@@ -11450,7 +11450,7 @@ $$
 f (x) = \beta_ {0} + \beta_ {1} x + \beta_ {2} x ^ {2} + \beta_ {3} x ^ {3} + \beta_ {4} (x - \xi) _ {+} ^ {3}
 $$
 
-![](images/7c6ba86e3fc9caee3e43c38ad6562d90b9d25d58a10e9fdf8369d4c187a0afa1.jpg)
+![](images/07-moving-beyond-linearity/7c6ba86e3fc9caee3e43c38ad6562d90b9d25d58a10e9fdf8369d4c187a0afa1.jpg)
 
 is indeed a cubic regression spline, regardless of the values of $\beta_{0}, \beta_{1}, \beta_{2}, \beta_{3}, \beta_{4}$ .
 
@@ -11612,7 +11612,7 @@ In order to motivate regression trees, we begin with a simple example.
 regression
 tree
 
-![](images/054526ce49ec041bb6d64db4238807fc5e3799442c075a60f0817c1d335b8073.jpg)
+![](images/08-tree-based-methods/054526ce49ec041bb6d64db4238807fc5e3799442c075a60f0817c1d335b8073.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -11634,7 +11634,7 @@ We use the Hitters data set to predict a baseball player's Salary based on Years
 
 Figure 8.1 shows a regression tree fit to this data. It consists of a series of splitting rules, starting at the top of the tree. The top split assigns observations having Years<4.5 to the left branch. $^{1}$ The predicted salary for these players is given by the mean response value for the players in the data set with Years<4.5. For such players, the mean log salary is 5.107, and so we make a prediction of $e^{5.107}$ thousands of dollars, i.e. \$165,174, for these players. Players with Years>=4.5 are assigned to the right branch, and then that group is further subdivided by Hits. Overall, the tree stratifies or segments the players into three regions of predictor space: players who have played for four or fewer years, players who have played for five or more years and who made fewer than 118 hits last year, and players who have played for five or more years and who made at least 118 hits last year. These three regions can be written as $R_1 = \{X \mid \text{Years}<4.5\}$ , $R_2 = \{X \mid \text{Years}>=4.5$ , Hits<117.5}, and $R_3 = \{X \mid \text{Years}>=4.5$ , Hits>=117.5}. Figure 8.2 illustrates
 
-![](images/8428359b7bf35fc8c19e426195d3ff7db9e3e1b716ec7db1d2f8510f6b6f348e.jpg)
+![](images/08-tree-based-methods/8428359b7bf35fc8c19e426195d3ff7db9e3e1b716ec7db1d2f8510f6b6f348e.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -11688,7 +11688,7 @@ where $\hat{y}_{R_{1}}$ is the mean response for the training observations in $R
 
 Next, we repeat the process, looking for the best predictor and best cutpoint in order to split the data further so as to minimize the RSS within
 
-![](images/1c539d092d1c7e117642e7f8e4b89447bd592a5422109ee267802c826b46b5a7.jpg)  
+![](images/08-tree-based-methods/1c539d092d1c7e117642e7f8e4b89447bd592a5422109ee267802c826b46b5a7.jpg)  
 FIGURE 8.3. Top Left: A partition of two-dimensional feature space that could not result from recursive binary splitting. Top Right: The output of recursive binary splitting on a two-dimensional example. Bottom Left: A tree corresponding to the partition in the top right panel. Bottom Right: A perspective plot of the prediction surface corresponding to that tree.
 
 each of the resulting regions. However, this time, instead of splitting the entire predictor space, we split one of the two previously identified regions. We now have three regions. Again, we look to split one of these three regions further, so as to minimize the RSS. The process continues until a stopping criterion is reached; for instance, we may continue until no region contains more than five observations.
@@ -11735,7 +11735,7 @@ A classification tree is very similar to a regression tree, except that it is us
 
 The task of growing a classification tree is quite similar to the task of growing a regression tree. Just as in the regression setting, we use recursive
 
-![](images/02571549cceb4e3db989265012879b5f0cfead35d1f3738179ab4312a0fc3359.jpg)
+![](images/08-tree-based-methods/02571549cceb4e3db989265012879b5f0cfead35d1f3738179ab4312a0fc3359.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -11774,7 +11774,7 @@ $$
 
 a measure of total variance across the $K$ classes. It is not hard to see that the Gini index takes on a small value if all of the $\hat{p}_{mk}$ 's are close to zero or one. For this reason the Gini index is referred to as a measure of
 
-![](images/42fa234067b011f4aeceb688788c0d72e4d46cc2a9929c7448a1d20f173d6ada.jpg)
+![](images/08-tree-based-methods/42fa234067b011f4aeceb688788c0d72e4d46cc2a9929c7448a1d20f173d6ada.jpg)
 
 <details>
 <summary>line</summary>
@@ -11813,7 +11813,7 @@ Figure 8.6 shows an example on the Heart data set. These data contain a binary o
 
 In our discussion thus far, we have assumed that the predictor variables take on continuous values. However, decision trees can be constructed even in the presence of qualitative predictor variables. For instance, in the Heart data, some of the predictors, such as Sex, Thal (Thallium stress test),
 
-![](images/d12627209dc9a2d92066f6ef1f0dd67bb55986bb75534247128cab4483d70913.jpg)  
+![](images/08-tree-based-methods/d12627209dc9a2d92066f6ef1f0dd67bb55986bb75534247128cab4483d70913.jpg)  
 FIGURE 8.6. Heart data. Top: The unpruned tree. Bottom Left: Cross-validation error, training, and test error, for different sizes of the pruned tree. Bottom Right: The pruned tree corresponding to the minimal cross-validation error.
 
 and ChestPain, are qualitative. Therefore, a split on one of these variables amounts to assigning some of the qualitative values to one branch and assigning the remaining to the other branch. In Figure 8.6, some of the internal nodes correspond to splitting qualitative variables. For instance, the top internal node corresponds to splitting Thal. The text Thal:a indicates that the left-hand branch coming out of that node consists of observations with the first value of the Thal variable (normal), and the right-hand node consists of the remaining observations (fixed or reversible defects). The text ChestPain:bc two splits down the tree on the left indicates that the left-hand branch coming out of that node consists of observations with the second and third values of the ChestPain variable, where the possible values are typical angina, atypical angina, non-anginal pain, and asymptomatic.
@@ -11848,7 +11848,7 @@ Decision trees for regression and classification have a number of advantages ove
 
 ▲ Trees are very easy to explain to people. In fact, they are even easier to explain than linear regression!
 
-![](images/dc0cdb3adab97304aa12fe40f5ae13e79e4a24ae71d5f5532cb649a198e0b8ce.jpg)  
+![](images/08-tree-based-methods/dc0cdb3adab97304aa12fe40f5ae13e79e4a24ae71d5f5532cb649a198e0b8ce.jpg)  
 FIGURE 8.7. Top Row: A two-dimensional classification example in which the true decision boundary is linear, and is indicated by the shaded regions. A classical approach that assumes a linear boundary (left) will outperform a decision tree that performs splits parallel to the axes (right). Bottom Row: Here the true decision boundary is non-linear. Here a linear model is unable to capture the true decision boundary (left), whereas a decision tree is successful (right).
 
 ▲ Some people believe that decision trees more closely mirror human decision-making than do the regression and classification approaches seen in previous chapters.  
@@ -11890,7 +11890,7 @@ $$
 
 bagging
 
-![](images/83e2a4563e5ddf5f00d9274e38404c9236493ddb9646eb89f449d45417a8b789.jpg)
+![](images/08-tree-based-methods/83e2a4563e5ddf5f00d9274e38404c9236493ddb9646eb89f449d45417a8b789.jpg)
 
 <details>
 <summary>line</summary>
@@ -11933,7 +11933,7 @@ As we have discussed, bagging typically results in improved accuracy over predic
 
 Although the collection of bagged trees is much more difficult to interpret than a single tree, one can obtain an overall summary of the importance of each predictor using the RSS (for bagging regression trees) or the Gini index (for bagging classification trees). In the case of bagging regression trees, we can record the total amount that the RSS (8.1) is decreased due to splits over a given predictor, averaged over all B trees. A large value indicates an important predictor. Similarly, in the context of bagging classification
 
-![](images/1f72e25a3b59d962b56f7ba65ea708681d33a40ad930cf4da57bad5e948f37d9.jpg)
+![](images/08-tree-based-methods/1f72e25a3b59d962b56f7ba65ea708681d33a40ad930cf4da57bad5e948f37d9.jpg)
 
 <details>
 <summary>bar</summary>
@@ -11989,7 +11989,7 @@ Recall that bagging involves creating multiple copies of the original training d
 
 boosting
 
-![](images/4110d81a55e3aefe3d300daf68c4d0e70a85fc28a323171a65c7316b9ef754c4.jpg)
+![](images/08-tree-based-methods/4110d81a55e3aefe3d300daf68c4d0e70a85fc28a323171a65c7316b9ef754c4.jpg)
 
 <details>
 <summary>line</summary>
@@ -12062,7 +12062,7 @@ Boosting has three tuning parameters:
 
 In Figure 8.11, we applied boosting to the 15-class cancer gene expression data set, in order to develop a classifier that can distinguish the normal class from the 14 cancer classes. We display the test error as a function of the total number of trees and the interaction depth d. We see that simple stumps with an interaction depth of one perform well if enough of them are included. This model outperforms the depth-two model, and both outperform a random forest. This highlights one difference between boosting and random forests: in boosting, because the growth of a particular tree takes into account the other trees that have already been grown, smaller
 
-![](images/5750a74609fab8f132850db1eef2f6dc7d75af0042186b4f56f92e905a82c367.jpg)
+![](images/08-tree-based-methods/5750a74609fab8f132850db1eef2f6dc7d75af0042186b4f56f92e905a82c367.jpg)
 
 <details>
 <summary>line</summary>
@@ -12112,7 +12112,7 @@ regression
 trees
 
 (a): $\hat{f}_{k}^{b-1}(X)$  
-![](images/4fc9cf0123a5a4df342f92164b808b284a85ac21a9e89b1bf4a5ffe2feeb8a15.jpg)
+![](images/08-tree-based-methods/4fc9cf0123a5a4df342f92164b808b284a85ac21a9e89b1bf4a5ffe2feeb8a15.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -12131,7 +12131,7 @@ graph TD
 (c): Possibility #2 for $\hat{f}_{k}^{b}(X)$
 
 (b): Possibility #1 for $\hat{f}_{k}^{b}(X)$  
-![](images/ae673e04087dddb3c7a5c0491d3d0365e74f6824f718e4006c929f85c07aa5ce.jpg)
+![](images/08-tree-based-methods/ae673e04087dddb3c7a5c0491d3d0365e74f6824f718e4006c929f85c07aa5ce.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -12149,7 +12149,7 @@ graph TD
 
 (d): Possibility #3 for $\hat{f}_k^b (X)$
 
-![](images/c0331d4b56524428f7defa5a5441ee7d0bd3841ac5c8a3eef8a0ab44f783fde2.jpg)
+![](images/08-tree-based-methods/c0331d4b56524428f7defa5a5441ee7d0bd3841ac5c8a3eef8a0ab44f783fde2.jpg)
 
 <details>
 <summary>wireframe</summary>
@@ -12160,7 +12160,7 @@ graph TD
 | 169.17 | 0.4079 |
 </details>
 
-![](images/680bd1998c6fdc0b5764504271ae2c297587f0b32976dd91484379c000795672.jpg)
+![](images/08-tree-based-methods/680bd1998c6fdc0b5764504271ae2c297587f0b32976dd91484379c000795672.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -12231,7 +12231,7 @@ A key element of the BART approach is that in Step 3(a)ii., we do not fit a fres
 
 Figure 8.13 shows the result of applying BART to the Heart data, using K = 200 trees, as the number of iterations is increased to 10,000. During the initial iterations, the test and training errors jump around a bit. After this initial burn-in period, the error rates settle down. We note that there is only a small difference between the training error and the test error, indicating that the tree perturbation process largely avoids overfitting.
 
-![](images/7b6ccfc5c14337641eec63ce48824957ade64f982a1abcf9a41412f48bf643f6.jpg)
+![](images/08-tree-based-methods/7b6ccfc5c14337641eec63ce48824957ade64f982a1abcf9a41412f48bf643f6.jpg)
 
 <details>
 <summary>line</summary>
@@ -12832,7 +12832,7 @@ Hint: In a setting with two classes, $\hat{p}_{m1} = 1 - \hat{p}_{m2}$ . You cou
 
 4. This question relates to the plots in Figure 8.14.
 
-![](images/cb9ae44ffd55bbb42289f29ea23892863eebb06cdb27c930390f61a6fd0d4da4.jpg)  
+![](images/08-tree-based-methods/cb9ae44ffd55bbb42289f29ea23892863eebb06cdb27c930390f61a6fd0d4da4.jpg)  
 FIGURE 8.14. Left: A partition of the predictor space corresponding to Exercise 4a. Right: A tree corresponding to Exercise 4b.
 
 (a) Sketch the tree corresponding to the partition of the predictor space illustrated in the left-hand panel of Figure 8.14. The numbers inside the boxes indicate the mean of $Y$ within each region.  
@@ -12946,7 +12946,7 @@ $$
 
 and that these observations fall into two classes—that is, $y_{1},\ldots ,y_{n}\in \{-1,1\}$ where $-1$ represents one class and 1 the other class. We also have a
 
-![](images/ad64efbc815c37d3b7ff4f294ad667c481d6da8e72e334281a0540c0270a2182.jpg)
+![](images/09-support-vector-machines/ad64efbc815c37d3b7ff4f294ad667c481d6da8e72e334281a0540c0270a2182.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -12983,7 +12983,7 @@ for all $i = 1,\dots ,n$
 
 If a separating hyperplane exists, we can use it to construct a very natural classifier: a test observation is assigned a class depending on which side of the hyperplane it is located. The right-hand panel of Figure 9.2 shows an example of such a classifier. That is, we classify the test observation $x^{*}$ based on the sign of $f(x^{*}) = \beta_{0} + \beta_{1}x_{1}^{*} + \beta_{2}x_{2}^{*} + \cdots + \beta_{p}x_{p}^{*}$ . If $f(x^{*})$ is positive, then we assign the test observation to class 1, and if $f(x^{*})$ is negative, then we assign it to class -1. We can also make use of the magnitude of $f(x^{*})$ . If
 
-![](images/b459da401baa4e4cb28a151695ea90763638790c693562f35b341bdfab186ce5.jpg)  
+![](images/09-support-vector-machines/b459da401baa4e4cb28a151695ea90763638790c693562f35b341bdfab186ce5.jpg)  
 FIGURE 9.2. Left: There are two classes of observations, shown in blue and in purple, each of which has measurements on two variables. Three separating hyperplanes, out of many possible, are shown in black. Right: A separating hyperplane is shown in black. The blue and purple grid indicates the decision rule made by a classifier based on this separating hyperplane: a test observation that falls in the blue portion of the grid will be assigned to the blue class, and a test observation that falls into the purple portion of the grid will be assigned to the purple class.
 
 $f(x^{*})$ is far from zero, then this means that $x^{*}$ lies far from the hyperplane, and so we can be confident about our class assignment for $x^{*}$ . On the other hand, if $f(x^{*})$ is close to zero, then $x^{*}$ is located near the hyperplane, and so we are less certain about the class assignment for $x^{*}$ . Not surprisingly, and as we see in Figure 9.2, a classifier that is based on a separating hyperplane leads to a linear decision boundary.
@@ -13002,7 +13002,7 @@ separating
 hyperplane
 margin
 
-![](images/0896eec701f802fbf5717cedabfc8ed22d818babab5379c5ed7b41957724e4ed.jpg)
+![](images/09-support-vector-machines/0896eec701f802fbf5717cedabfc8ed22d818babab5379c5ed7b41957724e4ed.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -13061,7 +13061,7 @@ Therefore, the constraints (9.10) and (9.11) ensure that each observation is on 
 
 The maximal margin classifier is a very natural way to perform classification, if a separating hyperplane exists. However, as we have hinted, in many cases no separating hyperplane exists, and so there is no maximal
 
-![](images/682d335ac2187f1a7b4d4974682be749624771636f0cc9d55bfc371247b54ef5.jpg)
+![](images/09-support-vector-machines/682d335ac2187f1a7b4d4974682be749624771636f0cc9d55bfc371247b54ef5.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -13106,7 +13106,7 @@ In Figure 9.4, we see that observations that belong to two classes are not neces
 
 In this case, we might be willing to consider a classifier based on a hyperplane that does not perfectly separate the two classes, in the interest of
 
-![](images/c49495228873a42697aa9ea69d6703f074fed01182d4cc1f79b1501df9049e53.jpg)  
+![](images/09-support-vector-machines/c49495228873a42697aa9ea69d6703f074fed01182d4cc1f79b1501df9049e53.jpg)  
 FIGURE 9.5. Left: Two classes of observations are shown in blue and in purple, along with the maximal margin hyperplane. Right: An additional blue observation has been added, leading to a dramatic shift in the maximal margin hyperplane shown as a solid line. The dashed line indicates the maximal margin hyperplane that was obtained in the absence of this additional point.
 
 - Greater robustness to individual observations, and  
@@ -13128,7 +13128,7 @@ classifier
 soft margin
 classifier
 
-![](images/f264ada9816cabefb4c40e3474aa2d671fa41eb4cd1fddfd7bc0f847a2563a3b.jpg)  
+![](images/09-support-vector-machines/f264ada9816cabefb4c40e3474aa2d671fa41eb4cd1fddfd7bc0f847a2563a3b.jpg)  
 FIGURE 9.6. Left: A support vector classifier was fit to a small data set. The hyperplane is shown as a solid line and the margins are shown as dashed lines. Purple observations: Observations 3, 4, 5, and 6 are on the correct side of the margin, observation 2 is on the margin, and observation 1 is on the wrong side of the margin. Blue observations: Observations 7 and 10 are on the correct side of the margin, observation 9 is on the margin, and observation 8 is on the wrong side of the margin. No observations are on the wrong side of the hyperplane. Right: Same as left panel with two additional points, 11 and 12. These two observations are on the wrong side of the hyperplane and the wrong side of the margin.
 
 misclassify a few observations. It is the solution to the optimization problem
@@ -13163,7 +13163,7 @@ The fact that only support vectors affect the classifier is in line with our pre
 
 The fact that the support vector classifier's decision rule is based only on a potentially small subset of the training observations (the support vectors) means that it is quite robust to the behavior of observations that are far away from the hyperplane. This property is distinct from some of
 
-![](images/7bf257128bf2e0760e7cb6e3da43157641a532693c9359e6728420d1e0e6b585.jpg)  
+![](images/09-support-vector-machines/7bf257128bf2e0760e7cb6e3da43157641a532693c9359e6728420d1e0e6b585.jpg)  
 FIGURE 9.7. A support vector classifier was fit using four different values of the tuning parameter C in (9.12)-(9.15). The largest value of C was used in the top left panel, and smaller values were used in the top right, bottom left, and bottom right panels. When C is large, then there is a high tolerance for observations being on the wrong side of the margin, and so the margin will be large. As C decreases, the tolerance for observations being on the wrong side of the margin decreases, and the margin narrows.
 
 the other classification methods that we have seen in preceding chapters, such as linear discriminant analysis. Recall that the LDA classification rule depends on the mean of all of the observations within each class, as well as the within-class covariance matrix computed using all of the observations. In contrast, logistic regression, unlike LDA, has very low sensitivity to observations far from the decision boundary. In fact we will see in Section 9.5 that the support vector classifier and logistic regression are closely related.
@@ -13171,7 +13171,7 @@ the other classification methods that we have seen in preceding chapters, such a
 # 9.3 Support Vector Machines
 
 We first discuss a general mechanism for converting a linear classifier into one that produces non-linear decision boundaries. We then introduce the support vector machine, which does this in an automatic way.
-![](images/02cf50078d08d76fd3b5ad575a8291e888cf2c5c6b5be4e1dc0d52ccec1a176f.jpg)  
+![](images/09-support-vector-machines/02cf50078d08d76fd3b5ad575a8291e888cf2c5c6b5be4e1dc0d52ccec1a176f.jpg)  
 FIGURE 9.8. Left: The observations fall into two classes, with a non-linear boundary between them. Right: The support vector classifier seeks a linear boundary, and consequently performs very poorly.
 
 # 9.3.1 Classification with Non-Linear Decision Boundaries
@@ -13258,7 +13258,7 @@ $$
 
 This is known as a polynomial kernel of degree $d$ , where $d$ is a positive integer. Using such a kernel with $d > 1$ , instead of the standard linear kernel (9.21), in the support vector classifier algorithm leads to a much more flexible decision boundary. It essentially amounts to fitting a support vector
 
-![](images/a3196730ba2e7524080fc3aac59dea9c85a43c2500dd7c588e30c7e5b4426676.jpg)  
+![](images/09-support-vector-machines/a3196730ba2e7524080fc3aac59dea9c85a43c2500dd7c588e30c7e5b4426676.jpg)  
 FIGURE 9.9. Left: An SVM with a polynomial kernel of degree 3 is applied to the non-linear data from Figure 9.8, resulting in a far more appropriate decision rule. Right: An SVM with a radial kernel is applied. In this example, either kernel is capable of capturing the decision boundary.
 
 classifier in a higher-dimensional space involving polynomials of degree d, rather than in the original feature space. When the support vector classifier is combined with a non-linear kernel such as $(9.22)$ , the resulting classifier is known as a support vector machine. Note that in this case the (non-linear) function has the form
@@ -13281,7 +13281,7 @@ In (9.24), $\gamma$ is a positive constant. The right-hand panel of Figure 9.9 s
 
 How does the radial kernel (9.24) actually work? If a given test observation $x^{*} = (x_{1}^{*},\dots,x_{p}^{*})^{T}$ is far from a training observation $x_{i}$ in terms of Euclidean distance, then $\sum_{j = 1}^{p}(x_{j}^{*} - x_{ij})^{2}$ will be large, and so $K(x^{*},x_{i}) = \exp (-\gamma \sum_{j = 1}^{p}(x_{j}^{*} - x_{ij})^{2})$ will be tiny. This means that in (9.23), $x_{i}$ will play virtually no role in $f(x^{*})$ . Recall that the predicted class label for the test observation $x^{*}$ is based on the sign of $f(x^{*})$ . In other words, training observations that are far from $x^{*}$ will play essentially no role in the predicted class label for $x^{*}$ . This means that the radial kernel has very local
 
-![](images/a0cfcbe0b8d27c2173cf99d24e24f9a203685b15e2a650a2bf94c35ce1730f1e.jpg)  
+![](images/09-support-vector-machines/a0cfcbe0b8d27c2173cf99d24e24f9a203685b15e2a650a2bf94c35ce1730f1e.jpg)  
 FIGURE 9.10. ROC curves for the Heart data training set. Left: The support vector classifier and LDA are compared. Right: The support vector classifier is compared to an SVM using a radial basis kernel with $\gamma = 10^{-3}$ , $10^{-2}$ , and $10^{-1}$ .
 
 behavior, in the sense that only nearby training observations have an effect on the class label of a test observation.
@@ -13294,7 +13294,7 @@ In Chapter 8 we apply decision trees and related methods to the Heart data. The 
 
 We first fit LDA and the support vector classifier to the training data. Note that the support vector classifier is equivalent to an SVM using a polynomial kernel of degree d = 1. The left-hand panel of Figure 9.10 displays ROC curves (described in Section 4.4.2) for the training set predictions for both LDA and the support vector classifier. Both classifiers compute scores of the form $\hat{f}(X) = \hat{\beta}_{0} + \hat{\beta}_{1}X_{1} + \hat{\beta}_{2}X_{2} + \cdots + \hat{\beta}_{p}X_{p}$ for each observation. For any given cutoff t, we classify observations into the heart disease or no heart disease categories depending on whether $\hat{f}(X) < t$ or $\hat{f}(X) \geq t$ . The ROC curve is obtained by forming these predictions and computing the false positive and true positive rates for a range of values of t. An optimal classifier will hug the top left corner of the ROC plot. In this instance
 
-![](images/2a1f9a0e49e070d83e0bc64a9b1474e0501d4538ce21ad1807869c618b67d8bf.jpg)  
+![](images/09-support-vector-machines/2a1f9a0e49e070d83e0bc64a9b1474e0501d4538ce21ad1807869c618b67d8bf.jpg)  
 FIGURE 9.11. ROC curves for the test set of the Heart data. Left: The support vector classifier and LDA are compared. Right: The support vector classifier is compared to an SVM using a radial basis kernel with $\gamma = 10^{-3}$ , $10^{-2}$ , and $10^{-1}$ .
 
 LDA and the support vector classifier both perform well, though there is a suggestion that the support vector classifier may be slightly superior.
@@ -13330,7 +13330,7 @@ $$
 
 where $\lambda$ is a nonnegative tuning parameter. When $\lambda$ is large then $\beta_{1},\ldots,\beta_{p}$ are small, more violations to the margin are tolerated, and a low-variance but high-bias classifier will result. When $\lambda$ is small then few violations to the margin will occur; this amounts to a high-variance but low-bias
 
-![](images/537a9f0e6b7960c9ab6577c93cb529510208e037c00234527f8ed09ccbc1f0b0.jpg)
+![](images/09-support-vector-machines/537a9f0e6b7960c9ab6577c93cb529510208e037c00234527f8ed09ccbc1f0b0.jpg)
 
 classifier. Thus, a small value of $\lambda$ in (9.25) amounts to a small value of C in (9.15). Note that the $\lambda\sum_{j=1}^{p}\beta_{j}^{2}$ term in (9.25) is the ridge penalty term from Section 6.2.1, and plays a similar role in controlling the bias-variance trade-off for the support vector classifier.
 
@@ -13358,7 +13358,7 @@ An interesting characteristic of the support vector classifier is that only supp
 
 When the support vector classifier and SVM were first introduced, it was thought that the tuning parameter C in $(9.15)$ was an unimportant “nuisance” parameter that could be set to some default value, like 1. However, the “Loss + Penalty” formulation $(9.25)$ for the support vector classifier indicates that this is not the case. The choice of tuning parameter is very important and determines the extent to which the model underfits or overfits the data, as illustrated, for example, in Figure 9.7.
 
-![](images/134d407d23f00ae50163e7f79cb389ae29c0e392808fc03c56592057321d37f9.jpg)
+![](images/09-support-vector-machines/134d407d23f00ae50163e7f79cb389ae29c0e392808fc03c56592057321d37f9.jpg)
 
 <details>
 <summary>line</summary>
@@ -14021,7 +14021,7 @@ learning
 
 neural network
 
-![](images/a58d51457d2a23702d3c1e597db456479da807628e90b951d1a8088f73119bc5.jpg)
+![](images/10-deep-learning/a58d51457d2a23702d3c1e597db456479da807628e90b951d1a8088f73119bc5.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -14088,7 +14088,7 @@ hidden units
 
 activations
 
-![](images/2f2c13cf69125516f2c142937c6ccfe42cdcba6dd215b7529e94103fcce1f98e.jpg)
+![](images/10-deep-learning/2f2c13cf69125516f2c142937c6ccfe42cdcba6dd215b7529e94103fcce1f98e.jpg)
 
 <details>
 <summary>line</summary>
@@ -14170,7 +14170,7 @@ Modern neural networks typically have more than one hidden layer, and often many
 
 We will illustrate a large dense network on the famous and publicly available MNIST handwritten digit dataset. $^{1}$ Figure 10.3 shows examples of these digits. The idea is to build a model to classify the images into their correct digit class 0–9. Every image has $p = 28 \times 28 = 784$ pixels, each of which is an eight-bit grayscale value between 0 and 255 representing
 
-![](images/660d675b98a1171d20fe326b03c40343cb3656e5f874329a594dab29d0edd097.jpg)  
+![](images/10-deep-learning/660d675b98a1171d20fe326b03c40343cb3656e5f874329a594dab29d0edd097.jpg)  
 FIGURE 10.3. Examples of handwritten digits from the MNIST corpus. Each grayscale image has $28 \times 28$ pixels, each of which is an eight-bit number (0–255) which represents how dark that pixel is. The first 3, 5, and 8 are enlarged to show their 784 individual pixel values.
 
 the relative amount of the written digit in that tiny square. $^{2}$ These pixels are stored in the input vector X (in, say, column order). The output is the class label, represented by a vector $Y = (Y_{0}, Y_{1}, \ldots, Y_{9})$ of 10 dummy variables, with a one in the position corresponding to the label, and zeros elsewhere. In the machine learning community, this is known as one-hot encoding. There are 60,000 training images, and 10,000 test images.
@@ -14183,7 +14183,7 @@ Figure 10.4 shows a multilayer network architecture that works well for solving 
 - It has ten output variables, rather than one. In this case the ten variables really represent a single qualitative variable and so are quite dependent. (We have indexed them by the digit class 0–9 rather than 1–10, for clarity.) More generally, in multi-task learning one can predict different responses simultaneously with a single network; they all have a say in the formation of the hidden layers.  
 - The loss function used for training the network is tailored for the multiclass classification task.
 
-![](images/add9941b5c87df1fba78b7b47dffa06b4cc8875b7e33d66d85f0da40a805f825.jpg)
+![](images/10-deep-learning/add9941b5c87df1fba78b7b47dffa06b4cc8875b7e33d66d85f0da40a805f825.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -14243,7 +14243,7 @@ Table 10.1 compares the test performance of the neural network with two simple m
 
 TABLE 10.1. Test error rate on the MNIST data, for neural networks with two forms of regularization, as well as multinomial logistic regression and linear discriminant analysis. In this example, the extra complexity of the neural network leads to a marked improvement in test error.
 
-![](images/744ebe584f5ceaf44a98b5cedc753cc4e3dd1e4df207525d25800a59fd18e4df.jpg)
+![](images/10-deep-learning/744ebe584f5ceaf44a98b5cedc753cc4e3dd1e4df207525d25800a59fd18e4df.jpg)
 
 <details>
 <summary>natural_image</summary>
@@ -14263,7 +14263,7 @@ Neural networks rebounded around 2010 with big successes in image classification
 
 feature map
 
-![](images/290e6c44bc40106fa6ba9659a1598a610dcc190225dc7b92786837d60532cdbc.jpg)
+![](images/10-deep-learning/290e6c44bc40106fa6ba9659a1598a610dcc190225dc7b92786837d60532cdbc.jpg)
 
 <details>
 <summary>text_image</summary>
@@ -14311,7 +14311,7 @@ For instance, the top-left element comes from multiplying each element in the $2
 
 Figure 10.7 illustrates the application of two convolution filters to a $192 \times 179$ image of a tiger, shown on the left-hand side. $^{8}$ Each convolution filter is a $15 \times 15$ image containing mostly zeros (black), with a narrow strip of ones (white) oriented either vertically or horizontally within the image. When each filter is convolved with the image of the tiger, areas of the tiger that resemble the filter (i.e. that have either horizontal or vertical stripes or edges) are given large values, and areas of the tiger that do not resemble the feature are given small values. The convolved images are displayed on the right-hand side. We see that the horizontal stripe filter picks out horizontal stripes and edges in the original image, whereas the vertical stripe filter picks out vertical stripes and edges in the original image.
 
-![](images/b1945ce60d3de05a544b138fef8feac1f1f92013ea78cfd1cd7dbb53ed3f3dfb.jpg)
+![](images/10-deep-learning/b1945ce60d3de05a544b138fef8feac1f1f92013ea78cfd1cd7dbb53ed3f3dfb.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -14356,7 +14356,7 @@ So far we have defined a single convolution layer — each filter produces a new
 
 At the input layer, we see the three-dimensional feature map of a color image, where the channel axis represents each color by a $32 \times 32$ two-dimensional feature map of pixels. Each convolution filter produces a new channel at the first hidden layer, each of which is a $32 \times 32$ feature map (after some padding at the edges). After this first round of convolutions, we now have a new “image”; a feature map with considerably more channels than the three color input channels (six in the figure, since we used six convolution filters).
 
-![](images/a5ff324c7f8c9a200b60e1b1a0907d511322fa28da0215872fa7f1c93b60c9ba.jpg)
+![](images/10-deep-learning/a5ff324c7f8c9a200b60e1b1a0907d511322fa28da0215872fa7f1c93b60c9ba.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -14384,7 +14384,7 @@ An additional important trick used with image modeling is data augmentation. Ess
 
 data augmentation
 
-![](images/2ed45c6bfc88f7083286b032f6a64b85cb0a2bca5ae86e8c3f4371b3ea69dc98.jpg)  
+![](images/10-deep-learning/2ed45c6bfc88f7083286b032f6a64b85cb0a2bca5ae86e8c3f4371b3ea69dc98.jpg)  
 FIGURE 10.9. Data augmentation. The original image (leftmost) is distorted in natural ways to produce different images with the same class label. These distortions do not fool humans, and act as a form of regularization when fitting the CNN.
 
 zoom, horizontal and vertical shift, shear, small rotations, and in this case horizontal flips. At face value this is a way of increasing the training set considerably with somewhat different examples, and thus protects against overfitting. In fact we can see this as a form of regularization: we build a cloud of images around each original image, all with the same label. This kind of fattening of the data is similar in spirit to ridge regularization.
@@ -14400,7 +14400,7 @@ Much of the work in fitting a CNN is in learning the convolution filters at the 
 weight
 freezing
 
-![](images/4a8de20893921c61a33f7284db3f2fc6b3c683ec67c320cddfbf041ab2146f41.jpg)
+![](images/10-deep-learning/4a8de20893921c61a33f7284db3f2fc6b3c683ec67c320cddfbf041ab2146f41.jpg)
 
 flamingo  
 Cooper's hawk  
@@ -14437,7 +14437,7 @@ Here we can see many words have been omitted, and some unknown words (UNK) have 
 - A lasso logistic regression using the glmnet package;  
 - A two-class neural network with two hidden layers, each with 16 ReLU units.
 
-![](images/cc8a909921978abb166acf577b4d0a0f762406b2c97e4926d91bd91f460971e7.jpg)  
+![](images/10-deep-learning/cc8a909921978abb166acf577b4d0a0f762406b2c97e4926d91bd91f460971e7.jpg)  
 FIGURE 10.11. Accuracy of the lasso and a two-hidden-layer neural network on the IMDb data. For the lasso, the x-axis displays $-\log(\lambda)$ , while for the neural network it displays epochs (number of times the fitting algorithm passes through the training set). Both show a tendency to overfit, and achieve approximately the same test accuracy.
 
 Both methods produce a sequence of solutions. The lasso sequence is indexed by the regularization parameter $\lambda$ . The neural-net sequence is indexed by the number of gradient-descent iterations used in the fitting, as measured by training epochs or passes through the training set (Section 10.7). Notice that the training accuracy in Figure 10.11 (black points) increases monotonically in both cases. We can use the validation error to pick a good solution from each sequence (blue points in the plots), which would then be used to make predictions on the test data set.
@@ -14480,7 +14480,7 @@ recurrent
 neural
 network
 
-![](images/7e751287668b783d7fe84cc6647b3a8e9767114211e4fdaa1d932da0074226c9.jpg)
+![](images/10-deep-learning/7e751287668b783d7fe84cc6647b3a8e9767114211e4fdaa1d932da0074226c9.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -14564,7 +14564,7 @@ sharing
 
 embedding
 
-![](images/b7e48af258da84298dbbba8e1b02c4147b640ea4b5d243c3a47a153fe3a0b033.jpg)
+![](images/10-deep-learning/b7e48af258da84298dbbba8e1b02c4147b640ea4b5d243c3a47a153fe3a0b033.jpg)
 
 <details>
 <summary>heatmap</summary>
@@ -14608,7 +14608,7 @@ RNNs provide a rich framework for modeling data sequences, and they continue to 
 
 Figure 10.14 shows historical trading statistics from the New York Stock Exchange. Shown are three daily time series covering the period December 3, 1962 to December 31, 1986. $^{18}$
 
-![](images/fc083539104e7c696a70e76eeb616a7dee04baeaf17029913857d2496a448c5b.jpg)
+![](images/10-deep-learning/fc083539104e7c696a70e76eeb616a7dee04baeaf17029913857d2496a448c5b.jpg)
 
 <details>
 <summary>line</summary>
@@ -14635,7 +14635,7 @@ An observation here consists of the measurements $(v_{t}, r_{t}, z_{t})$ on day 
 
 auto-correlation
 
-![](images/77e6b32eed21ae4edf77d9f1838151f46be22adb0696093d4b5e0f083b089918.jpg)
+![](images/10-deep-learning/77e6b32eed21ae4edf77d9f1838151f46be22adb0696093d4b5e0f083b089918.jpg)
 
 <details>
 <summary>bar</summary>
@@ -14702,7 +14702,7 @@ $$
 
 So here the target Y is the value of $\log\_volume\ v_{t}$ at a single timepoint t, and the input sequence X is the series of 3-vectors $\{X_{\ell}\}_{1}^{L}$ each consisting of the three measurements $\log\_volume$ , DJ\_return and $\log\_volatility$ from day t - L, $t - L + 1$ , up to t - 1. Each value of t makes a separate $(X, Y)$ pair, for t running from $L + 1$ to T. For the NYSE data we will use the past
 
-![](images/db3787cbd46ccfb74407b2f26125db068ec0513ec8405ec641e9e0811d74d272.jpg)
+![](images/10-deep-learning/db3787cbd46ccfb74407b2f26125db068ec0513ec8405ec641e9e0811d74d272.jpg)
 
 <details>
 <summary>line</summary>
@@ -14827,9 +14827,9 @@ $$
 R (\theta) = \frac {1}{2} \sum_ {i = 1} ^ {n} (y _ {i} - f _ {\theta} (x _ {i})) ^ {2}, \tag {10.25}
 $$
 
-![](images/3926535eb129a614a23eba5208546099de377f61089a30c482aae4164194ac3c.jpg)
+![](images/10-deep-learning/3926535eb129a614a23eba5208546099de377f61089a30c482aae4164194ac3c.jpg)
 
-![](images/e66c5217c4cb47d28a4e9d3acd1adc40c643f0f8a03e941b5519a7307f8b9453.jpg)
+![](images/10-deep-learning/e66c5217c4cb47d28a4e9d3acd1adc40c643f0f8a03e941b5519a7307f8b9453.jpg)
 
 <details>
 <summary>line</summary>
@@ -14911,7 +14911,7 @@ stochastic
 gradient
 descent
 
-![](images/b2bc4a4b8fbce5d2563f5ffd372ddbc7125c7b506ec30a816bead848ebe6860c.jpg)  
+![](images/10-deep-learning/b2bc4a4b8fbce5d2563f5ffd372ddbc7125c7b506ec30a816bead848ebe6860c.jpg)  
 FIGURE 10.18. Evolution of training and validation errors for the MNIST neural network depicted in Figure 10.4, as a function of training epochs. The objective refers to the log-likelihood (10.14).
 
 to avoid overfitting. The first row in Table 10.1 uses ridge regularization on the weights. This is achieved by augmenting the objective function (10.14) with a penalty term:
@@ -14924,7 +14924,7 @@ The parameter $\lambda$ is often preset at a small value, or else it is found us
 
 Figure 10.18 shows some metrics that evolve during the training of the network on the MNIST data. It turns out that SGD naturally enforces its own form of approximately quadratic regularization. $^{21}$ Here the minibatch size was 128 observations per gradient update. The term epochs labeling the horizontal axis in Figure 10.18 counts the number of times an equivalent of the full training set has been processed. For this network, 20% of the 60,000 training observations were used as a validation set in order to determine when training should stop. So in fact 48,000 observations were used for training, and hence there are $48,000/128 \approx 375$ minibatch gradient updates per epoch. We see that the value of the validation objective actually starts to increase by 30 epochs, so early stopping can also be used as an additional form of regularization.
 
-![](images/74f2799f46624faff0e1a8b472262aa464da71695db2ccf0a44f71bcce569852.jpg)  
+![](images/10-deep-learning/74f2799f46624faff0e1a8b472262aa464da71695db2ccf0a44f71bcce569852.jpg)  
 FIGURE 10.19. Dropout Learning. Left: a fully connected network. Right: network with dropout in the input and hidden layer. The nodes in grey are selected at random, and ignored in an instance of training.
 
 # 10.7.3 Dropout Learning
@@ -14941,7 +14941,7 @@ The network in Figure 10.4 is considered to be relatively straightforward; it ne
 
 Choices such as these can make a difference. In preparing this MNIST example, we achieved a respectable 1.8% misclassification error after some trial and error. Finer tuning and training of a similar network can get under 1% error on these data, but the tinkering process can be tedious, and can result in overfitting if done carelessly.
 
-![](images/f9affcc2ba6e60139f2b6e65e4e6f459ebb2a17b11129153dfb0e84eb73222fe.jpg)
+![](images/10-deep-learning/f9affcc2ba6e60139f2b6e65e4e6f459ebb2a17b11129153dfb0e84eb73222fe.jpg)
 
 <details>
 <summary>line</summary>
@@ -15006,7 +15006,7 @@ $$
 
 where $X \sim U[-5, 5]$ (uniform distribution), and $\epsilon \sim N(0, \sigma^2)$ with $\sigma = 0.3$ . We then fit a natural spline to the data, as described in Section 7.4, with $d$
 
-![](images/340066dc0f16c180cf169ded81f8361629464b0755dc47615b6937e83749a28e.jpg)  
+![](images/10-deep-learning/340066dc0f16c180cf169ded81f8361629464b0755dc47615b6937e83749a28e.jpg)  
 FIGURE 10.21. Fitted functions $\hat{f}_{d}(X)$ (orange), true function $f(X)$ (black) and the observed 20 training data points. A different value of d (degrees of freedom) is used in each panel. For $d \geq 20$ the orange curves all interpolate the training points, and hence the training error is zero.
 
 degrees of freedom. $^{22}$ Recall from Section 7.4 that fitting a natural spline with d degrees of freedom amounts to fitting a least-squares regression of the response onto a set of d basis functions. The upper-left panel of Figure 10.21 shows the data, the true function $f(X)$ , and $\hat{f}_{8}(X)$ , the fitted natural spline with d = 8 degrees of freedom.
@@ -16819,7 +16819,7 @@ Now, suppose we observe $n(Y,\delta)$ pairs, which we denote as $(y_{1},\delta_{
 
 In order to analyze survival data, we need to make some assumptions about why censoring has occurred. For instance, suppose that a number of patients drop out of a cancer study early because they are very sick. An analysis that does not take into consideration the reason why the patients dropped out will likely overestimate the true average survival time. Similarly, suppose that males who are very sick are more likely to drop out of the study than
 
-![](images/29388e75233d4af4f12a7a939709e3162478c3e8e4d16223d1d6f171e7091a49.jpg)
+![](images/11-survival-analysis-and-censored-data/29388e75233d4af4f12a7a939709e3162478c3e8e4d16223d1d6f171e7091a49.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -16911,7 +16911,7 @@ The Kaplan–Meier survival curve for the BrainCancer data is displayed in Figur
 
 The sequential construction of the Kaplan–Meier estimator — starting at time zero and mapping out the observed events as they unfold in time — is fundamental to many of the key techniques in survival analysis. These include the log-rank test of Section 11.4, and Cox's proportional hazard model of Section 11.5.2.
 
-![](images/b4a4c287959d8bfb40557b7f61f8614f1755623ee97d7c14ed42751c97e8697b.jpg)
+![](images/11-survival-analysis-and-censored-data/b4a4c287959d8bfb40557b7f61f8614f1755623ee97d7c14ed42751c97e8697b.jpg)
 
 <details>
 <summary>survival</summary>
@@ -16930,7 +16930,7 @@ The sequential construction of the Kaplan–Meier estimator — starting at time
 
 FIGURE 11.2. For the BrainCancer data, we display the Kaplan–Meier survival curve (solid curve), along with standard error bands (dashed curves).
 
-![](images/fa6dc9b03af14b9c218bc2c31fbd1c22a7461225addb31e93d82e81666319ab4.jpg)
+![](images/11-survival-analysis-and-censored-data/fa6dc9b03af14b9c218bc2c31fbd1c22a7461225addb31e93d82e81666319ab4.jpg)
 
 <details>
 <summary>survival</summary>
@@ -17105,7 +17105,7 @@ assumption
 baseline
 hazard
 
-![](images/040e9be20a2341106863b929ce64ffbca7f85f32cde9736c33a308a7227aee87.jpg)  
+![](images/11-survival-analysis-and-censored-data/040e9be20a2341106863b929ce64ffbca7f85f32cde9736c33a308a7227aee87.jpg)  
 FIGURE 11.4. Top: In a simple example with p = 1 and a binary covariate $x_{i} \in \{0,1\}$ , the log hazard and the survival function under the model (11.14) are shown (green for $x_{i} = 0$ and black for $x_{i} = 1$ ). Because of the proportional hazards assumption (11.14), the log hazard functions differ by a constant, and the survival functions do not cross. Bottom: Again we have a single binary covariate $x_{i} \in \{0,1\}$ . However, the proportional hazards assumption (11.14) does not hold. The log hazard functions cross, as do the survival functions.
 
 $h_0(t)$ times the factor $\exp \left(\sum_{j=1}^{p} x_{ij} \beta_j\right)$ . The quantity $\exp \left(\sum_{j=1}^{p} x_{ij} \beta_j\right)$ is called the relative risk for the feature vector $x_i = (x_{i1}, \ldots, x_{ip})^T$ , relative to that for the feature vector $x_i = (0, \ldots, 0)^T$ .
@@ -17188,7 +17188,7 @@ TABLE 11.2. Results for Cox's proportional hazards model fit to the BrainCancer 
 
 Next, we consider the dataset Publication involving the time to publication of journal papers reporting the results of clinical trials funded by the National Heart, Lung, and Blood Institute. $^{14}$ For 244 trials, the time in months until publication is recorded. Of the 244 trials, only 156 were published during the study period; the remaining studies were censored. The covariates include whether the trial focused on a clinical endpoint (clinend), whether the trial involved multiple centers (multi), the funding mechanism within the National Institutes of Health (mech), trial sample size (sampsize), budget (budget), impact (impact, related to the number of citations), and whether the trial produced a positive (significant) result (posres). The last covariate is particularly interesting, as a number of studies have suggested that positive trials have a higher publication rate.
 
-![](images/6f0b14976114c0db5e6ddb4956294cce807a3b63b4e75b87be934c2419f1dae5.jpg)
+![](images/11-survival-analysis-and-censored-data/6f0b14976114c0db5e6ddb4956294cce807a3b63b4e75b87be934c2419f1dae5.jpg)
 
 <details>
 <summary>survival</summary>
@@ -17230,7 +17230,7 @@ with respect to $\beta = (\beta_{1},\dots,\beta_{p})^{T}$ . We might take $P(\be
 
 In (11.17), $\lambda$ is a non-negative tuning parameter; typically we will minimize it over a range of values of $\lambda$ . When $\lambda = 0$ , then minimizing (11.17) is equivalent to simply maximizing the usual Cox partial likelihood (11.16). However, when $\lambda > 0$ , then minimizing (11.17) yields a shrunken version of the coefficient estimates. When $\lambda$ is large, then using a ridge penalty will give small coefficients that are not exactly equal to zero. By contrast, for a
 
-![](images/0046be17b3b872f1d405449f52e2d0d8443c616755496913490e810a783ba9bc.jpg)
+![](images/11-survival-analysis-and-censored-data/0046be17b3b872f1d405449f52e2d0d8443c616755496913490e810a783ba9bc.jpg)
 
 <details>
 <summary>survival</summary>
@@ -17262,7 +17262,7 @@ $$
 
 where $\hat{\beta}_{budget}$ and $\hat{\beta}_{impact}$ are the coefficient estimates for these two features from the training set. We then use these risk scores to categorize the observations based on their “risk”. For instance, the high risk group consists of the observations for which $budget_{i} \cdot \hat{\beta}_{budget} + impact_{i} \cdot \hat{\beta}_{impact}$ is largest; by
 
-![](images/a4886a03b200008540db7d173051b2d74011fe216438b3ecaf7742edab17f060.jpg)
+![](images/11-survival-analysis-and-censored-data/a4886a03b200008540db7d173051b2d74011fe216438b3ecaf7742edab17f060.jpg)
 
 <details>
 <summary>line</summary>
@@ -17292,7 +17292,7 @@ In Chapter 4, we introduced the area under the ROC curve — often referred to a
 
 This suggests a way to generalize the notion of AUC to survival analysis. We calculate an estimated risk score, $\hat{\eta}_{i} = \hat{\beta}_{1}x_{i1} + \cdots + \hat{\beta}_{p}x_{ip}$ , for $i = 1, \ldots, n$ , using the Cox model coefficients. If $\hat{\eta}_{i'} > \hat{\eta}_{i}$ , then the model predicts that the $i'$ th observation has a larger hazard than the ith observation, and thus that the survival time $t_{i}$ will be greater than $t_{i'}$ . Thus, it is tempting to try to generalize AUC by computing the proportion of observations for which $t_{i} > t_{i'}$ and $\hat{\eta}_{i'} > \hat{\eta}_{i}$ . However, things are not quite so easy, because recall that we do not observe $t_{1}, \ldots, t_{n}$ ; instead, we observe
 
-![](images/719bbce6d6128b698539b5c3389387655a8c614ac7c093c0543b104d7eaee132.jpg)
+![](images/11-survival-analysis-and-censored-data/719bbce6d6128b698539b5c3389387655a8c614ac7c093c0543b104d7eaee132.jpg)
 
 <details>
 <summary>survival</summary>
@@ -17960,7 +17960,7 @@ $$
 
 Your answer should look something like Figure 11.9.
 
-![](images/17317ae3be7b7321062826638679e9e1d2b1ff867d4e40f85649b37b69d9146a.jpg)
+![](images/11-survival-analysis-and-censored-data/17317ae3be7b7321062826638679e9e1d2b1ff867d4e40f85649b37b69d9146a.jpg)
 
 <details>
 <summary>survival</summary>
@@ -17988,7 +17988,7 @@ FIGURE 11.9. A Kaplan-Meier survival curve used in Exercise 4.
 (a) Assume that there is no difference between the survival functions of the two groups. Then we can think of $q_{1k}$ as the number of failures if we draw $r_{1k}$ observations, without replacement, from a risk set of $r_k$ observations that contains a total of $q_k$ failures. Argue that $q_{1k}$ follows a hypergeometric distribution. Write the parameters of this distribution in terms of $r_{1k}$ , $r_k$ , and $q_k$ .  
 (b) Given your previous answer, and the properties of the hypergeometric distribution, what are the mean and variance of $q_{1k}$ ? Compare your answer to (11.5) and (11.6).
 
-![](images/1e66a380a5784119ac3010b99fbc3fac2d188eedb9e55a4990667a897dcebf63.jpg)
+![](images/11-survival-analysis-and-censored-data/1e66a380a5784119ac3010b99fbc3fac2d188eedb9e55a4990667a897dcebf63.jpg)
 
 hyper-
 geometric
@@ -18000,7 +18000,7 @@ $$
 \begin{array}{l} f (t) = d F (t) / d t \\ S (t) = \exp \left(- \int_ {0} ^ {t} h (u) d u\right). \\ \end{array}
 $$
 
-![](images/6803d2ca98a764f2ced65e661dbb978877d077f9a3772079bf7526896c3a8af5.jpg)
+![](images/11-survival-analysis-and-censored-data/6803d2ca98a764f2ced65e661dbb978877d077f9a3772079bf7526896c3a8af5.jpg)
 
 9. In this exercise, we will explore the consequences of assuming that the survival times follow an exponential distribution.
 
@@ -18035,7 +18035,7 @@ Hint: For (d), recall that the mean of an $\mathrm{Exp}(\lambda)$ random variabl
 
 # Unsupervised Learning
 
-![](images/8dda4ead5b46e3b76d13bd06782b32e1388f17352be09682e1bacc6f352f54c3.jpg)
+![](images/12-unsupervised-learning/8dda4ead5b46e3b76d13bd06782b32e1388f17352be09682e1bacc6f352f54c3.jpg)
 
 Most of this book concerns supervised learning methods such as regression and classification. In the supervised learning setting, we typically have access to a set of p features $X_{1}, X_{2}, \ldots, X_{p}$ , measured on n observations, and a response Y also measured on those same n observations. The goal is then to predict Y using $X_{1}, X_{2}, \ldots, X_{p}$ .
 
@@ -18108,7 +18108,7 @@ z _ {i 2} = \phi_ {1 2} x _ {i 1} + \phi_ {2 2} x _ {i 2} + \dots + \phi_ {p 2} 
 $$
 
 where $\phi_{2}$ is the second principal component loading vector, with elements $\phi_{12}, \phi_{22}, \ldots, \phi_{p2}$ . It turns out that constraining $Z_{2}$ to be uncorrelated with $Z_{1}$ is equivalent to constraining the direction $\phi_{2}$ to be orthogonal (perpendicular) to the direction $\phi_{1}$ . In the example in Figure 6.14, the observations lie in two-dimensional space (since p = 2), and so once we have found $\phi_{1}$ , there is only one possibility for $\phi_{2}$ , which is shown as a blue dashed line. (From Section 6.3.1, we know that $\phi_{12} = 0.544$ and $\phi_{22} = -0.839$ .) But in a larger data set with p > 2 variables, there are multiple distinct principal components, and they are defined in a similar manner. To find $\phi_{2}$ , we solve a problem similar to (12.3) with $\phi_{2}$ replacing $\phi_{1}$ , and with the additional constraint that $\phi_{2}$ is orthogonal to $\phi_{1}$ . $^{2}$
-![](images/b28a2bd62c709ab968e97e357300387d94cc1f9f4f467f18a90d55b296790eba.jpg)
+![](images/12-unsupervised-learning/b28a2bd62c709ab968e97e357300387d94cc1f9f4f467f18a90d55b296790eba.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -18178,7 +18178,7 @@ The first two principal component loading vectors in a simulated three-dimension
 
 In the previous section, we describe the principal component loading vectors as the directions in feature space along which the data vary the most, and the principal component scores as projections along these directions. However, an alternative interpretation of principal components can also be
 
-![](images/0f4c876f3fed0187af1455af93dcc5aa3f79aa3da9e1688e512c1f9d176febdd.jpg)  
+![](images/12-unsupervised-learning/0f4c876f3fed0187af1455af93dcc5aa3f79aa3da9e1688e512c1f9d176febdd.jpg)  
 FIGURE 12.2. Ninety observations simulated in three dimensions. The observations are displayed in color for ease of visualization. Left: the first two principal component directions span the plane that best fits the data. The plane is positioned to minimize the sum of squared distances to each point. Right: the first two principal component score vectors give the coordinates of the projection of the 90 observations onto the plane.
 
 useful: principal components provide low-dimensional linear surfaces that are closest to the observations. We expand upon that interpretation here. $^{3}$
@@ -18253,7 +18253,7 @@ $$
 
 where TSS represents the total sum of squared elements of X, and RSS represents the residual sum of squares of the M-dimensional approximation given by the principal components. Recalling the definition of $R^{2}$ from (3.17), this means that we can interpret the PVE as the $R^{2}$ of the approximation for X given by the first M principal components.
 
-![](images/579bf81fd09b669e468170c64deca90b47e6c0865a6d88263269a3c59302cd3e.jpg)  
+![](images/12-unsupervised-learning/579bf81fd09b669e468170c64deca90b47e6c0865a6d88263269a3c59302cd3e.jpg)  
 FIGURE 12.3. Left: a scree plot depicting the proportion of variance explained by each of the four principal components in the USArrests data. Right: the cumulative proportion of variance explained by the four principal components in the USArrests data.
 
 In the USArrests data, the first principal component explains 62.0% of the variance in the data, and the next principal component explains 24.7% of the variance. Together, the first two principal components explain almost 87% of the variance in the data, and the last two principal components explain only 13% of the variance. This means that Figure 12.1 provides a pretty accurate summary of the data using just two dimensions. The PVE of each principal component, as well as the cumulative PVE, is shown in Figure 12.3. The left-hand panel is known as a scree plot, and will be discussed later in this chapter.
@@ -18268,7 +18268,7 @@ We have already mentioned that before PCA is performed, the variables should be 
 
 For instance, Figure 12.1 was obtained after scaling each of the variables to have standard deviation one. This is reproduced in the left-hand plot in Figure 12.4. Why does it matter that we scaled the variables? In these data, the variables are measured in different units; Murder, Rape, and Assault are reported as the number of occurrences per 100,000 people, and UrbanPop is the percentage of the state's population that lives in an urban area. These four variables have variances of 18.97, 87.73, 6945.16, and 209.5, respectively. Consequently, if we perform PCA on the unscaled variables, then
 
-![](images/22bed6f1fc2203b1024c7d2f60cc1dc2f199876d37a6488f5597cb4fefb4294b.jpg)  
+![](images/12-unsupervised-learning/22bed6f1fc2203b1024c7d2f60cc1dc2f199876d37a6488f5597cb4fefb4294b.jpg)  
 FIGURE 12.4. Two principal component biplots for the USArrests data. Left: the same as Figure 12.1, with the variables scaled to have unit standard deviations. Right: principal components using unscaled data. Assault has by far the largest loading on the first principal component because it has the highest variance among the four variables. In general, scaling the variables to have standard deviation one is recommended.
 
 the first principal component loading vector will have a very large loading for Assault, since that variable has by far the highest variance. The right-hand plot in Figure 12.4 displays the first two principal components for the USArrests data set, without scaling the variables to have standard deviation one. As predicted, the first principal component loading vector places almost all of its weight on Assault, while the second principal component loading vector places almost all of its weight on UrbanPop. Comparing this to the left-hand plot, we see that scaling does indeed have a substantial effect on the results obtained.
@@ -18366,7 +18366,7 @@ is pretty accurate. Over 100 random runs of this experiment, the average correla
 
 Figure 12.6 further indicates that Algorithm 12.1 performs fairly well on this dataset.
 
-![](images/2fa2385e22768a93987b741bd641990ce1543c8ab3ad73ae2b49768567d43c6c.jpg)
+![](images/12-unsupervised-learning/2fa2385e22768a93987b741bd641990ce1543c8ab3ad73ae2b49768567d43c6c.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -18404,7 +18404,7 @@ We close with a few observations:
 
 Digital streaming services like Netflix and Amazon use data about the content that a customer has viewed in the past, as well as data from other customers, to suggest other content for the customer. As a concrete example, some years back, Netflix had customers rate each movie that they had seen with a score from 1–5. This resulted in a very big $n \times p$ matrix for which the $(i, j)$ element is the rating given by the ith customer to the
 
-![](images/b4293694cc6bed462888618e3e3ddd422d2e53d39d17c7ebacd43a06992a7275.jpg)  
+![](images/12-unsupervised-learning/b4293694cc6bed462888618e3e3ddd422d2e53d39d17c7ebacd43a06992a7275.jpg)  
 FIGURE 12.6. As described in the text, in each of 100 trials, we left out 20 elements of the USArrests dataset. In each trial, we applied Algorithm 12.1 with M = 1 to impute the missing elements and compute the principal components. Left: For each of the 50 states, the imputed first principal component scores (averaged over 100 trials, and displayed with a standard deviation bar) are plotted against the first principal component scores computed using all the data. Right: The imputed principal component loadings (averaged over 100 trials, and displayed with a standard deviation bar) are plotted against the true principal component loadings.
 
 jth movie. One specific early example of this matrix had n = 480,189 customers and p = 17,770 movies. However, on average each customer had seen around 200 movies, so 99% of the matrix had missing elements. Table 12.2 illustrates the setup.
@@ -18420,7 +18420,7 @@ Examples of genres include Romance, Western, and Action.
 
 Principal component models similar to Algorithm 12.1 are at the heart of many recommender systems. Although the data matrices involved are
 
-![](images/72ea70d6b85d0d46d69b64ab947b03b367ccb7f2f4bae247c63be1780688404b.jpg)
+![](images/12-unsupervised-learning/72ea70d6b85d0d46d69b64ab947b03b367ccb7f2f4bae247c63be1780688404b.jpg)
 
 <details>
 <summary>flowchart</summary>
@@ -18472,7 +18472,7 @@ The K-means clustering procedure results from a simple and intuitive mathematica
 1. $C_{1} \cup C_{2} \cup \cdots \cup C_{K} = \{1, \ldots, n\}$ . In other words, each observation belongs to at least one of the K clusters.  
 2. $C_k \cap C_{k'} = \emptyset$ for all $k \neq k'$ . In other words, the clusters are non-overlapping: no observation belongs to more than one cluster.
 
-![](images/cc56c5b21e065a9b12c267e94f8a0f9dc2fc9d111d1cfde0267fc8b1216f3869.jpg)  
+![](images/12-unsupervised-learning/cc56c5b21e065a9b12c267e94f8a0f9dc2fc9d111d1cfde0267fc8b1216f3869.jpg)  
 FIGURE 12.7. A simulated data set with 150 observations in two-dimensional space. Panels show the results of applying K-means clustering with different values of K, the number of clusters. The color of each observation indicates the cluster to which it was assigned using the K-means clustering algorithm. Note that there is no ordering of the clusters, so the cluster coloring is arbitrary. These cluster labels were not used in clustering; instead, they are the outputs of the clustering procedure.
 
 For instance, if the $i$ th observation is in the $k$ th cluster, then $i \in C_k$ . The idea behind $K$ -means clustering is that a good clustering is one for which the within-cluster variation is as small as possible. The within-cluster variation for cluster $C_k$ is a measure $W(C_k)$ of the amount by which the observations within a cluster differ from each other. Hence we want to solve the problem
@@ -18518,14 +18518,14 @@ where $\bar{x}_{kj} = \frac{1}{|C_{k}|} \sum_{i \in C_{k}} x_{ij}$ is the mean f
 
 Because the K-means algorithm finds a local rather than a global optimum, the results obtained will depend on the initial (random) cluster assignment of each observation in Step 1 of Algorithm 12.2. For this reason, it is important to run the algorithm multiple times from different random
 
-![](images/4fef148312115bfb012c33c47be898b2c431a0e68f600d596f6f31da18e6f3f2.jpg)  
+![](images/12-unsupervised-learning/4fef148312115bfb012c33c47be898b2c431a0e68f600d596f6f31da18e6f3f2.jpg)  
 FIGURE 12.8. The progress of the K-means algorithm on the example of Figure 12.7 with K=3. Top left: the observations are shown. Top center: in Step 1 of the algorithm, each observation is randomly assigned to a cluster. Top right: in Step 2(a), the cluster centroids are computed. These are shown as large colored disks. Initially the centroids are almost completely overlapping because the initial cluster assignments were chosen at random. Bottom left: in Step 2(b), each observation is assigned to the nearest centroid. Bottom center: Step 2(a) is once again performed, leading to new cluster centroids. Bottom right: the results obtained after ten iterations.
 
 initial configurations. Then one selects the best solution, i.e. that for which the objective (12.17) is smallest. Figure 12.9 shows the local optima obtained by running K-means clustering six times using six different initial cluster assignments, using the toy data from Figure 12.7. In this case, the best clustering is the one with an objective value of 235.8.
 
 As we have seen, to perform K-means clustering, we must decide how many clusters we expect in the data. The problem of selecting K is far from simple. This issue, along with other practical considerations that arise in performing K-means clustering, is addressed in Section 12.4.3.
 
-![](images/63554b24f1c097eedf723d54da24efbf3469b9f95e5978712103b5c24824d302.jpg)  
+![](images/12-unsupervised-learning/63554b24f1c097eedf723d54da24efbf3469b9f95e5978712103b5c24824d302.jpg)  
 FIGURE 12.9. K-means clustering performed six times on the data from Figure 12.7 with K = 3, each time with a different random assignment of the observations in Step 1 of the K-means algorithm. Above each plot is the value of the objective (12.17). Three different local optima were obtained, one of which resulted in a smaller value of the objective and provides better separation between the clusters. Those labeled in red all achieved the same best solution, with an objective value of 235.8.
 
 # 12.4.2 Hierarchical Clustering
@@ -18537,7 +18537,7 @@ In this section, we describe bottom-up or agglomerative clustering. This is the 
 bottom-up
 agglomerative
 
-![](images/c4948692179ae526066725d15d9aa9d6a4f353afcaf86a45ce0f85a5f54a537e.jpg)
+![](images/12-unsupervised-learning/c4948692179ae526066725d15d9aa9d6a4f353afcaf86a45ce0f85a5f54a537e.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -18561,14 +18561,14 @@ In the left-hand panel of Figure 12.11, each leaf of the dendrogram represents o
 
 This highlights a very important point in interpreting dendrograms that is often misunderstood. Consider the left-hand panel of Figure 12.12, which shows a simple dendrogram obtained from hierarchically clustering nine
 
-![](images/bd6c0e384a7f6ce9b314ee14ddf37bff5f5bc79bec5f1e79c550ce7ec1d5263e.jpg)  
+![](images/12-unsupervised-learning/bd6c0e384a7f6ce9b314ee14ddf37bff5f5bc79bec5f1e79c550ce7ec1d5263e.jpg)  
 FIGURE 12.11. Left: dendrogram obtained from hierarchically clustering the data from Figure 12.10 with complete linkage and Euclidean distance. Center: the dendrogram from the left-hand panel, cut at a height of nine (indicated by the dashed line). This cut results in two distinct clusters, shown in different colors. Right: the dendrogram from the left-hand panel, now cut at a height of five. This cut results in three distinct clusters, shown in different colors. Note that the colors were not used in clustering, but are simply used for display purposes in this figure.
 
 observations. One can see that observations 5 and 7 are quite similar to each other, since they fuse at the lowest point on the dendrogram. Observations 1 and 6 are also quite similar to each other. However, it is tempting but incorrect to conclude from the figure that observations 9 and 2 are quite similar to each other on the basis that they are located near each other on the dendrogram. In fact, based on the information contained in the dendrogram, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7. (This can be seen from the right-hand panel of Figure 12.12, in which the raw data are displayed.) To put it mathematically, there are $2^{n-1}$ possible reorderings of the dendrogram, where n is the number of leaves. This is because at each of the n-1 points where fusions occur, the positions of the two fused branches could be swapped without affecting the meaning of the dendrogram. Therefore, we cannot draw conclusions about the similarity of two observations based on their proximity along the horizontal axis. Rather, we draw conclusions about the similarity of two observations based on the location on the vertical axis where branches containing those two observations first are fused.
 
 Now that we understand how to interpret the left-hand panel of Figure 12.11, we can move on to the issue of identifying clusters on the basis of a dendrogram. In order to do this, we make a horizontal cut across the dendrogram, as shown in the center and right-hand panels of Figure 12.11. The distinct sets of observations beneath the cut can be interpreted as clusters. In the center panel of Figure 12.11, cutting the dendrogram at a height of nine results in two clusters, shown in distinct colors. In the right-hand panel, cutting the dendrogram at a height of five results in three clusters. Further cuts can be made as one descends the dendrogram in order to obtain any number of clusters, between 1 (corresponding to no cut) and $n$
 
-![](images/7ba09d406b885f9b2eaabf49fb32bc1d4f944b78280f1292ab8aa240c9a62f42.jpg)  
+![](images/12-unsupervised-learning/7ba09d406b885f9b2eaabf49fb32bc1d4f944b78280f1292ab8aa240c9a62f42.jpg)  
 FIGURE 12.12. An illustration of how to properly interpret a dendrogram with nine observations in two-dimensional space. Left: a dendrogram generated using Euclidean distance and complete linkage. Observations 5 and 7 are quite similar to each other, as are observations 1 and 6. However, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7, even though observations 9 and 2 are close together in terms of horizontal distance. This is because observations 2, 8, 5, and 7 all fuse with observation 9 at the same height, approximately 1.8. Right: the raw data used to generate the dendrogram can be used to confirm that indeed, observation 9 is no more similar to observation 2 than it is to observations 8, 5, and 7.
 
 (corresponding to a cut at height 0, so that each observation is in its own cluster). In other words, the height of the cut to the dendrogram serves the same role as the K in K-means clustering: it controls the number of clusters obtained.
@@ -18604,14 +18604,14 @@ The choice of dissimilarity measure is very important, as it has a strong effect
 
 For instance, consider an online retailer interested in clustering shoppers based on their past shopping histories. The goal is to identify subgroups of similar shoppers, so that shoppers within each subgroup can be shown items and advertisements that are particularly likely to interest them. Suppose the data takes the form of a matrix where the rows are the shoppers and the columns are the items available for purchase; the elements of the data matrix indicate the number of times a given shopper has purchased a
 
-![](images/aa671e4fa724c49237660ff418d45c2c221df533c8b94a2767a831743cf4bd8a.jpg)  
+![](images/12-unsupervised-learning/aa671e4fa724c49237660ff418d45c2c221df533c8b94a2767a831743cf4bd8a.jpg)  
 FIGURE 12.13. An illustration of the first few steps of the hierarchical clustering algorithm, using the data from Figure 12.12, with complete linkage and Euclidean distance. Top Left: initially, there are nine distinct clusters, $\{1\}, \{2\}, \ldots, \{9\}$ . Top Right: the two clusters that are closest together, $\{5\}$ and $\{7\}$ , are fused into a single cluster. Bottom Left: the two clusters that are closest together, $\{6\}$ and $\{1\}$ , are fused into a single cluster. Bottom Right: the two clusters that are closest together using complete linkage, $\{8\}$ and the cluster $\{5, 7\}$ , are fused into a single cluster.
 
 given item (i.e. a 0 if the shopper has never purchased this item, a 1 if the shopper has purchased it once, etc.) What type of dissimilarity measure should be used to cluster the shoppers? If Euclidean distance is used, then shoppers who have bought very few items overall (i.e. infrequent users of the online shopping site) will be clustered together. This may not be desirable. On the other hand, if correlation-based distance is used, then shoppers with similar preferences (e.g. shoppers who have bought items A and B but never items C or D) will be clustered together, even if some shoppers with these preferences are higher-volume shoppers than others. Therefore, for this application, correlation-based distance may be a better choice.
 
 In addition to carefully selecting the dissimilarity measure used, one must also consider whether or not the variables should be scaled to have standard deviation one before the dissimilarity between the observations is computed. To illustrate this point, we continue with the online shopping ex-
 
-![](images/03139d97913009292e3b6a73a2d6dda57dfdd25d61539177f0ac17c5ae5af6cf.jpg)  
+![](images/12-unsupervised-learning/03139d97913009292e3b6a73a2d6dda57dfdd25d61539177f0ac17c5ae5af6cf.jpg)  
 FIGURE 12.14. Average, complete, and single linkage applied to an example data set. Average and complete linkage tend to yield more balanced clusters.
 
 ample just described. Some items may be purchased more frequently than others; for instance, a shopper might buy ten pairs of socks a year, but a computer very rarely. High-frequency purchases like socks therefore tend to have a much larger effect on the inter-shopper dissimilarities, and hence on the clustering ultimately obtained, than rare purchases like computers. This may not be desirable. If the variables are scaled to have standard deviation one before the inter-observation dissimilarities are computed, then each variable will in effect be given equal importance in the hierarchical clustering performed. We might also want to scale the variables to have standard deviation one if they are measured on different scales; otherwise, the choice of units (e.g. centimeters versus kilometers) for a particular variable will greatly affect the dissimilarity measure obtained. It should come as no surprise that whether or not it is a good decision to scale the variables before computing the dissimilarity measure depends on the application at hand. An example is shown in Figure 12.16. We note that the issue of whether or not to scale the variables before performing clustering applies to K-means clustering as well.
@@ -18624,7 +18624,7 @@ Clustering can be a very useful tool for data analysis in the unsupervised setti
 
 In order to perform clustering, some decisions must be made.
 
-![](images/1e8c5923b1513ee52ac41e1254ae8a229ab86f95ee4bcb7de1ad9b528e53cd70.jpg)
+![](images/12-unsupervised-learning/1e8c5923b1513ee52ac41e1254ae8a229ab86f95ee4bcb7de1ad9b528e53cd70.jpg)
 
 <details>
 <summary>line</summary>
@@ -18670,7 +18670,7 @@ Each of these decisions can have a strong impact on the results obtained. In pra
 
 Any time clustering is performed on a data set we will find clusters. But we really want to know whether the clusters that have been found represent true subgroups in the data, or whether they are simply a result of clustering the noise. For instance, if we were to obtain an independent set of observations, then would those observations also display the same set of clusters? This is a hard question to answer. There exist a number of techniques for assigning a p-value to a cluster in order to assess whether there is more
 
-![](images/f86a7ebf13151677fb345846dadb2241bccd7e2af91f04302be14e3cd52b5a7a.jpg)  
+![](images/12-unsupervised-learning/f86a7ebf13151677fb345846dadb2241bccd7e2af91f04302be14e3cd52b5a7a.jpg)  
 FIGURE 12.16. An eclectic online retailer sells two items: socks and computers. Left: the number of pairs of socks, and computers, purchased by eight online shoppers is displayed. Each shopper is shown in a different color. If inter-observation dissimilarities are computed using Euclidean distance on the raw variables, then the number of socks purchased by an individual will drive the dissimilarities obtained, and the number of computers purchased will have little effect. This might be undesirable, since (1) computers are more expensive than socks and so the online retailer may be more interested in encouraging shoppers to buy computers than socks, and (2) a large difference in the number of socks purchased by two shoppers may be less informative about the shoppers' overall shopping preferences than a small difference in the number of computers purchased. Center: the same data are shown, after scaling each variable by its standard deviation. Now the two products will have a comparable effect on the inter-observation dissimilarities obtained. Right: the same data are displayed, but now the y-axis represents the number of dollars spent by each online shopper on socks and on computers. Since computers are much more expensive than socks, now computer purchase history will drive the inter-observation dissimilarities obtained.
 
 evidence for the cluster than one would expect due to chance. However, there has been no consensus on a single best approach. More details can be found in ESL. $^{8}$
@@ -19401,7 +19401,7 @@ In [52]: fig, axes = plt.subplots(1, 2, figsize=(15,6))
     ticks = np.arange(nci_pca.n_components_)+1
 ```
 
-![](images/919900d843339a3af66885317bf383c3487c67722de97c07cfbc0f1bb03cad3d.jpg)  
+![](images/12-unsupervised-learning/919900d843339a3af66885317bf383c3487c67722de97c07cfbc0f1bb03cad3d.jpg)  
 FIGURE 12.17. Projections of the NCI60 cancer cell lines onto the first three principal components (in other words, the scores for the first three principal components). On the whole, observations belonging to a single cancer type tend to lie near each other in this low-dimensional space. It would not have been possible to visualize the data without using a dimension reduction method such as PCA, since based on the full data set there are $\binom{6,830}{2}$ possible scatterplots, none of which would have been particularly informative.
 
 ```matlab
@@ -19426,7 +19426,7 @@ We see that together, the first seven principal components explain around 40% of
 
 We now perform hierarchical clustering of the cell lines in the NCI60 data using complete, single, and average linkage. Once again, the goal is to find out whether or not the observations cluster into distinct types of cancer. Euclidean distance is used as the dissimilarity measure. We first write a short function to produce the three dendrograms.
 
-![](images/a83efd6327eac9e64a8d9820c20ba45e07e52c82b5cdcabb5cbfc5420295035b.jpg)  
+![](images/12-unsupervised-learning/a83efd6327eac9e64a8d9820c20ba45e07e52c82b5cdcabb5cbfc5420295035b.jpg)  
 FIGURE 12.18. The PVE of the principal components of the NCI60 cancer cell line microarray data set. Left: the PVE of each principal component is shown. Right: the cumulative PVE of the principal components is shown. Together, all principal components explain 100,% of the variance.
 
 In [53]:  
@@ -19459,7 +19459,7 @@ ax = axes[2]; hc_sing = plot_nci('Single', ax)
 
 The results are shown in Figure 12.19. We see that the choice of linkage certainly does affect the results obtained. Typically, single linkage will tend to yield trailing clusters: very large clusters onto which individual observations attach one-by-one. On the other hand, complete and average linkage tend to yield more balanced, attractive clusters. For this reason, complete and average linkage are generally preferred to single linkage. Clearly cell lines within a single cancer type do tend to cluster together, although the clustering is not perfect. We will use complete linkage hierarchical clustering for the analysis that follows.
 
-![](images/c087285d14508d6bdebaf4296e75d902047ea6567113756556b61ddc89442cbb.jpg)  
+![](images/12-unsupervised-learning/c087285d14508d6bdebaf4296e75d902047ea6567113756556b61ddc89442cbb.jpg)  
 FIGURE 12.19. The NCI60 cancer cell line microarray data, clustered with average, complete, and single linkage, and using Euclidean distance as the dissimilarity measure. Complete and average linkage tend to yield evenly sized clusters whereas single linkage tends to yield extended clusters to which single leaves are fused one by one.
 
 We can cut the dendrogram at the height that will yield a particular number of clusters, say four:
@@ -19536,7 +19536,7 @@ pd.crosstab(nci_labs['label'], pca_labels)
 (a) Prove (12.18).  
 (b) On the basis of this identity, argue that the $K$ -means clustering algorithm (Algorithm 12.2) decreases the objective (12.17) at each iteration.
 
-![](images/b5c9d2e388bfe42f2fb8cc20f56c189e770a8a568705bc97d9540f9d93e21446.jpg)
+![](images/12-unsupervised-learning/b5c9d2e388bfe42f2fb8cc20f56c189e770a8a568705bc97d9540f9d93e21446.jpg)
 
 2. Suppose that we have four observations, for which we compute a dissimilarity matrix, given by
 
@@ -19705,7 +19705,7 @@ test statistic
 two-sample
 t-statistic
 
-![](images/cff64c8a3242e1907c8f7fc620ac8b10413bc4a515dc2b029b6e6326bcdc96f8.jpg)
+![](images/13-multiple-testing/cff64c8a3242e1907c8f7fc620ac8b10413bc4a515dc2b029b6e6326bcdc96f8.jpg)
 
 <details>
 <summary>violin</summary>
@@ -19834,7 +19834,7 @@ $$
 \mathrm{FWER} (\alpha) = 1 - \prod_ {j = 1} ^ {m} (1 - \alpha) = 1 - (1 - \alpha) ^ {m}. \tag {13.5}
 $$
 
-![](images/02ba3049044ae4193e2c0172c25df1b48538b45276e79da484e8b964ba9aff8c.jpg)
+![](images/13-multiple-testing/02ba3049044ae4193e2c0172c25df1b48538b45276e79da484e8b964ba9aff8c.jpg)
 
 <details>
 <summary>line</summary>
@@ -19917,9 +19917,9 @@ Figure 13.3 provides an illustration of the Bonferroni and Holm methods on three
 
 Bonferroni's method and Holm's method can be used in virtually any setting in which we wish to control the FWER for $m$ null hypotheses: they
 
-![](images/91676ef86252cff73650458351c74b82bf986d3e5c21121c54b02109006d73e7.jpg)
+![](images/13-multiple-testing/91676ef86252cff73650458351c74b82bf986d3e5c21121c54b02109006d73e7.jpg)
 
-![](images/72c4f160f89fe375cc322cecdc3e3bdf9e65de50a1d1c486e6c7103cbdb0dcca.jpg)  
+![](images/13-multiple-testing/72c4f160f89fe375cc322cecdc3e3bdf9e65de50a1d1c486e6c7103cbdb0dcca.jpg)  
 FIGURE 13.3. Each panel displays, for a separate simulation, the sorted p-values for tests of m = 10 null hypotheses. The p-values corresponding to the $m_{0} = 2$ true null hypotheses are displayed in black, and the rest are in red. When controlling the FWER at level 0.05, the Bonferroni procedure rejects all null hypotheses that fall below the black line, and the Holm procedure rejects all null hypotheses that fall below the blue line. The region between the blue and black lines indicates null hypotheses that are rejected using the Holm procedure but not using the Bonferroni procedure. In the center panel, the Holm procedure rejects one more null hypothesis than the Bonferroni procedure. In the right-hand panel, it rejects five more null hypotheses.
 
 make no assumptions about the nature of the null hypotheses, the type of test statistic used, or the (in)dependence of the $p$ -values. However, in certain very specific settings, we can achieve higher power by controlling the FWER using approaches that are more tailored to the task at hand. Tukey's method and Scheffé's method provide two such examples.
@@ -19927,7 +19927,7 @@ make no assumptions about the nature of the null hypotheses, the type of test st
 Table 13.3 indicates that for the Fund dataset, Managers One and Two have the greatest difference in their sample mean returns. This finding might motivate us to test the null hypothesis $H_{0} : \mu_{1} = \mu_{2}$ , where $\mu_{j}$ is the (population) mean return for the jth fund manager. A two-sample t-test (13.1) for $H_{0}$ yields a p-value of 0.0349, suggesting modest evidence against $H_{0}$ . However, this p-value is misleading, since we decided to compare the average returns of Managers One and Two only after having examined the returns for all five managers; this essentially amounts to having performed $m = 5 \times (5 - 1)/2 = 10$ hypothesis tests, and selecting the one with the smallest p-value. This suggests that in order to control the FWER at level 0.05, we should make a Bonferroni correction for m = 10 hypothesis tests, and therefore should only reject a null hypothesis for which the p-value is below 0.005. If we do this, then we will be unable to reject the null hypothesis that Managers One and Two have identical performance.
 
 However, in this setting, a Bonferroni correction is actually a bit too stringent, since it fails to consider the fact that the m = 10 hypothesis tests are all somewhat related: for instance, Managers Two and Five have similar mean returns, as do Managers Two and Four; this guarantees that the mean returns of Managers Four and Five are similar. Stated another way, the m p-values for the m pairwise comparisons are not independent. Therefore, it should be possible to control the FWER in a way that is
-![](images/12eeb83fd442e399e56e63857044e95a6066cfa7cf4ff7cc4a7aa6eb0bd31904.jpg)  
+![](images/13-multiple-testing/12eeb83fd442e399e56e63857044e95a6066cfa7cf4ff7cc4a7aa6eb0bd31904.jpg)  
 FIGURE 13.4. Each panel displays, for a separate simulation, the sorted p-values for tests of m = 15 hypotheses, corresponding to pairwise tests for the equality of G = 6 means. The $m_{0} = 10$ true null hypotheses are displayed in black, and the rest are in red. When controlling the FWER at level 0.05, the Bonferroni procedure rejects all null hypotheses that fall below the black line, whereas Tukey rejects all those that fall below the blue line. Thus, Tukey's method has slightly higher power than Bonferroni's method. Controlling the Type I error without adjusting for multiple testing involves rejecting all those that fall below the green line.
 
 less conservative. This is exactly the idea behind Tukey's method: when performing $m = G(G - 1)/2$ pairwise comparisons of $G$ means, it allows us to control the FWER at level $\alpha$ while rejecting all null hypotheses for which the $p$ -value falls below $\alpha_T$ , for some $\alpha_T > \alpha/m$ .
@@ -19958,7 +19958,7 @@ Figure 13.5 indicates that it is reasonable to control the FWER when m takes on 
 
 Why is this the case? Recall that, using the notation in Table 13.2, the FWER is defined as $\Pr(V \geq 1)$ (13.3). In other other words, controlling the FWER at level $\alpha$ guarantees that the data analyst is very unlikely (with probability no more than $\alpha$ ) to reject any true null hypotheses, i.e. to have any false positives. In order to make good on this guarantee when m is large, the data analyst may be forced to reject very few null hypotheses, or perhaps even none at all (since if R = 0 then also V = 0; see Table 13.2).
 
-![](images/9efbfb37a41ddbcddf419e64729c5af57fa0a54914959e153af531bce422e9d5.jpg)
+![](images/13-multiple-testing/9efbfb37a41ddbcddf419e64729c5af57fa0a54914959e153af531bce422e9d5.jpg)
 
 <details>
 <summary>roc</summary>
@@ -20043,7 +20043,7 @@ $$
 
 In other words, this procedure ensures that, on average, no more than a fraction q of the rejected null hypotheses are false positives. Remarkably, this holds regardless of how many null hypotheses are true, and regardless of the distribution of the p-values for the null hypotheses that are false. Therefore, the Benjamini–Hochberg procedure gives us a very easy way to determine, given a set of m p-values, which null hypotheses to reject in order to control the FDR at any pre-specified level q.
 
-![](images/e134b1cd5ca7e9d84389e7e69304d3425cf6f824e345daab1b0101ecb0d8d380.jpg)  
+![](images/13-multiple-testing/e134b1cd5ca7e9d84389e7e69304d3425cf6f824e345daab1b0101ecb0d8d380.jpg)  
 FIGURE 13.6. Each panel displays the same set of m = 2,000 ordered p-values for the Fund data. The green lines indicate the p-value thresholds corresponding to FWER control, via the Bonferroni procedure, at levels $\alpha = 0.05$ (left), $\alpha = 0.1$ (center), and $\alpha = 0.3$ (right). The orange lines indicate the p-value thresholds corresponding to FDR control, via Benjamini–Hochberg, at levels q = 0.05 (left), q = 0.1 (center), and q = 0.3 (right). When the FDR is controlled at level q = 0.1, 146 null hypotheses are rejected (center); the corresponding p-values are shown in blue. When the FDR is controlled at level q = 0.3, 279 null hypotheses are rejected (right); the corresponding p-values are shown in blue.
 
 There is a fundamental difference between the Bonferroni procedure of Section 13.3.2 and the Benjamini–Hochberg procedure. In the Bonferroni procedure, in order to control the FWER for m null hypotheses at level $\alpha$ , we must simply reject null hypotheses for which the p-value is below $\alpha/m$ . This threshold of $\alpha/m$ does not depend on anything about the data (beyond the value of m), and certainly does not depend on the p-values themselves. By contrast, the rejection threshold used in the Benjamini–Hochberg procedure is more complicated: we reject all null hypotheses for which the p-value is less than or equal to the Lth smallest p-value, where L is itself a function of all m p-values, as in (13.10). Therefore, when conducting the Benjamini–Hochberg procedure, we cannot plan out in advance what threshold we will use to reject p-values; we need to first see our data. For instance, in the abstract, there is no way to know whether we will reject a null hypothesis corresponding to a p-value of 0.01 when using an FDR threshold of 0.1 with m = 100; the answer depends on the values of the other m - 1 p-values. This property of the Benjamini–Hochberg procedure is shared by the Holm procedure, which also involves a data-dependent p-value threshold.
@@ -20109,9 +20109,9 @@ In general, in settings with a smaller sample size or a more skewed data distrib
 
 Now, suppose that we wish to control the FDR for $m$ null hypotheses, $H_{01}, \ldots, H_{0m}$ , in a setting in which either no theoretical null distribution is available, or else we simply prefer to avoid the use of a theoretical null
 
-![](images/9243a4ca63d6baf4f65233cf510437c551611cff68587a4eaa4bedde727846de.jpg)
+![](images/13-multiple-testing/9243a4ca63d6baf4f65233cf510437c551611cff68587a4eaa4bedde727846de.jpg)
 
-![](images/14a3115f3504b43bee279f3952d6781c2be49dc905d5d8e404183724e79cbd0e.jpg)
+![](images/13-multiple-testing/14a3115f3504b43bee279f3952d6781c2be49dc905d5d8e404183724e79cbd0e.jpg)
 
 <details>
 <summary>histogram</summary>
@@ -20123,7 +20123,7 @@ Now, suppose that we wish to control the FDR for $m$ null hypotheses, $H_{01}, \
 
 FIGURE 13.7. The 11th gene in the Khan dataset has a test statistic of T = -2.09. Its theoretical and re-sampling null distributions are almost identical. The theoretical p-value equals 0.041 and the re-sampling p-value equals 0.042.
 
-![](images/f4c1504955c05c8e4b9746735bd6e43786b74519ff8e0864b4441ced13d51dbf.jpg)
+![](images/13-multiple-testing/f4c1504955c05c8e4b9746735bd6e43786b74519ff8e0864b4441ced13d51dbf.jpg)
 
 <details>
 <summary>histogram</summary>
@@ -20186,7 +20186,7 @@ In general, there are two settings in which a re-sampling approach is particular
 
 In general, if you can come up with a way to re-sample or permute your observations in order to generate data that follow the null distribution, then you can compute p-values or estimate the FDR using variants of Algorithms 13.3 and 13.4. In many real-world settings, this provides a powerful tool for hypothesis testing when no out-of-box hypothesis tests are available, or when the key assumptions underlying those out-of-box tests are violated.
 
-![](images/a94e7a4f9360167d38e2976136077f0c5728e37d1c12fcd0cd5aed3cc664ebe2.jpg)
+![](images/13-multiple-testing/a94e7a4f9360167d38e2976136077f0c5728e37d1c12fcd0cd5aed3cc664ebe2.jpg)
 
 <details>
 <summary>line</summary>
@@ -20441,7 +20441,7 @@ print(tukey.summary())
 
 The pairwise\_tukeyhsd() function provides confidence intervals for the difference between each pair of managers (lower and upper), as well as a
 
-![](images/bae88ce37ecbef033b638c6882081004cee9cad6caa64c1e6919b51e4da4d34c.jpg)
+![](images/13-multiple-testing/bae88ce37ecbef033b638c6882081004cee9cad6caa64c1e6919b51e4da4d34c.jpg)
 
 <details>
 <summary>error_bar</summary>
@@ -20686,7 +20686,7 @@ In [31]: fig, ax = plt.subplots()
     ax.set_ylabel("False Discovery Rate");
 ```
 
-![](images/11581e4acdc52575fc8f55af9391ea28503a5c6e814a404a648e3d7a4f3ec0f5.jpg)
+![](images/13-multiple-testing/11581e4acdc52575fc8f55af9391ea28503a5c6e814a404a648e3d7a4f3ec0f5.jpg)
 
 <details>
 <summary>line</summary>

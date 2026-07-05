@@ -39,7 +39,7 @@ Now, suppose we observe $n(Y,\delta)$ pairs, which we denote as $(y_{1},\delta_{
 
 In order to analyze survival data, we need to make some assumptions about why censoring has occurred. For instance, suppose that a number of patients drop out of a cancer study early because they are very sick. An analysis that does not take into consideration the reason why the patients dropped out will likely overestimate the true average survival time. Similarly, suppose that males who are very sick are more likely to drop out of the study than
 
-![](../images/29388e75233d4af4f12a7a939709e3162478c3e8e4d16223d1d6f171e7091a49.jpg)
+![](../images/11-survival-analysis-and-censored-data/29388e75233d4af4f12a7a939709e3162478c3e8e4d16223d1d6f171e7091a49.jpg)
 
 <details>
 <summary>scatter</summary>
@@ -131,7 +131,7 @@ The Kaplan–Meier survival curve for the BrainCancer data is displayed in Figur
 
 The sequential construction of the Kaplan–Meier estimator — starting at time zero and mapping out the observed events as they unfold in time — is fundamental to many of the key techniques in survival analysis. These include the log-rank test of Section 11.4, and Cox's proportional hazard model of Section 11.5.2.
 
-![](../images/b4a4c287959d8bfb40557b7f61f8614f1755623ee97d7c14ed42751c97e8697b.jpg)
+![](../images/11-survival-analysis-and-censored-data/b4a4c287959d8bfb40557b7f61f8614f1755623ee97d7c14ed42751c97e8697b.jpg)
 
 <details>
 <summary>survival</summary>
@@ -150,7 +150,7 @@ The sequential construction of the Kaplan–Meier estimator — starting at time
 
 FIGURE 11.2. For the BrainCancer data, we display the Kaplan–Meier survival curve (solid curve), along with standard error bands (dashed curves).
 
-![](../images/fa6dc9b03af14b9c218bc2c31fbd1c22a7461225addb31e93d82e81666319ab4.jpg)
+![](../images/11-survival-analysis-and-censored-data/fa6dc9b03af14b9c218bc2c31fbd1c22a7461225addb31e93d82e81666319ab4.jpg)
 
 <details>
 <summary>survival</summary>
@@ -325,7 +325,7 @@ assumption
 baseline
 hazard
 
-![](../images/040e9be20a2341106863b929ce64ffbca7f85f32cde9736c33a308a7227aee87.jpg)  
+![](../images/11-survival-analysis-and-censored-data/040e9be20a2341106863b929ce64ffbca7f85f32cde9736c33a308a7227aee87.jpg)  
 FIGURE 11.4. Top: In a simple example with p = 1 and a binary covariate $x_{i} \in \{0,1\}$ , the log hazard and the survival function under the model (11.14) are shown (green for $x_{i} = 0$ and black for $x_{i} = 1$ ). Because of the proportional hazards assumption (11.14), the log hazard functions differ by a constant, and the survival functions do not cross. Bottom: Again we have a single binary covariate $x_{i} \in \{0,1\}$ . However, the proportional hazards assumption (11.14) does not hold. The log hazard functions cross, as do the survival functions.
 
 $h_0(t)$ times the factor $\exp \left(\sum_{j=1}^{p} x_{ij} \beta_j\right)$ . The quantity $\exp \left(\sum_{j=1}^{p} x_{ij} \beta_j\right)$ is called the relative risk for the feature vector $x_i = (x_{i1}, \ldots, x_{ip})^T$ , relative to that for the feature vector $x_i = (0, \ldots, 0)^T$ .
@@ -408,7 +408,7 @@ TABLE 11.2. Results for Cox's proportional hazards model fit to the BrainCancer 
 
 Next, we consider the dataset Publication involving the time to publication of journal papers reporting the results of clinical trials funded by the National Heart, Lung, and Blood Institute. $^{14}$ For 244 trials, the time in months until publication is recorded. Of the 244 trials, only 156 were published during the study period; the remaining studies were censored. The covariates include whether the trial focused on a clinical endpoint (clinend), whether the trial involved multiple centers (multi), the funding mechanism within the National Institutes of Health (mech), trial sample size (sampsize), budget (budget), impact (impact, related to the number of citations), and whether the trial produced a positive (significant) result (posres). The last covariate is particularly interesting, as a number of studies have suggested that positive trials have a higher publication rate.
 
-![](../images/6f0b14976114c0db5e6ddb4956294cce807a3b63b4e75b87be934c2419f1dae5.jpg)
+![](../images/11-survival-analysis-and-censored-data/6f0b14976114c0db5e6ddb4956294cce807a3b63b4e75b87be934c2419f1dae5.jpg)
 
 <details>
 <summary>survival</summary>
@@ -450,7 +450,7 @@ with respect to $\beta = (\beta_{1},\dots,\beta_{p})^{T}$ . We might take $P(\be
 
 In (11.17), $\lambda$ is a non-negative tuning parameter; typically we will minimize it over a range of values of $\lambda$ . When $\lambda = 0$ , then minimizing (11.17) is equivalent to simply maximizing the usual Cox partial likelihood (11.16). However, when $\lambda > 0$ , then minimizing (11.17) yields a shrunken version of the coefficient estimates. When $\lambda$ is large, then using a ridge penalty will give small coefficients that are not exactly equal to zero. By contrast, for a
 
-![](../images/0046be17b3b872f1d405449f52e2d0d8443c616755496913490e810a783ba9bc.jpg)
+![](../images/11-survival-analysis-and-censored-data/0046be17b3b872f1d405449f52e2d0d8443c616755496913490e810a783ba9bc.jpg)
 
 <details>
 <summary>survival</summary>
@@ -482,7 +482,7 @@ $$
 
 where $\hat{\beta}_{budget}$ and $\hat{\beta}_{impact}$ are the coefficient estimates for these two features from the training set. We then use these risk scores to categorize the observations based on their “risk”. For instance, the high risk group consists of the observations for which $budget_{i} \cdot \hat{\beta}_{budget} + impact_{i} \cdot \hat{\beta}_{impact}$ is largest; by
 
-![](../images/a4886a03b200008540db7d173051b2d74011fe216438b3ecaf7742edab17f060.jpg)
+![](../images/11-survival-analysis-and-censored-data/a4886a03b200008540db7d173051b2d74011fe216438b3ecaf7742edab17f060.jpg)
 
 <details>
 <summary>line</summary>
@@ -512,7 +512,7 @@ In Chapter 4, we introduced the area under the ROC curve — often referred to a
 
 This suggests a way to generalize the notion of AUC to survival analysis. We calculate an estimated risk score, $\hat{\eta}_{i} = \hat{\beta}_{1}x_{i1} + \cdots + \hat{\beta}_{p}x_{ip}$ , for $i = 1, \ldots, n$ , using the Cox model coefficients. If $\hat{\eta}_{i'} > \hat{\eta}_{i}$ , then the model predicts that the $i'$ th observation has a larger hazard than the ith observation, and thus that the survival time $t_{i}$ will be greater than $t_{i'}$ . Thus, it is tempting to try to generalize AUC by computing the proportion of observations for which $t_{i} > t_{i'}$ and $\hat{\eta}_{i'} > \hat{\eta}_{i}$ . However, things are not quite so easy, because recall that we do not observe $t_{1}, \ldots, t_{n}$ ; instead, we observe
 
-![](../images/719bbce6d6128b698539b5c3389387655a8c614ac7c093c0543b104d7eaee132.jpg)
+![](../images/11-survival-analysis-and-censored-data/719bbce6d6128b698539b5c3389387655a8c614ac7c093c0543b104d7eaee132.jpg)
 
 <details>
 <summary>survival</summary>
@@ -1180,7 +1180,7 @@ $$
 
 Your answer should look something like Figure 11.9.
 
-![](../images/17317ae3be7b7321062826638679e9e1d2b1ff867d4e40f85649b37b69d9146a.jpg)
+![](../images/11-survival-analysis-and-censored-data/17317ae3be7b7321062826638679e9e1d2b1ff867d4e40f85649b37b69d9146a.jpg)
 
 <details>
 <summary>survival</summary>
@@ -1208,7 +1208,7 @@ FIGURE 11.9. A Kaplan-Meier survival curve used in Exercise 4.
 (a) Assume that there is no difference between the survival functions of the two groups. Then we can think of $q_{1k}$ as the number of failures if we draw $r_{1k}$ observations, without replacement, from a risk set of $r_k$ observations that contains a total of $q_k$ failures. Argue that $q_{1k}$ follows a hypergeometric distribution. Write the parameters of this distribution in terms of $r_{1k}$ , $r_k$ , and $q_k$ .  
 (b) Given your previous answer, and the properties of the hypergeometric distribution, what are the mean and variance of $q_{1k}$ ? Compare your answer to (11.5) and (11.6).
 
-![](../images/1e66a380a5784119ac3010b99fbc3fac2d188eedb9e55a4990667a897dcebf63.jpg)
+![](../images/11-survival-analysis-and-censored-data/1e66a380a5784119ac3010b99fbc3fac2d188eedb9e55a4990667a897dcebf63.jpg)
 
 hyper-
 geometric
@@ -1220,7 +1220,7 @@ $$
 \begin{array}{l} f (t) = d F (t) / d t \\ S (t) = \exp \left(- \int_ {0} ^ {t} h (u) d u\right). \\ \end{array}
 $$
 
-![](../images/6803d2ca98a764f2ced65e661dbb978877d077f9a3772079bf7526896c3a8af5.jpg)
+![](../images/11-survival-analysis-and-censored-data/6803d2ca98a764f2ced65e661dbb978877d077f9a3772079bf7526896c3a8af5.jpg)
 
 9. In this exercise, we will explore the consequences of assuming that the survival times follow an exponential distribution.
 

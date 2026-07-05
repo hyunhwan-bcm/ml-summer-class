@@ -58,7 +58,7 @@ test statistic
 two-sample
 t-statistic
 
-![](../images/cff64c8a3242e1907c8f7fc620ac8b10413bc4a515dc2b029b6e6326bcdc96f8.jpg)
+![](../images/13-multiple-testing/cff64c8a3242e1907c8f7fc620ac8b10413bc4a515dc2b029b6e6326bcdc96f8.jpg)
 
 <details>
 <summary>violin</summary>
@@ -187,7 +187,7 @@ $$
 \mathrm{FWER} (\alpha) = 1 - \prod_ {j = 1} ^ {m} (1 - \alpha) = 1 - (1 - \alpha) ^ {m}. \tag {13.5}
 $$
 
-![](../images/02ba3049044ae4193e2c0172c25df1b48538b45276e79da484e8b964ba9aff8c.jpg)
+![](../images/13-multiple-testing/02ba3049044ae4193e2c0172c25df1b48538b45276e79da484e8b964ba9aff8c.jpg)
 
 <details>
 <summary>line</summary>
@@ -270,9 +270,9 @@ Figure 13.3 provides an illustration of the Bonferroni and Holm methods on three
 
 Bonferroni's method and Holm's method can be used in virtually any setting in which we wish to control the FWER for $m$ null hypotheses: they
 
-![](../images/91676ef86252cff73650458351c74b82bf986d3e5c21121c54b02109006d73e7.jpg)
+![](../images/13-multiple-testing/91676ef86252cff73650458351c74b82bf986d3e5c21121c54b02109006d73e7.jpg)
 
-![](../images/72c4f160f89fe375cc322cecdc3e3bdf9e65de50a1d1c486e6c7103cbdb0dcca.jpg)  
+![](../images/13-multiple-testing/72c4f160f89fe375cc322cecdc3e3bdf9e65de50a1d1c486e6c7103cbdb0dcca.jpg)  
 FIGURE 13.3. Each panel displays, for a separate simulation, the sorted p-values for tests of m = 10 null hypotheses. The p-values corresponding to the $m_{0} = 2$ true null hypotheses are displayed in black, and the rest are in red. When controlling the FWER at level 0.05, the Bonferroni procedure rejects all null hypotheses that fall below the black line, and the Holm procedure rejects all null hypotheses that fall below the blue line. The region between the blue and black lines indicates null hypotheses that are rejected using the Holm procedure but not using the Bonferroni procedure. In the center panel, the Holm procedure rejects one more null hypothesis than the Bonferroni procedure. In the right-hand panel, it rejects five more null hypotheses.
 
 make no assumptions about the nature of the null hypotheses, the type of test statistic used, or the (in)dependence of the $p$ -values. However, in certain very specific settings, we can achieve higher power by controlling the FWER using approaches that are more tailored to the task at hand. Tukey's method and Scheffé's method provide two such examples.
@@ -280,7 +280,7 @@ make no assumptions about the nature of the null hypotheses, the type of test st
 Table 13.3 indicates that for the Fund dataset, Managers One and Two have the greatest difference in their sample mean returns. This finding might motivate us to test the null hypothesis $H_{0} : \mu_{1} = \mu_{2}$ , where $\mu_{j}$ is the (population) mean return for the jth fund manager. A two-sample t-test (13.1) for $H_{0}$ yields a p-value of 0.0349, suggesting modest evidence against $H_{0}$ . However, this p-value is misleading, since we decided to compare the average returns of Managers One and Two only after having examined the returns for all five managers; this essentially amounts to having performed $m = 5 \times (5 - 1)/2 = 10$ hypothesis tests, and selecting the one with the smallest p-value. This suggests that in order to control the FWER at level 0.05, we should make a Bonferroni correction for m = 10 hypothesis tests, and therefore should only reject a null hypothesis for which the p-value is below 0.005. If we do this, then we will be unable to reject the null hypothesis that Managers One and Two have identical performance.
 
 However, in this setting, a Bonferroni correction is actually a bit too stringent, since it fails to consider the fact that the m = 10 hypothesis tests are all somewhat related: for instance, Managers Two and Five have similar mean returns, as do Managers Two and Four; this guarantees that the mean returns of Managers Four and Five are similar. Stated another way, the m p-values for the m pairwise comparisons are not independent. Therefore, it should be possible to control the FWER in a way that is
-![](../images/12eeb83fd442e399e56e63857044e95a6066cfa7cf4ff7cc4a7aa6eb0bd31904.jpg)  
+![](../images/13-multiple-testing/12eeb83fd442e399e56e63857044e95a6066cfa7cf4ff7cc4a7aa6eb0bd31904.jpg)  
 FIGURE 13.4. Each panel displays, for a separate simulation, the sorted p-values for tests of m = 15 hypotheses, corresponding to pairwise tests for the equality of G = 6 means. The $m_{0} = 10$ true null hypotheses are displayed in black, and the rest are in red. When controlling the FWER at level 0.05, the Bonferroni procedure rejects all null hypotheses that fall below the black line, whereas Tukey rejects all those that fall below the blue line. Thus, Tukey's method has slightly higher power than Bonferroni's method. Controlling the Type I error without adjusting for multiple testing involves rejecting all those that fall below the green line.
 
 less conservative. This is exactly the idea behind Tukey's method: when performing $m = G(G - 1)/2$ pairwise comparisons of $G$ means, it allows us to control the FWER at level $\alpha$ while rejecting all null hypotheses for which the $p$ -value falls below $\alpha_T$ , for some $\alpha_T > \alpha/m$ .
@@ -311,7 +311,7 @@ Figure 13.5 indicates that it is reasonable to control the FWER when m takes on 
 
 Why is this the case? Recall that, using the notation in Table 13.2, the FWER is defined as $\Pr(V \geq 1)$ (13.3). In other other words, controlling the FWER at level $\alpha$ guarantees that the data analyst is very unlikely (with probability no more than $\alpha$ ) to reject any true null hypotheses, i.e. to have any false positives. In order to make good on this guarantee when m is large, the data analyst may be forced to reject very few null hypotheses, or perhaps even none at all (since if R = 0 then also V = 0; see Table 13.2).
 
-![](../images/9efbfb37a41ddbcddf419e64729c5af57fa0a54914959e153af531bce422e9d5.jpg)
+![](../images/13-multiple-testing/9efbfb37a41ddbcddf419e64729c5af57fa0a54914959e153af531bce422e9d5.jpg)
 
 <details>
 <summary>roc</summary>
@@ -396,7 +396,7 @@ $$
 
 In other words, this procedure ensures that, on average, no more than a fraction q of the rejected null hypotheses are false positives. Remarkably, this holds regardless of how many null hypotheses are true, and regardless of the distribution of the p-values for the null hypotheses that are false. Therefore, the Benjamini–Hochberg procedure gives us a very easy way to determine, given a set of m p-values, which null hypotheses to reject in order to control the FDR at any pre-specified level q.
 
-![](../images/e134b1cd5ca7e9d84389e7e69304d3425cf6f824e345daab1b0101ecb0d8d380.jpg)  
+![](../images/13-multiple-testing/e134b1cd5ca7e9d84389e7e69304d3425cf6f824e345daab1b0101ecb0d8d380.jpg)  
 FIGURE 13.6. Each panel displays the same set of m = 2,000 ordered p-values for the Fund data. The green lines indicate the p-value thresholds corresponding to FWER control, via the Bonferroni procedure, at levels $\alpha = 0.05$ (left), $\alpha = 0.1$ (center), and $\alpha = 0.3$ (right). The orange lines indicate the p-value thresholds corresponding to FDR control, via Benjamini–Hochberg, at levels q = 0.05 (left), q = 0.1 (center), and q = 0.3 (right). When the FDR is controlled at level q = 0.1, 146 null hypotheses are rejected (center); the corresponding p-values are shown in blue. When the FDR is controlled at level q = 0.3, 279 null hypotheses are rejected (right); the corresponding p-values are shown in blue.
 
 There is a fundamental difference between the Bonferroni procedure of Section 13.3.2 and the Benjamini–Hochberg procedure. In the Bonferroni procedure, in order to control the FWER for m null hypotheses at level $\alpha$ , we must simply reject null hypotheses for which the p-value is below $\alpha/m$ . This threshold of $\alpha/m$ does not depend on anything about the data (beyond the value of m), and certainly does not depend on the p-values themselves. By contrast, the rejection threshold used in the Benjamini–Hochberg procedure is more complicated: we reject all null hypotheses for which the p-value is less than or equal to the Lth smallest p-value, where L is itself a function of all m p-values, as in (13.10). Therefore, when conducting the Benjamini–Hochberg procedure, we cannot plan out in advance what threshold we will use to reject p-values; we need to first see our data. For instance, in the abstract, there is no way to know whether we will reject a null hypothesis corresponding to a p-value of 0.01 when using an FDR threshold of 0.1 with m = 100; the answer depends on the values of the other m - 1 p-values. This property of the Benjamini–Hochberg procedure is shared by the Holm procedure, which also involves a data-dependent p-value threshold.
@@ -462,9 +462,9 @@ In general, in settings with a smaller sample size or a more skewed data distrib
 
 Now, suppose that we wish to control the FDR for $m$ null hypotheses, $H_{01}, \ldots, H_{0m}$ , in a setting in which either no theoretical null distribution is available, or else we simply prefer to avoid the use of a theoretical null
 
-![](../images/9243a4ca63d6baf4f65233cf510437c551611cff68587a4eaa4bedde727846de.jpg)
+![](../images/13-multiple-testing/9243a4ca63d6baf4f65233cf510437c551611cff68587a4eaa4bedde727846de.jpg)
 
-![](../images/14a3115f3504b43bee279f3952d6781c2be49dc905d5d8e404183724e79cbd0e.jpg)
+![](../images/13-multiple-testing/14a3115f3504b43bee279f3952d6781c2be49dc905d5d8e404183724e79cbd0e.jpg)
 
 <details>
 <summary>histogram</summary>
@@ -476,7 +476,7 @@ Now, suppose that we wish to control the FDR for $m$ null hypotheses, $H_{01}, \
 
 FIGURE 13.7. The 11th gene in the Khan dataset has a test statistic of T = -2.09. Its theoretical and re-sampling null distributions are almost identical. The theoretical p-value equals 0.041 and the re-sampling p-value equals 0.042.
 
-![](../images/f4c1504955c05c8e4b9746735bd6e43786b74519ff8e0864b4441ced13d51dbf.jpg)
+![](../images/13-multiple-testing/f4c1504955c05c8e4b9746735bd6e43786b74519ff8e0864b4441ced13d51dbf.jpg)
 
 <details>
 <summary>histogram</summary>
@@ -539,7 +539,7 @@ In general, there are two settings in which a re-sampling approach is particular
 
 In general, if you can come up with a way to re-sample or permute your observations in order to generate data that follow the null distribution, then you can compute p-values or estimate the FDR using variants of Algorithms 13.3 and 13.4. In many real-world settings, this provides a powerful tool for hypothesis testing when no out-of-box hypothesis tests are available, or when the key assumptions underlying those out-of-box tests are violated.
 
-![](../images/a94e7a4f9360167d38e2976136077f0c5728e37d1c12fcd0cd5aed3cc664ebe2.jpg)
+![](../images/13-multiple-testing/a94e7a4f9360167d38e2976136077f0c5728e37d1c12fcd0cd5aed3cc664ebe2.jpg)
 
 <details>
 <summary>line</summary>
@@ -794,7 +794,7 @@ print(tukey.summary())
 
 The pairwise\_tukeyhsd() function provides confidence intervals for the difference between each pair of managers (lower and upper), as well as a
 
-![](../images/bae88ce37ecbef033b638c6882081004cee9cad6caa64c1e6919b51e4da4d34c.jpg)
+![](../images/13-multiple-testing/bae88ce37ecbef033b638c6882081004cee9cad6caa64c1e6919b51e4da4d34c.jpg)
 
 <details>
 <summary>error_bar</summary>
@@ -1039,7 +1039,7 @@ In [31]: fig, ax = plt.subplots()
     ax.set_ylabel("False Discovery Rate");
 ```
 
-![](../images/11581e4acdc52575fc8f55af9391ea28503a5c6e814a404a648e3d7a4f3ec0f5.jpg)
+![](../images/13-multiple-testing/11581e4acdc52575fc8f55af9391ea28503a5c6e814a404a648e3d7a4f3ec0f5.jpg)
 
 <details>
 <summary>line</summary>
