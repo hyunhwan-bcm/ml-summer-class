@@ -20,7 +20,6 @@ Full text converted from [`ISLP.pdf`](ISLP.pdf) to Markdown (MinerU2.5-Pro VLM, 
 | 11 | Survival Analysis and Censored Data | [chapters_md/11-survival-analysis-and-censored-data.md](chapters_md/11-survival-analysis-and-censored-data.md) |
 | 12 | Unsupervised Learning | [chapters_md/12-unsupervised-learning.md](chapters_md/12-unsupervised-learning.md) |
 | 13 | Multiple Testing | [chapters_md/13-multiple-testing.md](chapters_md/13-multiple-testing.md) |
-| — | Index | [chapters_md/14-index.md](chapters_md/14-index.md) |
 
 ## Layout
 
