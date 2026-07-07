@@ -61,4 +61,6 @@ the course.
 
 | Date | Title | Description | Slides |
 |---|---|---|---|
+| — | Reading the Math | Notation primer — scalars/vectors/matrices, sub/superscripts, Greek letters, and simple linear regression worked three ways; reference deck for the whole course | [`week0-notation/slides.qmd`](week0-notation/slides.qmd) (run `make` in `week0-notation/` to build `slides.pdf`) |
 | Jul 10 | Why Statistical Learning? | Motivation, importance, and how statistical learning works — Week 1 kickoff | [`week1/slides.qmd`](week1/slides.qmd) (run `make` in `week1/` to build `slides.pdf`) |
+| Jul 17 | Linear Regression & Classification | Least squares, multiple regression, logistic regression, LDA/QDA, ROC — Week 2 | [`week2/slides.qmd`](week2/slides.qmd) (run `make` in `week2/` to build `slides.pdf`) |
