@@ -64,3 +64,26 @@ the course.
 | — | Reading the Math | Notation primer — scalars/vectors/matrices, sub/superscripts, Greek letters, and simple linear regression worked three ways; reference deck for the whole course | [`week0-notation/slides.qmd`](week0-notation/slides.qmd) (run `make` in `week0-notation/` to build `slides.pdf`) |
 | Jul 10 | Why Statistical Learning? | Motivation, importance, and how statistical learning works — Week 1 kickoff | [`week1/slides.qmd`](week1/slides.qmd) (run `make` in `week1/` to build `slides.pdf`) |
 | Jul 17 | Linear Regression & Classification | Least squares, multiple regression, logistic regression, LDA/QDA, ROC — Week 2 | [`week2/slides.qmd`](week2/slides.qmd) (run `make` in `week2/` to build `slides.pdf`) |
+| Jul 24 | Trusting and Taming Your Models | Validation, LOOCV & k-fold CV, the bootstrap, subset selection, ridge & lasso — Week 3 | [`week3/slides.qmd`](week3/slides.qmd) (run `make` in `week3/` to build `slides.pdf`) |
+| Jul 31 | Beyond Straight Lines: Splines & Trees | Polynomials, splines, GAMs, decision trees, bagging, random forests, boosting — Week 4 | [`week4/slides.qmd`](week4/slides.qmd) (run `make` in `week4/` to build `slides.pdf`) |
+| Aug 7 | Margins and Layers | Maximal margin, support vector classifiers & kernels, neural networks, CNNs — Week 5 | [`week5/slides.qmd`](week5/slides.qmd) (run `make` in `week5/` to build `slides.pdf`) |
+| Aug 14 | Sequences and Structure | RNNs & embeddings, fitting networks (SGD, dropout, double descent), PCA, K-means & hierarchical clustering — Week 6 | [`week6/slides.qmd`](week6/slides.qmd) (run `make` in `week6/` to build `slides.pdf`) |
+| Aug 21 | How Long, and How Sure? | Kaplan–Meier, Cox proportional hazards, FWER & FDR, Benjamini–Hochberg, course wrap-up — Week 7 | [`week7/slides.qmd`](week7/slides.qmd) (run `make` in `week7/` to build `slides.pdf`) |
+
+## Homework (Excel worksheets)
+
+Each week has a hands-on Excel homework in the spirit of the
+[`excel_worksheets/`](excel_worksheets/) collection: small, hand-computable
+datasets, formulas entered step by step in the yellow cells, instant ✓/✗
+auto-checking, and an `Answer_Key` sheet. Every workbook's Instructions sheet
+lists the matching ISLP sections and slide titles.
+
+| Week | Topics | File |
+|---|---|---|
+| 1 | Train/test MSE, bias–variance decomposition, KNN by hand | [`week1/homework-test-error-knn.xlsx`](week1/homework-test-error-knn.xlsx) |
+| 2 | Least squares fit, RSE/R²/t-test, logistic predictions, confusion matrix | [`week2/homework-regression-classification.xlsx`](week2/homework-regression-classification.xlsx) |
+| 3 | k-fold CV, bootstrap SE, ridge shrinkage path, lasso soft-threshold | [`week3/homework-cv-bootstrap-shrinkage.xlsx`](week3/homework-cv-bootstrap-shrinkage.xlsx) |
+| 4 | Step functions, greedy tree splits by RSS, Gini, bagging & boosting | [`week4/homework-step-functions-trees.xlsx`](week4/homework-step-functions-trees.xlsx) |
+| 5 | Hyperplane classification, hinge loss, radial kernel, NN forward pass | [`week5/homework-svm-neural-net.xlsx`](week5/homework-svm-neural-net.xlsx) |
+| 6 | K-means iterations, complete-linkage fusion, PVE, tiny RNN unroll | [`week6/homework-clustering-pca-rnn.xlsx`](week6/homework-clustering-pca-rnn.xlsx) |
+| 7 | Kaplan–Meier estimation, hazard ratios, Bonferroni/Holm/BH | [`week7/homework-survival-multiple-testing.xlsx`](week7/homework-survival-multiple-testing.xlsx) |
