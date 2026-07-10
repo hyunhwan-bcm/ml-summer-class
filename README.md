@@ -61,14 +61,32 @@ the course.
 
 | Date | Title | Description | Slides |
 |---|---|---|---|
-| — | Reading the Math | Notation primer — scalars/vectors/matrices, sub/superscripts, Greek letters, and simple linear regression worked three ways; reference deck for the whole course | [`week0-notation/slides.qmd`](week0-notation/slides.qmd) (run `make` in `week0-notation/` to build `slides.pdf`) |
-| Jul 10 | Why Statistical Learning? | Motivation, importance, and how statistical learning works — Week 1 kickoff | [`week1/slides.qmd`](week1/slides.qmd) (run `make` in `week1/` to build `slides.pdf`) |
-| Jul 17 | Linear Regression & Classification | Least squares, multiple regression, logistic regression, LDA/QDA, ROC — Week 2 | [`week2/slides.qmd`](week2/slides.qmd) (run `make` in `week2/` to build `slides.pdf`) |
-| Jul 24 | Trusting and Taming Your Models | Validation, LOOCV & k-fold CV, the bootstrap, subset selection, ridge & lasso — Week 3 | [`week3/slides.qmd`](week3/slides.qmd) (run `make` in `week3/` to build `slides.pdf`) |
-| Jul 31 | Beyond Straight Lines: Splines & Trees | Polynomials, splines, GAMs, decision trees, bagging, random forests, boosting — Week 4 | [`week4/slides.qmd`](week4/slides.qmd) (run `make` in `week4/` to build `slides.pdf`) |
-| Aug 7 | Margins and Layers | Maximal margin, support vector classifiers & kernels, neural networks, CNNs — Week 5 | [`week5/slides.qmd`](week5/slides.qmd) (run `make` in `week5/` to build `slides.pdf`) |
-| Aug 14 | Sequences and Structure | RNNs & embeddings, fitting networks (SGD, dropout, double descent), PCA, K-means & hierarchical clustering — Week 6 | [`week6/slides.qmd`](week6/slides.qmd) (run `make` in `week6/` to build `slides.pdf`) |
-| Aug 21 | How Long, and How Sure? | Kaplan–Meier, Cox proportional hazards, FWER & FDR, Benjamini–Hochberg, course wrap-up — Week 7 | [`week7/slides.qmd`](week7/slides.qmd) (run `make` in `week7/` to build `slides.pdf`) |
+| — | Reading the Math | Notation primer — scalars/vectors/matrices, sub/superscripts, Greek letters, and simple linear regression worked three ways; reference deck for the whole course | [`week0-notation/slides.qmd`](week0-notation/slides.qmd) · [`slides.pdf`](week0-notation/slides.pdf) |
+| Jul 10 | Why Statistical Learning? | Motivation, importance, and how statistical learning works — Week 1 kickoff | [`week1/slides.qmd`](week1/slides.qmd) · [`slides.pdf`](week1/slides.pdf) |
+| Jul 17 | Linear Regression & Classification | Least squares, multiple regression, logistic regression, LDA/QDA, ROC — Week 2 | [`week2/slides.qmd`](week2/slides.qmd) · [`slides.pdf`](week2/slides.pdf) |
+| Jul 24 | Trusting and Taming Your Models | Validation, LOOCV & k-fold CV, the bootstrap, subset selection, ridge & lasso — Week 3 | [`week3/slides.qmd`](week3/slides.qmd) · [`slides.pdf`](week3/slides.pdf) |
+| Jul 31 | Beyond Straight Lines: Splines & Trees | Polynomials, splines, GAMs, decision trees, bagging, random forests, boosting — Week 4 | [`week4/slides.qmd`](week4/slides.qmd) · [`slides.pdf`](week4/slides.pdf) |
+| Aug 7 | Margins and Layers | Maximal margin, support vector classifiers & kernels, neural networks, CNNs — Week 5 | [`week5/slides.qmd`](week5/slides.qmd) · [`slides.pdf`](week5/slides.pdf) |
+| Aug 14 | Sequences and Structure | RNNs & embeddings, fitting networks (SGD, dropout, double descent), PCA, K-means & hierarchical clustering — Week 6 | [`week6/slides.qmd`](week6/slides.qmd) · [`slides.pdf`](week6/slides.pdf) |
+| Aug 21 | How Long, and How Sure? | Kaplan–Meier, Cox proportional hazards, FWER & FDR, Benjamini–Hochberg, course wrap-up — Week 7 | [`week7/slides.qmd`](week7/slides.qmd) · [`slides.pdf`](week7/slides.pdf) |
+
+## Labs (Python notebooks)
+
+Each week's session includes the official ISLP lab notebook(s), copied from
+[intro-stat-learning/ISLP_labs](https://github.com/intro-stat-learning/ISLP_labs)
+into the corresponding week folder so everything needed for a session lives in
+one place. Install the dependencies once with
+`pip install -r lab-requirements.txt`.
+
+| Week | Lab(s) | Notebooks |
+|---|---|---|
+| 1 | 2.3 Introduction to Python | [`week1/Ch02-statlearn-lab.ipynb`](week1/Ch02-statlearn-lab.ipynb) |
+| 2 | 3.6 Linear Regression · 4.7 Classification | [`Ch03`](week2/Ch03-linreg-lab.ipynb) · [`Ch04`](week2/Ch04-classification-lab.ipynb) |
+| 3 | 5.3 CV & Bootstrap · 6.5 Regularization | [`Ch05`](week3/Ch05-resample-lab.ipynb) · [`Ch06`](week3/Ch06-varselect-lab.ipynb) |
+| 4 | 7.8 Non-Linear Modeling · 8.3 Trees | [`Ch07`](week4/Ch07-nonlin-lab.ipynb) · [`Ch08`](week4/Ch08-baggboost-lab.ipynb) |
+| 5 | 9.6 SVM · 10.9 Deep Learning (part 1) | [`Ch09`](week5/Ch09-svm-lab.ipynb) · [`Ch10`](week5/Ch10-deeplearning-lab.ipynb) |
+| 6 | 10.9 Deep Learning (part 2) · 12.5 Unsupervised | [`Ch10`](week6/Ch10-deeplearning-lab.ipynb) · [`Ch12`](week6/Ch12-unsup-lab.ipynb) |
+| 7 | 11.8 Survival Analysis · 13.6 Multiple Testing | [`Ch11`](week7/Ch11-surv-lab.ipynb) · [`Ch13`](week7/Ch13-multiple-lab.ipynb) |
 
 ## Homework (Excel worksheets)
 
