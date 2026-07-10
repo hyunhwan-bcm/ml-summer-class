@@ -1,0 +1,110 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+$brand-navy: #1b3a5c;
+$brand-blue: #2f6fb5;
+$brand-amber: #e8a33d;
+$brand-ink: #1c1f24;
+$brand-paper: #fbfbfa;
+
+$presentation-heading-font: "Source Sans Pro", sans-serif;
+$presentation-font-family: "Source Sans Pro", sans-serif;
+$presentation-heading-color: $brand-navy;
+$presentation-heading-font-weight: 700;
+$body-color: $brand-ink;
+$presentation-font-size-root: 40px;
+$link-color: $brand-blue;
+$code-block-font-size: 0.65em;
+
+/*-- scss:rules --*/
+
+.reveal .slides section {
+  text-align: left;
+
+  h1, h2 {
+    border-bottom: 3px solid $brand-amber;
+    padding-bottom: 0.2em;
+  }
+}
+
+// Section-divider slides (# H1 headings tagged .divider)
+.reveal .slides section.divider {
+  text-align: center;
+
+  h1 {
+    color: #fff;
+    border-bottom: none;
+    font-size: 2.2em;
+    letter-spacing: 0.02em;
+  }
+}
+
+// Inline emphasis class used throughout slides.qmd
+.hl {
+  color: $brand-blue;
+  font-weight: 700;
+}
+
+// Blockquote styling for the ISLP citation
+.reveal .slides section blockquote {
+  border-left: 6px solid $brand-amber;
+  padding-left: 0.8em;
+  font-style: italic;
+  color: lighten($brand-ink, 15%);
+}
+
+// Callout card used on the "Why It Is Important" slide
+.stat-card {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  background: rgba($brand-blue, 0.08);
+  border-left: 6px solid $brand-blue;
+  border-radius: 6px;
+  padding: 0.9em 1.1em;
+
+  i {
+    color: $brand-blue;
+    font-size: 1.6em;
+    margin-top: 0.1em;
+  }
+
+  p {
+    margin: 0.2em 0 0 0;
+    font-size: 0.85em;
+  }
+}
+
+// Table styling (used for the course roadmap and history timeline)
+.reveal .slides table {
+  font-size: 0.85em;
+}
+
+// Figures extracted from the textbook, wrapped in raw HTML (not a markdown
+// image) specifically to avoid Quarto's revealjs auto-figure handling: a
+// centered markdown image gets tagged with reveal.js's `r-stretch`, which
+// resizes it at runtime via JS. That fights a CSS max-width/max-height
+// constraint and can leave the image mid-resize (wrong ratio) in decktape's
+// static capture. Plain img + CSS-only sizing is deterministic.
+.fig-wrap {
+  text-align: center;
+}
+
+.fig-wrap img {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 55vh;
+  border: 1px solid darken($brand-paper, 10%);
+  border-radius: 4px;
+}
+
+// Quiz card for the notation primer's check-yourself slides
+.quiz {
+  background: rgba($brand-amber, 0.12);
+  border-left: 6px solid $brand-amber;
+  border-radius: 6px;
+  padding: 0.7em 1.1em;
+  margin-top: 0.5em;
+}

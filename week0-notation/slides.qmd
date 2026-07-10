@@ -1,0 +1,497 @@
+---
+title: "Reading the Math"
+subtitle: "A Notation Primer for ISLP — Scalars, Vectors, Hats, and Greeks"
+author: "Ho-min Park & Hyun-Hwan Jeong"
+date: 2026-07-17
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1920
+    height: 1080
+    margin: 0.08
+    slide-number: c/t
+    center: true
+    transition: fade
+    footer: "ML Summer Class · Notation Primer"
+    highlight-style: github
+    code-line-numbers: false
+    html-math-method: katex
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+---
+
+# Why This Deck Exists {.divider background-color="#1b3a5c"}
+
+## Math notation is a compressed language
+
+An equation like $\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$
+is one short sentence — *if* you can read it. If you can't, it's a wall.
+
+- ISLP assumes fluency in this language but never teaches it explicitly
+- This deck is the [pocket dictionary]{.hl}: every symbol convention the
+  textbook uses, in one place
+- Keep it open next to any chapter — nothing here is more than
+  high-school algebra wearing formal clothes
+
+::: notes
+Standalone reference deck — go through it before/alongside Weeks 1–2, and
+come back whenever a symbol looks unfamiliar.
+:::
+
+# The Objects: Scalars, Vectors, Matrices {.divider background-color="#1b3a5c"}
+
+## Scalars: single numbers
+
+Written as *italic* letters: $n$, $p$, $x$, $y$, $\lambda$.
+
+Two scalars are so common in ISLP they're practically reserved words:
+
+- $n$ — the [number of observations]{.hl} (rows of data)
+- $p$ — the [number of predictors]{.hl} (input variables)
+
+::: {.fragment}
+So "$n = 200$, $p = 3$" in the `Advertising` data means: 200 markets,
+each described by 3 ad budgets (TV, radio, newspaper).
+:::
+
+## Vectors: ordered lists of numbers
+
+A vector collects several scalars into one object:
+
+$$x = \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_p \end{pmatrix}$$
+
+- By convention a vector is a **column** (stacked vertically)
+- Its **dimension** is how many entries it has — here $p$
+- $x_j$ (one subscript) picks out the $j$-th entry — a scalar again
+
+## When is a vector bold? ISLP's house rule
+
+Most linear algebra texts bold *every* vector ($\mathbf{v}$). ISLP is pickier:
+
+| Notation | Meaning | Length |
+|---|---|---|
+| $\mathbf{y}$, $\mathbf{a}$ (bold lowercase) | a vector with [one entry per **observation**]{.hl} | $n$ |
+| $x_i$, $\beta$ (plain italic) | any other vector — e.g. one observation's features, or the coefficients | $p$ (or $p+1$) |
+| $\mathbf{X}$ (bold capital) | a matrix | $n \times p$ |
+
+::: {.fragment}
+So boldness is a hint about *length*: bold = "as long as the dataset".
+That's why the response $\mathbf{y}$ is bold but a single observation $x_i$
+is not — and why you'll see both in the same equation. Other books bold
+everything; don't let the font-change throw you when switching sources.
+:::
+
+## Matrices: grids of numbers
+
+A matrix is written as a bold capital letter, with its size as
+$\text{rows} \times \text{columns}$:
+
+$$\mathbf{X} = \begin{pmatrix} x_{11} & x_{12} & \cdots & x_{1p} \\ x_{21} & x_{22} & \cdots & x_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ x_{n1} & x_{n2} & \cdots & x_{np} \end{pmatrix} \quad (n \times p)$$
+
+- $x_{ij}$ — the entry in **row $i$, column $j$**: always row first
+- A vector is just a matrix with one column ($n \times 1$)
+- A scalar is just a $1 \times 1$ matrix — it's objects all the way down
+
+## The data matrix: one grid, two readings
+
+In ISLP, $\mathbf{X}$ is *the dataset itself* — and you can slice it two ways:
+
+:::: {.columns}
+::: {.column style="width:50%;"}
+### By row
+$x_i$ = observation $i$: one market, one patient, one customer — a vector
+of its $p$ measurements.
+
+*"For observation $i$…"*
+:::
+::: {.column style="width:50%;"}
+### By column
+$\mathbf{x}_j$ = variable $j$: all $n$ values of one predictor, e.g. every
+market's TV budget.
+
+*"The predictor $X_j$…"*
+:::
+::::
+
+::: {.fragment}
+When ISLP writes the model $Y = f(X) + \epsilon$, that $X$ means "the
+predictors" abstractly — not a specific number. Which brings us to…
+:::
+
+## Capital vs lowercase: random vs realized
+
+- **Capital** $X$, $Y$ — the **random variable**: the quantity *in general*,
+  before we've measured anything ("income", "whether a customer defaults")
+- **Lowercase** $x_i$, $y_i$ — the **observed value** for observation $i$:
+  an actual number in your dataset ($x_3 = 41{,}000$)
+
+::: {.fragment}
+That's why the model is stated as $Y = f(X) + \epsilon$ (a claim about the
+world), but the fitted line is $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i$
+(arithmetic on your data).
+:::
+
+## Check yourself #1
+
+::: {.quiz}
+For the `Advertising` data ($n = 200$ markets, $p = 3$ ad channels),
+classify each symbol — scalar, vector, or matrix? What does it refer to?
+
+$$n \qquad \mathbf{X} \qquad x_i \qquad x_{ij} \qquad Y \qquad y_7$$
+:::
+
+::: {.fragment}
+- $n$ — scalar, the number 200
+- $\mathbf{X}$ — the $200 \times 3$ matrix of all ad budgets
+- $x_i$ — vector, the 3 budgets of market $i$
+- $x_{ij}$ — scalar, market $i$'s spend on channel $j$
+- $Y$ — random variable, "sales" in general
+- $y_7$ — scalar, the actual sales of market 7
+:::
+
+# The Decorations: Sub, Super, Hat {.divider background-color="#1b3a5c"}
+
+## Subscripts: *which one?*
+
+A subscript **indexes** — it answers "which one out of many":
+
+- $x_i$ — the $i$-th **observation** (rows: $i = 1, \dots, n$)
+- $\beta_j$ — the coefficient of the $j$-th **predictor** (columns: $j = 1, \dots, p$)
+- $x_{ij}$ — both at once: observation $i$, predictor $j$
+
+::: {.fragment}
+ISLP is consistent: [$i$ runs over observations, $j$ (or $k$) runs over
+variables or classes]{.hl}. When you see a subscript, first ask: is this
+counting rows, columns, or classes?
+:::
+
+::: {.fragment}
+Note the house rule at work: $x_i$ (row $i$, length $p$) stays **plain**,
+while $\mathbf{x}_j$ (column $j$, length $n$) is **bold** — same letter,
+and only the subscript letter plus the boldness tell you which slice of
+$\mathbf{X}$ you're holding.
+:::
+
+## Superscripts: usually a power, sometimes a label
+
+- $x^2$, $\texttt{horsepower}^2$ — a **power**: plain squaring
+- $\mathbf{X}^T$ — **transpose**: flip rows and columns
+  (an $n \times p$ matrix becomes $p \times n$)
+- $\mathbf{A}^{-1}$ — **matrix inverse**: the matrix analogue of $\frac{1}{a}$;
+  $\mathbf{A}^{-1}\mathbf{A} = \mathbf{I}$ (the identity, matrix-land's "1")
+- $R^2$ — just a name with a square in it (it *is* a squared correlation)
+
+::: {.fragment}
+$T$ and $-1$ are **operations**, not powers. If a superscript is a letter or
+sits on a matrix, suspect an operation.
+:::
+
+## The hat: "our estimate of"
+
+The single most important decoration in this course:
+
+$$\beta_1 \;\; \text{vs} \;\; \hat{\beta}_1 \qquad\qquad f \;\; \text{vs} \;\; \hat{f} \qquad\qquad y_i \;\; \text{vs} \;\; \hat{y}_i$$
+
+- Plain symbol — the **true, unknown** quantity (nature's secret)
+- Hatted symbol — our **estimate** of it, computed from training data
+
+::: {.fragment}
+$y_i$ vs $\hat{y}_i$ deserves care: $y_i$ is what *actually happened*,
+$\hat{y}_i$ is what our model *predicted*. Their gap $y_i - \hat{y}_i$ is the
+**residual** — the quantity least squares minimizes.
+:::
+
+## Bars, tildes, and stars
+
+- $\bar{x}$ — the **sample mean**: $\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i$
+- $X \sim N(\mu, \sigma^2)$ — the tilde means ["is distributed as"]{.hl}:
+  $X$ follows a normal distribution with mean $\mu$ and variance $\sigma^2$
+- $x^*$ or $x_0$ — a **new, unseen** point at which we want a prediction
+  (test point), as opposed to the training points $x_1, \dots, x_n$
+
+## Check yourself #2
+
+::: {.quiz}
+Translate each into words:
+
+$$\hat{\beta}_1 \qquad \bar{y} \qquad \mathbf{X}^T \qquad x_{52}^2 \qquad \epsilon \sim N(0, \sigma^2) \qquad \hat{f}(x_0)$$
+:::
+
+::: {.fragment}
+- $\hat{\beta}_1$ — our estimate of the first coefficient
+- $\bar{y}$ — the average of the observed responses
+- $\mathbf{X}^T$ — the data matrix, transposed
+- $x_{52}^2$ — the square of observation 5's value on predictor 2 (context
+  disambiguates 5,2 vs 52!)
+- $\epsilon \sim N(0, \sigma^2)$ — the noise is normally distributed, mean 0, variance $\sigma^2$
+- $\hat{f}(x_0)$ — our fitted model's prediction at the new point $x_0$
+:::
+
+# The Greek Cast {.divider background-color="#1b3a5c"}
+
+## Greek letters you'll meet every week
+
+| Letter | Name | Typical role in ISLP |
+|---|---|---|
+| $\beta$ | beta | regression **coefficients** — the stars of Ch. 3–4 |
+| $\epsilon$ | epsilon | the irreducible **noise** in $Y = f(X) + \epsilon$ |
+| $\mu$ | mu | a **mean** |
+| $\sigma, \sigma^2$ | sigma | standard deviation / **variance** |
+| $\lambda$ | lambda | **tuning knob** — regularization strength (Ch. 6) |
+| $\pi_k$ | pi | **prior probability** of class $k$ (Ch. 4 — not 3.14!) |
+| $\theta$ | theta | a **generic parameter** when no specific letter applies |
+| $\rho$ | rho | **correlation** |
+| $\delta_k$ | delta | **discriminant score** of class $k$ (LDA/QDA) |
+
+## The unwritten rule: Greek = unknown, Roman = data
+
+- **Roman letters** ($x$, $y$, $n$, $p$) — things you can *see*: your data
+  and its dimensions
+- **Greek letters** ($\beta$, $\mu$, $\sigma$) — things you *can't* see:
+  the parameters of the process that generated the data
+- **Greek with a hat** ($\hat{\beta}$, $\hat{\mu}$) — your data-based
+  *guess* at the invisible thing
+
+::: {.fragment}
+This is why statisticians write $\hat{\beta}$ rather than $b$: the notation
+itself reminds you that [an estimate exists only in relation to an unknown
+truth]{.hl}.
+:::
+
+## One symbol, two jobs: $\Sigma$ and $\Pi$
+
+$$\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n \qquad\qquad \prod_{i=1}^{n} p_i = p_1 \times p_2 \times \cdots \times p_n$$
+
+Capital sigma = **repeated addition**; capital pi = **repeated
+multiplication** (you met $\prod$ in the logistic likelihood).
+
+::: {.fragment}
+But in Ch. 4, $\mathbf{\Sigma}$ (bold, no limits attached) is the
+**covariance matrix** of a multivariate normal. Same glyph, different job —
+[the limits above and below are the giveaway]{.hl}: with limits it's a sum,
+without them it's a matrix.
+:::
+
+## Check yourself #3
+
+::: {.quiz}
+From Week 2's slides — name each Greek letter and its role:
+
+$$p(X) = \frac{e^{\beta_0 + \beta_1 X}}{1 + e^{\beta_0 + \beta_1 X}} \qquad\qquad \Pr(Y = k \mid X = x) = \frac{\pi_k f_k(x)}{\sum_{l=1}^K \pi_l f_l(x)}$$
+:::
+
+::: {.fragment}
+- $\beta_0, \beta_1$ — betas: intercept and slope on the *log-odds* scale
+- $\pi_k$ — pi: the prior probability of class $k$
+- $\sum_{l=1}^K$ — capital sigma *with limits*: sum over all $K$ classes
+- Bonus: $e$ is Roman — Euler's number 2.718…, a known constant, not a
+  parameter
+:::
+
+# Functions and Parameters {.divider background-color="#1b3a5c"}
+
+## Function notation: $f$ vs $f(x)$
+
+A function is a **machine**: feed in an input, get an output.
+
+- $f$ — the machine itself (the relationship, the "true pattern")
+- $f(x)$ — the machine's **output** at a particular input $x$ — a number
+- $\hat{f}$ — our estimated copy of the machine; $\hat{f}(x_0)$ — its
+  prediction at a new point
+
+::: {.fragment}
+"Estimating $f$" — the phrase defining this whole course — means building a
+machine whose outputs mimic nature's, [without ever seeing nature's
+blueprints]{.hl}.
+:::
+
+## Arguments vs parameters
+
+Two kinds of things live inside a function's parentheses:
+
+- **Arguments** — the inputs that vary: the $X$ in $f(X)$
+- **Parameters** — the settings that define *which* function you have:
+  the $\beta$'s in $\beta_0 + \beta_1 X$
+
+::: {.fragment}
+$p(X)$ in logistic regression is read "the probability, *as a function of*
+$X$" — its shape is controlled by parameters $\beta_0, \beta_1$ hiding inside.
+Fitting = [using data to choose parameter values]{.hl}; predicting =
+plugging arguments into the fitted function.
+:::
+
+## Operators: $E[\cdot]$, $\mathrm{Var}(\cdot)$, $\Pr(\cdot)$
+
+These look like functions, and they are — their input is a *random quantity*:
+
+- $E[Y]$ — the **expected value** (long-run average) of $Y$
+- $\mathrm{Var}(\hat{f}(x_0))$ — the **variance**: how much this quantity
+  would wobble across different training sets
+- $\Pr(Y = k \mid X = x)$ — a **conditional probability**: the chance $Y$
+  is class $k$, [given that]{.hl} we know $X = x$ — the "$\mid$" is read
+  "given"
+
+::: {.fragment}
+None of these are multiplications: $E[Y]$ is not "$E$ times $Y$". Brackets
+after an operator name mean "applied to".
+:::
+
+## Compact shorthands worth memorizing
+
+- $I(\text{condition})$ — the **indicator**: equals 1 if the condition holds,
+  0 if not. Week 1's error rate $\frac{1}{n}\sum_i I(y_i \neq \hat{y}_i)$
+  literally says: *count the mistakes, divide by $n$*
+- $\arg\min_\beta \; g(\beta)$ — "the value of $\beta$ that makes $g$
+  smallest" ($\arg\max$: largest). Least squares in one line:
+  $\hat{\beta} = \arg\min_\beta \mathrm{RSS}(\beta)$
+- $\log$ — in ISLP (and most of ML), always the **natural log** (base $e$)
+- $\mathbb{R}^p$ — the set of all vectors with $p$ real entries; "$x \in
+  \mathbb{R}^p$" = "$x$ is a $p$-dimensional vector"
+
+# Worked Example: Simple Linear Regression, Three Ways {.divider background-color="#1b3a5c"}
+
+## The model, symbol by symbol
+
+$$y_i = \beta_0 + \beta_1 x_i + \epsilon_i, \qquad i = 1, \dots, n$$
+
+- $y_i$ — observed response of observation $i$ (Roman, lowercase: data)
+- $x_i$ — observed predictor of observation $i$ (data)
+- $\beta_0, \beta_1$ — unknown intercept and slope (Greek: parameters)
+- $\epsilon_i$ — observation $i$'s unobservable noise (Greek: unknown)
+- The trailing "$i = 1, \dots, n$" means: [this equation holds $n$ times,
+  once per observation]{.hl} — it's $n$ equations wearing one line
+
+## A dataset small enough to see everything
+
+Three observations ($n = 3$, $p = 1$) — think "TV spend vs sales":
+
+| $i$ | $x_i$ | $y_i$ |
+|---|---|---|
+| 1 | 1 | 2 |
+| 2 | 2 | 4 |
+| 3 | 3 | 3 |
+
+The sample means (bars!): $\bar{x} = \frac{1+2+3}{3} = 2$, $\quad \bar{y} = \frac{2+4+3}{3} = 3$.
+
+::: notes
+Numbers chosen so every later computation comes out in clean fractions —
+follow along by hand, that's the point of this section.
+:::
+
+## Way 1: scalar arithmetic
+
+The Ch. 3 least squares formulas, then plug in:
+
+$$\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sum_{i=1}^n (x_i - \bar{x})^2} = \frac{(-1)(-1) + (0)(1) + (1)(0)}{(-1)^2 + 0^2 + 1^2} = \frac{1}{2}$$
+
+$$\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x} = 3 - \tfrac{1}{2} \cdot 2 = 2$$
+
+::: {.fragment}
+Fitted line: $\hat{y} = 2 + 0.5x$. Notice the notation working: sums run
+over $i$ (observations), bars are means, hats appear exactly when data
+replaces truth.
+:::
+
+## Way 2: the same data as vectors and a matrix
+
+Stack the $n$ scalar equations into one vector equation
+$\mathbf{y} = \mathbf{X}\beta + \epsilon$:
+
+$$\underbrace{\begin{pmatrix} 2 \\ 4 \\ 3 \end{pmatrix}}_{\mathbf{y}\;(3 \times 1)} = \underbrace{\begin{pmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{pmatrix}}_{\mathbf{X}\;(3 \times 2)} \underbrace{\begin{pmatrix} \beta_0 \\ \beta_1 \end{pmatrix}}_{\beta\;(2 \times 1)} + \underbrace{\begin{pmatrix} \epsilon_1 \\ \epsilon_2 \\ \epsilon_3 \end{pmatrix}}_{\epsilon\;(3 \times 1)}$$
+
+- The column of 1's is the intercept's seat — it multiplies $\beta_0$
+- $\mathbf{X}$ here is called the **design matrix**: one row per
+  observation, one column per parameter
+
+## Multiplying it out: the two notations are the same thing
+
+Matrix × vector = take each **row** of $\mathbf{X}$, multiply entrywise with
+$\beta$, add up:
+
+$$\mathbf{X}\beta = \begin{pmatrix} 1 \cdot \beta_0 + 1 \cdot \beta_1 \\ 1 \cdot \beta_0 + 2 \cdot \beta_1 \\ 1 \cdot \beta_0 + 3 \cdot \beta_1 \end{pmatrix} = \begin{pmatrix} \beta_0 + \beta_1 \cdot 1 \\ \beta_0 + \beta_1 \cdot 2 \\ \beta_0 + \beta_1 \cdot 3 \end{pmatrix}$$
+
+Row $i$ is exactly the scalar equation $\beta_0 + \beta_1 x_i$.
+[The matrix form isn't new math — it's the same three equations,
+holding hands.]{.hl}
+
+## Way 3: the one-line solution
+
+$$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$$
+
+Reading right to left, with our numbers:
+
+$$\mathbf{X}^T\mathbf{X} = \begin{pmatrix} 3 & 6 \\ 6 & 14 \end{pmatrix} \qquad \mathbf{X}^T\mathbf{y} = \begin{pmatrix} 9 \\ 19 \end{pmatrix}$$
+
+$$\hat{\beta} = \begin{pmatrix} 3 & 6 \\ 6 & 14 \end{pmatrix}^{-1} \begin{pmatrix} 9 \\ 19 \end{pmatrix} = \frac{1}{6}\begin{pmatrix} 14 & -6 \\ -6 & 3 \end{pmatrix}\begin{pmatrix} 9 \\ 19 \end{pmatrix} = \begin{pmatrix} 2 \\ 0.5 \end{pmatrix}$$
+
+::: {.fragment}
+Same $\hat{\beta}_0 = 2$, $\hat{\beta}_1 = 0.5$ as the scalar route — and
+this is [literally what `statsmodels` computes]{.hl} when you call `.fit()`,
+for any number of predictors.
+:::
+
+## Predictions and residuals, both ways
+
+$$\hat{\mathbf{y}} = \mathbf{X}\hat{\beta} = \begin{pmatrix} 2.5 \\ 3 \\ 3.5 \end{pmatrix} \qquad \mathbf{e} = \mathbf{y} - \hat{\mathbf{y}} = \begin{pmatrix} -0.5 \\ 1 \\ -0.5 \end{pmatrix}$$
+
+$$\mathrm{RSS} = \sum_{i=1}^{3} e_i^2 = 0.25 + 1 + 0.25 = 1.5 \qquad \text{or} \qquad \mathrm{RSS} = \mathbf{e}^T\mathbf{e} = 1.5$$
+
+$\mathbf{e}^T\mathbf{e}$ — a row vector times a column vector — *is* the
+sum of squares. Every $\Sigma$-formula in ISLP has a compact matrix twin.
+
+## Check yourself #4
+
+::: {.quiz}
+Dimension bookkeeping — if $\mathbf{X}$ is $n \times p$ and $\mathbf{y}$ is
+$n \times 1$, what are the shapes of:
+
+$$\mathbf{X}^T \qquad \mathbf{X}^T\mathbf{X} \qquad \mathbf{X}^T\mathbf{y} \qquad (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$$
+:::
+
+::: {.fragment}
+- $\mathbf{X}^T$: $p \times n$
+- $\mathbf{X}^T\mathbf{X}$: $(p \times n)(n \times p) = p \times p$ — inner $n$'s cancel
+- $\mathbf{X}^T\mathbf{y}$: $(p \times n)(n \times 1) = p \times 1$
+- $(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$: $(p \times p)(p \times 1) = p \times 1$ —
+  one coefficient per predictor. [Dimensions always chain: inner sizes must
+  match, outer sizes survive.]{.hl}
+:::
+
+# Wrap-Up {.divider background-color="#1b3a5c"}
+
+## The cheat sheet
+
+| You see | You read |
+|---|---|
+| $n$, $p$ | # observations, # predictors |
+| $\mathbf{y}$ vs $x_i$, $\beta$ | bold = length-$n$ vector; plain = other vectors (ISLP rule) |
+| $x_{ij}$ | row $i$ (observation), column $j$ (variable) |
+| $\hat{\theta}$ | estimate of the unknown $\theta$ |
+| $\bar{x}$ | sample mean of $x$ |
+| $\mathbf{X}^T$, $\mathbf{A}^{-1}$ | transpose; matrix inverse |
+| $\sim N(\mu, \sigma^2)$ | "is distributed as" a normal |
+| $\sum$, $\prod$ | repeated $+$, repeated $\times$ |
+| $E[\cdot]$, $\mathrm{Var}(\cdot)$, $\Pr(\cdot \mid \cdot)$ | expectation, variance, conditional probability |
+| $I(\cdot)$, $\arg\min$ | indicator (0/1); the minimizing value |
+| Greek / Roman | unknown parameter / observed data |
+
+## How to read any equation in this course
+
+1. **Identify the objects** — which symbols are scalars, vectors, matrices?
+   (Bold? Capital? Subscripts left over?)
+2. **Check the dimensions** — do the shapes chain correctly? What shape is
+   the result?
+3. **Find the hats** — what's data, what's truth, what's an estimate?
+4. **Say it aloud in words** — every equation is a sentence; if you can't
+   speak it, you haven't read it yet
+
+::: {.fragment}
+[Notation is the interface. Master the interface, and every chapter of ISLP
+gets easier.]{.hl} Keep this deck within reach all summer.
+:::
+
+::: notes
+Pair well with ISLP Section 1's "Notation and Simple Matrix Algebra" —
+this deck is a superset with examples.
+:::

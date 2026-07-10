@@ -182,6 +182,23 @@ cross-validation — plant the idea now, they'll see the math for it soon.
 
 # How It Works {.divider background-color="#1b3a5c"}
 
+## First, the vocabulary
+
+The book's running example: the **Advertising** data — `sales` of a product
+in $n = 200$ markets, alongside `TV`, `radio`, and `newspaper` ad budgets.
+
+- What we predict **from** — the budgets — are the **inputs**: also called
+  [predictors]{.hl}, *features*, or *independent variables* ($X_1, X_2, X_3$)
+- What we predict — `sales` — is the **output**: the [response]{.hl} or
+  *dependent variable* ($Y$)
+- **Notation for the whole course:** $n$ = number of observations,
+  $p$ = number of predictors, $x_{ij}$ = predictor $j$ for observation $i$
+
+::: {.fragment}
+The book (and every paper you'll ever read) uses these names
+interchangeably — hear "feature," think "predictor," think $X$.
+:::
+
 ## The basic setup
 
 We assume there's some relationship between an input $X$ and an output $Y$:
@@ -221,6 +238,26 @@ matter, and how. $f$ must stay interpretable.
 ::: {.fragment}
 Most real projects are a mix of both — and the mix determines which method
 you should reach for.
+:::
+
+## Two kinds of error — only one is your fault
+
+Even a *perfect* estimate of $f$ would not predict perfectly:
+
+$$E(Y - \hat{Y})^2 = \underbrace{\left[f(X) - \hat{f}(X)\right]^2}_{\text{reducible}} + \underbrace{\text{Var}(\epsilon)}_{\text{irreducible}}$$
+
+::: {.fragment}
+- **Reducible error** shrinks as $\hat{f}$ improves — every method in this
+  course is a strategy for reducing it.
+- **Irreducible error** comes from unmeasured variables and inherent
+  randomness. [No model, however clever, gets below it.]{.hl}
+- In practice that floor is *unknown* — a model that plateaus leaves you
+  guessing whether you've hit the floor or just a bad $\hat{f}$.
+:::
+
+::: notes
+This equation is the seed for the bias-variance decomposition later in the
+deck — Var(ε) will reappear there as the third, untouchable term.
 :::
 
 ## How do we estimate $f$?
@@ -347,6 +384,21 @@ The theoretical best possible classifier — the **Bayes classifier** —
 assigns each $x_0$ to the class $j$ that maximizes
 $\Pr(Y = j \mid X = x_0)$. It's a gold standard we can't compute directly
 (we don't know the true conditional distribution), but we can approximate it.
+:::
+
+## The floor, again: the Bayes error rate
+
+Even the Bayes classifier isn't perfect — *best possible* still makes errors
+wherever the classes genuinely overlap:
+
+$$\text{Bayes error rate} = 1 - E\left(\max_j \Pr(Y = j \mid X)\right)$$
+
+::: {.fragment}
+- That error is built into the **problem**, not the method — it's the
+  classification twin of the [irreducible error]{.hl} from the regression
+  setting.
+- Every real classifier (KNN, next) is judged by how close it gets to this
+  floor — never by whether it reaches zero.
 :::
 
 ## K-Nearest Neighbors

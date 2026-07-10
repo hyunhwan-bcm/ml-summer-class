@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Statistical Modelling - Excel Worksheets</title>
+    <style>
+        :root {
+            /* Ghent University Colors - Light Theme */
+            --ugent-blue: #1E64C8;
+            --ugent-blue-dark: #164a96;
+            --ugent-blue-light: #4a8ae0;
+            --ugent-blue-lighter: #e8f1fc;
+            --ugent-blue-pale: #f4f8fd;
+
+            --primary: #1E64C8;
+            --primary-dark: #164a96;
+            --primary-light: #4a8ae0;
+
+            --bg: #ffffff;
+            --bg-alt: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1a202c;
+            --text-muted: #4a5568;
+            --border: #e2e8f0;
+            --border-light: #edf2f7;
+            --success: #10b981;
+            --google-green: #34a853;
+
+            --gradient-blue: linear-gradient(135deg, #1E64C8 0%, #4a8ae0 100%);
+            --gradient-blue-light: linear-gradient(135deg, #4a8ae0 0%, #7eb3f0 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--ugent-blue-pale) 0%, #ffffff 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(30, 100, 200, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(30, 100, 200, 0.05) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--ugent-blue);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--ugent-blue);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--ugent-blue);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 32px;
+            height: 32px;
+            color: var(--ugent-blue);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 20px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .nav a:hover {
+            color: var(--ugent-blue);
+            background: var(--ugent-blue-lighter);
+        }
+
+        .nav a.active {
+            color: white;
+            background: var(--ugent-blue);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        section {
+            margin-bottom: 100px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--ugent-blue);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* How to Use - Step Progress */
+        .use-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            position: relative;
+        }
+
+        .use-steps::before {
+            content: '';
+            position: absolute;
+            top: 48px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 3px;
+            background: var(--gradient-blue);
+            border-radius: 2px;
+        }
+
+        .use-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .use-step-icon {
+            width: 96px;
+            height: 96px;
+            background: white;
+            border: 3px solid var(--ugent-blue);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(30, 100, 200, 0.1);
+        }
+
+        .use-step:hover .use-step-icon {
+            background: var(--ugent-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(30, 100, 200, 0.2);
+        }
+
+        .use-step h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .use-step p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background: var(--ugent-blue-lighter);
+            border-left: 4px solid var(--ugent-blue);
+            border-radius: 0 12px 12px 0;
+            padding: 24px 28px;
+            margin-top: 40px;
+        }
+
+        .tip-box h4 {
+            color: var(--ugent-blue);
+            font-size: 1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Learning Journey - Step by Step Timeline */
+        .journey {
+            position: relative;
+        }
+
+        .journey-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--gradient-blue);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .journey-step:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .journey-step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .journey-step:nth-child(odd) .step-content {
+            padding-right: 80px;
+            text-align: right;
+        }
+
+        .journey-step:nth-child(even) .step-content {
+            padding-left: 80px;
+            text-align: left;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 64px;
+            height: 64px;
+            background: var(--ugent-blue);
+            border: 4px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            z-index: 2;
+            color: white;
+            box-shadow: 0 4px 12px rgba(30, 100, 200, 0.3);
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ugent-blue);
+        }
+
+        .step-desc {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .step-files {
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .journey-step:nth-child(odd) .step-files {
+            justify-content: flex-end;
+        }
+
+        .file-tag {
+            padding: 6px 12px;
+            background: var(--ugent-blue-lighter);
+            color: var(--ugent-blue);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            font-family: 'Monaco', 'Consolas', monospace;
+        }
+
+        /* Step Cards */
+        .steps-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .step-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .step-card:hover {
+            border-color: var(--ugent-blue);
+            box-shadow: 0 8px 24px rgba(30, 100, 200, 0.12);
+        }
+
+        .step-card-header {
+            padding: 20px 24px;
+            background: var(--ugent-blue-pale);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            background: var(--ugent-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            color: white;
+        }
+
+        .step-card-title {
+            flex: 1;
+        }
+
+        .step-card-title h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            color: var(--text);
+        }
+
+        .step-card-title span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Google Sheets Button */
+        .sheets-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--google-green);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .sheets-btn:hover {
+            background: #2d9248;
+            transform: scale(1.02);
+        }
+
+        .sheets-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .expand-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--ugent-blue);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .step-card.active .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .step-card-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .step-card.active .step-card-body {
+            max-height: 600px;
+        }
+
+        .step-card-content {
+            padding: 24px;
+            background: white;
+        }
+
+        .step-card-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Sheet Steps */
+        .sheet-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sheet-step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 16px;
+            background: var(--ugent-blue-pale);
+            border-radius: 10px;
+            border: 1px solid var(--border-light);
+        }
+
+        .sheet-step-num {
+            width: 28px;
+            height: 28px;
+            background: var(--ugent-blue);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .sheet-step-info {
+            flex: 1;
+        }
+
+        .sheet-step-info strong {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 2px;
+            color: var(--text);
+        }
+
+        .sheet-step-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .sheet-step-arrow {
+            color: var(--ugent-blue);
+            font-weight: bold;
+        }
+
+        /* Prerequisites */
+        .prereq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .prereq-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 24px;
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .prereq-card:hover {
+            border-color: var(--ugent-blue);
+            background: var(--ugent-blue-pale);
+        }
+
+        .prereq-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--ugent-blue-lighter);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .prereq-card span {
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--ugent-blue);
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .footer-logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .journey-line { display: none; }
+            .journey-step, .journey-step:nth-child(even) {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .step-content, .journey-step:nth-child(odd) .step-content,
+            .journey-step:nth-child(even) .step-content {
+                padding: 0;
+                text-align: center;
+            }
+            .step-marker {
+                position: relative;
+                left: auto;
+                transform: none;
+                margin-bottom: 24px;
+            }
+            .step-files, .journey-step:nth-child(odd) .step-files {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero-stats { gap: 24px; }
+            .stat-number { font-size: 2rem; }
+            .section-title { font-size: 1.75rem; }
+            .use-steps {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
+            .use-steps::before { display: none; }
+            .step-card-header {
+                flex-wrap: wrap;
+            }
+            .sheets-btn {
+                order: 10;
+                margin-top: 12px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .use-steps { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Hands-on Learning with Excel</div>
+            <h1>Statistical Modelling Worksheets</h1>
+            <p>Master statistical concepts by calculating everything step-by-step in Excel. No black boxes — just pure understanding.</p>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">Worksheets</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Parts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Steps</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <nav class="nav">
+            <a href="#how-to-use">How to Use</a>
+            <a href="#journey">Learning Path</a>
+            <a href="#part1">Part 1: Regression</a>
+            <a href="#part2">Part 2: PCA & Classification</a>
+            <a href="#part3">Part 3: Inference</a>
+        </nav>
+    </div>
+
+    <main class="container">
+        <!-- How to Use Section -->
+        <section id="how-to-use">
+            <div class="section-header">
+                <div class="section-label">Getting Started</div>
+                <h2 class="section-title">How to Use These Worksheets</h2>
+                <p class="section-desc">Follow this simple 4-step process for each worksheet</p>
+            </div>
+
+            <div class="use-steps">
+                <div class="use-step">
+                    <div class="use-step-icon">📖</div>
+                    <h3>1. Read Instructions</h3>
+                    <p>Start with the Instructions sheet to understand the learning objectives and context.</p>
+                </div>
+                <div class="use-step">
+                    <div class="use-step-icon">✏️</div>
+                    <h3>2. Fill Yellow Cells</h3>
+                    <p>Enter formulas in highlighted cells. Work through each step sequentially.</p>
+                </div>
+                <div class="use-step">
+                    <div class="use-step-icon">🔍</div>
+                    <h3>3. Check Your Work</h3>
+                    <p>Compare your results with the Answer Key sheet to verify your calculations.</p>
+                </div>
+                <div class="use-step">
+                    <div class="use-step-icon">🔄</div>
+                    <h3>4. Iterate & Learn</h3>
+                    <p>If results differ, trace back through steps to find and fix errors.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <h4>💡 Excel Tips</h4>
+                <p>
+                    <strong>Array formulas:</strong> Use Ctrl+Shift+Enter for matrix operations.<br>
+                    <strong>Key functions:</strong> MMULT (matrix multiply), MINVERSE (inverse), TRANSPOSE, SUMPRODUCT
+                </p>
+            </div>
+        </section>
+
+        <!-- Learning Journey Section -->
+        <section id="journey">
+            <div class="section-header">
+                <div class="section-label">Learning Path</div>
+                <h2 class="section-title">Your Journey Through Statistical Modelling</h2>
+                <p class="section-desc">Follow this structured path from foundational concepts to advanced techniques</p>
+            </div>
+
+            <div class="journey">
+                <div class="journey-line"></div>
+
+                <div class="journey-step">
+                    <div class="step-content">
+                        <h3 class="step-title">Part 1: Regression Foundations</h3>
+                        <p class="step-desc">Build a solid foundation with linear regression. Learn to fit models, interpret coefficients, diagnose problems, and handle special cases.</p>
+                        <div class="step-files">
+                            <span class="file-tag">01b Simple</span>
+                            <span class="file-tag">01c Multiple</span>
+                            <span class="file-tag">01d Predictivity</span>
+                            <span class="file-tag">01e Outliers</span>
+                            <span class="file-tag">01f Categorical</span>
+                            <span class="file-tag">01g Multicollinearity</span>
+                        </div>
+                    </div>
+                    <div class="step-marker">1</div>
+                    <div class="step-content"></div>
+                </div>
+
+                <div class="journey-step">
+                    <div class="step-content"></div>
+                    <div class="step-marker">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Part 2: Dimensionality & Classification</h3>
+                        <p class="step-desc">Reduce dimensions with PCA and classify binary outcomes with logistic regression. Learn MLE, confusion matrices, and ROC curves.</p>
+                        <div class="step-files">
+                            <span class="file-tag">02a-c PCA</span>
+                            <span class="file-tag">02d Logistic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-step">
+                    <div class="step-content">
+                        <h3 class="step-title">Part 3: Inference & Model Selection</h3>
+                        <p class="step-desc">Master parameter estimation, quality assessment, model selection criteria (AIC/BIC), and sensitivity analysis.</p>
+                        <div class="step-files">
+                            <span class="file-tag">03a Parameters</span>
+                            <span class="file-tag">03b Quality</span>
+                            <span class="file-tag">03c Selection</span>
+                            <span class="file-tag">03d Sensitivity</span>
+                        </div>
+                    </div>
+                    <div class="step-marker">3</div>
+                    <div class="step-content"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 1: Regression -->
+        <section id="part1">
+            <div class="section-header">
+                <div class="section-label">Part 1</div>
+                <h2 class="section-title">Regression Foundations</h2>
+                <p class="section-desc">From simple linear regression to handling real-world complexities</p>
+            </div>
+
+            <div class="steps-container">
+                <!-- 01b Simple Regression -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">1</div>
+                        <div class="step-card-title">
+                            <h4>Simple Linear Regression</h4>
+                            <span>Lecture01b_Simple_Regression.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1OhIO4LQyus5qByTzg7Xhg_J2t6-yBpoS/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Start with the simplest case: one predictor, one outcome. Learn to derive and interpret β₀ (intercept) and β₁ (slope).</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Basic Statistics</strong><span>Calculate means, variances, and covariance</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Coefficients</strong><span>Derive β₁ = Cov(X,Y)/Var(X) and β₀ = ȳ - β₁x̄</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Residuals</strong><span>Compute ε = y - ŷ for each observation</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>R-Squared</strong><span>Calculate SST, SSR, SSE and R² = SSR/SST</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>t-Test</strong><span>Test if β₁ is significantly different from zero</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01c Multiple Regression Matrix -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">2</div>
+                        <div class="step-card-title">
+                            <h4>Multiple Regression (Matrix Form)</h4>
+                            <span>Lecture01c_Multiple_Regression_Matrix.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1GRb6tWP4qV7HVDoMn4Y3ShakKyAwqQN4/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Extend to multiple predictors using matrix algebra. Understand the famous formula: β = (X'X)⁻¹X'Y</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Design Matrix X</strong><span>Construct matrix with intercept column and predictors</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>X'X Matrix</strong><span>Multiply transpose of X by X</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>X'Y Vector</strong><span>Multiply transpose of X by response vector Y</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Inverse (X'X)⁻¹</strong><span>Calculate inverse using MINVERSE formula</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>Coefficients β</strong><span>Final multiplication: β = (X'X)⁻¹X'Y</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01c Multiple Regression -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">3</div>
+                        <div class="step-card-title">
+                            <h4>Multiple Regression (Alternative)</h4>
+                            <span>Lecture01c_Multiple_Regression.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1YaG7Lr-CRUmd4dyHprBrpyLEnG6-Zq5q/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Another approach to multiple regression with step-by-step coefficient derivation.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Design Matrix</strong><span>Build the design matrix X</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Matrix Operations</strong><span>X'X and X'Y calculations</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Predictions</strong><span>Compute ŷ = Xβ</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01d Predictivity -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">4</div>
+                        <div class="step-card-title">
+                            <h4>Model Predictivity</h4>
+                            <span>Lecture01d_Predictivity_Birds.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/18L91ZBKv_LbgDH_wDjlhJ3HoL-9jVuLy/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>How well does your model explain the data? Learn R², Adjusted R², and why more predictors isn't always better.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Data Exploration</strong><span>Visualize and understand the bird migration dataset</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Sum of Squares</strong><span>Calculate SST (total), SSR (regression), SSE (error)</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>R² & Adjusted R²</strong><span>Understand the penalty for adding more variables</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01e Outliers -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">5</div>
+                        <div class="step-card-title">
+                            <h4>Outliers & Influence Diagnostics</h4>
+                            <span>Lecture01e_Outliers_Birds.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1ZudhDXCffK4iamtrXK43XhfxIixr7Jk-/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Identify observations that have unusual influence on your regression. Not all outliers are problematic!</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Leverage</strong><span>Identify points far from the center of X-space</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Residual Analysis</strong><span>Standardized and studentized residuals</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Cook's Distance</strong><span>Combined measure of leverage and residual</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01f Categorical -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">6</div>
+                        <div class="step-card-title">
+                            <h4>Categorical Variables</h4>
+                            <span>Lecture01f_Categorical_Insurance.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1jABP2JN6NWuPx4Z3pv4GXdvqDqnV3ge4/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>How do you include categorical variables (like region, gender) in regression? Learn dummy coding and avoid the dummy variable trap.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Dummy Coding</strong><span>Convert categories to 0/1 indicator variables</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Group Means</strong><span>Understand intercept as baseline group mean</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Coefficient Interpretation</strong><span>Coefficients as differences from baseline</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Multi-level Dummy</strong><span>Handle variables with more than 2 categories</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>Dummy Variable Trap</strong><span>Why you need k-1 dummies for k categories</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 01g Multicollinearity -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">7</div>
+                        <div class="step-card-title">
+                            <h4>Multicollinearity</h4>
+                            <span>Lecture01g_Multicollinearity_Decathlon.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1-wsTBM4hYn9ywhAzS5EhpQCcUtwAJwD4/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>When predictors are highly correlated, regression becomes unstable. Learn to detect and handle multicollinearity.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Correlation Matrix</strong><span>Examine pairwise correlations between predictors</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>VIF Calculation</strong><span>Variance Inflation Factor: VIF = 1/(1-R²ⱼ)</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>High VIF Example</strong><span>See how high VIF inflates standard errors</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Centering Solution</strong><span>Mean-centering to reduce multicollinearity</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: PCA & Classification -->
+        <section id="part2">
+            <div class="section-header">
+                <div class="section-label">Part 2</div>
+                <h2 class="section-title">Dimensionality & Classification</h2>
+                <p class="section-desc">Reduce complexity and classify outcomes</p>
+            </div>
+
+            <div class="steps-container">
+                <!-- 02a-c PCA -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">1</div>
+                        <div class="step-card-title">
+                            <h4>Principal Component Analysis (PCA)</h4>
+                            <span>Lecture02a-c_PCA.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1Ss6RtJ0rGq9obYB0mpSk4HJ5xJtPGw8x/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Transform correlated variables into uncorrelated principal components. Find the directions of maximum variance.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Original Data</strong><span>Start with raw multivariate data</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Standardization</strong><span>Z-score: (x - μ) / σ for each variable</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Correlation Matrix</strong><span>Calculate correlation matrix of standardized data</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Eigenvalues & Eigenvectors</strong><span>Extract principal directions and variances</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>PC Scores</strong><span>Project data onto principal components</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02a-c PCA Decathlon -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">2</div>
+                        <div class="step-card-title">
+                            <h4>PCA - Decathlon Dataset</h4>
+                            <span>Lecture02a-c_PCA_Decathlon.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1Kg-mbzHjFHYtrZEs0Gq4qXhui8PmIiAn/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Apply PCA to a real sports dataset. Reduce 10 decathlon events to interpretable principal components.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Raw Data</strong><span>Athlete scores across 10 events</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Standardization</strong><span>Make events comparable</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>PC Interpretation</strong><span>What do the principal components mean?</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 02d Logistic -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">3</div>
+                        <div class="step-card-title">
+                            <h4>Logistic Regression</h4>
+                            <span>Lecture02d_Logistic_Regression.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1F-P5lYUdLE-1aT8RLtdtRjhlQw18sOCv/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Model binary outcomes (yes/no, success/fail). Learn probability prediction, odds ratios, and model evaluation.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Odds & Logit</strong><span>p/(1-p) and log(odds) transformation</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Probability Prediction</strong><span>Sigmoid: p = 1/(1 + e^(-z))</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Odds Ratio Interpretation</strong><span>e^β as multiplicative effect on odds</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Maximum Likelihood (MLE)</strong><span>How coefficients are estimated</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>Confusion Matrix</strong><span>TP, FP, TN, FN and derived metrics</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">6</div><div class="sheet-step-info"><strong>ROC & AUC</strong><span>Evaluate classifier across all thresholds</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Inference -->
+        <section id="part3">
+            <div class="section-header">
+                <div class="section-label">Part 3</div>
+                <h2 class="section-title">Inference & Model Selection</h2>
+                <p class="section-desc">Parameter estimation, uncertainty quantification, and choosing the best model</p>
+            </div>
+
+            <div class="steps-container">
+                <!-- 03a Parameter Estimation -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">1</div>
+                        <div class="step-card-title">
+                            <h4>Parameter Estimation (Nonlinear)</h4>
+                            <span>Lecture03a_Parameter_Estimation.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1YoMFZJL0DpFAw0z9S4tq1oJLs2PkkUd6/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Estimate parameters for nonlinear models like Beverton-Holt. Compare grid search and gradient descent optimization.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Model Prediction</strong><span>Calculate predictions for given parameters</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Grid Search</strong><span>Exhaustive search over parameter grid</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Gradient Descent</strong><span>Iteratively move toward minimum</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Residual Analysis</strong><span>Check model fit quality</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03b Quality of Estimation -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">2</div>
+                        <div class="step-card-title">
+                            <h4>Quality of Estimation</h4>
+                            <span>Lecture03b_Quality_of_Estimation.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1-OEXEjUuKCuwbMx93VfMOKn6fXhpn8Si/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Use Fisher Information Matrix to understand parameter uncertainty and correlation between estimates.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Covariance Matrix</strong><span>Var-Cov matrix of parameter estimates</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Fisher Information Matrix</strong><span>Information about parameters from data</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>SE & Confidence Intervals</strong><span>Derive standard errors from FIM</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Parameter Correlation</strong><span>How estimates co-vary</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03c Model Selection -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">3</div>
+                        <div class="step-card-title">
+                            <h4>Model Selection</h4>
+                            <span>Lecture03c_Model_Selection_Birds.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1QbOjYCKy-Ioto_vBWd95jMtVmFTOEoCV/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>Which model is best? Compare models using AIC and BIC — information criteria that balance fit and complexity.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Fit Multiple Models</strong><span>Compare different predictor combinations</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Calculate AIC</strong><span>AIC = 2k - 2ln(L)</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Calculate BIC</strong><span>BIC = k·ln(n) - 2ln(L)</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Model Comparison</strong><span>Select model with lowest AIC/BIC</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03d Sensitivity Analysis -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="this.parentElement.classList.toggle('active')">
+                        <div class="step-num">4</div>
+                        <div class="step-card-title">
+                            <h4>Sensitivity Analysis</h4>
+                            <span>Lecture03d_Sensitivity_Analysis.xlsx</span>
+                        </div>
+                        <a href="https://docs.google.com/spreadsheets/d/1PKZPGvoinOZaY36L3GE8QykX1R6MGyVp/edit?usp=drive_link&ouid=101633548124306174896&rtpof=true&sd=true" target="_blank" class="sheets-btn" onclick="event.stopPropagation()">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 7h2v2H7zm0 4h2v2H7zm0 4h2v2H7zm4-8h6v2h-6zm0 4h6v2h-6zm0 4h6v2h-6z"/></svg>
+                            Open in Sheets
+                        </a>
+                        <svg class="expand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-card-content">
+                            <p>How sensitive is your model output to changes in parameters? Essential for understanding model robustness.</p>
+                            <div class="sheet-steps">
+                                <div class="sheet-step"><div class="sheet-step-num">1</div><div class="sheet-step-info"><strong>Baseline Output</strong><span>Model output at nominal parameter values</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">2</div><div class="sheet-step-info"><strong>Absolute Sensitivity</strong><span>∂Y/∂θ — raw change in output</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">3</div><div class="sheet-step-info"><strong>Relative Sensitivity</strong><span>(∂Y/Y)/(∂θ/θ) — elasticity</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">4</div><div class="sheet-step-info"><strong>Standardized Regression Coefficient</strong><span>Compare importance across parameters</span></div><span class="sheet-step-arrow">→</span></div>
+                                <div class="sheet-step"><div class="sheet-step-num">5</div><div class="sheet-step-info"><strong>Morris Screening</strong><span>Efficient global sensitivity method</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prerequisites Section -->
+        <section id="prerequisites">
+            <div class="section-header">
+                <div class="section-label">Before You Start</div>
+                <h2 class="section-title">Prerequisites</h2>
+                <p class="section-desc">Make sure you're comfortable with these foundational concepts</p>
+            </div>
+
+            <div class="prereq-grid">
+                <div class="prereq-card">
+                    <div class="prereq-icon">📊</div>
+                    <span>Basic Statistics (mean, variance, SD)</span>
+                </div>
+                <div class="prereq-card">
+                    <div class="prereq-icon">📐</div>
+                    <span>Linear Algebra (matrix operations)</span>
+                </div>
+                <div class="prereq-card">
+                    <div class="prereq-icon">💻</div>
+                    <span>Excel Fundamentals</span>
+                </div>
+                <div class="prereq-card">
+                    <div class="prereq-icon">∑</div>
+                    <span>Summation Notation</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-logo">Introduction to Statistical Modelling</p>
+        <p>Ghent University — Excel Worksheets for Hands-on Learning</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Active nav highlight on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Auto-open first card in each section
+        document.querySelectorAll('.steps-container').forEach(container => {
+            const firstCard = container.querySelector('.step-card');
+            if (firstCard) {
+                firstCard.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
