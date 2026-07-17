@@ -23,6 +23,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Install Python dependencies for Quarto execution
+        run: python3 -m pip install jupyter nbformat nbclient numpy pandas matplotlib scikit-learn ISLP
 
       - uses: actions/setup-node@v4
         with:

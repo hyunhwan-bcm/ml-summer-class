@@ -228,6 +228,61 @@ $$\hat{\beta}_1 \qquad \bar{y} \qquad \mathbf{X}^T \qquad x_{52}^2 \qquad \epsil
 - $\hat{f}(x_0)$ — our fitted model's prediction at the new point $x_0$
 :::
 
+# Sets: When Letters Mean Collections {.divider background-color="#1b3a5c"}
+
+## Curly braces and $\in$: naming a collection
+
+- $\{a, b, c\}$ — a **set**: an unordered collection of things
+- $x \in S$ — ["$x$ is a member of $S$"]{.hl}; $\notin$ means it isn't
+- ISLP's most important set is the **training data** itself:
+  $$\{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$$
+  — read: *the collection of all $n$ observation pairs*
+
+::: {.fragment}
+Sets can also be defined by a rule: $\{x : x > 0\}$ reads "all $x$
+**such that** $x$ is positive." The colon (sometimes a vertical bar) is
+the word *such that*.
+:::
+
+## Blackboard letters: the number families
+
+The doubled ("blackboard bold") letters name the standard universes of
+numbers:
+
+| Symbol | Contains | In this course |
+|---|---|---|
+| $\mathbb{N}$ | natural numbers $1, 2, 3, \dots$ | counts: $n$, $p$, $K$ |
+| $\mathbb{Z}$ | integers $\dots, -1, 0, 1, \dots$ | rarely appears |
+| $\mathbb{R}$ | **real numbers** — the whole continuous line | [where almost everything lives]{.hl} |
+
+::: {.fragment}
+The powers of $\mathbb{R}$ describe *shapes* of objects:
+
+- $a \in \mathbb{R}$ — $a$ is a single number (scalar)
+- $x \in \mathbb{R}^p$ — $x$ is a vector with $p$ real entries
+- $\mathbf{X} \in \mathbb{R}^{n \times p}$ — $\mathbf{X}$ is an $n \times p$ matrix
+
+One glance at the superscript tells you an object's dimensions before you
+read anything else.
+:::
+
+## Script letters: collections with a job
+
+Calligraphic (script) capitals mark a **named set** — distinguishing it
+from a matrix (bold capital) or a random variable (plain capital):
+
+- $\mathcal{N}_0$ — in KNN (Week 1), [the set of the $K$ training points
+  nearest to $x_0$]{.hl}:
+  $$\Pr(Y = j \mid X = x_0) \approx \frac{1}{K}\sum_{i \in \mathcal{N}_0} I(y_i = j)$$
+  read: *average over the observations **in the neighborhood***
+- $C_1, \dots, C_K$ — in clustering (Week 6), the sets of observations
+  assigned to each cluster
+
+::: {.fragment}
+So when a $\sum$ ranges over $i \in \mathcal{S}$ instead of $i = 1, \dots, n$,
+it means: *sum over just the members of that set* — a subset, not everyone.
+:::
+
 # The Greek Cast {.divider background-color="#1b3a5c"}
 
 ## Greek letters you'll meet every week
@@ -346,8 +401,6 @@ after an operator name mean "applied to".
   smallest" ($\arg\max$: largest). Least squares in one line:
   $\hat{\beta} = \arg\min_\beta \mathrm{RSS}(\beta)$
 - $\log$ — in ISLP (and most of ML), always the **natural log** (base $e$)
-- $\mathbb{R}^p$ — the set of all vectors with $p$ real entries; "$x \in
-  \mathbb{R}^p$" = "$x$ is a $p$-dimensional vector"
 
 # Worked Example: Simple Linear Regression, Three Ways {.divider background-color="#1b3a5c"}
 
@@ -474,6 +527,8 @@ $$\mathbf{X}^T \qquad \mathbf{X}^T\mathbf{X} \qquad \mathbf{X}^T\mathbf{y} \qqua
 | $\sum$, $\prod$ | repeated $+$, repeated $\times$ |
 | $E[\cdot]$, $\mathrm{Var}(\cdot)$, $\Pr(\cdot \mid \cdot)$ | expectation, variance, conditional probability |
 | $I(\cdot)$, $\arg\min$ | indicator (0/1); the minimizing value |
+| $x \in \mathbb{R}^p$, $\mathbf{X} \in \mathbb{R}^{n \times p}$ | a $p$-vector of reals; an $n \times p$ real matrix |
+| $\mathcal{N}_0$, $C_k$ (script/set capitals) | a named set — sum over its members, not everyone |
 | Greek / Roman | unknown parameter / observed data |
 
 ## How to read any equation in this course
